@@ -1,0 +1,5 @@
+# rust output directory
+target/
+
+# extraction output directory
+game_data/
