@@ -1,3 +1,4 @@
+mod data;
 mod pak_index;
 
 use std::path::{Path, PathBuf};
@@ -42,26 +43,21 @@ pub fn extract(args: ExtractArgs) -> anyhow::Result<()> {
     // loading index of game files
     debug!("Reading pak file index");
     let pak_dir = args.game_directory.join("Data");
-    let mut map = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
-    info!("Loaded pak file index with {} entries", map.len());
+    let mut pak_index = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
+    info!("Loaded pak file index with {} entries", pak_index.len());
 
-    // for now, just extract some file
-    let file_read = map
-        .get_file(r"\saves\item\itemdata.xml")
-        .context("read file ")?;
-
-    let Some(mut file_read) = file_read else {
-        bail!("File {} not found", r"\saves\item\itemdata.xml");
-    };
+    let data = data::Data::read_all(&mut pak_index).context("read data files")?;
+    let formatted_data = serde_json::to_string_pretty(&data).context("format data")?;
 
     debug!("Creating output directory");
     std::fs::create_dir_all(&output_directory).context("create output directory")?;
 
     debug!("Writing file");
-    let output_file_path = output_directory.join("itemdata.xml");
+    let output_file_path = output_directory.join("data.json");
     let mut output_file = std::fs::File::create(&output_file_path)
         .with_context(|| format!("create output file {:?}", output_file_path))?;
-    std::io::copy(&mut file_read, &mut output_file).context("write output file")?;
+    std::io::copy(&mut formatted_data.as_bytes(), &mut output_file).context("write output file")?;
+    info!("Wrote data to {:?}", output_file_path);
 
     Ok(())
 }
