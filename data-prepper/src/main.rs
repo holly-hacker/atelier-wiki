@@ -7,6 +7,14 @@ use tracing::{debug, info};
 /// Data Prepper
 #[derive(FromArgs)]
 struct CliArgs {
+    /// enable debug logging
+    #[argh(switch, short = 'v')]
+    verbose: bool,
+
+    /// enable trace logging
+    #[argh(switch, short = 't')]
+    trace: bool,
+
     #[argh(subcommand)]
     subcommand: Subcommand,
 }
@@ -20,9 +28,15 @@ enum Subcommand {
 fn main() {
     let args: CliArgs = argh::from_env();
 
-    tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::DEBUG)
-        .init();
+    let log_level = if args.trace {
+        tracing::Level::TRACE
+    } else if args.verbose || cfg!(debug_assertions) {
+        tracing::Level::DEBUG
+    } else {
+        tracing::Level::INFO
+    };
+
+    tracing_subscriber::fmt().with_max_level(log_level).init();
     debug!("Initialized tracing");
 
     let time_before_command_handling = std::time::Instant::now();
