@@ -1,6 +1,7 @@
 use anyhow::Context;
 use serde::Serialize;
 use tracing::info;
+use typescript_type_def::TypeDef;
 
 use super::pak_index::PakIndex;
 
@@ -8,7 +9,7 @@ mod items;
 mod strings;
 mod util;
 
-#[derive(Serialize)]
+#[derive(Serialize, TypeDef)]
 pub struct Data {
     pub item_data: Vec<items::ItemData>,
 }

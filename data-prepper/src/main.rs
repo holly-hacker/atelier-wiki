@@ -1,4 +1,5 @@
 mod extract;
+mod typedefs;
 
 use anyhow::Context;
 use argh::FromArgs;
@@ -23,6 +24,7 @@ struct CliArgs {
 #[argh(subcommand)]
 enum Subcommand {
     Extract(extract::ExtractArgs),
+    TypeDefs(typedefs::TypeDefsArgs),
 }
 
 fn main() {
@@ -44,6 +46,7 @@ fn main() {
         Subcommand::Extract(extract_args) => {
             extract::extract(extract_args).context("Run extract command")
         }
+        Subcommand::TypeDefs(typedef_args) => typedefs::generate_typedefs(typedef_args),
     };
     let time_elapsed = time_before_command_handling.elapsed();
 

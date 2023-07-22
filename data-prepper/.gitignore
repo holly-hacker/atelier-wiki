@@ -3,3 +3,6 @@ target/
 
 # extraction output directory
 game_data/
+
+# don't store generated typedefs in this folder, they're probably generated from testing
+typedefs.d.ts

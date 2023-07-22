@@ -5,6 +5,7 @@ use std::path::{Path, PathBuf};
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
+pub use data::Data;
 use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 

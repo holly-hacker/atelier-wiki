@@ -1,10 +1,11 @@
 use anyhow::Context;
 use serde::Serialize;
 use tracing::trace;
+use typescript_type_def::TypeDef;
 
 use super::strings::StringsData;
 
-#[derive(Serialize)]
+#[derive(Serialize, TypeDef)]
 pub struct ItemData {
     pub name: Option<String>,
     pub temp_name: Option<String>,
