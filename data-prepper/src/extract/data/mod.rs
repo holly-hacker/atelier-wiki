@@ -10,11 +10,11 @@ mod strings;
 mod util;
 
 #[derive(Serialize, TypeDef)]
-pub struct Data {
+pub struct Ryza3Data {
     pub item_data: Vec<items::ItemData>,
 }
 
-impl Data {
+impl Ryza3Data {
     pub fn read_all(pak_index: &mut PakIndex) -> anyhow::Result<Self> {
         // TODO: consider reading other languages too
         let strings = util::read_xml(

@@ -5,7 +5,7 @@ use std::path::{Path, PathBuf};
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
-pub use data::Data;
+pub use data::Ryza3Data;
 use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 
@@ -47,14 +47,14 @@ pub fn extract(args: ExtractArgs) -> anyhow::Result<()> {
     let mut pak_index = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
     info!("Loaded pak file index with {} entries", pak_index.len());
 
-    let data = data::Data::read_all(&mut pak_index).context("read data files")?;
+    let data = data::Ryza3Data::read_all(&mut pak_index).context("read data files")?;
     let formatted_data = serde_json::to_string_pretty(&data).context("format data")?;
 
     debug!("Creating output directory");
     std::fs::create_dir_all(&output_directory).context("create output directory")?;
 
     debug!("Writing file");
-    let output_file_path = output_directory.join("data.json");
+    let output_file_path = output_directory.join("ryza3.json");
     let mut output_file = std::fs::File::create(&output_file_path)
         .with_context(|| format!("create output file {:?}", output_file_path))?;
     std::io::copy(&mut formatted_data.as_bytes(), &mut output_file).context("write output file")?;

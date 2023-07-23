@@ -24,7 +24,7 @@ pub fn generate_typedefs(args: TypeDefsArgs) -> anyhow::Result<()> {
     let ts_module = {
         let mut buf = Vec::new();
         let options = DefinitionFileOptions::default();
-        write_definition_file::<_, super::extract::Data>(&mut buf, options)
+        write_definition_file::<_, super::extract::Ryza3Data>(&mut buf, options)
             .context("generate definition")?;
         String::from_utf8(buf).context("convert typedef to string")?
     };
