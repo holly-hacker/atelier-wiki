@@ -24,7 +24,11 @@ function IndexPage() {
   return (
     <>
       <h1>Index page</h1>
-      <Link to="/ryza3">Atelier Ryza 3</Link>
+      <ul>
+        <li>
+          <Link to="/ryza3">Atelier Ryza 3</Link>
+        </li>
+      </ul>
     </>
   );
 }

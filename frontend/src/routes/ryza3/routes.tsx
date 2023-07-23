@@ -8,7 +8,7 @@ export default function Ryza3Routes() {
     <Route path="ryza3">
       <Route index element={<Ryza3Index />} />
       <Route path="items" element={<ItemList />} />
-      <Route path="item/:id" element={<ItemDetail />} />
+      <Route path="items/:id" element={<ItemDetail />} />
     </Route>
   );
 }

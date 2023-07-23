@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 export default function Ryza3Index() {
   return (
     <>
-      <h1>Ryza 3 index</h1>
-      <Link to="/ryza3/items">Items</Link>
+      <h1>Overview for Atelier Ryza 3</h1>
+      <ul>
+        <li>
+          <Link to="/ryza3/items">Items</Link>
+        </li>
+      </ul>
     </>
   );
 }
