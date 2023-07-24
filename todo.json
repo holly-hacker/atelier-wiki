@@ -18,12 +18,68 @@
       {
         "id": "cMfffKk5",
         "title": "Allow switching between localized names",
-        "time_created": "2023-07-24 21:12:39.0238186 +02:00:00"
+        "time_created": "2023-07-24 21:12:39.0238186 +02:00:00",
+        "tags": [
+          "frontend",
+          "data-prepper"
+        ]
       },
       {
         "id": "ZJmoRKtV",
         "title": "Add filter/search to tables",
-        "time_created": "2023-07-24 21:12:47.6004372 +02:00:00"
+        "time_created": "2023-07-24 21:12:47.6004372 +02:00:00",
+        "tags": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "z3Y25cNV",
+        "title": "Add basic monster info",
+        "time_created": "2023-07-24 21:56:31.0633516 +02:00:00",
+        "tags": [
+          "data-prepper",
+          "frontend"
+        ]
+      },
+      {
+        "id": "NP84Dkvg",
+        "title": "Extract and store images in online object storage",
+        "time_created": "2023-07-24 21:56:44.7992513 +02:00:00",
+        "tags": [
+          "data-prepper",
+          "atelier-tools"
+        ]
+      },
+      {
+        "dependencies": [
+          "NP84Dkvg"
+        ],
+        "id": "7smcsyER",
+        "title": "Create online map",
+        "time_created": "2023-07-24 22:06:55.1432127 +02:00:00",
+        "tags": [
+          "frontend"
+        ]
+      },
+      {
+        "dependencies": [
+          "7smcsyER"
+        ],
+        "id": "F9hPgNjx",
+        "title": "Show monster locations on the online map",
+        "time_created": "2023-07-24 22:07:20.7111516 +02:00:00",
+        "tags": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "qCEZGNxF",
+        "title": "Investigate MDX for content markup",
+        "time_created": "2023-07-24 22:09:32.4872024 +02:00:00",
+        "tags": [
+          "research",
+          "frontend"
+        ]
       }
     ]
   }
