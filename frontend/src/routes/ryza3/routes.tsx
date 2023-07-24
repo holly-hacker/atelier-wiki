@@ -4,6 +4,8 @@ import ItemList from "./items/list";
 import ItemDetail from "./items/detail";
 import ItemCategoriesList from "./item_categories/list";
 import ItemCategoryDetail from "./item_categories/detail";
+import ItemKindsList from "./item_kinds/list";
+import ItemKindDetail from "./item_kinds/detail";
 
 export default function Ryza3Routes() {
   return (
@@ -16,6 +18,8 @@ export default function Ryza3Routes() {
         path="item_categories/:category"
         element={<ItemCategoryDetail />}
       />
+      <Route path="item_kinds" element={<ItemKindsList />} />
+      <Route path="item_kinds/:kind" element={<ItemKindDetail />} />
     </Route>
   );
 }

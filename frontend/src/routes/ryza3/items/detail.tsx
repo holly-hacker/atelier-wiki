@@ -31,7 +31,12 @@ export default function ItemDetail() {
           Use tag: <code>{item.use_tag}</code>
         </li>
         <li>
-          Kind tag: <code>{item.kind_tag}</code>
+          Kind tag:
+          <code>
+            <Link to={`/ryza3/item_kinds/${item.kind_tag}`}>
+              {item.kind_tag}
+            </Link>
+          </code>
         </li>
         <li>
           Categories:
