@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ryza3 } from "data";
+import { ryza3 } from "@/data.ts";
 
 export default function ItemDetail() {
   const { id } = useParams();

@@ -1,4 +1,4 @@
-import { ryza3 } from "data";
+import { ryza3 } from "@/data.ts";
 import { Link } from "react-router-dom";
 
 export default function ItemList() {
