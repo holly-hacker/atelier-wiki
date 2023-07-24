@@ -17,7 +17,12 @@ function App() {
 
 function Layout() {
   // we'll add some layout stuff here later
-  return <Outlet />;
+  return (
+    <>
+      <Link to="/">Home</Link>
+      <Outlet />
+    </>
+  );
 }
 
 function IndexPage() {
