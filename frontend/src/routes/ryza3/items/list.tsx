@@ -2,7 +2,7 @@ import { ryza3 } from "@/data.ts";
 import { Link } from "react-router-dom";
 
 export default function ItemList() {
-  let item_data = ryza3.item_data;
+  const item_data = ryza3.item_data;
 
   return (
     <>

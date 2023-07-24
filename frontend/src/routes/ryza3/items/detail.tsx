@@ -4,13 +4,13 @@ import { ryza3 } from "@/data.ts";
 export default function ItemDetail() {
   const { id } = useParams();
 
-  let id_num = Number(id);
+  const id_num = Number(id);
 
   if (id_num == null || id_num == undefined) {
     return <>Item not found</>;
   }
 
-  let item = ryza3.item_data[id_num];
+  const item = ryza3.item_data[id_num];
 
   return (
     <>
