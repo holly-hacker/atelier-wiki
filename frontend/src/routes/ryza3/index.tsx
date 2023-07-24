@@ -8,6 +8,9 @@ export default function Ryza3Index() {
         <li>
           <Link to="/ryza3/items">Items</Link>
         </li>
+        <li>
+          <Link to="/ryza3/item_categories">Item categories</Link>
+        </li>
       </ul>
     </>
   );

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
 
 export default function ItemDetail() {
@@ -39,7 +39,9 @@ export default function ItemDetail() {
             {item.cat.map((cat, i) => {
               return (
                 <li key={i}>
-                  <code>{cat}</code>
+                  <Link to={`/ryza3/item_categories/${cat}`}>
+                    <code>{cat}</code>
+                  </Link>
                 </li>
               );
             })}
