@@ -5,6 +5,7 @@ use typescript_type_def::TypeDef;
 
 use super::pak_index::PakIndex;
 
+mod enemies;
 mod items;
 mod strings;
 mod util;
@@ -12,6 +13,7 @@ mod util;
 #[derive(Serialize, TypeDef)]
 pub struct Ryza3Data {
     pub item_data: Vec<items::ItemData>,
+    pub enemy_data: Vec<enemies::Enemy>,
 }
 
 impl Ryza3Data {
@@ -27,9 +29,14 @@ impl Ryza3Data {
 
         // NOTE: itemdata_no appears to be the exact same file
         let item_data = items::ItemData::read(pak_index, &strings).context("read itemdata")?;
-
         info!("Read data for {} items", item_data.len());
 
-        Ok(Self { item_data })
+        let enemy_data = enemies::read(pak_index, &strings).context("read enemy data")?;
+        info!("Read data for {} enemies", enemy_data.len());
+
+        Ok(Self {
+            item_data,
+            enemy_data,
+        })
     }
 }
