@@ -3,7 +3,9 @@ use serde::Serialize;
 use tracing::trace;
 use typescript_type_def::TypeDef;
 
-use super::strings::StringsData;
+use crate::extract::pak_index::PakIndex;
+
+use super::{strings::StringsData, util};
 
 #[derive(Serialize, TypeDef)]
 pub struct ItemData {
@@ -48,7 +50,16 @@ pub struct ItemData {
 }
 
 impl ItemData {
-    pub fn read(document: roxmltree::Document, strings: &StringsData) -> anyhow::Result<Vec<Self>> {
+    pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Self>> {
+        util::read_xml(pak_index, r"\saves\item\itemdata.xml", |d| {
+            Self::read_from_doc(d, strings)
+        })
+    }
+
+    pub fn read_from_doc(
+        document: roxmltree::Document,
+        strings: &StringsData,
+    ) -> anyhow::Result<Vec<Self>> {
         let mut ret = vec![];
 
         // NOTE: encoding in header seems to be SHIFT-JIS, may need to account for that?

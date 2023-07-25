@@ -17,12 +17,7 @@ pub struct Ryza3Data {
 impl Ryza3Data {
     pub fn read_all(pak_index: &mut PakIndex) -> anyhow::Result<Self> {
         // TODO: consider reading other languages too
-        let strings = util::read_xml(
-            pak_index,
-            r"\saves\text_en\strcombineall.xml",
-            strings::StringsData::read,
-        )
-        .context("read strings")?;
+        let strings = strings::StringsData::read(pak_index).context("read strings")?;
 
         info!(
             "Read {} strings by id and {} strings by number",
@@ -31,10 +26,7 @@ impl Ryza3Data {
         );
 
         // NOTE: itemdata_no appears to be the exact same file
-        let item_data = util::read_xml(pak_index, r"\saves\item\itemdata.xml", |doc| {
-            items::ItemData::read(doc, &strings)
-        })
-        .context("read itemdata")?;
+        let item_data = items::ItemData::read(pak_index, &strings).context("read itemdata")?;
 
         info!("Read data for {} items", item_data.len());
 

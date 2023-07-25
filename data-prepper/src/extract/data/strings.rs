@@ -2,13 +2,24 @@ use std::collections::HashMap;
 
 use anyhow::Context;
 
+use crate::extract::pak_index::PakIndex;
+
+use super::util;
+
 pub struct StringsData {
     pub id_lookup: HashMap<String, String>,
     pub no_lookup: HashMap<usize, String>,
 }
 
 impl StringsData {
-    pub fn read(document: roxmltree::Document) -> anyhow::Result<Self> {
+    pub fn read(pak_index: &mut PakIndex) -> anyhow::Result<Self> {
+        util::read_xml(
+            pak_index,
+            r"\saves\text_en\strcombineall.xml",
+            Self::read_from_doc,
+        )
+    }
+    fn read_from_doc(document: roxmltree::Document) -> anyhow::Result<Self> {
         let mut id_lookup = HashMap::new();
         let mut no_lookup = HashMap::new();
 
