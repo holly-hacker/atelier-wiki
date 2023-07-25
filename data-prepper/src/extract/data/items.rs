@@ -1,9 +1,8 @@
-use anyhow::Context;
 use serde::Serialize;
 use tracing::trace;
 use typescript_type_def::TypeDef;
 
-use crate::extract::pak_index::PakIndex;
+use crate::extract::{data::util::ElementReader, pak_index::PakIndex};
 
 use super::{strings::StringsData, util};
 
@@ -20,6 +19,7 @@ pub struct ItemData {
     pub element: Option<u32>,
     pub element_value: Option<u32>,
 
+    // TODO: these should be bools instead
     pub elem_fire: Option<i32>,
     pub elem_ice: Option<i32>,
     pub elem_thunder: Option<i32>,
@@ -69,128 +69,56 @@ impl ItemData {
             .filter(|n| n.tag_name().name() == "itemData");
 
         for element in elements {
+            let read = ElementReader(&element);
+
             // start with required properties
-            let sort = element
-                .attribute("sort")
-                .context("field 'sort' is required on each item")?
-                .parse()
-                .context("parse 'sort'")?;
+            let sort = read.read_parse("sort")?;
             trace!(?sort, "Reading item");
-            let img_no = element
-                .attribute("imgNo")
-                .context("field 'imgNo' is required on each item")?
-                .parse()
-                .context("parse 'imgNo'")?;
-            let price = element
-                .attribute("price")
-                .context("field 'price' is required on each item")?
-                .parse()
-                .context("parse 'price'")?;
-            let lv = element
-                .attribute("lv")
-                .context("field 'lv' is required on each item")?
-                .parse()
-                .context("parse 'lv'")?;
-            let use_tag = element
-                .attribute("useTag")
-                .context("field 'useTag' is required on each item")?
-                .to_string();
-            let kind_tag = element
-                .attribute("kindTag")
-                .context("field 'kindTag' is required on each item")?
-                .to_string();
+            let img_no = read.read_parse("imgNo")?;
+            let price = read.read_parse("price")?;
+            let lv = read.read_parse("lv")?;
+            let use_tag = read.read_string("useTag")?;
+            let kind_tag = read.read_string("kindTag")?;
 
             // resolvable strings
             // we're not going to fail if we can't resolve them, some items (eg. STR_ITEM_NAME_744) don't have a string
-            let name = element
-                .attribute("nameID")
-                .and_then(|id| strings.id_lookup.get(id).cloned());
-            let temp_name = element
-                .attribute("tempNameID")
-                .and_then(|id| strings.id_lookup.get(id).cloned());
+            let name = read
+                .read_string_opt("nameID")
+                .and_then(|s| strings.id_lookup.get(&s).cloned());
+            let temp_name = read
+                .read_string_opt("tempNameID")
+                .and_then(|s| strings.id_lookup.get(&s).cloned());
 
             // optional string properties
-            let temp_end_event = element.attribute("tempEndEvent").map(|s| s.to_string());
-            let bme = element.attribute("bme").map(|s| s.to_string());
-            let bmee = element.attribute("bmee").map(|s| s.to_string());
+            let temp_end_event = read.read_string_opt("tempEndEvent");
+            let bme = read.read_string_opt("bme");
+            let bmee = read.read_string_opt("bmee");
 
             // optional numbers properties
             // notably, elemFire, elemIce, elemThunder and elemAir may incorrectly contain the value "TURE"
-            let element_ = element
-                .attribute("element")
-                .map(|s| s.parse().context("parse 'element'"))
-                .transpose()?;
-            let element_value = element
-                .attribute("elementValue")
-                .map(|s| s.parse().context("parse 'elementValue'"))
-                .transpose()?;
-            let elem_fire = element
-                .attribute("elemFire")
-                .map(|s| {
-                    if s == "TURE" {
-                        Ok(1)
-                    } else {
-                        s.parse().context("parse 'elemFire'")
-                    }
-                })
-                .transpose()?;
-            let elem_ice = element
-                .attribute("elemIce")
-                .map(|s| {
-                    if s == "TURE" {
-                        Ok(1)
-                    } else {
-                        s.parse().context("parse 'elemIce'")
-                    }
-                })
-                .transpose()?;
-            let elem_thunder = element
-                .attribute("elemThunder")
-                .map(|s| {
-                    if s == "TURE" {
-                        Ok(1)
-                    } else {
-                        s.parse().context("parse 'elemThunder'")
-                    }
-                })
-                .transpose()?;
-            let elem_air = element
-                .attribute("elemAir")
-                .map(|s| {
-                    if s == "TURE" {
-                        Ok(1)
-                    } else {
-                        s.parse().context("parse 'elemAir'")
-                    }
-                })
-                .transpose()?;
-            let hp = element.attribute("hp").map(|s| s.parse()).transpose()?;
-            let atk = element.attribute("atk").map(|s| s.parse()).transpose()?;
-            let def = element.attribute("def").map(|s| s.parse()).transpose()?;
-            let spd = element.attribute("spd").map(|s| s.parse()).transpose()?;
-            let w_hp = element.attribute("w_hp").map(|s| s.parse()).transpose()?;
-            let w_mp = element.attribute("w_mp").map(|s| s.parse()).transpose()?;
-            let w_atk = element.attribute("w_atk").map(|s| s.parse()).transpose()?;
-            let w_def = element.attribute("w_def").map(|s| s.parse()).transpose()?;
-            let w_spd = element.attribute("w_spd").map(|s| s.parse()).transpose()?;
+            let element_ = read.read_parse_opt("element")?;
+            let element_value = read.read_parse_opt("elementValue")?;
+            let elem_fire = read.read_present("elemFire").then_some(-1);
+            let elem_ice = read.read_present("elemIce").then_some(-1);
+            let elem_thunder = read.read_present("elemThunder").then_some(-1);
+            let elem_air = read.read_present("elemAir").then_some(-1);
+
+            let hp = read.read_parse_opt("hp")?;
+            let atk = read.read_parse_opt("atk")?;
+            let def = read.read_parse_opt("def")?;
+            let spd = read.read_parse_opt("spd")?;
+            let w_hp = read.read_parse_opt("w_hp")?;
+            let w_mp = read.read_parse_opt("w_mp")?;
+            let w_atk = read.read_parse_opt("w_atk")?;
+            let w_def = read.read_parse_opt("w_def")?;
+            let w_spd = read.read_parse_opt("w_spd")?;
 
             // optional list properties
-            // TODO: ensure order is correct
-            let pc = element
-                .attributes()
-                .filter(|a| a.name().starts_with("pc_"))
-                .flat_map(|a| a.value().parse().context("parse 'pc_*'"))
-                .collect::<Vec<_>>();
-            let dlc = element
-                .attributes()
-                .filter(|a| a.name().starts_with("dlc_"))
-                .map(|a| a.value().to_string())
-                .collect::<Vec<_>>();
-            let cat = element
-                .attributes()
-                .filter(|a| a.name().starts_with("cat_"))
-                .map(|a| a.value().to_string())
-                .collect::<Vec<_>>();
+            let pc = read.read_parse_list("pc_");
+            let dlc = read.read_parse_list("dlc_");
+            let cat = read.read_parse_list("cat_");
+
+            debug_assert!(dlc.len() <= 1);
 
             let data_item = Self {
                 name,

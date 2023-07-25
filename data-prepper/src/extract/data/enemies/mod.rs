@@ -1,3 +1,4 @@
+use anyhow::Context;
 use serde::Serialize;
 use tracing::debug;
 use typescript_type_def::TypeDef;
@@ -55,10 +56,10 @@ pub struct EnemyStatus {
 
 pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Enemy>> {
     debug!("Reading enemy data");
-    let data = data::EnemyData::read(pak_index)?;
+    let data = data::EnemyData::read(pak_index).context("read enemy_data")?;
 
     debug!("Reading enemy status");
-    let status = status::EnemyStatus::read(pak_index)?;
+    let status = status::EnemyStatus::read(pak_index).context("read enemy_status")?;
 
     debug!("Merging enemy info");
     let ret = data

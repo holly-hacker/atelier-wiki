@@ -1,6 +1,7 @@
-use anyhow::Context;
-
-use crate::extract::{data::util, pak_index::PakIndex};
+use crate::extract::{
+    data::util::{self, ElementReader},
+    pak_index::PakIndex,
+};
 
 #[derive(Debug, Clone)]
 pub struct EnemyStatus {
@@ -46,121 +47,32 @@ impl EnemyStatus {
             .filter(|n| n.tag_name().name() == "enemy_status");
 
         for element in elements {
-            let exp = element
-                .attribute("exp")
-                .context("field 'exp' is required on enemy status")?
-                .parse()
-                .context("parse 'exp'")?;
-            let money = element
-                .attribute("money")
-                .context("field 'money' is required on enemy status")?
-                .parse()
-                .context("parse 'money'")?;
-            let exp_rosca = element
-                .attribute("exp_rosca")
-                .context("field 'exp_rosca' is required on enemy status")?
-                .parse()
-                .context("parse 'exp_rosca'")?;
-            let money_rosca = element
-                .attribute("money_rosca")
-                .context("field 'money_rosca' is required on enemy status")?
-                .parse()
-                .context("parse 'money_rosca'")?;
-            let gold_coin = element
-                .attribute("gold_coin")
-                .context("field 'gold_coin' is required on enemy status")?
-                .parse()
-                .context("parse 'gold_coin'")?;
-            let gold_coin_rate = element
-                .attribute("gold_coin_rate")
-                .context("field 'gold_coin_rate' is required on enemy status")?
-                .parse()
-                .context("parse 'gold_coin_rate'")?;
-            let drop_tag = element
-                .attribute("drop_tag")
-                .context("field 'drop_tag' is required on enemy status")?
-                .to_string();
-            let skill_tag = element
-                .attribute("skill_tag")
-                .context("field 'skill_tag' is required on enemy status")?
-                .to_string();
-            let extra_skill_tag = element
-                .attribute("extra_skill_tag")
-                .context("field 'extra_skill_tag' is required on enemy status")?
-                .to_string();
-            let lv = element
-                .attribute("lv")
-                .context("field 'lv' is required on enemy status")?
-                .parse()
-                .context("parse 'lv'")?;
-            let stun = element
-                .attribute("stun")
-                .context("field 'stun' is required on enemy status")?
-                .parse()
-                .context("parse 'stun'")?;
-            let key_make = element
-                .attribute("key_make")
-                .context("field 'key_make' is required on enemy status")?
-                .parse()
-                .context("parse 'key_make'")?;
-            let atk_num = element
-                .attribute("atk_num")
-                .context("field 'atk_num' is required on enemy status")?
-                .parse()
-                .context("parse 'atk_num'")?;
-            let burst_up = element
-                .attribute("burst_up")
-                .context("field 'burst_up' is required on enemy status")?
-                .parse()
-                .context("parse 'burst_up'")?;
-            let burst_max = element
-                .attribute("burst_max")
-                .context("field 'burst_max' is required on enemy status")?
-                .parse()
-                .context("parse 'burst_max'")?;
-            let hp = element
-                .attribute("hp")
-                .context("field 'hp' is required on enemy status")?
-                .parse()
-                .context("parse 'hp'")?;
-            let atk = element
-                .attribute("atk")
-                .context("field 'atk' is required on enemy status")?
-                .parse()
-                .context("parse 'atk'")?;
-            let def = element
-                .attribute("def")
-                .context("field 'def' is required on enemy status")?
-                .parse()
-                .context("parse 'def'")?;
-            let spd = element
-                .attribute("spd")
-                .context("field 'spd' is required on enemy status")?
-                .parse()
-                .context("parse 'spd'")?;
-            let bad_resist = element
-                .attributes()
-                .filter(|a| a.name().starts_with("bad_resist_"))
-                .flat_map(|a| a.value().parse().context("parse 'bad_resist_*'"))
-                .collect::<Vec<_>>();
-            let resist_non = element
-                .attribute("resist_non")
-                .context("field 'resist_non' is required on enemy status")?
-                .parse()
-                .context("parse 'resist_non'")?;
-            let monster_tag = element
-                .attribute("monster_tag")
-                .context("field 'monster_tag' is required on enemy status")?
-                .to_string();
-            let key_create_tag = element
-                .attribute("key_create_tag")
-                .context("field 'key_create_tag' is required on enemy status")?
-                .to_string();
-            let att = element
-                .attributes()
-                .filter(|a| a.name().starts_with("att_"))
-                .map(|a| a.value().to_string())
-                .collect::<Vec<_>>();
+            let read = ElementReader(&element);
+
+            let exp = read.read_parse("exp")?;
+            let money = read.read_parse("money")?;
+            let exp_rosca = read.read_parse("exp_rosca")?;
+            let money_rosca = read.read_parse("money_rosca")?;
+            let gold_coin = read.read_parse("gold_coin")?;
+            let gold_coin_rate = read.read_parse("gold_coin_rate")?;
+            let drop_tag = read.read_string("drop_tag")?;
+            let skill_tag = read.read_string("skill_tag")?;
+            let extra_skill_tag = read.read_string("extra_skill_tag")?;
+            let lv = read.read_parse("lv")?;
+            let stun = read.read_parse("stun")?;
+            let key_make = read.read_parse("key_make")?;
+            let atk_num = read.read_parse("atk_num")?;
+            let burst_up = read.read_parse("burst_up")?;
+            let burst_max = read.read_parse("burst_max")?;
+            let hp = read.read_parse("hp")?;
+            let atk = read.read_parse("atk")?;
+            let def = read.read_parse("def")?;
+            let spd = read.read_parse("spd")?;
+            let bad_resist = read.read_parse_list("bad_resist_");
+            let resist_non = read.read_parse("resist_non")?;
+            let monster_tag = read.read_string("monster_tag")?;
+            let key_create_tag = read.read_string("key_create_tag")?;
+            let att = read.read_string_list("att_");
 
             debug_assert_eq!(bad_resist.len(), 10);
             debug_assert_eq!(att.len(), 8);

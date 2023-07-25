@@ -4,7 +4,7 @@ use anyhow::Context;
 
 use crate::extract::pak_index::PakIndex;
 
-use super::util;
+use super::util::{self, ElementReader};
 
 pub struct StringsData {
     pub id_lookup: HashMap<String, String>,
@@ -28,7 +28,8 @@ impl StringsData {
             .descendants()
             .filter(|n| n.tag_name().name() == "str");
         for element in elements {
-            let no: Option<usize> = element.attribute("String_No").and_then(|a| a.parse().ok());
+            let read = ElementReader(&element);
+            let no: Option<usize> = read.read_parse_opt("String_No")?;
             let id: Option<&str> = element.attribute("String_ID");
             let text: &str = element.attribute("Text").context("string must have text")?;
 

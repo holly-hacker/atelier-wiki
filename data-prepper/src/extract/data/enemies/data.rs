@@ -1,6 +1,7 @@
-use anyhow::Context;
-
-use crate::extract::{data::util, pak_index::PakIndex};
+use crate::extract::{
+    data::util::{self, ElementReader},
+    pak_index::PakIndex,
+};
 
 #[derive(Debug)]
 pub struct EnemyData {
@@ -34,48 +35,20 @@ impl EnemyData {
             .filter(|n| n.tag_name().name() == "enemy_data");
 
         for element in elements {
-            let name_id = element
-                .attribute("name_id")
-                .context("field 'name_id' is required on each enemy data")?
-                .to_string();
-            let is_big = element.attribute("isBig").is_some();
-            let img_no = element
-                .attribute("imgNo")
-                .context("field 'imgNo' is required on each enemy data")?
-                .parse()
-                .context("parse 'imgNo'")?;
-            let wait_action = element.attribute("waitAction").is_some();
-            let library_rank = element
-                .attributes()
-                .filter(|a| a.name().starts_with("library_rank_"))
-                .flat_map(|a| a.value().parse().context("parse 'library_rank_*'"))
-                .collect::<Vec<_>>();
-            let dlc = element
-                .attributes()
-                .filter(|a| a.name().starts_with("dlc_"))
-                .map(|a| a.value().to_string())
-                .collect::<Vec<_>>();
-            let shoot_up = element.attribute("shoot_up").is_some();
-            let monster_tag = element
-                .attribute("monster_tag")
-                .context("field 'monster_tag' is required on each enemy data")?
-                .to_string();
-            let chara_tag = element
-                .attribute("chara_tag")
-                .context("field 'chara_tag' is required on each enemy data")?
-                .to_string();
-            let race_tag = element
-                .attribute("race_tag")
-                .context("field 'race_tag' is required on each enemy data")?
-                .to_string();
-            let size = element
-                .attribute("size")
-                .context("field 'size' is required on each enemy data")?
-                .to_string();
-            let division = element
-                .attribute("division")
-                .context("field 'division' is required on each enemy data")?
-                .to_string();
+            let read = ElementReader(&element);
+
+            let name_id = read.read_string("name_id")?;
+            let is_big = read.read_present("isBig");
+            let img_no = read.read_string("imgNo")?;
+            let wait_action = read.read_present("waitAction");
+            let library_rank = read.read_parse_list("library_rank_");
+            let dlc = read.read_parse_list("dlc_");
+            let shoot_up = read.read_present("shoot_up");
+            let monster_tag = read.read_string("monster_tag")?;
+            let chara_tag = read.read_string("chara_tag")?;
+            let race_tag = read.read_string("race_tag")?;
+            let size = read.read_string("size")?;
+            let division = read.read_string("division")?;
 
             debug_assert!(dlc.len() <= 1);
             debug_assert_eq!(library_rank.len(), 4);
