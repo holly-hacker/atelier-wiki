@@ -26,7 +26,7 @@ export default function ItemDetail() {
         </li>
         <li>
           Use tag:{" "}
-          <Link to={`/ryza3/item_use_kinds/${item.use_tag}`}>
+          <Link to={`/ryza3/item_use_tags/${item.use_tag}`}>
             <code>{item.use_tag}</code>
           </Link>
         </li>
