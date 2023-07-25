@@ -19,13 +19,10 @@ export default function ItemDetail() {
         {item.price && <li>Price: {item.price}</li>}
         {item.lv && <li>Level: {item.lv}</li>}
         <li>
-          Elements:
-          <ul>{item.elem_fire != null && <li>Fire: {item.elem_fire}</li>}</ul>
-          <ul>{item.elem_ice != null && <li>Ice: {item.elem_ice}</li>}</ul>
-          <ul>
-            {item.elem_thunder != null && <li>Thunder: {item.elem_thunder}</li>}
-          </ul>
-          <ul>{item.elem_air != null && <li>Air: {item.elem_air}</li>}</ul>
+          Elements: {item.elem_fire && "🔥 "}
+          {item.elem_ice && "❄️ "}
+          {item.elem_thunder && "⚡ "}
+          {item.elem_air && "🍃 "}
         </li>
         <li>
           Use tag:{" "}

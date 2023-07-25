@@ -19,11 +19,10 @@ pub struct ItemData {
     pub element: Option<u32>,
     pub element_value: Option<u32>,
 
-    // TODO: these should be bools instead
-    pub elem_fire: Option<i32>,
-    pub elem_ice: Option<i32>,
-    pub elem_thunder: Option<i32>,
-    pub elem_air: Option<i32>,
+    pub elem_fire: bool,
+    pub elem_ice: bool,
+    pub elem_thunder: bool,
+    pub elem_air: bool,
 
     pub pc: Vec<i32>,
 
@@ -98,10 +97,10 @@ impl ItemData {
             // notably, elemFire, elemIce, elemThunder and elemAir may incorrectly contain the value "TURE"
             let element_ = read.read_parse_opt("element")?;
             let element_value = read.read_parse_opt("elementValue")?;
-            let elem_fire = read.read_present("elemFire").then_some(-1);
-            let elem_ice = read.read_present("elemIce").then_some(-1);
-            let elem_thunder = read.read_present("elemThunder").then_some(-1);
-            let elem_air = read.read_present("elemAir").then_some(-1);
+            let elem_fire = read.read_present("elemFire");
+            let elem_ice = read.read_present("elemIce");
+            let elem_thunder = read.read_present("elemThunder");
+            let elem_air = read.read_present("elemAir");
 
             let hp = read.read_parse_opt("hp")?;
             let atk = read.read_parse_opt("atk")?;
