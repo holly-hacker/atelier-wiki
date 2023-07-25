@@ -28,15 +28,16 @@ export default function ItemDetail() {
           <ul>{item.elem_air != null && <li>Air: {item.elem_air}</li>}</ul>
         </li>
         <li>
-          Use tag: <code>{item.use_tag}</code>
+          Use tag:{" "}
+          <Link to={`/ryza3/item_use_kinds/${item.use_tag}`}>
+            <code>{item.use_tag}</code>
+          </Link>
         </li>
         <li>
-          Kind tag:
-          <code>
-            <Link to={`/ryza3/item_kinds/${item.kind_tag}`}>
-              {item.kind_tag}
-            </Link>
-          </code>
+          Kind tag:{" "}
+          <Link to={`/ryza3/item_kinds/${item.kind_tag}`}>
+            <code>{item.kind_tag}</code>
+          </Link>
         </li>
         <li>
           Categories:

@@ -14,6 +14,9 @@ export default function Ryza3Index() {
         <li>
           <Link to="/ryza3/item_kinds">Item kinds</Link>
         </li>
+        <li>
+          <Link to="/ryza3/item_use_tags">Item use tags</Link>
+        </li>
       </ul>
     </>
   );
