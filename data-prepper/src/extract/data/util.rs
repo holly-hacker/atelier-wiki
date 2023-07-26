@@ -50,22 +50,40 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
             .transpose()
     }
 
-    pub fn read_parse_list<T>(&self, name_start: &str) -> Vec<T>
+    pub fn read_parse_list<T>(&self, name_pattern: &'static str) -> Vec<T>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
     {
         // TODO: ensure order is correct
-        // TODO: generally improve this, eg. allow suffixes as is used by enemy drops
         self.0
             .attributes()
-            .filter(|a| a.name().starts_with(name_start))
+            .filter(|a| Self::match_pattern(name_pattern, a.name()).is_some())
             .flat_map(|a| {
                 a.value()
                     .parse()
-                    .with_context(|| format!("parse '{name_start}*'"))
+                    .with_context(|| format!("parse '{name_pattern}'"))
             })
             .collect::<Vec<_>>()
+    }
+
+    fn match_pattern<'h>(needle: &'static str, haystack: &'h str) -> Option<&'h str> {
+        let Some(index) = needle.find('*') else {
+            return if needle == haystack {
+                Some(haystack)
+            } else {
+                None
+            }
+        };
+
+        let left = &needle[..index];
+        let right = &needle[index + 1..];
+
+        if haystack.starts_with(left) && haystack.ends_with(right) {
+            Some(&haystack[left.len()..haystack.len() - right.len()])
+        } else {
+            None
+        }
     }
 
     pub fn read_string(&self, name: &str) -> anyhow::Result<String> {
@@ -80,10 +98,10 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
         self.0.attribute(name).map(|s| s.to_string())
     }
 
-    pub fn read_string_list(&self, name_start: &str) -> Vec<String> {
+    pub fn read_string_list(&self, name_pattern: &'static str) -> Vec<String> {
         self.0
             .attributes()
-            .filter(|a| a.name().starts_with(name_start))
+            .filter(|a| Self::match_pattern(name_pattern, a.name()).is_some())
             .map(|a| a.value().to_string())
             .collect::<Vec<_>>()
     }

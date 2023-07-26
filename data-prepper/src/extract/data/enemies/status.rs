@@ -68,11 +68,11 @@ impl EnemyStatus {
             let atk = read.read_parse("atk")?;
             let def = read.read_parse("def")?;
             let spd = read.read_parse("spd")?;
-            let bad_resist = read.read_parse_list("bad_resist_");
+            let bad_resist = read.read_parse_list("bad_resist_*");
             let resist_non = read.read_parse("resist_non")?;
             let monster_tag = read.read_string("monster_tag")?;
             let key_create_tag = read.read_string("key_create_tag")?;
-            let att = read.read_string_list("att_");
+            let att = read.read_string_list("att_*");
 
             debug_assert_eq!(bad_resist.len(), 10);
             debug_assert_eq!(att.len(), 8);
