@@ -92,7 +92,7 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
         }
     }
 
-    pub fn read_present(&self, name: &str) -> bool {
+    pub fn is_present(&self, name: &str) -> bool {
         self.0.attribute(name).is_some()
     }
 }

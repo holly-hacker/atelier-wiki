@@ -97,10 +97,10 @@ impl ItemData {
             // notably, elemFire, elemIce, elemThunder and elemAir may incorrectly contain the value "TURE"
             let element_ = reader.read_opt("element")?;
             let element_value = reader.read_opt("elementValue")?;
-            let elem_fire = reader.read_present("elemFire");
-            let elem_ice = reader.read_present("elemIce");
-            let elem_thunder = reader.read_present("elemThunder");
-            let elem_air = reader.read_present("elemAir");
+            let elem_fire = reader.is_present("elemFire");
+            let elem_ice = reader.is_present("elemIce");
+            let elem_thunder = reader.is_present("elemThunder");
+            let elem_air = reader.is_present("elemAir");
 
             let hp = reader.read_opt("hp")?;
             let atk = reader.read_opt("atk")?;
