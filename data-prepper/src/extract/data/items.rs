@@ -113,9 +113,9 @@ impl ItemData {
             let w_spd = reader.read_opt("w_spd")?;
 
             // optional list properties
-            let pc = reader.read_list("pc_*");
-            let dlc = reader.read_list("dlc_*");
-            let cat = reader.read_list("cat_*");
+            let pc = reader.read_list("pc_*")?;
+            let dlc = reader.read_list("dlc_*")?;
+            let cat = reader.read_list("cat_*")?;
 
             debug_assert!(dlc.len() <= 1);
 

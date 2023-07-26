@@ -51,7 +51,7 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
             .transpose()
     }
 
-    pub fn read_list<T>(&self, name_pattern: &'static str) -> Vec<T>
+    pub fn read_list<T>(&self, name_pattern: &'static str) -> anyhow::Result<Vec<T>>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
@@ -59,13 +59,18 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
         // TODO: ensure order is correct
         self.0
             .attributes()
-            .filter(|a| Self::match_pattern(name_pattern, a.name()).is_some())
-            .flat_map(|a| {
-                a.value()
-                    .parse()
-                    .with_context(|| format!("parse '{name_pattern}'"))
+            .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .filter_map(|(idx, value)| {
+                idx.parse::<usize>()
+                    .map(|idx_parsed| (idx_parsed, value))
+                    .ok()
             })
-            .collect::<Vec<_>>()
+            .map(|(idx, value)| {
+                value.parse().with_context(|| {
+                    format!("parse value `{value}` for '{name_pattern}' index {idx}")
+                })
+            })
+            .collect::<anyhow::Result<Vec<_>>>()
     }
 
     fn match_pattern<'h>(needle: &'static str, haystack: &'h str) -> Option<&'h str> {

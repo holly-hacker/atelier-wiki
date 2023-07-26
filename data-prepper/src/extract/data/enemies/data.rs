@@ -41,8 +41,8 @@ impl EnemyData {
             let is_big = reader.read_present("isBig");
             let img_no = reader.read("imgNo")?;
             let wait_action = reader.read_present("waitAction");
-            let library_rank = reader.read_list("library_rank_*");
-            let dlc = reader.read_list("dlc_*");
+            let library_rank = reader.read_list("library_rank_*")?;
+            let dlc = reader.read_list("dlc_*")?;
             let shoot_up = reader.read_present("shoot_up");
             let monster_tag = reader.read("monster_tag")?;
             let chara_tag = reader.read("chara_tag")?;
