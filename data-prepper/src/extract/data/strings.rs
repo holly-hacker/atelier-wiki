@@ -28,8 +28,9 @@ impl StringsData {
             .descendants()
             .filter(|n| n.tag_name().name() == "str");
         for element in elements {
-            let read = ElementReader(&element);
-            let no: Option<usize> = read.read_parse_opt("String_No")?;
+            let reader = ElementReader(&element);
+
+            let no: Option<usize> = reader.read_opt("String_No")?;
             let id: Option<&str> = element.attribute("String_ID");
             let text: &str = element.attribute("Text").context("string must have text")?;
 

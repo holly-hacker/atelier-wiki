@@ -35,20 +35,20 @@ impl EnemyData {
             .filter(|n| n.tag_name().name() == "enemy_data");
 
         for element in elements {
-            let read = ElementReader(&element);
+            let reader = ElementReader(&element);
 
-            let name_id = read.read_string("name_id")?;
-            let is_big = read.read_present("isBig");
-            let img_no = read.read_string("imgNo")?;
-            let wait_action = read.read_present("waitAction");
-            let library_rank = read.read_parse_list("library_rank_*");
-            let dlc = read.read_parse_list("dlc_*");
-            let shoot_up = read.read_present("shoot_up");
-            let monster_tag = read.read_string("monster_tag")?;
-            let chara_tag = read.read_string("chara_tag")?;
-            let race_tag = read.read_string("race_tag")?;
-            let size = read.read_string("size")?;
-            let division = read.read_string("division")?;
+            let name_id = reader.read("name_id")?;
+            let is_big = reader.read_present("isBig");
+            let img_no = reader.read("imgNo")?;
+            let wait_action = reader.read_present("waitAction");
+            let library_rank = reader.read_list("library_rank_*");
+            let dlc = reader.read_list("dlc_*");
+            let shoot_up = reader.read_present("shoot_up");
+            let monster_tag = reader.read("monster_tag")?;
+            let chara_tag = reader.read("chara_tag")?;
+            let race_tag = reader.read("race_tag")?;
+            let size = reader.read("size")?;
+            let division = reader.read("division")?;
 
             debug_assert!(dlc.len() <= 1);
             debug_assert_eq!(library_rank.len(), 4);

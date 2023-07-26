@@ -47,32 +47,32 @@ impl EnemyStatus {
             .filter(|n| n.tag_name().name() == "enemy_status");
 
         for element in elements {
-            let read = ElementReader(&element);
+            let reader = ElementReader(&element);
 
-            let exp = read.read_parse("exp")?;
-            let money = read.read_parse("money")?;
-            let exp_rosca = read.read_parse("exp_rosca")?;
-            let money_rosca = read.read_parse("money_rosca")?;
-            let gold_coin = read.read_parse("gold_coin")?;
-            let gold_coin_rate = read.read_parse("gold_coin_rate")?;
-            let drop_tag = read.read_string("drop_tag")?;
-            let skill_tag = read.read_string("skill_tag")?;
-            let extra_skill_tag = read.read_string("extra_skill_tag")?;
-            let lv = read.read_parse("lv")?;
-            let stun = read.read_parse("stun")?;
-            let key_make = read.read_parse("key_make")?;
-            let atk_num = read.read_parse("atk_num")?;
-            let burst_up = read.read_parse("burst_up")?;
-            let burst_max = read.read_parse("burst_max")?;
-            let hp = read.read_parse("hp")?;
-            let atk = read.read_parse("atk")?;
-            let def = read.read_parse("def")?;
-            let spd = read.read_parse("spd")?;
-            let bad_resist = read.read_parse_list("bad_resist_*");
-            let resist_non = read.read_parse("resist_non")?;
-            let monster_tag = read.read_string("monster_tag")?;
-            let key_create_tag = read.read_string("key_create_tag")?;
-            let att = read.read_string_list("att_*");
+            let exp = reader.read("exp")?;
+            let money = reader.read("money")?;
+            let exp_rosca = reader.read("exp_rosca")?;
+            let money_rosca = reader.read("money_rosca")?;
+            let gold_coin = reader.read("gold_coin")?;
+            let gold_coin_rate = reader.read("gold_coin_rate")?;
+            let drop_tag = reader.read("drop_tag")?;
+            let skill_tag = reader.read("skill_tag")?;
+            let extra_skill_tag = reader.read("extra_skill_tag")?;
+            let lv = reader.read("lv")?;
+            let stun = reader.read("stun")?;
+            let key_make = reader.read("key_make")?;
+            let atk_num = reader.read("atk_num")?;
+            let burst_up = reader.read("burst_up")?;
+            let burst_max = reader.read("burst_max")?;
+            let hp = reader.read("hp")?;
+            let atk = reader.read("atk")?;
+            let def = reader.read("def")?;
+            let spd = reader.read("spd")?;
+            let bad_resist = reader.read_list("bad_resist_*");
+            let resist_non = reader.read("resist_non")?;
+            let monster_tag = reader.read("monster_tag")?;
+            let key_create_tag = reader.read("key_create_tag")?;
+            let att = reader.read_list("att_*");
 
             debug_assert_eq!(bad_resist.len(), 10);
             debug_assert_eq!(att.len(), 8);

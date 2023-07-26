@@ -26,8 +26,9 @@ where
 
 pub struct ElementReader<'x, 'a, 'b>(pub &'x roxmltree::Node<'a, 'b>);
 
+// TODO: consider a mode where the read properties are tracked, allowing to check for missing properties
 impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
-    pub fn read_parse<T>(&self, name: &str) -> anyhow::Result<T>
+    pub fn read<T>(&self, name: &str) -> anyhow::Result<T>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
@@ -39,7 +40,7 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
             .with_context(|| format!("parse '{name}'"))
     }
 
-    pub fn read_parse_opt<T>(&self, name: &str) -> anyhow::Result<Option<T>>
+    pub fn read_opt<T>(&self, name: &str) -> anyhow::Result<Option<T>>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
@@ -50,7 +51,7 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
             .transpose()
     }
 
-    pub fn read_parse_list<T>(&self, name_pattern: &'static str) -> Vec<T>
+    pub fn read_list<T>(&self, name_pattern: &'static str) -> Vec<T>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
@@ -84,26 +85,6 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
         } else {
             None
         }
-    }
-
-    pub fn read_string(&self, name: &str) -> anyhow::Result<String> {
-        Ok(self
-            .0
-            .attribute(name)
-            .with_context(|| format!("field '{name}' is required"))?
-            .to_string())
-    }
-
-    pub fn read_string_opt(&self, name: &str) -> Option<String> {
-        self.0.attribute(name).map(|s| s.to_string())
-    }
-
-    pub fn read_string_list(&self, name_pattern: &'static str) -> Vec<String> {
-        self.0
-            .attributes()
-            .filter(|a| Self::match_pattern(name_pattern, a.name()).is_some())
-            .map(|a| a.value().to_string())
-            .collect::<Vec<_>>()
     }
 
     pub fn read_present(&self, name: &str) -> bool {
