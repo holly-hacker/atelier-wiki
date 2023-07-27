@@ -26,6 +26,9 @@ export default function ItemDetail() {
           {item.elem_air && "🍃 "}
         </li>
         <li>
+          Item tag: <code>{item.tag}</code>
+        </li>
+        <li>
           Use tag:{" "}
           <Link to={`/ryza3/item_use_tags/${item.use_tag}`}>
             <code>{item.use_tag}</code>
