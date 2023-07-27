@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
+import { item_display_name } from "../ryza3_data_util";
 
 export default function ItemCategoryDetail() {
   const { category } = useParams();
@@ -24,9 +25,7 @@ export default function ItemCategoryDetail() {
         {item.map(({ item, idx }) => {
           return (
             <li key={idx}>
-              <Link to={`/ryza3/items/${idx}`}>
-                {item.name ?? `<<item ${idx}>>`}
-              </Link>
+              <Link to={`/ryza3/items/${idx}`}>{item_display_name(item)}</Link>
             </li>
           );
         })}

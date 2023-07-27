@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
+import { item_display_name } from "../ryza3_data_util";
 
 export default function ItemDetail() {
   const { id } = useParams();
@@ -14,10 +15,10 @@ export default function ItemDetail() {
 
   return (
     <>
-      <h1>{item.name ?? `Unnamed item (item #${id})`}</h1>
+      <h1>{item_display_name(item)}</h1>
       <ul>
-        {item.price && <li>Price: {item.price}</li>}
-        {item.lv && <li>Level: {item.lv}</li>}
+        <li>Price: {item.price}</li>
+        <li>Level: {item.lv}</li>
         <li>
           Elements: {item.elem_fire && "🔥 "}
           {item.elem_ice && "❄️ "}

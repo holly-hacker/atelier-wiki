@@ -1,5 +1,6 @@
 import { ryza3 } from "@/data.ts";
 import { Link } from "react-router-dom";
+import { item_display_name } from "../ryza3_data_util";
 
 export default function ItemList() {
   const item_data = ryza3.item_data;
@@ -29,7 +30,7 @@ export default function ItemList() {
               <tr key={i}>
                 <td>
                   <Link to={`/ryza3/items/${i}`}>
-                    {item.name ?? `<<item ${i}>>`}
+                    {item_display_name(item)}
                   </Link>
                 </td>
                 <td>{item.price}</td>
