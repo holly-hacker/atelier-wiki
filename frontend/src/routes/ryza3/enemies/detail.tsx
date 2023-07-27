@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
 import { enemy_display_name } from "../ryza3_data_util";
 
