@@ -1,17 +1,17 @@
 import "./App.css";
-import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
+import { HashRouter, Link, Outlet, Route, Routes } from "react-router-dom";
 import Ryza3Routes from "./routes/ryza3/routes";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<IndexPage />} />
           {Ryza3Routes()}
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
