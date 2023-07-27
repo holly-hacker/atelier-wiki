@@ -30,13 +30,12 @@ impl StringsData {
         for element in elements {
             let reader = ElementReader(&element);
 
-            let no: Option<usize> = reader.read_opt("String_No")?;
+            let no: usize = reader.read("String_No")?;
             let id: Option<&str> = element.attribute("String_ID");
             let text: &str = element.attribute("Text").context("string must have text")?;
 
-            if let Some(no) = no {
-                no_lookup.insert(no, text.to_string());
-            }
+            no_lookup.insert(no, text.to_string());
+
             if let Some(id) = id {
                 id_lookup.insert(id.to_string(), text.to_string());
             }

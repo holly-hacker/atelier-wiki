@@ -1,15 +1,13 @@
-use serde::Serialize;
 use tracing::trace;
-use typescript_type_def::TypeDef;
 
-use crate::extract::{data::util::ElementReader, pak_index::PakIndex};
+use crate::extract::{
+    data::util::{self, ElementReader},
+    pak_index::PakIndex,
+};
 
-use super::{strings::StringsData, util};
-
-#[derive(Serialize, TypeDef)]
 pub struct ItemData {
-    pub name: Option<String>,
-    pub temp_name: Option<String>,
+    pub name_id: Option<String>,
+    pub temp_name_id: Option<String>,
     pub temp_end_event: Option<String>,
     pub sort: i32,
     pub img_no: i32,
@@ -49,16 +47,13 @@ pub struct ItemData {
 }
 
 impl ItemData {
-    pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Self>> {
+    pub fn read(pak_index: &mut PakIndex) -> anyhow::Result<Vec<Self>> {
         util::read_xml(pak_index, r"\saves\item\itemdata.xml", |d| {
-            Self::read_from_doc(d, strings)
+            Self::read_from_doc(d)
         })
     }
 
-    pub fn read_from_doc(
-        document: roxmltree::Document,
-        strings: &StringsData,
-    ) -> anyhow::Result<Vec<Self>> {
+    pub fn read_from_doc(document: roxmltree::Document) -> anyhow::Result<Vec<Self>> {
         let mut ret = vec![];
 
         // NOTE: encoding in header seems to be SHIFT-JIS, may need to account for that?
@@ -81,12 +76,8 @@ impl ItemData {
 
             // resolvable strings
             // we're not going to fail if we can't resolve them, some items (eg. STR_ITEM_NAME_744) don't have a string
-            let name = reader
-                .read_opt::<String>("nameID")?
-                .and_then(|s| strings.id_lookup.get(&s).cloned());
-            let temp_name = reader
-                .read_opt::<String>("tempNameID")?
-                .and_then(|s| strings.id_lookup.get(&s).cloned());
+            let name_id = reader.read_opt::<String>("nameID")?;
+            let temp_name_id = reader.read_opt::<String>("tempNameID")?;
 
             // optional string properties
             let temp_end_event = reader.read_opt("tempEndEvent")?;
@@ -120,8 +111,8 @@ impl ItemData {
             debug_assert!(dlc.len() <= 1);
 
             let data_item = Self {
-                name,
-                temp_name,
+                name_id,
+                temp_name_id,
                 temp_end_event,
                 sort,
                 img_no,
