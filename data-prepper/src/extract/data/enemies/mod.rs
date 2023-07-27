@@ -8,6 +8,7 @@ use crate::extract::pak_index::PakIndex;
 use super::strings::StringsData;
 
 mod data;
+mod drop;
 mod status;
 
 #[derive(Serialize, TypeDef)]
@@ -52,6 +53,36 @@ pub struct EnemyStatus {
     pub resist_non: u32,
     pub key_create_tag: String,
     pub att: Vec<String>,
+
+    /// `sp_item_tag` from drop data
+    pub sp_item_tag: String,
+    pub drops: Vec<EnemyDrop>,
+}
+
+#[derive(Serialize, TypeDef)]
+pub struct EnemyDrop {
+    pub item_tag: String,
+    pub rate: u32,
+    pub num: u32,
+    pub quality_min: f32,
+    pub quality_max: f32,
+    pub potential_min: f32,
+    pub potential_max: f32,
+    pub potential_num_min: f32,
+    pub potential_num_max: f32,
+    pub potential_lv_min: f32,
+    pub potential_lv_max: f32,
+    pub quality_min_adj: f32,
+    pub quality_max_adj: f32,
+    pub potential_min_adj: f32,
+    pub potential_max_adj: f32,
+    pub potential_num_min_adj: f32,
+    pub potential_num_max_adj: f32,
+    pub potential_lv_min_adj: f32,
+    pub potential_lv_max_adj: f32,
+    pub super_pot_rate: u32,
+    pub factor: String,
+    pub eff: Option<String>,
 }
 
 pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Enemy>> {
@@ -60,6 +91,9 @@ pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<V
 
     debug!("Reading enemy status");
     let status = status::EnemyStatus::read(pak_index).context("read enemy_status")?;
+
+    debug!("Reading enemy drops");
+    let drops = drop::DropData::read(pak_index).context("read drop data")?;
 
     debug!("Merging enemy info");
     let ret = data
@@ -82,8 +116,9 @@ pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<V
             // see: rust-lang/rust#43244
             statusses: status
                 .iter()
-                .filter(|s| s.monster_tag == d.monster_tag)
-                .map(|s| EnemyStatus {
+                .enumerate()
+                .filter(|(_, s)| s.monster_tag == d.monster_tag)
+                .map(|(i, s)| EnemyStatus {
                     exp: s.exp,
                     money: s.money,
                     exp_rosca: s.exp_rosca,
@@ -107,6 +142,34 @@ pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<V
                     resist_non: s.resist_non,
                     key_create_tag: s.key_create_tag.clone(),
                     att: s.att.clone(),
+
+                    sp_item_tag: drops[i].sp_item_tag[0].clone(),
+                    drops: (0..drops[i].num.len())
+                        .map(|j| EnemyDrop {
+                            item_tag: drops[i].item_tag[j].clone(),
+                            rate: drops[i].rate[j],
+                            num: drops[i].num[j],
+                            quality_min: drops[i].quality_min[j],
+                            quality_max: drops[i].quality_max[j],
+                            potential_min: drops[i].potential_min[j],
+                            potential_max: drops[i].potential_max[j],
+                            potential_num_min: drops[i].potential_num_min[j],
+                            potential_num_max: drops[i].potential_num_max[j],
+                            potential_lv_min: drops[i].potential_lv_min[j],
+                            potential_lv_max: drops[i].potential_lv_max[j],
+                            quality_min_adj: drops[i].quality_min_adj[j],
+                            quality_max_adj: drops[i].quality_max_adj[j],
+                            potential_min_adj: drops[i].potential_min_adj[j],
+                            potential_max_adj: drops[i].potential_max_adj[j],
+                            potential_num_min_adj: drops[i].potential_num_min_adj[j],
+                            potential_num_max_adj: drops[i].potential_num_max_adj[j],
+                            potential_lv_min_adj: drops[i].potential_lv_min_adj[j],
+                            potential_lv_max_adj: drops[i].potential_lv_max_adj[j],
+                            super_pot_rate: drops[i].super_pot_rate[j],
+                            factor: drops[i].factor[j].clone(),
+                            eff: drops[i].eff.get(j).cloned(),
+                        })
+                        .collect(),
                 })
                 .collect(),
             monster_tag: d.monster_tag,
