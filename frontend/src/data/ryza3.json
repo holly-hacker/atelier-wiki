@@ -1,6 +1,7 @@
 {
   "item_data": [
     {
+      "tag": "ITEM_MAT_LIQUID_WATER",
       "name": "Clean Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -34,6 +35,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_MILK",
       "name": "Goats Milk",
       "temp_name": null,
       "temp_end_event": null,
@@ -68,6 +70,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_BAMBOO",
       "name": "Water Bamboo",
       "temp_name": null,
       "temp_end_event": null,
@@ -102,6 +105,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_PLANTJUICE",
       "name": "Plant Essence",
       "temp_name": null,
       "temp_end_event": null,
@@ -136,6 +140,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_HARD",
       "name": "Roteswasser Tonic",
       "temp_name": null,
       "temp_end_event": null,
@@ -170,6 +175,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_RAPWAR",
       "name": "Rapwar Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -205,6 +211,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_FOAM",
       "name": "Foamy Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -239,6 +246,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_JADE",
       "name": "Jade Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -273,6 +281,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_ANCIENT",
       "name": "Ancient Blue Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -307,6 +316,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_CURIOS",
       "name": "Curious Aqua",
       "temp_name": null,
       "temp_end_event": null,
@@ -341,6 +351,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_LIQUID_BLACK",
       "name": "Black Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -375,6 +386,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_NANASHI",
       "name": "Nameless Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -408,6 +420,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_MUGI",
       "name": "Wasser Wheat",
       "temp_name": null,
       "temp_end_event": null,
@@ -442,6 +455,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_KOGE",
       "name": "Dry Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -476,6 +490,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_LITTUCE",
       "name": "Hill Lettuce",
       "temp_name": null,
       "temp_end_event": null,
@@ -510,6 +525,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_BLUE",
       "name": "Blue Herb",
       "temp_name": null,
       "temp_end_event": null,
@@ -545,6 +561,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_KELP",
       "name": "Rishikelp",
       "temp_name": null,
       "temp_end_event": null,
@@ -579,6 +596,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_BITE",
       "name": "Chomping Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -613,6 +631,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_SWEET",
       "name": "Sweet Leaf",
       "temp_name": null,
       "temp_end_event": null,
@@ -647,6 +666,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_ANCIENT",
       "name": "Ancient Branch",
       "temp_name": null,
       "temp_end_event": null,
@@ -682,6 +702,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_BELL",
       "name": "Campanula",
       "temp_name": null,
       "temp_end_event": null,
@@ -716,6 +737,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_DIATOM",
       "name": "Glowing Diatom",
       "temp_name": null,
       "temp_end_event": null,
@@ -750,6 +772,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_CLOVER",
       "name": "Lucky Clover",
       "temp_name": null,
       "temp_end_event": null,
@@ -785,6 +808,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_AOTUME",
       "name": "Blue Clover",
       "temp_name": null,
       "temp_end_event": null,
@@ -819,6 +843,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_HIKARI",
       "name": "Light Absorbing Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -854,6 +879,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PLANT_ROSEN",
       "name": "Rosen Leaf",
       "temp_name": null,
       "temp_end_event": null,
@@ -889,6 +915,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_NORMAL",
       "name": "Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -923,6 +950,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_ANCIENT",
       "name": "Ancient Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -957,6 +985,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_AQUA",
       "name": "Water Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -991,6 +1020,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_CHARCOAL",
       "name": "Charcoal Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -1025,6 +1055,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_GOLDEN",
       "name": "Gold Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -1060,6 +1091,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_DEMON",
       "name": "Demon Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -1096,6 +1128,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_UNI_KING",
       "name": "Emperor Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -1130,6 +1163,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_RED",
       "name": "Health Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -1164,6 +1198,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_BLUE",
       "name": "Northern Wind Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -1198,6 +1233,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_YELLOW",
       "name": "Sunny Honey Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -1232,6 +1268,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_SHABON",
       "name": "Bubble Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -1267,6 +1304,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_GLASS",
       "name": "Stained Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -1302,6 +1340,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_CAGE",
       "name": "Caged Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -1336,6 +1375,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_PRINCESS",
       "name": "Spring Princess",
       "temp_name": null,
       "temp_end_event": null,
@@ -1372,6 +1412,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_SCATTER",
       "name": "Soul Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -1407,6 +1448,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_CRYSTAL",
       "name": "Rose Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -1442,6 +1484,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_ROSE",
       "name": "Delphi Rose",
       "temp_name": null,
       "temp_end_event": null,
@@ -1476,6 +1519,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_CACTUS",
       "name": "Polar Cactus",
       "temp_name": null,
       "temp_end_event": null,
@@ -1512,6 +1556,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FLOWER_TIME",
       "name": "Timeteller",
       "temp_name": null,
       "temp_end_event": null,
@@ -1547,6 +1592,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_TONE",
       "name": "Taun",
       "temp_name": null,
       "temp_end_event": null,
@@ -1581,6 +1627,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_LONGTONE",
       "name": "Tall Taun",
       "temp_name": null,
       "temp_end_event": null,
@@ -1616,6 +1663,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_YOUNG",
       "name": "Sapling Branch",
       "temp_name": null,
       "temp_end_event": null,
@@ -1650,6 +1698,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_MOSS",
       "name": "Medicinal Moss",
       "temp_name": null,
       "temp_end_event": null,
@@ -1685,6 +1734,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_FERTILIZER",
       "name": "Fertile Soil",
       "temp_name": null,
       "temp_end_event": null,
@@ -1719,6 +1769,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_DRY",
       "name": "Dry Incense",
       "temp_name": null,
       "temp_end_event": null,
@@ -1754,6 +1805,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_BITTER",
       "name": "Bitter Root",
       "temp_name": null,
       "temp_end_event": null,
@@ -1788,6 +1840,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_DEEP_RED",
       "name": "Crimson Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -1822,6 +1875,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_SECRET_OIL",
       "name": "Earth's Secret Oils",
       "temp_name": null,
       "temp_end_event": null,
@@ -1856,6 +1910,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_HERMIT",
       "name": "Sage Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -1891,6 +1946,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_LIFE",
       "name": "Life Leaf",
       "temp_name": null,
       "temp_end_event": null,
@@ -1926,6 +1982,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_REFURE",
       "name": "Refueling Extract​",
       "temp_name": null,
       "temp_end_event": null,
@@ -1961,6 +2018,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MEDICAL_YOUGDOR",
       "name": "Yugdore Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -1996,6 +2054,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_GARBAGE",
       "name": "Stinky Trash",
       "temp_name": null,
       "temp_end_event": null,
@@ -2029,6 +2088,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_POWDER",
       "name": "Mushroom Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -2063,6 +2123,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_MISPEL",
       "name": "Mispel Seed",
       "temp_name": null,
       "temp_end_event": null,
@@ -2098,6 +2159,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_SCREAM",
       "name": "Resentful Scream",
       "temp_name": null,
       "temp_end_event": null,
@@ -2133,6 +2195,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_BLESSING",
       "name": "Blessing of Delusion",
       "temp_name": null,
       "temp_end_event": null,
@@ -2167,6 +2230,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_RYUSOURAN",
       "name": "Dragon Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -2201,6 +2265,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POISON_DEMONBLOOD",
       "name": "Demon Blood",
       "temp_name": null,
       "temp_end_event": null,
@@ -2235,6 +2300,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ELIXIL_SAGE",
       "name": "Forest Sage",
       "temp_name": null,
       "temp_end_event": null,
@@ -2269,6 +2335,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ELIXIL_HEAVEN",
       "name": "Celestial Tears",
       "temp_name": null,
       "temp_end_event": null,
@@ -2304,6 +2371,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ELIXIL_SUN",
       "name": "Solflower",
       "temp_name": null,
       "temp_end_event": null,
@@ -2339,6 +2407,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ELIXIL_DONKERUHAITO",
       "name": "Dunkelheit",
       "temp_name": null,
       "temp_end_event": null,
@@ -2375,6 +2444,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_SOFT",
       "name": "Soft Sand",
       "temp_name": null,
       "temp_end_event": null,
@@ -2408,6 +2478,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_BURN",
       "name": "Burning Sand",
       "temp_name": null,
       "temp_end_event": null,
@@ -2442,6 +2513,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_CORAL",
       "name": "Corail Saber",
       "temp_name": null,
       "temp_end_event": null,
@@ -2475,6 +2547,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_POLLUTION",
       "name": "Polluted Humus",
       "temp_name": null,
       "temp_end_event": null,
@@ -2510,6 +2583,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_EMERALD",
       "name": "Emerald Glass",
       "temp_name": null,
       "temp_end_event": null,
@@ -2544,6 +2618,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_WATER",
       "name": "Seafloor Soil",
       "temp_name": null,
       "temp_end_event": null,
@@ -2577,6 +2652,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_BLACK",
       "name": "Black Muck",
       "temp_name": null,
       "temp_end_event": null,
@@ -2611,6 +2687,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_SWIRLING",
       "name": "Vortex Sand",
       "temp_name": null,
       "temp_end_event": null,
@@ -2645,6 +2722,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_SAND_GLITTER",
       "name": "Glittering Sand",
       "temp_name": null,
       "temp_end_event": null,
@@ -2679,6 +2757,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_DAMAGED",
       "name": "Eroded Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -2712,6 +2791,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_SWEET",
       "name": "Nectar Rock",
       "temp_name": null,
       "temp_end_event": null,
@@ -2746,6 +2826,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_HAZE",
       "name": "Nepheline",
       "temp_name": null,
       "temp_end_event": null,
@@ -2779,6 +2860,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_MOSS",
       "name": "Waterside Moss Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -2812,6 +2894,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_SPIRIT",
       "name": "Ethereal Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -2845,6 +2928,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_ANCIENT",
       "name": "Ancient Pillar",
       "temp_name": null,
       "temp_end_event": null,
@@ -2879,6 +2963,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_CORAL",
       "name": "Coral Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -2913,6 +2998,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_BREEZE",
       "name": "Breeze Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -2947,6 +3033,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_RIVER",
       "name": "Riverstone",
       "temp_name": null,
       "temp_end_event": null,
@@ -2981,6 +3068,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_RIVER_BLUEFLAME",
       "name": "Blue Flame Riverstone",
       "temp_name": null,
       "temp_end_event": null,
@@ -3015,6 +3103,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_HEAT",
       "name": "Hot Saltpeter",
       "temp_name": null,
       "temp_end_event": null,
@@ -3049,6 +3138,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_STONE_ARKNIGHT",
       "name": "Arknite",
       "temp_name": null,
       "temp_end_event": null,
@@ -3083,6 +3173,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_SEKINETU",
       "name": "Crimson Ore",
       "temp_name": null,
       "temp_end_event": null,
@@ -3118,6 +3209,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_AQUA",
       "name": "Aqua Ore",
       "temp_name": null,
       "temp_end_event": null,
@@ -3153,6 +3245,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_INAZUMA",
       "name": "Lightning Ore",
       "temp_name": null,
       "temp_end_event": null,
@@ -3188,6 +3281,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_VINT",
       "name": "Wind Ore",
       "temp_name": null,
       "temp_end_event": null,
@@ -3223,6 +3317,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_AMATAITO",
       "name": "Amatite Ore",
       "temp_name": null,
       "temp_end_event": null,
@@ -3257,6 +3352,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_YAKOU",
       "name": "Luminous Rock",
       "temp_name": null,
       "temp_end_event": null,
@@ -3290,6 +3386,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_PENT",
       "name": "Pentanite",
       "temp_name": null,
       "temp_end_event": null,
@@ -3323,6 +3420,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_MORUDY",
       "name": "Mordenite",
       "temp_name": null,
       "temp_end_event": null,
@@ -3356,6 +3454,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_GOLDY",
       "name": "Goldinite",
       "temp_name": null,
       "temp_end_event": null,
@@ -3389,6 +3488,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_SOUSEI",
       "name": "Degenesis Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -3423,6 +3523,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_SEPUTO",
       "name": "Septrin",
       "temp_name": null,
       "temp_end_event": null,
@@ -3458,6 +3559,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_ADAMANT",
       "name": "Adamant",
       "temp_name": null,
       "temp_end_event": null,
@@ -3493,6 +3595,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_ORE_ETERNAL",
       "name": "Eternal Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -3528,6 +3631,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_SMALL",
       "name": "Small Crystals",
       "temp_name": null,
       "temp_end_event": null,
@@ -3562,6 +3666,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_UNIDENTIFIED",
       "name": "Unknown Gemstone",
       "temp_name": null,
       "temp_end_event": null,
@@ -3595,6 +3700,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_CORAL",
       "name": "Glowing Coral",
       "temp_name": null,
       "temp_end_event": null,
@@ -3630,6 +3736,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_WHITE",
       "name": "White Shell Pearl",
       "temp_name": null,
       "temp_end_event": null,
@@ -3664,6 +3771,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_BLACK",
       "name": "Black Shell Pearl",
       "temp_name": null,
       "temp_end_event": null,
@@ -3698,6 +3806,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_AMBER_FRAGMENT",
       "name": "Amber Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -3732,6 +3841,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_AMBER",
       "name": "Amber Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -3766,6 +3876,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_THREE",
       "name": "Three-Colored Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -3800,6 +3911,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_CLEAR",
       "name": "Clear Branch",
       "temp_name": null,
       "temp_end_event": null,
@@ -3833,6 +3945,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_HOLY",
       "name": "Holy Arbor Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -3867,6 +3980,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_ALIEN_WORLD",
       "name": "Underworld Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -3901,6 +4015,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_SHINING",
       "name": "Black Glitter Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -3934,6 +4049,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GEMSTONE_SEVEN",
       "name": "Rainbow Gemstone",
       "temp_name": null,
       "temp_end_event": null,
@@ -3967,6 +4083,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POWDER_DRY",
       "name": "Dried Lumber",
       "temp_name": null,
       "temp_end_event": null,
@@ -4000,6 +4117,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POWDER_FLINT",
       "name": "Flint Pepper",
       "temp_name": null,
       "temp_end_event": null,
@@ -4033,6 +4151,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POWDER_KAZURA",
       "name": "Explosive Vine",
       "temp_name": null,
       "temp_end_event": null,
@@ -4066,6 +4185,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POWDER_HOMURA",
       "name": "Flaming Black Sand",
       "temp_name": null,
       "temp_end_event": null,
@@ -4099,6 +4219,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_POWDER_MAGUMA",
       "name": "Magma Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -4132,6 +4253,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_PAPER",
       "name": "Scrap Paper",
       "temp_name": null,
       "temp_end_event": null,
@@ -4165,6 +4287,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_BARK",
       "name": "Flammable Bark",
       "temp_name": null,
       "temp_end_event": null,
@@ -4199,6 +4322,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_PALMA",
       "name": "Palma Bark",
       "temp_name": null,
       "temp_end_event": null,
@@ -4233,6 +4357,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_COCONUT",
       "name": "Fuel Coconut",
       "temp_name": null,
       "temp_end_event": null,
@@ -4268,6 +4393,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_NATURE",
       "name": "Natural Oil",
       "temp_name": null,
       "temp_end_event": null,
@@ -4302,6 +4428,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_AMBER",
       "name": "Amber Oil",
       "temp_name": null,
       "temp_end_event": null,
@@ -4336,6 +4463,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_FLAME_ICE",
       "name": "Fire and Ice Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -4370,6 +4498,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FUEL_ETERNAL",
       "name": "Eternal Fire",
       "temp_name": null,
       "temp_end_event": null,
@@ -4405,6 +4534,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_BEAST",
       "name": "Beast Meat",
       "temp_name": null,
       "temp_end_event": null,
@@ -4438,6 +4568,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_FRESH",
       "name": "Fresh Meat",
       "temp_name": null,
       "temp_end_event": null,
@@ -4471,6 +4602,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_EGG",
       "name": "Some Kind of Egg",
       "temp_name": null,
       "temp_end_event": null,
@@ -4505,6 +4637,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_OIL",
       "name": "Oil Tree Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -4540,6 +4673,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_SWEET",
       "name": "Nectar Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -4575,6 +4709,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_POTATO",
       "name": "Wild Potato",
       "temp_name": null,
       "temp_end_event": null,
@@ -4608,6 +4743,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_BEANS",
       "name": "Portpea",
       "temp_name": null,
       "temp_end_event": null,
@@ -4641,6 +4777,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_RED",
       "name": "Red Devil",
       "temp_name": null,
       "temp_end_event": null,
@@ -4675,6 +4812,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_KURENOKO",
       "name": "Clenoko",
       "temp_name": null,
       "temp_end_event": null,
@@ -4709,6 +4847,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_APPLE",
       "name": "Red King Apple",
       "temp_name": null,
       "temp_end_event": null,
@@ -4744,6 +4883,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_PUMPKIN",
       "name": "Skull Pumpkin",
       "temp_name": null,
       "temp_end_event": null,
@@ -4778,6 +4918,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FOODSTUFF_VENOM",
       "name": "Venom Nut",
       "temp_name": null,
       "temp_end_event": null,
@@ -4812,6 +4953,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_PALMA",
       "name": "Palma Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -4846,6 +4988,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_FRESS",
       "name": "Fresh Berry",
       "temp_name": null,
       "temp_end_event": null,
@@ -4880,6 +5023,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_WERDER",
       "name": "Werder Nut",
       "temp_name": null,
       "temp_end_event": null,
@@ -4915,6 +5059,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_KUKEN",
       "name": "Kurken Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -4949,6 +5094,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_FORTUNE",
       "name": "Fortune Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -4983,6 +5129,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_GRAPE",
       "name": "Rainbow Grapevine",
       "temp_name": null,
       "temp_end_event": null,
@@ -5018,6 +5165,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_SUMMER",
       "name": "Summer Gem",
       "temp_name": null,
       "temp_end_event": null,
@@ -5052,6 +5200,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_NUT_SOFT",
       "name": "Softtail",
       "temp_name": null,
       "temp_end_event": null,
@@ -5086,6 +5235,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_BEEHIVE_NORMAL",
       "name": "Beehive",
       "temp_name": null,
       "temp_end_event": null,
@@ -5120,6 +5270,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_BEEHIVE_SILVER",
       "name": "Silver Beehive",
       "temp_name": null,
       "temp_end_event": null,
@@ -5154,6 +5305,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_BEEHIVE_GORD",
       "name": "Gold Beehive",
       "temp_name": null,
       "temp_end_event": null,
@@ -5189,6 +5341,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_BEEHIVE_BEEHIVE",
       "name": "Bee Haven",
       "temp_name": null,
       "temp_end_event": null,
@@ -5223,6 +5376,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_BEEHIVE_BALL",
       "name": "Honey Ball",
       "temp_name": null,
       "temp_end_event": null,
@@ -5258,6 +5412,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_AIHE",
       "name": "Eicheloa",
       "temp_name": null,
       "temp_end_event": null,
@@ -5291,6 +5446,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_GUNTAI",
       "name": "Mushroom Colony",
       "temp_name": null,
       "temp_end_event": null,
@@ -5324,6 +5480,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_BRODEN",
       "name": "Brodenbits",
       "temp_name": null,
       "temp_end_event": null,
@@ -5357,6 +5514,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_YUPITO",
       "name": "Utopiechampignon",
       "temp_name": null,
       "temp_end_event": null,
@@ -5391,6 +5549,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_KURAGE",
       "name": "Jellyfish Mushroom",
       "temp_name": null,
       "temp_end_event": null,
@@ -5425,6 +5584,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_KOCHIKAKE",
       "name": "Stool of Nature",
       "temp_name": null,
       "temp_end_event": null,
@@ -5459,6 +5619,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_YORU",
       "name": "Dusk Mushroom",
       "temp_name": null,
       "temp_end_event": null,
@@ -5493,6 +5654,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_GEKI",
       "name": "Danger Mushroom",
       "temp_name": null,
       "temp_end_event": null,
@@ -5527,6 +5689,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_HOUSYOU",
       "name": "Jewel Mushroom",
       "temp_name": null,
       "temp_end_event": null,
@@ -5561,6 +5724,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MUSHROOM_GOLDEN",
       "name": "Golden Crown",
       "temp_name": null,
       "temp_end_event": null,
@@ -5595,6 +5759,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_SARUDIN",
       "name": "Sardine",
       "temp_name": null,
       "temp_end_event": null,
@@ -5628,6 +5793,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_SERIYORU",
       "name": "Seriole",
       "temp_name": null,
       "temp_end_event": null,
@@ -5661,6 +5827,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_PURUMURU",
       "name": "Pourpremoule",
       "temp_name": null,
       "temp_end_event": null,
@@ -5695,6 +5862,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_SYURABU",
       "name": "Crab",
       "temp_name": null,
       "temp_end_event": null,
@@ -5728,6 +5896,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_SHELL",
       "name": "Pretty Shells",
       "temp_name": null,
       "temp_end_event": null,
@@ -5761,6 +5930,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_TOGE",
       "name": "Spikey",
       "temp_name": null,
       "temp_end_event": null,
@@ -5794,6 +5964,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_HITODE",
       "name": "Uni Starfish",
       "temp_name": null,
       "temp_end_event": null,
@@ -5827,6 +5998,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_KURI",
       "name": "Chestnut​",
       "temp_name": null,
       "temp_end_event": null,
@@ -5860,6 +6032,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_NIJI",
       "name": "Rainbow Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -5893,6 +6066,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_MACE",
       "name": "Mace Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -5926,6 +6100,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_STIN",
       "name": "Stingray",
       "temp_name": null,
       "temp_end_event": null,
@@ -5960,6 +6135,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_MANNEN",
       "name": "Myria Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -5994,6 +6170,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_NUSHI",
       "name": "Lake Master",
       "temp_name": null,
       "temp_end_event": null,
@@ -6027,6 +6204,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_RYUGU",
       "name": "Dragonpalace Nautilus",
       "temp_name": null,
       "temp_end_event": null,
@@ -6062,6 +6240,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_KING",
       "name": "Crown Shellfish",
       "temp_name": null,
       "temp_end_event": null,
@@ -6096,6 +6275,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_FISH_EMPEROR",
       "name": "Imperial Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -6130,6 +6310,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_NANAHOSHI",
       "name": "Seven Stars",
       "temp_name": null,
       "temp_end_event": null,
@@ -6163,6 +6344,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_HONEY",
       "name": "Honey Ant",
       "temp_name": null,
       "temp_end_event": null,
@@ -6197,6 +6379,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_IKKAKU",
       "name": "Narwhal Grasshopper",
       "temp_name": null,
       "temp_end_event": null,
@@ -6231,6 +6414,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_HOTARU",
       "name": "Lantern Fly",
       "temp_name": null,
       "temp_end_event": null,
@@ -6265,6 +6449,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_BEE",
       "name": "Rose Bee",
       "temp_name": null,
       "temp_end_event": null,
@@ -6299,6 +6484,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_KABUTO",
       "name": "Giant Beetle",
       "temp_name": null,
       "temp_end_event": null,
@@ -6333,6 +6519,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_BEBY",
       "name": "Baby Wyrm",
       "temp_name": null,
       "temp_end_event": null,
@@ -6367,6 +6554,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_CRIMSON",
       "name": "Crimson Cloak",
       "temp_name": null,
       "temp_end_event": null,
@@ -6401,6 +6589,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_SPIRIT",
       "name": "Spirit Isopod",
       "temp_name": null,
       "temp_end_event": null,
@@ -6435,6 +6624,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_AMBER",
       "name": "Amber Fly",
       "temp_name": null,
       "temp_end_event": null,
@@ -6469,6 +6659,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_LAPIS",
       "name": "Lapis Papillion",
       "temp_name": null,
       "temp_end_event": null,
@@ -6503,6 +6694,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_TRY",
       "name": "Trihorn",
       "temp_name": null,
       "temp_end_event": null,
@@ -6537,6 +6729,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_KING",
       "name": "Ancient Bug",
       "temp_name": null,
       "temp_end_event": null,
@@ -6572,6 +6765,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_INSECT_ROCK",
       "name": "Rock Schloss",
       "temp_name": null,
       "temp_end_event": null,
@@ -6606,6 +6800,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_THREAD_THREAD",
       "name": "Restraint Silk",
       "temp_name": null,
       "temp_end_event": null,
@@ -6639,6 +6834,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_THREAD_COTTON",
       "name": "Cotton Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -6672,6 +6868,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_THREAD_VINE",
       "name": "Tough Vine",
       "temp_name": null,
       "temp_end_event": null,
@@ -6706,6 +6903,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_THREAD_IVY",
       "name": "Arbor Ivy",
       "temp_name": null,
       "temp_end_event": null,
@@ -6740,6 +6938,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_THREAD_QUEEN",
       "name": "Queen Spider Web",
       "temp_name": null,
       "temp_end_event": null,
@@ -6774,6 +6973,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_THREAD_ARAKUNE",
       "name": "Hug of Arachne",
       "temp_name": null,
       "temp_end_event": null,
@@ -6808,6 +7008,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_AIHE",
       "name": "Eiche",
       "temp_name": null,
       "temp_end_event": null,
@@ -6841,6 +7042,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_DURABLE",
       "name": "Tough Log",
       "temp_name": null,
       "temp_end_event": null,
@@ -6874,6 +7076,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_MOSS",
       "name": "Mossy Driftwood",
       "temp_name": null,
       "temp_end_event": null,
@@ -6908,6 +7111,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_HOLY",
       "name": "Holy Arbor Branch",
       "temp_name": null,
       "temp_end_event": null,
@@ -6942,6 +7146,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_PALMA",
       "name": "Palma",
       "temp_name": null,
       "temp_end_event": null,
@@ -6975,6 +7180,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_FOSSIL",
       "name": "Fossil Tree",
       "temp_name": null,
       "temp_end_event": null,
@@ -7008,6 +7214,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_MIASMA",
       "name": "Miasma Log",
       "temp_name": null,
       "temp_end_event": null,
@@ -7042,6 +7249,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_THUNDER",
       "name": "Lightning Tree",
       "temp_name": null,
       "temp_end_event": null,
@@ -7077,6 +7285,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_ANCIENT",
       "name": "Ancient Log",
       "temp_name": null,
       "temp_end_event": null,
@@ -7110,6 +7319,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_WOOD_SENNEN",
       "name": "Millennial Tree",
       "temp_name": null,
       "temp_end_event": null,
@@ -7144,6 +7354,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_WING",
       "name": "Wing Plant",
       "temp_name": null,
       "temp_end_event": null,
@@ -7178,6 +7389,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_NOROSHI",
       "name": "Smoke Signal Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -7212,6 +7424,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_BURNT",
       "name": "Crispy Mushroom",
       "temp_name": null,
       "temp_end_event": null,
@@ -7246,6 +7459,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_BUBBLE",
       "name": "Sky Bubble",
       "temp_name": null,
       "temp_end_event": null,
@@ -7279,6 +7493,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_POISON",
       "name": "Rotwood Miasma",
       "temp_name": null,
       "temp_end_event": null,
@@ -7313,6 +7528,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_AQUEOUS",
       "name": "Water Holy Branch",
       "temp_name": null,
       "temp_end_event": null,
@@ -7347,6 +7563,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_GAS_FIRE",
       "name": "Dragon Breath",
       "temp_name": null,
       "temp_end_event": null,
@@ -7381,6 +7598,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_MAGIC",
       "name": "Fairystone Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -7414,6 +7632,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_HOLY",
       "name": "Dark Crystal Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -7448,6 +7667,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_DARKNESS",
       "name": "Holy Stone Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -7482,6 +7702,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_RAINBOW",
       "name": "Rainbow Wing Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -7516,6 +7737,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_SHARD",
       "name": "Magic Tome Piece",
       "temp_name": null,
       "temp_end_event": null,
@@ -7550,6 +7772,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_BOOK",
       "name": "Old Magic Tome",
       "temp_name": null,
       "temp_end_event": null,
@@ -7584,6 +7807,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_LEAF",
       "name": "Holy Tree Leaf",
       "temp_name": null,
       "temp_end_event": null,
@@ -7618,6 +7842,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_SPHERE",
       "name": "Mystic Sphere",
       "temp_name": null,
       "temp_end_event": null,
@@ -7652,6 +7877,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_FOSSIL",
       "name": "Ancient Fossil",
       "temp_name": null,
       "temp_end_event": null,
@@ -7685,6 +7911,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_MYSTIC_BLOCK",
       "name": "Forever Ice Block",
       "temp_name": null,
       "temp_end_event": null,
@@ -7720,6 +7947,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_METAL_IRON",
       "name": "Decayed Iron Pieces",
       "temp_name": null,
       "temp_end_event": null,
@@ -7753,6 +7981,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_METAL_RUST",
       "name": "Rusted Sword",
       "temp_name": null,
       "temp_end_event": null,
@@ -7786,6 +8015,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_METAL_BEOKEN",
       "name": "Broken Tools",
       "temp_name": null,
       "temp_end_event": null,
@@ -7820,6 +8050,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_METAL_LIQUID",
       "name": "Liquid Metal",
       "temp_name": null,
       "temp_end_event": null,
@@ -7855,6 +8086,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_METAL_OLD",
       "name": "Ancient Sword",
       "temp_name": null,
       "temp_end_event": null,
@@ -7890,6 +8122,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_BULE",
       "name": "Blue Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -7924,6 +8157,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_GREEN",
       "name": "Green Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -7958,6 +8192,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_RED",
       "name": "Red Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -7992,6 +8227,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_BLACK",
       "name": "Black Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -8026,6 +8262,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_SILVER",
       "name": "Silver Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -8061,6 +8298,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_GOLD",
       "name": "Gold Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -8096,6 +8334,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_FUR",
       "name": "Animal Hide",
       "temp_name": null,
       "temp_end_event": null,
@@ -8130,6 +8369,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_PHANTOM_FUR",
       "name": "Mythical Hide",
       "temp_name": null,
       "temp_end_event": null,
@@ -8165,6 +8405,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_BONE",
       "name": "Large Bone",
       "temp_name": null,
       "temp_end_event": null,
@@ -8198,6 +8439,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_FOSSIL",
       "name": "Beast Fossil",
       "temp_name": null,
       "temp_end_event": null,
@@ -8231,6 +8473,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_A_BEAST_FOSSIL",
       "name": "Water Beast Fossil",
       "temp_name": null,
       "temp_end_event": null,
@@ -8265,6 +8508,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_A_BEAST_SCALE",
       "name": "Water Beast Scale",
       "temp_name": null,
       "temp_end_event": null,
@@ -8298,6 +8542,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_BAT",
       "name": "Cave Bat Wing",
       "temp_name": null,
       "temp_end_event": null,
@@ -8332,6 +8577,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_NEST",
       "name": "White Swallow's Nest",
       "temp_name": null,
       "temp_end_event": null,
@@ -8366,6 +8612,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_D_BEAST_FILLET",
       "name": "Beast Fin",
       "temp_name": null,
       "temp_end_event": null,
@@ -8401,6 +8648,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_D_BEAST_CRUSTACEAN",
       "name": "Beast Shell",
       "temp_name": null,
       "temp_end_event": null,
@@ -8436,6 +8684,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_D_BEAST_SCALE",
       "name": "Beast Scales",
       "temp_name": null,
       "temp_end_event": null,
@@ -8470,6 +8719,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_BIRD_WING",
       "name": "Giant Bird Feather",
       "temp_name": null,
       "temp_end_event": null,
@@ -8505,6 +8755,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_BIRD_EGG",
       "name": "Giant Bird Egg",
       "temp_name": null,
       "temp_end_event": null,
@@ -8538,6 +8789,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_GOAT",
       "name": "Goat Horn",
       "temp_name": null,
       "temp_end_event": null,
@@ -8571,6 +8823,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_DEMON_NAIL",
       "name": "Demon Claws",
       "temp_name": null,
       "temp_end_event": null,
@@ -8606,6 +8859,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_WOOL",
       "name": "Fluffy Wool",
       "temp_name": null,
       "temp_end_event": null,
@@ -8641,6 +8895,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_NEEDLE",
       "name": "Poison Needle",
       "temp_name": null,
       "temp_end_event": null,
@@ -8676,6 +8931,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_WINGS",
       "name": "Dragon Wing",
       "temp_name": null,
       "temp_end_event": null,
@@ -8710,6 +8966,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_EGG",
       "name": "Dragon Egg",
       "temp_name": null,
       "temp_end_event": null,
@@ -8744,6 +9001,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_DRAGON_EYE",
       "name": "Dragon Eye",
       "temp_name": null,
       "temp_end_event": null,
@@ -8780,6 +9038,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_DRAGON_BORN",
       "name": "Dragon Bone",
       "temp_name": null,
       "temp_end_event": null,
@@ -8814,6 +9073,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_DRAGON_MEAT",
       "name": "Dragon Meat",
       "temp_name": null,
       "temp_end_event": null,
@@ -8848,6 +9108,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_GUARDIAN",
       "name": "Guardian Armor",
       "temp_name": null,
       "temp_end_event": null,
@@ -8882,6 +9143,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_SOUL",
       "name": "Heroic Spirit",
       "temp_name": null,
       "temp_end_event": null,
@@ -8916,6 +9178,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_BIG_PUNI",
       "name": "Giant Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -8950,6 +9213,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_FAIRY",
       "name": "Fairy Horn Adornment",
       "temp_name": null,
       "temp_end_event": null,
@@ -8984,6 +9248,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_HUGE_NAILS",
       "name": "Giant Claws",
       "temp_name": null,
       "temp_end_event": null,
@@ -9017,6 +9282,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_GOLEM",
       "name": "Golem Core",
       "temp_name": null,
       "temp_end_event": null,
@@ -9050,6 +9316,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_REVERSE_SCALE",
       "name": "Inverted Scale",
       "temp_name": null,
       "temp_end_event": null,
@@ -9086,6 +9353,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_ETHER",
       "name": "Ether Core",
       "temp_name": null,
       "temp_end_event": null,
@@ -9122,6 +9390,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_DEMON",
       "name": "Imp's Lost Item",
       "temp_name": null,
       "temp_end_event": null,
@@ -9157,6 +9426,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_ELEMENT",
       "name": "Elemental Force",
       "temp_name": null,
       "temp_end_event": null,
@@ -9191,6 +9461,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_ROOT",
       "name": "Twisted Thorns",
       "temp_name": null,
       "temp_end_event": null,
@@ -9225,6 +9496,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_LONG_NAILS",
       "name": "Curved Long Nails",
       "temp_name": null,
       "temp_end_event": null,
@@ -9260,6 +9532,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_COMB",
       "name": "Running Beast Crest",
       "temp_name": null,
       "temp_end_event": null,
@@ -9295,6 +9568,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_TAIL",
       "name": "Phantom Color Tail",
       "temp_name": null,
       "temp_end_event": null,
@@ -9331,6 +9605,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_BLADE",
       "name": "Wolf Beast's Blade",
       "temp_name": null,
       "temp_end_event": null,
@@ -9367,6 +9642,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_DUET",
       "name": "Duet Stock Solution",
       "temp_name": "Iridescent Mucus",
       "temp_end_event": "EVENT_MM02_140",
@@ -9400,6 +9676,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_CINTILLA",
       "name": "Scintilla Ore",
       "temp_name": null,
       "temp_end_event": null,
@@ -9434,6 +9711,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_LUJADA",
       "name": "Lujada's Fairystone",
       "temp_name": null,
       "temp_end_event": null,
@@ -9468,6 +9746,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_PUNI_SAKURA",
       "name": "Pink Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -9501,6 +9780,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_005",
       "name": "Giant Kurken Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -9535,6 +9815,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_006",
       "name": "Cow Milk",
       "temp_name": null,
       "temp_end_event": null,
@@ -9569,6 +9850,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9602,6 +9884,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9635,6 +9918,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9668,6 +9952,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9701,6 +9986,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9734,6 +10020,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9767,6 +10054,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9800,6 +10088,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9833,6 +10122,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9866,6 +10156,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9899,6 +10190,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -9932,6 +10224,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_018",
       "name": "Thick Reference Book",
       "temp_name": null,
       "temp_end_event": null,
@@ -9965,6 +10258,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_019",
       "name": "Giant Claws",
       "temp_name": null,
       "temp_end_event": null,
@@ -9998,6 +10292,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_020",
       "name": "White Swallow's Nest",
       "temp_name": null,
       "temp_end_event": null,
@@ -10031,6 +10326,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_021",
       "name": "Water Beast Scale",
       "temp_name": null,
       "temp_end_event": null,
@@ -10064,6 +10360,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_022",
       "name": "Mythical Hide",
       "temp_name": null,
       "temp_end_event": null,
@@ -10097,6 +10394,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_023",
       "name": "Dragon Meat",
       "temp_name": null,
       "temp_end_event": null,
@@ -10130,6 +10428,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_024",
       "name": "Heroic Spirit",
       "temp_name": null,
       "temp_end_event": null,
@@ -10163,6 +10462,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_025",
       "name": "Dragon Wing",
       "temp_name": null,
       "temp_end_event": null,
@@ -10196,6 +10496,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_026",
       "name": "Demon Claws",
       "temp_name": null,
       "temp_end_event": null,
@@ -10229,6 +10530,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_027",
       "name": "Dragon Bone",
       "temp_name": null,
       "temp_end_event": null,
@@ -10262,6 +10564,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_028",
       "name": "Dragon Eye",
       "temp_name": null,
       "temp_end_event": null,
@@ -10295,6 +10598,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_029",
       "name": "Spirit Catalysts",
       "temp_name": null,
       "temp_end_event": null,
@@ -10328,6 +10632,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_DROPITEM_ETHER",
       "name": "Ether Core",
       "temp_name": null,
       "temp_end_event": null,
@@ -10361,6 +10666,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_001",
       "name": "Spirit Catalysts",
       "temp_name": null,
       "temp_end_event": null,
@@ -10396,6 +10702,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_002",
       "name": "Guiding Bird Feather",
       "temp_name": null,
       "temp_end_event": null,
@@ -10431,6 +10738,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_003",
       "name": "Gnade Ring",
       "temp_name": null,
       "temp_end_event": null,
@@ -10464,6 +10772,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_004",
       "name": "Phantom Scarf",
       "temp_name": null,
       "temp_end_event": null,
@@ -10497,6 +10806,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_005",
       "name": "Chick Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -10530,6 +10840,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_006",
       "name": "Myria Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -10563,6 +10874,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_006",
       "name": "Fairystone Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -10596,6 +10908,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_008",
       "name": "Spring Princess",
       "temp_name": null,
       "temp_end_event": null,
@@ -10629,6 +10942,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_002",
       "name": "Energy Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -10662,6 +10976,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_003",
       "name": "Fairy Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -10695,6 +11010,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_005",
       "name": "Puni Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -10728,6 +11044,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_032",
       "name": "Farm Photo",
       "temp_name": null,
       "temp_end_event": null,
@@ -10761,6 +11078,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_013",
       "name": "Rainbow Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -10794,6 +11112,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_033",
       "name": "Countryside Photo",
       "temp_name": null,
       "temp_end_event": null,
@@ -10827,6 +11146,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_065",
       "name": "Small Devil Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -10860,6 +11180,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_056",
       "name": "Photo of the Capital",
       "temp_name": null,
       "temp_end_event": null,
@@ -10893,6 +11214,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_053",
       "name": "Weasel Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -10926,6 +11248,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_040",
       "name": "Pumpkin Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -10959,6 +11282,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_001",
       "name": "Uni Charm",
       "temp_name": null,
       "temp_end_event": null,
@@ -10992,6 +11316,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_RESERVE_005",
       "name": "Softtail",
       "temp_name": null,
       "temp_end_event": null,
@@ -11025,6 +11350,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_RESERVE_006",
       "name": "Dunkelheit",
       "temp_name": null,
       "temp_end_event": null,
@@ -11058,6 +11384,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_058",
       "name": "Poisonous Liquid",
       "temp_name": null,
       "temp_end_event": null,
@@ -11091,6 +11418,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_RESERVE_008",
       "name": "Light Absorbing Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -11124,6 +11452,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_QUEST_RESERVE_009",
       "name": "Black Muck",
       "temp_name": null,
       "temp_end_event": null,
@@ -11157,6 +11486,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_059",
       "name": "The Grim Reaper",
       "temp_name": null,
       "temp_end_event": null,
@@ -11190,6 +11520,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_BAKU_UNI",
       "name": "Explosive Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -11235,6 +11566,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_CRAFT",
       "name": "Craft",
       "temp_name": null,
       "temp_end_event": null,
@@ -11280,6 +11612,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_FLAME",
       "name": "Bomb",
       "temp_name": null,
       "temp_end_event": null,
@@ -11325,6 +11658,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_REFERUN",
       "name": "Ice Bomb",
       "temp_name": null,
       "temp_end_event": null,
@@ -11370,6 +11704,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_PLAJIG",
       "name": "Plajig",
       "temp_name": null,
       "temp_end_event": null,
@@ -11415,6 +11750,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_LUFT",
       "name": "Luft",
       "temp_name": null,
       "temp_end_event": null,
@@ -11460,6 +11796,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_CRAFTTRIO",
       "name": "Trio Craft",
       "temp_name": null,
       "temp_end_event": null,
@@ -11505,6 +11842,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ANEMO_FLAME",
       "name": "Anemo Bomb",
       "temp_name": null,
       "temp_end_event": null,
@@ -11550,6 +11888,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MELT_REFERUN",
       "name": "Melting Ice Bomb",
       "temp_name": null,
       "temp_end_event": null,
@@ -11595,6 +11934,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_RIA_PLAJIG",
       "name": "Lia Plajig",
       "temp_name": null,
       "temp_end_event": null,
@@ -11640,6 +11980,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_EDEL_LUFT",
       "name": "Edle Luft",
       "temp_name": null,
       "temp_end_event": null,
@@ -11685,6 +12026,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_LUNA_LAMP",
       "name": "Lunar Lamp",
       "temp_name": null,
       "temp_end_event": null,
@@ -11730,6 +12072,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ASTROROSE",
       "name": "Astro Rose",
       "temp_name": null,
       "temp_end_event": null,
@@ -11775,6 +12118,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_LAVINEGE",
       "name": "Lavinage",
       "temp_name": null,
       "temp_end_event": null,
@@ -11820,6 +12164,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_GRANZEIT",
       "name": "Grazeit",
       "temp_name": null,
       "temp_end_event": null,
@@ -11866,6 +12211,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_HIMMEL_FEATHER",
       "name": "Himmel Feather",
       "temp_name": null,
       "temp_end_event": null,
@@ -11912,6 +12258,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_TABOO_ARCANEBOOK",
       "name": "Forbidden Spell Book",
       "temp_name": null,
       "temp_end_event": null,
@@ -11957,6 +12304,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ZWEI_RESONANCE",
       "name": "Zwei Resonance",
       "temp_name": null,
       "temp_end_event": null,
@@ -12002,6 +12350,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_CROSS_JUDGMENT",
       "name": "Cross Judgement",
       "temp_name": null,
       "temp_end_event": null,
@@ -12047,6 +12396,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ACACIA_ORIGINAL",
       "name": "Sourcebook of Acacia",
       "temp_name": null,
       "temp_end_event": null,
@@ -12092,6 +12442,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12123,6 +12474,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12154,6 +12506,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12185,6 +12538,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12216,6 +12570,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12247,6 +12602,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12278,6 +12634,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12309,6 +12666,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12340,6 +12698,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12371,6 +12730,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12402,6 +12762,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_MIX_GRASS_BEANS",
       "name": "Grass Beans",
       "temp_name": null,
       "temp_end_event": null,
@@ -12447,6 +12808,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_DRY_BISCUIT",
       "name": "Dry Biscuit",
       "temp_name": null,
       "temp_end_event": null,
@@ -12492,6 +12854,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_NECTOR",
       "name": "Nectar",
       "temp_name": null,
       "temp_end_event": null,
@@ -12537,6 +12900,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ELIXIR",
       "name": "Elixir",
       "temp_name": null,
       "temp_end_event": null,
@@ -12582,6 +12946,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_HERMIT_SALVE",
       "name": "Hermit Ointment",
       "temp_name": null,
       "temp_end_event": null,
@@ -12627,6 +12992,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_FAIRY_ELIXIR",
       "name": "Fairy Elixir",
       "temp_name": null,
       "temp_end_event": null,
@@ -12672,6 +13038,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_SILENCE_MIST",
       "name": "Mist of Silence",
       "temp_name": null,
       "temp_end_event": null,
@@ -12717,6 +13084,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_GOLD_HEART",
       "name": "Golden Heart",
       "temp_name": null,
       "temp_end_event": null,
@@ -12762,6 +13130,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MYTHOLOGY_NECTOR",
       "name": "Mythic Nectar",
       "temp_name": null,
       "temp_end_event": null,
@@ -12807,6 +13176,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ETERNAL_HOLYGRAIL",
       "name": "Eternal Holy Grail",
       "temp_name": null,
       "temp_end_event": null,
@@ -12852,6 +13222,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12883,6 +13254,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12914,6 +13286,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12945,6 +13318,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12976,6 +13350,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13007,6 +13382,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13038,6 +13414,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13069,6 +13446,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13100,6 +13478,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13131,6 +13510,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13162,6 +13542,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_MIX_FISH_OIL",
       "name": "Fish Oil",
       "temp_name": null,
       "temp_end_event": null,
@@ -13207,6 +13588,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_WAR_POWDER",
       "name": "War Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -13252,6 +13634,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ENERGIANICA",
       "name": "Energianica",
       "temp_name": null,
       "temp_end_event": null,
@@ -13297,6 +13680,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_HORN",
       "name": "Fake Bouquet",
       "temp_name": null,
       "temp_end_event": null,
@@ -13342,6 +13726,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MYSTERIOUS_ROBE",
       "name": "Prison of Decline",
       "temp_name": null,
       "temp_end_event": null,
@@ -13387,6 +13772,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_DEVIL_PAINTING",
       "name": "Haze Breath",
       "temp_name": null,
       "temp_end_event": null,
@@ -13432,6 +13818,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MIRACLE_DRUG_EBONYAL",
       "name": "Barbaric Horn Whistle",
       "temp_name": null,
       "temp_end_event": null,
@@ -13477,6 +13864,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ORIGIN_CLOCK",
       "name": "Depiction of a Devil",
       "temp_name": null,
       "temp_end_event": null,
@@ -13522,6 +13910,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_FALSE_BOUQUET",
       "name": "Mystic Robe",
       "temp_name": null,
       "temp_end_event": null,
@@ -13567,6 +13956,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_INFERIOR_PRISON",
       "name": "Miracle Ebonyal",
       "temp_name": null,
       "temp_end_event": null,
@@ -13612,6 +14002,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ASTRONOMICAL_CLOCK",
       "name": "Hourglass of Origin",
       "temp_name": null,
       "temp_end_event": null,
@@ -13657,6 +14048,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_HAZE_BREATH",
       "name": "Astronomical Clock",
       "temp_name": null,
       "temp_end_event": null,
@@ -13702,6 +14094,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_DISASTER_CANTERA",
       "name": "Cantera of Calamity",
       "temp_name": null,
       "temp_end_event": null,
@@ -13747,6 +14140,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_GODS_PRELUDE",
       "name": "Prelude of the Gods",
       "temp_name": null,
       "temp_end_event": null,
@@ -13792,6 +14186,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_ABYSS_CALL",
       "name": "Call of Abyss",
       "temp_name": null,
       "temp_end_event": null,
@@ -13837,6 +14232,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13868,6 +14264,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13899,6 +14296,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13930,6 +14328,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13961,6 +14360,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13992,6 +14392,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14023,6 +14424,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14054,6 +14456,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14085,6 +14488,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14116,6 +14520,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14147,6 +14552,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_MIX_MOWING_SCYTHE_01",
       "name": "Grass Sickle​",
       "temp_name": null,
       "temp_end_event": null,
@@ -14192,6 +14598,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MOWING_SCYTHE_02",
       "name": "Silent Sickle",
       "temp_name": null,
       "temp_end_event": null,
@@ -14237,6 +14644,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_PICKAXE_01",
       "name": "Woodcutter's Axe",
       "temp_name": null,
       "temp_end_event": null,
@@ -14282,6 +14690,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_PICKAXE_02",
       "name": "Golden Axe",
       "temp_name": null,
       "temp_end_event": null,
@@ -14327,6 +14736,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_HAMMER_01",
       "name": "Hammer",
       "temp_name": null,
       "temp_end_event": null,
@@ -14372,6 +14782,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_HAMMER_02",
       "name": "Ravage Hammer",
       "temp_name": null,
       "temp_end_event": null,
@@ -14417,6 +14828,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_FISHING_ROD_01",
       "name": "Fishing Rod",
       "temp_name": null,
       "temp_end_event": null,
@@ -14462,6 +14874,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_FISHING_ROD_02",
       "name": "Divine Fishing Rod",
       "temp_name": null,
       "temp_end_event": null,
@@ -14507,6 +14920,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_INSECT_REPELLENT_01",
       "name": "Catcher's Net",
       "temp_name": null,
       "temp_end_event": null,
@@ -14552,6 +14966,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_INSECT_REPELLENT_02",
       "name": "Master Catcher's Net",
       "temp_name": null,
       "temp_end_event": null,
@@ -14597,6 +15012,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_WIND_SHOES",
       "name": "Wind Shoes",
       "temp_name": null,
       "temp_end_event": null,
@@ -14642,6 +15058,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_EMERALD_BAND",
       "name": "Emerald Band",
       "temp_name": null,
       "temp_end_event": null,
@@ -14687,6 +15104,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_AIR_DROPS",
       "name": "Air Drop",
       "temp_name": null,
       "temp_end_event": null,
@@ -14732,6 +15150,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_SACRED_BEAST_BELL",
       "name": "Summoner's Bell",
       "temp_name": null,
       "temp_end_event": null,
@@ -14777,6 +15196,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14808,6 +15228,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14839,6 +15260,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14870,6 +15292,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14901,6 +15324,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14932,6 +15356,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14963,6 +15388,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14994,6 +15420,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15025,6 +15452,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15056,6 +15484,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15087,6 +15516,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_001",
       "name": "Red Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -15120,6 +15550,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_002",
       "name": "Blue Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -15153,6 +15584,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_003",
       "name": "Yellow Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -15186,6 +15618,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_004",
       "name": "Green Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -15219,6 +15652,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_005",
       "name": "Rainbow Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -15252,6 +15686,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_006",
       "name": "Honey",
       "temp_name": null,
       "temp_end_event": null,
@@ -15285,6 +15720,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_007",
       "name": "Berry Syrup",
       "temp_name": null,
       "temp_end_event": null,
@@ -15318,6 +15754,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_008",
       "name": "Flour",
       "temp_name": null,
       "temp_end_event": null,
@@ -15351,6 +15788,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_009",
       "name": "Devil's Breath",
       "temp_name": null,
       "temp_end_event": null,
@@ -15385,6 +15823,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_010",
       "name": "Puppet Liquid",
       "temp_name": null,
       "temp_end_event": null,
@@ -15419,6 +15858,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_011",
       "name": "Super Pure Water",
       "temp_name": null,
       "temp_end_event": null,
@@ -15452,6 +15892,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_012",
       "name": "Traveler's Water Orb",
       "temp_name": null,
       "temp_end_event": null,
@@ -15486,6 +15927,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_013",
       "name": "Medica Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -15519,6 +15961,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_014",
       "name": "Doctor's Bottle",
       "temp_name": null,
       "temp_end_event": null,
@@ -15553,6 +15996,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_015",
       "name": "Holy Drop",
       "temp_name": null,
       "temp_end_event": null,
@@ -15587,6 +16031,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_016",
       "name": "Taboo Drop",
       "temp_name": null,
       "temp_end_event": null,
@@ -15620,6 +16065,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_017",
       "name": "Zettel",
       "temp_name": null,
       "temp_end_event": null,
@@ -15654,6 +16100,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_018",
       "name": "Reinforced Zettel",
       "temp_name": null,
       "temp_end_event": null,
@@ -15688,6 +16135,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_019",
       "name": "Pearl Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -15721,6 +16169,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_020",
       "name": "Amberlite",
       "temp_name": null,
       "temp_end_event": null,
@@ -15754,6 +16203,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_021",
       "name": "Spirinite",
       "temp_name": null,
       "temp_end_event": null,
@@ -15787,6 +16237,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_022",
       "name": "Waking Emerald",
       "temp_name": null,
       "temp_end_event": null,
@@ -15820,6 +16271,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_023",
       "name": "Arc en Ciel",
       "temp_name": null,
       "temp_end_event": null,
@@ -15853,6 +16305,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_024",
       "name": "Dark Glittering Oval",
       "temp_name": null,
       "temp_end_event": null,
@@ -15886,6 +16339,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_025",
       "name": "Nitro Chips",
       "temp_name": null,
       "temp_end_event": null,
@@ -15919,6 +16373,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_026",
       "name": "Donour Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -15952,6 +16407,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_027",
       "name": "Blue Flame Ember",
       "temp_name": null,
       "temp_end_event": null,
@@ -15986,6 +16442,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_028",
       "name": "Mixing Oil",
       "temp_name": null,
       "temp_end_event": null,
@@ -16019,6 +16476,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_029",
       "name": "Flint Charcoal",
       "temp_name": null,
       "temp_end_event": null,
@@ -16052,6 +16510,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_030",
       "name": "Colorful Oil",
       "temp_name": null,
       "temp_end_event": null,
@@ -16086,6 +16545,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_031",
       "name": "Solid Ice Fuel",
       "temp_name": null,
       "temp_end_event": null,
@@ -16120,6 +16580,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_032",
       "name": "Feather Draft",
       "temp_name": null,
       "temp_end_event": null,
@@ -16153,6 +16614,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_033",
       "name": "Ingot",
       "temp_name": null,
       "temp_end_event": null,
@@ -16187,6 +16649,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_034",
       "name": "Startium",
       "temp_name": null,
       "temp_end_event": null,
@@ -16221,6 +16684,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_035",
       "name": "Creaminea",
       "temp_name": null,
       "temp_end_event": null,
@@ -16255,6 +16719,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_036",
       "name": "Goldoterion",
       "temp_name": null,
       "temp_end_event": null,
@@ -16289,6 +16754,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_037",
       "name": "Grand Orgen",
       "temp_name": null,
       "temp_end_event": null,
@@ -16323,6 +16789,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_038",
       "name": "Alchemy Fibers",
       "temp_name": null,
       "temp_end_event": null,
@@ -16356,6 +16823,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_039",
       "name": "Himmel Schulwa",
       "temp_name": null,
       "temp_end_event": null,
@@ -16390,6 +16858,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_040",
       "name": "Eternal Firo",
       "temp_name": null,
       "temp_end_event": null,
@@ -16425,6 +16894,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_041",
       "name": "Cloth",
       "temp_name": null,
       "temp_end_event": null,
@@ -16459,6 +16929,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_042",
       "name": "Bestial Air",
       "temp_name": null,
       "temp_end_event": null,
@@ -16493,6 +16964,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_043",
       "name": "Sorcery Rose",
       "temp_name": null,
       "temp_end_event": null,
@@ -16527,6 +16999,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_044",
       "name": "Royal Cloth",
       "temp_name": null,
       "temp_end_event": null,
@@ -16561,6 +17034,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_045",
       "name": "Sage Coat",
       "temp_name": null,
       "temp_end_event": null,
@@ -16595,6 +17069,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_046",
       "name": "Puni Leather",
       "temp_name": null,
       "temp_end_event": null,
@@ -16629,6 +17104,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_047",
       "name": "Master Leather",
       "temp_name": null,
       "temp_end_event": null,
@@ -16663,6 +17139,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_048",
       "name": "Dread Leather",
       "temp_name": null,
       "temp_end_event": null,
@@ -16697,6 +17174,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_049",
       "name": "Grace Nero",
       "temp_name": null,
       "temp_end_event": null,
@@ -16731,6 +17209,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_050",
       "name": "Philosopher's Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -16767,6 +17246,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_051",
       "name": "Olden Philosopher's Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -16803,6 +17283,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_052",
       "name": "Honey Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -16836,6 +17317,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_053",
       "name": "Glass Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -16870,6 +17352,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_054",
       "name": "Wind Crystal Ball",
       "temp_name": null,
       "temp_end_event": null,
@@ -16904,6 +17387,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_055",
       "name": "Growing Quartz",
       "temp_name": null,
       "temp_end_event": null,
@@ -16937,6 +17421,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_056",
       "name": "Spirit Bottle",
       "temp_name": null,
       "temp_end_event": null,
@@ -16971,6 +17456,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_057",
       "name": "Crystal Element",
       "temp_name": null,
       "temp_end_event": null,
@@ -17007,6 +17493,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_058",
       "name": "Poisonous Liquid",
       "temp_name": null,
       "temp_end_event": null,
@@ -17040,6 +17527,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_059",
       "name": "The Grim Reaper",
       "temp_name": null,
       "temp_end_event": null,
@@ -17074,6 +17562,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_060",
       "name": "Polishing Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -17107,6 +17596,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_061",
       "name": "Rose Perfume",
       "temp_name": null,
       "temp_end_event": null,
@@ -17140,6 +17630,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_062",
       "name": "Spring Wind Pinwheel",
       "temp_name": null,
       "temp_end_event": null,
@@ -17174,6 +17665,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_063",
       "name": "Luft Atomizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -17208,6 +17700,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_064",
       "name": "Exotic Lantern",
       "temp_name": null,
       "temp_end_event": null,
@@ -17242,6 +17735,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_065",
       "name": "Four Seasons Dome",
       "temp_name": null,
       "temp_end_event": null,
@@ -17275,6 +17769,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_066",
       "name": "Magna Mater",
       "temp_name": null,
       "temp_end_event": null,
@@ -17308,6 +17803,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_067",
       "name": "Polishing Sand",
       "temp_name": null,
       "temp_end_event": null,
@@ -17341,6 +17837,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_068",
       "name": "Marblestone",
       "temp_name": null,
       "temp_end_event": null,
@@ -17374,6 +17871,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_069",
       "name": "Eternal Monolith",
       "temp_name": null,
       "temp_end_event": null,
@@ -17408,6 +17906,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_070",
       "name": "Plant Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17441,6 +17940,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_071",
       "name": "Stone Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17474,6 +17974,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_072",
       "name": "Fire Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17507,6 +18008,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_073",
       "name": "Water Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17540,6 +18042,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_074",
       "name": "Mystic Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17573,6 +18076,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_075",
       "name": "Poison Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17606,6 +18110,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_076",
       "name": "Golden Seeds",
       "temp_name": null,
       "temp_end_event": null,
@@ -17639,6 +18144,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_077",
       "name": "Duet Solvent Solution",
       "temp_name": "Iridescent High-Purity Mucus",
       "temp_end_event": "EVENT_MM02_140",
@@ -17672,6 +18178,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_078",
       "name": "Fairystone Compass",
       "temp_name": null,
       "temp_end_event": null,
@@ -17705,6 +18212,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_079",
       "name": "Scintilla Glass",
       "temp_name": null,
       "temp_end_event": null,
@@ -17738,6 +18246,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_080",
       "name": "Lujada Crystals",
       "temp_name": null,
       "temp_end_event": null,
@@ -17771,6 +18280,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_005",
       "name": "Glass Goblet",
       "temp_name": null,
       "temp_end_event": null,
@@ -17804,6 +18314,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_006",
       "name": "Fairystone Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -17837,6 +18348,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -17868,6 +18380,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -17899,6 +18412,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -17930,6 +18444,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -17961,6 +18476,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -17992,6 +18508,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18023,6 +18540,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18054,6 +18572,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18085,6 +18604,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18116,6 +18636,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18147,6 +18668,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18178,6 +18700,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18209,6 +18732,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18240,6 +18764,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18271,6 +18796,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_KEY_MAIN_01",
       "name": "Hollow Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18305,6 +18831,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_MAIN_02",
       "name": "The Starting Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18339,6 +18866,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_MAIN_03",
       "name": "Castle Door Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18373,6 +18901,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_MAIN_04",
       "name": "Blockade Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18407,6 +18936,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_MAIN_05",
       "name": "Key of Honor",
       "temp_name": null,
       "temp_end_event": null,
@@ -18441,6 +18971,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_INNOCENT",
       "name": "Pristine Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18474,6 +19005,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_COMMON_01",
       "name": "Red Stone Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18519,6 +19051,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_COMMON_02",
       "name": "Blue Stone Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18564,6 +19097,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_COMMON_03",
       "name": "Yellow Stone Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18609,6 +19143,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_COMMON_04",
       "name": "Green Stone Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18654,6 +19189,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_UNCOMMON_01",
       "name": "Red Iron Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18699,6 +19235,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_UNCOMMON_02",
       "name": "Blue Iron Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18744,6 +19281,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_UNCOMMON_03",
       "name": "Orange Iron Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18789,6 +19327,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_UNCOMMON_04",
       "name": "Jade Iron Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18834,6 +19373,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_RARE_01",
       "name": "White Silver Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18879,6 +19419,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_RARE_02",
       "name": "Golden Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18924,6 +19465,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STONE_SPECIAL_01",
       "name": "Rainbow Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -18969,6 +19511,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_COMMON_01",
       "name": "Red Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19014,6 +19557,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_COMMON_02",
       "name": "Blue Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19059,6 +19603,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_COMMON_03",
       "name": "Light Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19104,6 +19649,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_COMMON_04",
       "name": "Leaf Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19149,6 +19695,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_UNCOMMON_01",
       "name": "Scarlet Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19194,6 +19741,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_UNCOMMON_02",
       "name": "Cloud Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19239,6 +19787,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_UNCOMMON_03",
       "name": "Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19284,6 +19833,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_UNCOMMON_04",
       "name": "Tree Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19329,6 +19879,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_RARE_01",
       "name": "Firebird Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19374,6 +19925,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_RARE_02",
       "name": "Phoenix Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19419,6 +19971,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_WING_SPECIAL_01",
       "name": "Phantom Wing Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19464,6 +20017,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_COMMON_01",
       "name": "Fire Gear Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19509,6 +20063,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_COMMON_02",
       "name": "Water Gear Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19554,6 +20109,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_COMMON_03",
       "name": "Gear Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19599,6 +20155,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_COMMON_04",
       "name": "Wind Gear Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19644,6 +20201,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_UNCOMMON_01",
       "name": "Fire Clock Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19689,6 +20247,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_UNCOMMON_02",
       "name": "Water Clock Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19734,6 +20293,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_UNCOMMON_03",
       "name": "Hourglass Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19779,6 +20339,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_UNCOMMON_04",
       "name": "Gear Gimmick Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -19824,6 +20385,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_RARE_01",
       "name": "Key to the Future",
       "temp_name": null,
       "temp_end_event": null,
@@ -19869,6 +20431,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_RARE_02",
       "name": "Key to the Past",
       "temp_name": null,
       "temp_end_event": null,
@@ -19914,6 +20477,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_GEAR_SPECIAL_01",
       "name": "Key of All Times",
       "temp_name": null,
       "temp_end_event": null,
@@ -19959,6 +20523,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_COMMON_01",
       "name": "Key of Bright Sky",
       "temp_name": null,
       "temp_end_event": null,
@@ -20004,6 +20569,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_COMMON_02",
       "name": "Key of Blue Sky",
       "temp_name": null,
       "temp_end_event": null,
@@ -20049,6 +20615,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_COMMON_03",
       "name": "Key of Twilight Sky",
       "temp_name": null,
       "temp_end_event": null,
@@ -20094,6 +20661,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_COMMON_04",
       "name": "Key of Night Sky",
       "temp_name": null,
       "temp_end_event": null,
@@ -20139,6 +20707,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_UNCOMMON_01",
       "name": "Scarlet Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20184,6 +20753,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_UNCOMMON_02",
       "name": "Dark Star Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20229,6 +20799,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_UNCOMMON_03",
       "name": "Bright Star Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20274,6 +20845,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_UNCOMMON_04",
       "name": "Meteor Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20319,6 +20891,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_RARE_01",
       "name": "Great Heavens Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20364,6 +20937,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_RARE_02",
       "name": "Moon Shadow Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20409,6 +20983,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_STAR_SPECIAL_01",
       "name": "Soul Cradle Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20454,6 +21029,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_MAIN_06",
       "name": "Key of Truth",
       "temp_name": null,
       "temp_end_event": null,
@@ -20488,6 +21064,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_MAIN_07",
       "name": "Key of the End",
       "temp_name": null,
       "temp_end_event": null,
@@ -20522,6 +21099,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_RESERVE_003",
       "name": "Shining Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -20556,6 +21134,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20587,6 +21166,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20618,6 +21198,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20649,6 +21230,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20680,6 +21262,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20711,6 +21294,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20742,6 +21326,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20773,6 +21358,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20804,6 +21390,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20835,6 +21422,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20866,6 +21454,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20897,6 +21486,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -20928,6 +21518,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_WEAPON_REISA_01",
       "name": "Alchemist's Staff",
       "temp_name": null,
       "temp_end_event": null,
@@ -20963,6 +21554,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_REISA_02",
       "name": "Svate Rod",
       "temp_name": null,
       "temp_end_event": null,
@@ -20998,6 +21590,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_REISA_03",
       "name": "Celestial Seeker",
       "temp_name": null,
       "temp_end_event": null,
@@ -21033,6 +21626,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_REISA_04",
       "name": "Sparkling Reverie",
       "temp_name": null,
       "temp_end_event": null,
@@ -21068,6 +21662,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_REISA_05",
       "name": "Agnes Luce",
       "temp_name": null,
       "temp_end_event": null,
@@ -21103,6 +21698,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KLAU_01",
       "name": "Ciel Shoot",
       "temp_name": null,
       "temp_end_event": null,
@@ -21138,6 +21734,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KLAU_02",
       "name": "Yale Soar",
       "temp_name": null,
       "temp_end_event": null,
@@ -21173,6 +21770,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KLAU_03",
       "name": "Croiselt",
       "temp_name": null,
       "temp_end_event": null,
@@ -21208,6 +21806,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KLAU_04",
       "name": "Astrumnox",
       "temp_name": null,
       "temp_end_event": null,
@@ -21243,6 +21842,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KLAU_05",
       "name": "Astral Regalia",
       "temp_name": null,
       "temp_end_event": null,
@@ -21278,6 +21878,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LENT_01",
       "name": "Smite Blade",
       "temp_name": null,
       "temp_end_event": null,
@@ -21313,6 +21914,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LENT_02",
       "name": "Sword of Rupture",
       "temp_name": null,
       "temp_end_event": null,
@@ -21348,6 +21950,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LENT_03",
       "name": "Lord Guardian",
       "temp_name": null,
       "temp_end_event": null,
@@ -21383,6 +21986,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LENT_04",
       "name": "Demon Ender",
       "temp_name": null,
       "temp_end_event": null,
@@ -21418,6 +22022,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LENT_05",
       "name": "Liese Divider",
       "temp_name": null,
       "temp_end_event": null,
@@ -21453,6 +22058,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_TAO_01",
       "name": "Sharp Edge",
       "temp_name": null,
       "temp_end_event": null,
@@ -21488,6 +22094,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_TAO_02",
       "name": "Paradiera",
       "temp_name": null,
       "temp_end_event": null,
@@ -21523,6 +22130,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_TAO_03",
       "name": "Luna Solis",
       "temp_name": null,
       "temp_end_event": null,
@@ -21558,6 +22166,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_TAO_04",
       "name": "Amphisbaena",
       "temp_name": null,
       "temp_end_event": null,
@@ -21593,6 +22202,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_TAO_05",
       "name": "Ifestio",
       "temp_name": null,
       "temp_end_event": null,
@@ -21628,6 +22238,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_PATRICIA_01",
       "name": "Aristoclite",
       "temp_name": null,
       "temp_end_event": null,
@@ -21663,6 +22274,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_PATRICIA_02",
       "name": "Herzog",
       "temp_name": null,
       "temp_end_event": null,
@@ -21698,6 +22310,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_PATRICIA_03",
       "name": "Might of Heaven",
       "temp_name": null,
       "temp_end_event": null,
@@ -21733,6 +22346,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_PATRICIA_04",
       "name": "Edel Schwert",
       "temp_name": null,
       "temp_end_event": null,
@@ -21768,6 +22382,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_PATRICIA_05",
       "name": "Efflorescence",
       "temp_name": null,
       "temp_end_event": null,
@@ -21803,6 +22418,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_AMPEL_01",
       "name": "Wise Wand",
       "temp_name": null,
       "temp_end_event": null,
@@ -21838,6 +22454,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_AMPEL_02",
       "name": "Educator",
       "temp_name": null,
       "temp_end_event": null,
@@ -21873,6 +22490,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_AMPEL_03",
       "name": "Occult Wisdom",
       "temp_name": null,
       "temp_end_event": null,
@@ -21908,6 +22526,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_AMPEL_04",
       "name": "Nachfolger",
       "temp_name": null,
       "temp_end_event": null,
@@ -21943,6 +22562,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_AMPEL_05",
       "name": "Genesis Staff",
       "temp_name": null,
       "temp_end_event": null,
@@ -21978,6 +22598,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LILA_01",
       "name": "Trisker",
       "temp_name": null,
       "temp_end_event": null,
@@ -22013,6 +22634,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LILA_02",
       "name": "Aurora",
       "temp_name": null,
       "temp_end_event": null,
@@ -22048,6 +22670,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LILA_03",
       "name": "Oren Herald",
       "temp_name": null,
       "temp_end_event": null,
@@ -22083,6 +22706,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LILA_04",
       "name": "Ventiska",
       "temp_name": null,
       "temp_end_event": null,
@@ -22118,6 +22742,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_LILA_05",
       "name": "Nevernoche",
       "temp_name": null,
       "temp_end_event": null,
@@ -22153,6 +22778,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_BOS_01",
       "name": "Onyx Blade",
       "temp_name": null,
       "temp_end_event": null,
@@ -22188,6 +22814,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_BOS_02",
       "name": "Lysil Edge",
       "temp_name": null,
       "temp_end_event": null,
@@ -22223,6 +22850,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_BOS_03",
       "name": "Baron's Light",
       "temp_name": null,
       "temp_end_event": null,
@@ -22258,6 +22886,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_BOS_04",
       "name": "Unfold",
       "temp_name": null,
       "temp_end_event": null,
@@ -22293,6 +22922,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_BOS_05",
       "name": "Lost Alucard",
       "temp_name": null,
       "temp_end_event": null,
@@ -22328,6 +22958,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_FEDERICA_01",
       "name": "Iron Fan",
       "temp_name": null,
       "temp_end_event": null,
@@ -22363,6 +22994,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_FEDERICA_02",
       "name": "Purple Orchid",
       "temp_name": null,
       "temp_end_event": null,
@@ -22398,6 +23030,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_FEDERICA_03",
       "name": "Scarlet Heaven",
       "temp_name": null,
       "temp_end_event": null,
@@ -22433,6 +23066,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_FEDERICA_04",
       "name": "Jing Qing Fan",
       "temp_name": null,
       "temp_end_event": null,
@@ -22468,6 +23102,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_FEDERICA_05",
       "name": "Shrine Maiden's Dance",
       "temp_name": null,
       "temp_end_event": null,
@@ -22503,6 +23138,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_DIAN_01",
       "name": "Wild Axe",
       "temp_name": null,
       "temp_end_event": null,
@@ -22538,6 +23174,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_DIAN_02",
       "name": "Daybreak",
       "temp_name": null,
       "temp_end_event": null,
@@ -22573,6 +23210,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_DIAN_03",
       "name": "Estacado",
       "temp_name": null,
       "temp_end_event": null,
@@ -22608,6 +23246,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_DIAN_04",
       "name": "Elde Divide",
       "temp_name": null,
       "temp_end_event": null,
@@ -22643,6 +23282,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_DIAN_05",
       "name": "Diamantis",
       "temp_name": null,
       "temp_end_event": null,
@@ -22678,6 +23318,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KALA_01",
       "name": "Moon Quake",
       "temp_name": null,
       "temp_end_event": null,
@@ -22713,6 +23354,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KALA_02",
       "name": "Crepusclype",
       "temp_name": null,
       "temp_end_event": null,
@@ -22748,6 +23390,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KALA_03",
       "name": "Gravimarius",
       "temp_name": null,
       "temp_end_event": null,
@@ -22783,6 +23426,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KALA_04",
       "name": "Elder Lily",
       "temp_name": null,
       "temp_end_event": null,
@@ -22818,6 +23462,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_KALA_05",
       "name": "Raventoad",
       "temp_name": null,
       "temp_end_event": null,
@@ -22853,6 +23498,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_001",
       "name": "Mistral Cane",
       "temp_name": null,
       "temp_end_event": null,
@@ -22888,6 +23534,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_002",
       "name": "Etoile Filant",
       "temp_name": null,
       "temp_end_event": null,
@@ -22923,6 +23570,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_003",
       "name": "Hashbringer",
       "temp_name": null,
       "temp_end_event": null,
@@ -22958,6 +23606,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_004",
       "name": "Vita Reaper",
       "temp_name": null,
       "temp_end_event": null,
@@ -22993,6 +23642,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_005",
       "name": "Folklore",
       "temp_name": null,
       "temp_end_event": null,
@@ -23028,6 +23678,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_006",
       "name": "Windword",
       "temp_name": null,
       "temp_end_event": null,
@@ -23063,6 +23714,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_007",
       "name": "Crimson Mist",
       "temp_name": null,
       "temp_end_event": null,
@@ -23098,6 +23750,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_008",
       "name": "Void Punisher",
       "temp_name": null,
       "temp_end_event": null,
@@ -23133,6 +23786,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_009",
       "name": "Self-defense Fans",
       "temp_name": null,
       "temp_end_event": null,
@@ -23168,6 +23822,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_010",
       "name": "Brute Veil",
       "temp_name": null,
       "temp_end_event": null,
@@ -23203,6 +23858,7 @@
       ]
     },
     {
+      "tag": "ITEM_WEAPON_RESERVE_011",
       "name": "Solmarkt",
       "temp_name": null,
       "temp_end_event": null,
@@ -23238,6 +23894,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_001",
       "name": "Noble Tunic",
       "temp_name": null,
       "temp_end_event": null,
@@ -23283,6 +23940,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_002",
       "name": "Leather Protector",
       "temp_name": null,
       "temp_end_event": null,
@@ -23328,6 +23986,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_003",
       "name": "Bone Armor",
       "temp_name": null,
       "temp_end_event": null,
@@ -23373,6 +24032,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_004",
       "name": "Mage's Robe",
       "temp_name": null,
       "temp_end_event": null,
@@ -23418,6 +24078,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_005",
       "name": "Soldier's Cuirass",
       "temp_name": null,
       "temp_end_event": null,
@@ -23463,6 +24124,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_006",
       "name": "Radiant Plate",
       "temp_name": null,
       "temp_end_event": null,
@@ -23508,6 +24170,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_007",
       "name": "Fairy Cloak",
       "temp_name": null,
       "temp_end_event": null,
@@ -23553,6 +24216,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_008",
       "name": "Chainmail Cloak",
       "temp_name": null,
       "temp_end_event": null,
@@ -23598,6 +24262,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_009",
       "name": "Foreign Armor",
       "temp_name": null,
       "temp_end_event": null,
@@ -23643,6 +24308,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_010",
       "name": "Elven Robe",
       "temp_name": null,
       "temp_end_event": null,
@@ -23688,6 +24354,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_011",
       "name": "Moonlight Cloak",
       "temp_name": null,
       "temp_end_event": null,
@@ -23733,6 +24400,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_012",
       "name": "Dragoon Mail",
       "temp_name": null,
       "temp_end_event": null,
@@ -23778,6 +24446,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_013",
       "name": "Kruger Cloak",
       "temp_name": null,
       "temp_end_event": null,
@@ -23823,6 +24492,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_014",
       "name": "Meuchelmolder",
       "temp_name": null,
       "temp_end_event": null,
@@ -23868,6 +24538,7 @@
       ]
     },
     {
+      "tag": "ITEM_ARMOR_015",
       "name": "Armanoir",
       "temp_name": null,
       "temp_end_event": null,
@@ -23913,6 +24584,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -23944,6 +24616,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -23975,6 +24648,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24006,6 +24680,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24037,6 +24712,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24068,6 +24744,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24099,6 +24776,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24130,6 +24808,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24161,6 +24840,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24192,6 +24872,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24223,6 +24904,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_ACCESSORY_001",
       "name": "Uni Charm",
       "temp_name": null,
       "temp_end_event": null,
@@ -24268,6 +24950,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_002",
       "name": "Energy Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -24313,6 +24996,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_003",
       "name": "Gnade Ring",
       "temp_name": null,
       "temp_end_event": null,
@@ -24358,6 +25042,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_004",
       "name": "Phantom Scarf",
       "temp_name": null,
       "temp_end_event": null,
@@ -24403,6 +25088,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_005",
       "name": "Locket of Devotion",
       "temp_name": null,
       "temp_end_event": null,
@@ -24448,6 +25134,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_006",
       "name": "Migratory Charm",
       "temp_name": null,
       "temp_end_event": null,
@@ -24493,6 +25180,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_007",
       "name": "Quartz Necklace",
       "temp_name": null,
       "temp_end_event": null,
@@ -24538,6 +25226,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_008",
       "name": "Warlock Ring",
       "temp_name": null,
       "temp_end_event": null,
@@ -24583,6 +25272,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_009",
       "name": "Warrior Bangle",
       "temp_name": null,
       "temp_end_event": null,
@@ -24628,6 +25318,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_010",
       "name": "Clairvoyance Monocle",
       "temp_name": null,
       "temp_end_event": null,
@@ -24673,6 +25364,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_011",
       "name": "Harnal Ring",
       "temp_name": null,
       "temp_end_event": null,
@@ -24718,6 +25410,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_012",
       "name": "Warrior Choker",
       "temp_name": null,
       "temp_end_event": null,
@@ -24763,6 +25456,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_013",
       "name": "Four Spirits Amulet",
       "temp_name": null,
       "temp_end_event": null,
@@ -24808,6 +25502,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_014",
       "name": "Cluster Cuffs",
       "temp_name": null,
       "temp_end_event": null,
@@ -24853,6 +25548,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_015",
       "name": "Baron's Crown",
       "temp_name": null,
       "temp_end_event": null,
@@ -24898,6 +25594,7 @@
       ]
     },
     {
+      "tag": "ITEM_ACCESSORY_RESERVE_001",
       "name": "Dragon Scale Necklace",
       "temp_name": null,
       "temp_end_event": null,
@@ -24931,6 +25628,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24962,6 +25660,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -24993,6 +25692,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25024,6 +25724,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25055,6 +25756,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25086,6 +25788,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25117,6 +25820,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25148,6 +25852,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25179,6 +25884,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25210,6 +25916,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_KEY_ITEM_001",
       "name": "Broken Hoe",
       "temp_name": null,
       "temp_end_event": null,
@@ -25243,6 +25950,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_002",
       "name": "Light and Sturdy Hoe",
       "temp_name": null,
       "temp_end_event": null,
@@ -25276,6 +25984,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_003",
       "name": "Fairystone Light",
       "temp_name": null,
       "temp_end_event": null,
@@ -25309,6 +26018,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_004",
       "name": "Fairystone Light EX",
       "temp_name": null,
       "temp_end_event": null,
@@ -25342,6 +26052,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_005",
       "name": "Scruffy Drawing",
       "temp_name": null,
       "temp_end_event": null,
@@ -25375,6 +26086,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_006",
       "name": "Flame Hair Clip",
       "temp_name": null,
       "temp_end_event": null,
@@ -25408,6 +26120,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_007",
       "name": "Hammer Brooch",
       "temp_name": null,
       "temp_end_event": null,
@@ -25441,6 +26154,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_008",
       "name": "Duet Stock Solution+",
       "temp_name": null,
       "temp_end_event": null,
@@ -25474,6 +26188,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_009",
       "name": "Duet Solvent Solution EX",
       "temp_name": null,
       "temp_end_event": null,
@@ -25507,6 +26222,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_010",
       "name": "Seeds of Light",
       "temp_name": null,
       "temp_end_event": null,
@@ -25540,6 +26256,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_011",
       "name": "Seeds of Light EX",
       "temp_name": null,
       "temp_end_event": null,
@@ -25573,6 +26290,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_012",
       "name": "Disturbing Bell",
       "temp_name": null,
       "temp_end_event": null,
@@ -25618,6 +26336,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_013",
       "name": "Emil's Tablet",
       "temp_name": null,
       "temp_end_event": null,
@@ -25651,6 +26370,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_014",
       "name": "Emil's Book",
       "temp_name": null,
       "temp_end_event": null,
@@ -25684,6 +26404,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_015",
       "name": "True Silver",
       "temp_name": null,
       "temp_end_event": null,
@@ -25717,6 +26438,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_016",
       "name": "Chart of Another Sky",
       "temp_name": null,
       "temp_end_event": null,
@@ -25750,6 +26472,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_017",
       "name": "Fi's Necklace",
       "temp_name": null,
       "temp_end_event": null,
@@ -25783,6 +26506,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_018",
       "name": "Shiny Necklace",
       "temp_name": null,
       "temp_end_event": null,
@@ -25816,6 +26540,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_019",
       "name": "Dancing Bird Pinwheel",
       "temp_name": null,
       "temp_end_event": null,
@@ -25849,6 +26574,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_020",
       "name": "Silver Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -25882,6 +26608,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_021",
       "name": "Celestial Globe of Another Sky",
       "temp_name": null,
       "temp_end_event": null,
@@ -25915,6 +26642,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_022",
       "name": "High Quality Wood",
       "temp_name": null,
       "temp_end_event": null,
@@ -25948,6 +26676,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_023",
       "name": "Sturdy Wood",
       "temp_name": null,
       "temp_end_event": null,
@@ -25981,6 +26710,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_024",
       "name": "Broken Ancient Artifact",
       "temp_name": null,
       "temp_end_event": null,
@@ -26014,6 +26744,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_025",
       "name": "New Purifier",
       "temp_name": null,
       "temp_end_event": null,
@@ -26047,6 +26778,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_026",
       "name": "Broken Light",
       "temp_name": null,
       "temp_end_event": null,
@@ -26080,6 +26812,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_027",
       "name": "Lamp of the Beginning",
       "temp_name": null,
       "temp_end_event": null,
@@ -26113,6 +26846,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_028",
       "name": "Age of God Manual",
       "temp_name": null,
       "temp_end_event": null,
@@ -26146,6 +26880,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_029",
       "name": "Dragon Bone Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -26179,6 +26914,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_030",
       "name": "Ancient Dragon Gem",
       "temp_name": null,
       "temp_end_event": null,
@@ -26212,6 +26948,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_031",
       "name": "Indestructible Box",
       "temp_name": null,
       "temp_end_event": null,
@@ -26245,6 +26982,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_032",
       "name": "Auxiliary Prosthesis",
       "temp_name": null,
       "temp_end_event": null,
@@ -26278,6 +27016,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_033",
       "name": "Wild Meat on the Bone",
       "temp_name": null,
       "temp_end_event": null,
@@ -26311,6 +27050,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_034",
       "name": "Father's Album",
       "temp_name": null,
       "temp_end_event": null,
@@ -26344,6 +27084,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_035",
       "name": "Desalination Equipment EX",
       "temp_name": null,
       "temp_end_event": null,
@@ -26377,6 +27118,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_RESERVE_001",
       "name": "Federica's Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -26410,6 +27152,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_RESERVE_002",
       "name": "Small Tablet",
       "temp_name": null,
       "temp_end_event": null,
@@ -26443,6 +27186,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_038",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26476,6 +27220,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_039",
       "name": "High Quality Coral Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -26509,6 +27254,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_040",
       "name": "\"Agnes Luce\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26542,6 +27288,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_041",
       "name": "\"Astral Regalia\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26575,6 +27322,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_042",
       "name": "",
       "temp_name": null,
       "temp_end_event": null,
@@ -26606,6 +27354,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_KEY_ITEM_043",
       "name": "\"Ifestio\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26639,6 +27388,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_044",
       "name": "\"Efflorescence\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26672,6 +27422,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_045",
       "name": "\"Genesis Staff\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26705,6 +27456,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_046",
       "name": "\"Nevernoche\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26738,6 +27490,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_047",
       "name": "\"Lost Alucard\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26771,6 +27524,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_048",
       "name": "\"Shrine Maiden's Dance\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26804,6 +27558,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_049",
       "name": "\"Diamantis\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26837,6 +27592,7 @@
       ]
     },
     {
+      "tag": "ITEM_KEY_ITEM_050",
       "name": "\"Raventoad\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -26870,6 +27626,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_DUET",
       "name": "Duet Stock Solution",
       "temp_name": "Iridescent Mucus",
       "temp_end_event": "EVENT_MM02_140",
@@ -26903,6 +27660,7 @@
       ]
     },
     {
+      "tag": "ITEM_MIX_MATERIAL_077",
       "name": "Duet Solvent Solution",
       "temp_name": "Iridescent High-Purity Mucus",
       "temp_end_event": "EVENT_MM02_140",
@@ -26936,6 +27694,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26967,6 +27726,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26998,6 +27758,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27029,6 +27790,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27060,6 +27822,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27091,6 +27854,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27122,6 +27886,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27153,6 +27918,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27184,6 +27950,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27215,6 +27982,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27246,6 +28014,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27277,6 +28046,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27308,6 +28078,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27339,6 +28110,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27370,6 +28142,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27401,6 +28174,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27432,6 +28206,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27463,6 +28238,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27494,6 +28270,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BOOK_001",
       "name": "\"Glassware\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27527,6 +28304,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_002",
       "name": "\"Fairystone Wares\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27560,6 +28338,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_003",
       "name": "\"Iridescent High-Purity Mucus\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27593,6 +28372,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_004",
       "name": "\"Scintilla Glass\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27626,6 +28406,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_005",
       "name": "\"Lujada Crystal\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27659,6 +28440,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_006",
       "name": "\"Fairystone Light\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27692,6 +28474,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_007",
       "name": "\"Pristine Key\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27725,6 +28508,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_008",
       "name": "\"Disturbing Bell\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27758,6 +28542,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_009",
       "name": "\"Seeds of Light EX\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27791,6 +28576,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_010",
       "name": "\"Emil's Tablet\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27824,6 +28610,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_011",
       "name": "\"Duet Solvent Solution EX\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27857,6 +28644,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_012",
       "name": "\"Fairystone Compass\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27890,6 +28678,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_013",
       "name": "\"Hammer Brooch\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27923,6 +28712,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_014",
       "name": "\"Flame Hair Clip\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27956,6 +28746,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_015",
       "name": "\"Shiny Necklace\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -27989,6 +28780,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_016",
       "name": "\"Dancing Bird Pinwheel\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28022,6 +28814,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_017",
       "name": "\"Silver Crystal\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28055,6 +28848,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_018",
       "name": "\"Globe of Another Sky\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28088,6 +28882,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_019",
       "name": "\"Light and Sturdy Hoe\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28121,6 +28916,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28154,6 +28950,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_001",
       "name": "\"Puppet Liquid\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28187,6 +28984,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_002",
       "name": "\"Flint Charcoal\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28220,6 +29018,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_003",
       "name": "\"Solid Ice Fuel\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28253,6 +29052,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_004",
       "name": "\"Four Seasons Dome\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28286,6 +29086,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_005",
       "name": "\"Mage's Robe\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28319,6 +29120,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_006",
       "name": "\"Soldier's Cuirass\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28352,6 +29154,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_007",
       "name": "\"Radiant Plate\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28385,6 +29188,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_008",
       "name": "\"Elven Robe\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28418,6 +29222,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_009",
       "name": "\"Moonlight Cloak\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28451,6 +29256,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_010",
       "name": "\"Dragoon Mail\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28484,6 +29290,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_011",
       "name": "\"Summoner's Bell\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28517,6 +29324,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_012",
       "name": "\"Sturdy Wood\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28550,6 +29358,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_013",
       "name": "\"New Purifier\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28583,6 +29392,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_014",
       "name": "\"Lamp of the Beginning\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28616,6 +29426,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_015",
       "name": "\"Age of God Manual\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28649,6 +29460,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_016",
       "name": "\"Ancient Dragon Gem\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28682,6 +29494,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_017",
       "name": "\"Indestructible Box\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28715,6 +29528,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_018",
       "name": "\"Wild Meat on the Bone\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28748,6 +29562,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_019",
       "name": "\"Desalination Equipment EX\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28781,6 +29596,7 @@
       ]
     },
     {
+      "tag": "ITEM_BOOK_RESERVE_020",
       "name": "\"Grace Nero\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28814,6 +29630,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_001",
       "name": "\"Two-handed Staff\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28847,6 +29664,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_002",
       "name": "\"Bow\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28880,6 +29698,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_003",
       "name": "\"Great Sword\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28913,6 +29732,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_004",
       "name": "\"Double Sword\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28946,6 +29766,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_005",
       "name": "\"Long Sword\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -28979,6 +29800,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_006",
       "name": "\"Single-handed Staff\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29012,6 +29834,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_007",
       "name": "\"Claw\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29045,6 +29868,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_008",
       "name": "\"Single-handed Sword\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29078,6 +29902,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_009",
       "name": "\"Fan\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29111,6 +29936,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_010",
       "name": "\"Axe\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29144,6 +29970,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_001",
       "name": "\"War Hammer\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29177,6 +30004,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_002",
       "name": "\"Legendary Sword\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29210,6 +30038,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_003",
       "name": "\"Plant Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29243,6 +30072,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_004",
       "name": "\"Stone Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29276,6 +30106,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_005",
       "name": "\"Fire Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29309,6 +30140,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_006",
       "name": "\"Water Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29342,6 +30174,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_007",
       "name": "\"Mystic Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29375,6 +30208,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_008",
       "name": "\"Poison Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29408,6 +30242,7 @@
       ]
     },
     {
+      "tag": "ITEM_EVENT_ICON_RESERVE_009",
       "name": "\"Golden Seeds\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -29441,6 +30276,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -29472,6 +30308,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_DISH_ICON_001",
       "name": "Packed Rice",
       "temp_name": null,
       "temp_end_event": null,
@@ -29505,6 +30342,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_002",
       "name": "Roasted Chicken",
       "temp_name": null,
       "temp_end_event": null,
@@ -29538,6 +30376,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_003",
       "name": "Gibier Burger",
       "temp_name": null,
       "temp_end_event": null,
@@ -29571,6 +30410,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_004",
       "name": "Mixed Sandwich",
       "temp_name": null,
       "temp_end_event": null,
@@ -29604,6 +30444,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_005",
       "name": "Smoked Meat",
       "temp_name": null,
       "temp_end_event": null,
@@ -29637,6 +30478,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_006",
       "name": "Dried Meat Pizza",
       "temp_name": null,
       "temp_end_event": null,
@@ -29670,6 +30512,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_007",
       "name": "Fresh Fish Carpaccio",
       "temp_name": null,
       "temp_end_event": null,
@@ -29703,6 +30546,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_008",
       "name": "Summer Veggie Stew",
       "temp_name": null,
       "temp_end_event": null,
@@ -29736,6 +30580,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_009",
       "name": "Forest Green Pasta",
       "temp_name": null,
       "temp_end_event": null,
@@ -29769,6 +30614,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_010",
       "name": "Seafood Paella",
       "temp_name": null,
       "temp_end_event": null,
@@ -29802,6 +30648,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_011",
       "name": "Red Chili Soup",
       "temp_name": null,
       "temp_end_event": null,
@@ -29835,6 +30682,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_012",
       "name": "Steak on Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -29868,6 +30716,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_013",
       "name": "Roasted Monster Fish",
       "temp_name": null,
       "temp_end_event": null,
@@ -29901,6 +30750,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_014",
       "name": "Beef Omelette Rice",
       "temp_name": null,
       "temp_end_event": null,
@@ -29934,6 +30784,7 @@
       ]
     },
     {
+      "tag": "ITEM_DISH_ICON_015",
       "name": "White Sauce Ragu",
       "temp_name": null,
       "temp_end_event": null,
@@ -29967,6 +30818,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -29998,6 +30850,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30029,6 +30882,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30060,6 +30914,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30091,6 +30946,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30122,6 +30978,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30153,6 +31010,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30184,6 +31042,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30215,6 +31074,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30246,6 +31106,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30277,6 +31138,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_001",
       "name": "Observing Hut",
       "temp_name": null,
       "temp_end_event": null,
@@ -30308,6 +31170,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_002",
       "name": "Farm",
       "temp_name": null,
       "temp_end_event": null,
@@ -30339,6 +31202,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_003",
       "name": "Laboratory",
       "temp_name": null,
       "temp_end_event": null,
@@ -30370,6 +31234,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_004",
       "name": "Room Extension 1",
       "temp_name": null,
       "temp_end_event": null,
@@ -30401,6 +31266,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_005",
       "name": "Room Extension 2",
       "temp_name": null,
       "temp_end_event": null,
@@ -30432,6 +31298,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_006",
       "name": "Build Observing Hut",
       "temp_name": null,
       "temp_end_event": null,
@@ -30463,6 +31330,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_007",
       "name": "Build Lookout",
       "temp_name": null,
       "temp_end_event": null,
@@ -30494,6 +31362,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_008",
       "name": "Build Windmill",
       "temp_name": null,
       "temp_end_event": null,
@@ -30525,6 +31394,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_009",
       "name": "Build Greenhouse",
       "temp_name": null,
       "temp_end_event": null,
@@ -30556,6 +31426,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_010",
       "name": "Build Celestial Globe",
       "temp_name": null,
       "temp_end_event": null,
@@ -30587,6 +31458,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_011",
       "name": "Build Laboratory",
       "temp_name": null,
       "temp_end_event": null,
@@ -30618,6 +31490,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_012",
       "name": "Rebuild (Observing Hut)",
       "temp_name": null,
       "temp_end_event": null,
@@ -30649,6 +31522,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_013",
       "name": "Rebuild (Farm)",
       "temp_name": null,
       "temp_end_event": null,
@@ -30680,6 +31554,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_014",
       "name": "Rebuild (Laboratory)",
       "temp_name": null,
       "temp_end_event": null,
@@ -30711,6 +31586,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_BUILDING_015",
       "name": "",
       "temp_name": null,
       "temp_end_event": null,
@@ -30742,6 +31618,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30773,6 +31650,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30804,6 +31682,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30835,6 +31714,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30866,6 +31746,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30897,6 +31778,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30928,6 +31810,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30959,6 +31842,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -30990,6 +31874,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31021,6 +31906,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31052,6 +31938,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_001",
       "name": "Chick Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -31086,6 +31973,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_002",
       "name": "Crystal Object",
       "temp_name": null,
       "temp_end_event": null,
@@ -31120,6 +32008,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_003",
       "name": "Fairy Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -31154,6 +32043,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_004",
       "name": "Puni Jelly",
       "temp_name": null,
       "temp_end_event": null,
@@ -31188,6 +32078,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_005",
       "name": "Puni Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -31222,6 +32113,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_006",
       "name": "Exhibition Stand",
       "temp_name": null,
       "temp_end_event": null,
@@ -31256,6 +32148,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_007",
       "name": "Hanging Lantern",
       "temp_name": null,
       "temp_end_event": null,
@@ -31290,6 +32183,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_008",
       "name": "Round Table",
       "temp_name": null,
       "temp_end_event": null,
@@ -31324,6 +32218,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_009",
       "name": "Leather Sofa",
       "temp_name": null,
       "temp_end_event": null,
@@ -31358,6 +32253,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_010",
       "name": "Chic Sofa",
       "temp_name": null,
       "temp_end_event": null,
@@ -31392,6 +32288,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_011",
       "name": "Elegant Low Table",
       "temp_name": null,
       "temp_end_event": null,
@@ -31426,6 +32323,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_012",
       "name": "Pendulum Clock",
       "temp_name": null,
       "temp_end_event": null,
@@ -31460,6 +32358,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_013",
       "name": "Piano",
       "temp_name": null,
       "temp_end_event": null,
@@ -31494,6 +32393,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_014",
       "name": "Cute Bed",
       "temp_name": null,
       "temp_end_event": null,
@@ -31528,6 +32428,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_015",
       "name": "Extravagant Bed",
       "temp_name": null,
       "temp_end_event": null,
@@ -31562,6 +32463,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_016",
       "name": "Barrel",
       "temp_name": null,
       "temp_end_event": null,
@@ -31596,6 +32498,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_017",
       "name": "Fashionable Bench",
       "temp_name": null,
       "temp_end_event": null,
@@ -31630,6 +32533,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_018",
       "name": "Garden Table",
       "temp_name": null,
       "temp_end_event": null,
@@ -31664,6 +32568,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_019",
       "name": "Potted Plant",
       "temp_name": null,
       "temp_end_event": null,
@@ -31698,6 +32603,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_020",
       "name": "Oren Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -31732,6 +32638,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_021",
       "name": "Dinner Bell",
       "temp_name": null,
       "temp_end_event": null,
@@ -31766,6 +32673,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_022",
       "name": "Decorative Sword",
       "temp_name": null,
       "temp_end_event": null,
@@ -31800,6 +32708,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_023",
       "name": "Resort Bed",
       "temp_name": null,
       "temp_end_event": null,
@@ -31834,6 +32743,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_024",
       "name": "Resort Sofa",
       "temp_name": null,
       "temp_end_event": null,
@@ -31868,6 +32778,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_025",
       "name": "Table with Tablecloth",
       "temp_name": null,
       "temp_end_event": null,
@@ -31902,6 +32813,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_026",
       "name": "Potted Palm",
       "temp_name": null,
       "temp_end_event": null,
@@ -31936,6 +32848,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_027",
       "name": "Music Stand",
       "temp_name": null,
       "temp_end_event": null,
@@ -31970,6 +32883,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_028",
       "name": "Giant Manuscript",
       "temp_name": null,
       "temp_end_event": null,
@@ -32004,6 +32918,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_029",
       "name": "Pixie Pot",
       "temp_name": null,
       "temp_end_event": null,
@@ -32038,6 +32953,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_030",
       "name": "Great Elemental's Chair",
       "temp_name": null,
       "temp_end_event": null,
@@ -32072,6 +32988,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_031",
       "name": "Celestial Body Model",
       "temp_name": null,
       "temp_end_event": null,
@@ -32106,6 +33023,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_032",
       "name": "Farm Photo",
       "temp_name": null,
       "temp_end_event": null,
@@ -32140,6 +33058,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_033",
       "name": "Countryside Photo",
       "temp_name": null,
       "temp_end_event": null,
@@ -32174,6 +33093,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_034",
       "name": "Rocking Chair",
       "temp_name": null,
       "temp_end_event": null,
@@ -32208,6 +33128,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_035",
       "name": "Cute Sofa",
       "temp_name": null,
       "temp_end_event": null,
@@ -32242,6 +33163,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_036",
       "name": "Blackboard",
       "temp_name": null,
       "temp_end_event": null,
@@ -32276,6 +33198,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_037",
       "name": "Blacksmith Statue",
       "temp_name": null,
       "temp_end_event": null,
@@ -32310,6 +33233,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_038",
       "name": "Goat",
       "temp_name": null,
       "temp_end_event": null,
@@ -32344,6 +33268,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_039",
       "name": "Crisp Bun",
       "temp_name": null,
       "temp_end_event": null,
@@ -32378,6 +33303,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_040",
       "name": "Pumpkin Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -32412,6 +33338,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_041",
       "name": "Globe",
       "temp_name": null,
       "temp_end_event": null,
@@ -32446,6 +33373,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_042",
       "name": "Transport Cannon",
       "temp_name": null,
       "temp_end_event": null,
@@ -32480,6 +33408,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_043",
       "name": "Ashra Donut",
       "temp_name": null,
       "temp_end_event": null,
@@ -32514,6 +33443,7 @@
       ]
     },
     {
+      "tag": "ITEM_MAT_RESERVE_005",
       "name": "Giant Luceaux Seed",
       "temp_name": null,
       "temp_end_event": null,
@@ -32548,6 +33478,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_045",
       "name": "Mountain of Sweets",
       "temp_name": null,
       "temp_end_event": null,
@@ -32582,6 +33513,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_046",
       "name": "Exotic Horn",
       "temp_name": null,
       "temp_end_event": null,
@@ -32616,6 +33548,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_047",
       "name": "Apple Basket",
       "temp_name": null,
       "temp_end_event": null,
@@ -32650,6 +33583,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_048",
       "name": "Knight's Armor",
       "temp_name": null,
       "temp_end_event": null,
@@ -32684,6 +33618,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_049",
       "name": "Teddy Bear",
       "temp_name": null,
       "temp_end_event": null,
@@ -32718,6 +33653,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_050",
       "name": "Beautiful Picture Frame",
       "temp_name": null,
       "temp_end_event": null,
@@ -32752,6 +33688,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_051",
       "name": "Mysterious Broom",
       "temp_name": null,
       "temp_end_event": null,
@@ -32786,6 +33723,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_052",
       "name": "Phonograph",
       "temp_name": null,
       "temp_end_event": null,
@@ -32820,6 +33758,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_053",
       "name": "Weasel Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -32854,6 +33793,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_054",
       "name": "Shiny Bust",
       "temp_name": null,
       "temp_end_event": null,
@@ -32888,6 +33828,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_055",
       "name": "Sparkling Bust",
       "temp_name": null,
       "temp_end_event": null,
@@ -32922,6 +33863,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_056",
       "name": "Photo of the Capital",
       "temp_name": null,
       "temp_end_event": null,
@@ -32956,6 +33898,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_057",
       "name": "Fi Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -32990,6 +33933,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_058",
       "name": "Candy House",
       "temp_name": null,
       "temp_end_event": null,
@@ -33024,6 +33968,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_059",
       "name": "Mini Cork Board",
       "temp_name": null,
       "temp_end_event": null,
@@ -33058,6 +34003,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_060",
       "name": "Books And Bookends",
       "temp_name": null,
       "temp_end_event": null,
@@ -33092,6 +34038,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_061",
       "name": "Tea Set",
       "temp_name": null,
       "temp_end_event": null,
@@ -33126,6 +34073,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_062",
       "name": "Synthesis Eqp Set",
       "temp_name": null,
       "temp_end_event": null,
@@ -33160,6 +34108,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_063",
       "name": "Basket of Uni",
       "temp_name": null,
       "temp_end_event": null,
@@ -33194,6 +34143,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_064",
       "name": "Mushroom Shaped Lamp",
       "temp_name": null,
       "temp_end_event": null,
@@ -33228,6 +34178,7 @@
       ]
     },
     {
+      "tag": "ITEM_FURNITURE_ARTICLE_065",
       "name": "Small Devil Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -33262,6 +34213,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33293,6 +34245,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33324,6 +34277,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33355,6 +34309,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33386,6 +34341,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33417,6 +34373,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33448,6 +34405,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33479,6 +34437,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33510,6 +34469,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33541,6 +34501,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33572,6 +34533,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33603,6 +34565,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33634,6 +34597,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33665,6 +34629,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33696,6 +34661,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33727,6 +34693,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33758,6 +34725,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33789,6 +34757,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33820,6 +34789,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33851,6 +34821,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -33882,6 +34853,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_DLC2_MIX_DOWN_WIND",
       "name": "Downwind",
       "temp_name": null,
       "temp_end_event": null,
@@ -33929,6 +34901,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_RAINBOW_LAPIS",
       "name": "Rainbow Lapis",
       "temp_name": null,
       "temp_end_event": null,
@@ -33976,6 +34949,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_CERBERUS_SPIRIT",
       "name": "Cerberus Spirit",
       "temp_name": null,
       "temp_end_event": null,
@@ -34023,6 +34997,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_DRACONIC_ARROW",
       "name": "Draconic Arrow",
       "temp_name": null,
       "temp_end_event": null,
@@ -34070,6 +35045,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_MALEFICUS",
       "name": "Maleficus",
       "temp_name": null,
       "temp_end_event": null,
@@ -34117,6 +35093,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_CALAMITY_CODE",
       "name": "Calamity Code",
       "temp_name": null,
       "temp_end_event": null,
@@ -34164,6 +35141,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_SUGER_DRIP",
       "name": "Sugar Drip",
       "temp_name": null,
       "temp_end_event": null,
@@ -34211,6 +35189,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_FUHENNOYAKUSEN",
       "name": "Eternal Spring",
       "temp_name": null,
       "temp_end_event": null,
@@ -34258,6 +35237,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_SUONARE",
       "name": "Suonare",
       "temp_name": null,
       "temp_end_event": null,
@@ -34305,6 +35285,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_BOLT_LIBERATE",
       "name": "Voltage Liberator",
       "temp_name": null,
       "temp_end_event": null,
@@ -34352,6 +35333,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_KAZEYOMINOCHOUZOU",
       "name": "Windsong Fowl",
       "temp_name": null,
       "temp_end_event": null,
@@ -34399,6 +35381,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_CHINSEINOYOBISUZU",
       "name": "Bell of Tranquility",
       "temp_name": null,
       "temp_end_event": null,
@@ -34446,6 +35429,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_LOVELY_BLOSSOM",
       "name": "Lovely Blossom",
       "temp_name": null,
       "temp_end_event": null,
@@ -34493,6 +35477,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_NEUTRONENSTERN",
       "name": "Neutronenstern",
       "temp_name": null,
       "temp_end_event": null,
@@ -34540,6 +35525,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_SHIKOKUNOOOTUBO",
       "name": "Violet Cauldron",
       "temp_name": null,
       "temp_end_event": null,
@@ -34587,6 +35573,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_SEALBRANCH",
       "name": "Seal Branch",
       "temp_name": null,
       "temp_end_event": null,
@@ -34624,6 +35611,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_KORYUNOKAGIDUME",
       "name": "Old Dragon's Claw",
       "temp_name": null,
       "temp_end_event": null,
@@ -34660,6 +35648,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_SUIKANSEKI",
       "name": "Water Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -34696,6 +35685,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_SILENCESTEEL",
       "name": "Silence Steel",
       "temp_name": null,
       "temp_end_event": null,
@@ -34732,6 +35722,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_SHINRYOKUNOGEKKA",
       "name": "Verdant Moonflower",
       "temp_name": null,
       "temp_end_event": null,
@@ -34768,6 +35759,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34799,6 +35791,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34830,6 +35823,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34861,6 +35855,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34892,6 +35887,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34923,6 +35919,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34954,6 +35951,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -34985,6 +35983,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35016,6 +36015,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35047,6 +36047,7 @@
       "cat": []
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35078,6 +36079,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_DLC2_MAT_AMAMISUI",
       "name": "Heavenly Seawater",
       "temp_name": null,
       "temp_end_event": null,
@@ -35113,6 +36115,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_RIKKAUO",
       "name": "Clearfish",
       "temp_name": null,
       "temp_end_event": null,
@@ -35148,6 +36151,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_HOURINOMI",
       "name": "Pine Fruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -35183,6 +36187,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_MEROKOTON",
       "name": "Melocotone",
       "temp_name": null,
       "temp_end_event": null,
@@ -35218,6 +36223,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_HOSHISHIJIMI",
       "name": "Star Clam",
       "temp_name": null,
       "temp_end_event": null,
@@ -35253,6 +36259,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_GEMEAT",
       "name": "Gemeater",
       "temp_name": null,
       "temp_end_event": null,
@@ -35289,6 +36296,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_TURUGITAKE",
       "name": "Tsurugi Mushroom",
       "temp_name": null,
       "temp_end_event": null,
@@ -35324,6 +36332,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_FUJYOUKASEKI",
       "name": "Floating Petal Stone",
       "temp_name": null,
       "temp_end_event": null,
@@ -35359,6 +36368,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_BERUDEUMU",
       "name": "Verdeum Metal",
       "temp_name": null,
       "temp_end_event": null,
@@ -35394,6 +36404,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_KAZENORINOHANA",
       "name": "Wool Flower",
       "temp_name": null,
       "temp_end_event": null,
@@ -35430,6 +36441,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_RARUKO",
       "name": "Cleaner Plant",
       "temp_name": null,
       "temp_end_event": null,
@@ -35465,6 +36477,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_YAKUJYUEKI",
       "name": "Medicinal Sap",
       "temp_name": null,
       "temp_end_event": null,
@@ -35500,6 +36513,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_FUKYUNOSOMAGI",
       "name": "Immortal Sapling",
       "temp_name": null,
       "temp_end_event": null,
@@ -35535,6 +36549,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_MEGUMINOWATAGUMO",
       "name": "Blessed Clouds",
       "temp_name": null,
       "temp_end_event": null,
@@ -35570,6 +36585,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_KIBORI",
       "name": "Carved Relic",
       "temp_name": null,
       "temp_end_event": null,
@@ -35606,6 +36622,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_SHINIGAMINOOOGAMA",
       "name": "Reaper's Scythe",
       "temp_name": null,
       "temp_end_event": null,
@@ -35642,6 +36659,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_AMATUYUNOITO",
       "name": "Heavenly Rain Thread",
       "temp_name": null,
       "temp_end_event": null,
@@ -35677,6 +36695,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_FUANTEINAKATAMARI",
       "name": "Unstable Lump",
       "temp_name": null,
       "temp_end_event": null,
@@ -35712,6 +36731,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_IGNISNUTS",
       "name": "Ignis Nut",
       "temp_name": null,
       "temp_end_event": null,
@@ -35748,6 +36768,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MAT_OLD_SCROLL",
       "name": "Ancient Scroll",
       "temp_name": null,
       "temp_end_event": null,
@@ -35783,6 +36804,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_EDELHEIT",
       "name": "Edelhard",
       "temp_name": null,
       "temp_end_event": null,
@@ -35819,6 +36841,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_MEDICINE",
       "name": "Medica Solution",
       "temp_name": null,
       "temp_end_event": null,
@@ -35854,6 +36877,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_TOXIC",
       "name": "Toxited",
       "temp_name": null,
       "temp_end_event": null,
@@ -35889,6 +36913,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_JELLYSAND",
       "name": "Jelly Sandwich",
       "temp_name": null,
       "temp_end_event": null,
@@ -35926,6 +36951,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_CRIMSON",
       "name": "Crimson Birth",
       "temp_name": null,
       "temp_end_event": null,
@@ -35962,6 +36988,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_RIOTCALL",
       "name": "Riot Coal",
       "temp_name": null,
       "temp_end_event": null,
@@ -35998,6 +37025,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_KONGOUSEN",
       "name": "Vajra Wire",
       "temp_name": null,
       "temp_end_event": null,
@@ -36034,6 +37062,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_RYUMIELLPOPURI",
       "name": "Lumiere Potpourri",
       "temp_name": null,
       "temp_end_event": null,
@@ -36071,6 +37100,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_IDEALUNIT",
       "name": "Ideal Unit",
       "temp_name": null,
       "temp_end_event": null,
@@ -36107,6 +37137,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC2_MIX_DRAGONTEARS",
       "name": "Dragon's Tears",
       "temp_name": null,
       "temp_end_event": null,
@@ -36144,6 +37175,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_ARMOR_ANTIQUE",
       "name": "Antique Style",
       "temp_name": null,
       "temp_end_event": null,
@@ -36191,6 +37223,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_ARMOR_HUHTER",
       "name": "Hunter's Wear",
       "temp_name": null,
       "temp_end_event": null,
@@ -36238,6 +37271,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_ARMOR_GOLDARMOR",
       "name": "Luminous Gold Armor",
       "temp_name": null,
       "temp_end_event": null,
@@ -36285,6 +37319,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_GLOVE",
       "name": "Immortal Gloves",
       "temp_name": null,
       "temp_end_event": null,
@@ -36332,6 +37367,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_CORSAGE",
       "name": "Fleur Corsage",
       "temp_name": null,
       "temp_end_event": null,
@@ -36379,6 +37415,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_LAMP",
       "name": "Lamp of Force",
       "temp_name": null,
       "temp_end_event": null,
@@ -36414,6 +37451,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_AURORA",
       "name": "Aurora Jewel",
       "temp_name": null,
       "temp_end_event": null,
@@ -36449,6 +37487,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_GLUCK",
       "name": "Glück Potion",
       "temp_name": null,
       "temp_end_event": null,
@@ -36485,6 +37524,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_SENKONOTOMOSHIBI",
       "name": "Torch of the Ages",
       "temp_name": null,
       "temp_end_event": null,
@@ -36520,6 +37560,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_OUKENOBOUSHI",
       "name": "Royal Spun Thread",
       "temp_name": null,
       "temp_end_event": null,
@@ -36555,6 +37596,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_KUONNOSHIROSUNA",
       "name": "White Sand of Eternity",
       "temp_name": null,
       "temp_end_event": null,
@@ -36590,6 +37632,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_TABISURUKOREKUSA",
       "name": "Traveling Grass",
       "temp_name": null,
       "temp_end_event": null,
@@ -36625,6 +37668,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_SHIROSUNAKINNZOKU",
       "name": "White Sand Metal",
       "temp_name": null,
       "temp_end_event": null,
@@ -36660,6 +37704,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_AMETORAITO",
       "name": "Ametrite",
       "temp_name": null,
       "temp_end_event": null,
@@ -36695,6 +37740,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_IKISARETATOUKI",
       "name": "Forgotten Pottery",
       "temp_name": null,
       "temp_end_event": null,
@@ -36730,6 +37776,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_SABAKUNOSOUJIYA",
       "name": "Desert Cleaner",
       "temp_name": null,
       "temp_end_event": null,
@@ -36766,6 +37813,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_TRYFRUITS",
       "name": "Trifruit",
       "temp_name": null,
       "temp_end_event": null,
@@ -36801,6 +37849,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_SABOTAN",
       "name": "Cactus Blossom",
       "temp_name": null,
       "temp_end_event": null,
@@ -36836,6 +37885,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_MOTALANIMA",
       "name": "Mortal Anima",
       "temp_name": null,
       "temp_end_event": null,
@@ -36871,6 +37921,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_THIBUROBONE",
       "name": "Shark Bone",
       "temp_name": null,
       "temp_end_event": null,
@@ -36906,6 +37957,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_CHINMINANIKU",
       "name": "Exotic Meat",
       "temp_name": null,
       "temp_end_event": null,
@@ -36941,6 +37993,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_BUNKENNOUTUSHI",
       "name": "Kala's Translated Texts (Copy)",
       "temp_name": null,
       "temp_end_event": null,
@@ -36976,6 +38029,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MAT_PUNI_OUGON",
       "name": "Golden Puniball",
       "temp_name": null,
       "temp_end_event": null,
@@ -37012,6 +38066,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_NEUTRALIZER_R",
       "name": "Crimson Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -37047,6 +38102,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_NEUTRALIZER_B",
       "name": "Azure Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -37082,6 +38138,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_NEUTRALIZER_G",
       "name": "Emerald Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -37117,6 +38174,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_NEUTRALIZER_Y",
       "name": "Thunder Neutralizer",
       "temp_name": null,
       "temp_end_event": null,
@@ -37152,6 +38210,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_INGOT",
       "name": "Hard Ingot",
       "temp_name": null,
       "temp_end_event": null,
@@ -37187,6 +38246,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_CLOTH",
       "name": "Soft Cloth",
       "temp_name": null,
       "temp_end_event": null,
@@ -37222,6 +38282,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_ALCHEMYFIBER",
       "name": "Strong Alchemy Fibers",
       "temp_name": null,
       "temp_end_event": null,
@@ -37257,6 +38318,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_MIXOIL",
       "name": "Flame Mixing Oil",
       "temp_name": null,
       "temp_end_event": null,
@@ -37292,6 +38354,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_MEDUCPOWDER",
       "name": "Superior Medica Powder",
       "temp_name": null,
       "temp_end_event": null,
@@ -37327,6 +38390,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_MIX_POISONLIQUID",
       "name": "Strong Poisonous Liquid",
       "temp_name": null,
       "temp_end_event": null,
@@ -37362,6 +38426,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_RESERVE_011",
       "name": "\"White Tower Key\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -37397,6 +38462,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_RESERVE_012",
       "name": "Sandstorm Crystal",
       "temp_name": null,
       "temp_end_event": null,
@@ -37432,6 +38498,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_HAKUROU",
       "name": "White Tower Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37467,6 +38534,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_CHIKESSYOU",
       "name": "Bloodstone Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37514,6 +38582,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_DATEN",
       "name": "Fallen Angel Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37561,6 +38630,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_MUSOU",
       "name": "Dream Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37608,6 +38678,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_NISSYKU",
       "name": "Eclipse Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37655,6 +38726,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_MUSAISYOKU",
       "name": "Colorless Crystal Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37702,6 +38774,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_SHINNYOKU",
       "name": "Divine Wing Ruler Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37749,6 +38822,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_KOKU",
       "name": "Master of the Void Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37796,6 +38870,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC4_KEY_SEIMEI",
       "name": "Cradle of Life Key",
       "temp_name": null,
       "temp_end_event": null,
@@ -37843,6 +38918,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -37874,6 +38950,7 @@
       "cat": []
     },
     {
+      "tag": "ITEM_DLC5_MIX_HAKUGETU",
       "name": "White Moon's Soul",
       "temp_name": null,
       "temp_end_event": null,
@@ -37909,6 +38986,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_UNIVERSE",
       "name": "Universe Sphere",
       "temp_name": null,
       "temp_end_event": null,
@@ -37944,6 +39022,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_FAITYBAUM",
       "name": "Fairywood",
       "temp_name": null,
       "temp_end_event": null,
@@ -37979,6 +39058,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_RITENBORUKE",
       "name": "Mini Volcano",
       "temp_name": null,
       "temp_end_event": null,
@@ -38014,6 +39094,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_NANAIROBIORA",
       "name": "Seven-Color Pansy",
       "temp_name": null,
       "temp_end_event": null,
@@ -38049,6 +39130,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_YOUSEINONAEGI",
       "name": "Fairy Sapling",
       "temp_name": null,
       "temp_end_event": null,
@@ -38084,6 +39166,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_LAVAROKU",
       "name": "Lava Rock",
       "temp_name": null,
       "temp_end_event": null,
@@ -38119,6 +39202,7 @@
       ]
     },
     {
+      "tag": "ITEM_DLC5_MIX_MOONFRAGMENT",
       "name": "Moon Fragment",
       "temp_name": null,
       "temp_end_event": null,
@@ -38154,6 +39238,7 @@
       ]
     },
     {
+      "tag": null,
       "name": "\"White Moon's Soul\" Recipe",
       "temp_name": null,
       "temp_end_event": null,
@@ -38189,6 +39274,7 @@
       ]
     },
     {
+      "tag": null,
       "name": null,
       "temp_name": null,
       "temp_end_event": null,

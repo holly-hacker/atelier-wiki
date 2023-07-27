@@ -1,5 +1,7 @@
 mod item_data;
+mod library_item;
 
+use anyhow::Context;
 use serde::Serialize;
 use tracing::debug;
 use typescript_type_def::TypeDef;
@@ -11,6 +13,9 @@ use super::strings::StringsData;
 // TODO: separate struct for read data?
 #[derive(Serialize, TypeDef)]
 pub struct Item {
+    /// The item tag. This is the closest we get to a string id but it does not exist for all items.
+    pub tag: Option<String>,
+
     pub name: Option<String>,
     pub temp_name: Option<String>,
     pub temp_end_event: Option<String>,
@@ -55,44 +60,61 @@ pub struct Item {
 impl Item {
     pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Self>> {
         debug!("Reading item data");
-        let item_data = item_data::ItemData::read(pak_index)?;
+        let item_data = item_data::ItemData::read(pak_index).context("read item data")?;
+
+        debug!("Reading library items");
+        let library_items =
+            library_item::LibraryItem::read(pak_index).context("read library items")?;
 
         let items = item_data
             .into_iter()
-            .map(|d| Self {
-                name: d.name_id.and_then(|id| strings.id_lookup.get(&id).cloned()),
-                temp_name: d
-                    .temp_name_id
-                    .and_then(|id| strings.id_lookup.get(&id).cloned()),
-                temp_end_event: d.temp_end_event,
-                sort: d.sort,
-                img_no: d.img_no,
-                price: d.price,
-                lv: d.lv,
-                element: d.element,
-                element_value: d.element_value,
-                elem_fire: d.elem_fire,
-                elem_ice: d.elem_ice,
-                elem_thunder: d.elem_thunder,
-                elem_air: d.elem_air,
-                pc: d.pc,
-                hp: d.hp,
-                atk: d.atk,
-                def: d.def,
-                spd: d.spd,
-                w_hp: d.w_hp,
-                w_mp: d.w_mp,
-                w_atk: d.w_atk,
-                w_def: d.w_def,
-                w_spd: d.w_spd,
-                dlc: d.dlc,
-                use_tag: d.use_tag,
-                kind_tag: d.kind_tag,
-                bme: d.bme,
-                bmee: d.bmee,
-                cat: d.cat,
+            .map(|d| {
+                let item_index = d
+                    .name_id
+                    .as_ref()
+                    .map(|id| id["STR_ITEM_NAME_".len()..].parse::<usize>())
+                    .transpose()
+                    .context("extract item id from item name id")?;
+                Ok(Self {
+                    tag: item_index
+                        .and_then(|i| library_items.get(i))
+                        .map(|x| x.item_tag.clone()),
+
+                    name: d.name_id.and_then(|id| strings.id_lookup.get(&id).cloned()),
+                    temp_name: d
+                        .temp_name_id
+                        .and_then(|id| strings.id_lookup.get(&id).cloned()),
+                    temp_end_event: d.temp_end_event,
+                    sort: d.sort,
+                    img_no: d.img_no,
+                    price: d.price,
+                    lv: d.lv,
+                    element: d.element,
+                    element_value: d.element_value,
+                    elem_fire: d.elem_fire,
+                    elem_ice: d.elem_ice,
+                    elem_thunder: d.elem_thunder,
+                    elem_air: d.elem_air,
+                    pc: d.pc,
+                    hp: d.hp,
+                    atk: d.atk,
+                    def: d.def,
+                    spd: d.spd,
+                    w_hp: d.w_hp,
+                    w_mp: d.w_mp,
+                    w_atk: d.w_atk,
+                    w_def: d.w_def,
+                    w_spd: d.w_spd,
+                    dlc: d.dlc,
+                    use_tag: d.use_tag,
+                    kind_tag: d.kind_tag,
+                    bme: d.bme,
+                    bmee: d.bmee,
+                    cat: d.cat,
+                })
             })
-            .collect();
+            .collect::<anyhow::Result<Vec<Self>>>()
+            .context("create items")?;
 
         Ok(items)
     }
