@@ -36,6 +36,7 @@
         "id": "z3Y25cNV",
         "title": "Add basic monster info",
         "time_created": "2023-07-24 21:56:31.0633516 +02:00:00",
+        "time_completed": "2023-07-28 00:02:58.7441788 +02:00:00",
         "tags": [
           "data-prepper",
           "frontend"
@@ -78,6 +79,14 @@
         "time_created": "2023-07-24 22:09:32.4872024 +02:00:00",
         "tags": [
           "research",
+          "frontend"
+        ]
+      },
+      {
+        "id": "6CmLALjr",
+        "title": "List drop locations on item detail page",
+        "time_created": "2023-07-28 00:07:05.2565451 +02:00:00",
+        "tags": [
           "frontend"
         ]
       }
