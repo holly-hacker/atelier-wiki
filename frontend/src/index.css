@@ -8,3 +8,8 @@ pre,
 code {
   font-family: "JetBrains Mono", monospace;
 }
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
