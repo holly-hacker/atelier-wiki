@@ -7,13 +7,19 @@ import { EnemyLink } from "../utility_components/links";
 export default function ItemDetail() {
   const { id } = useParams();
 
-  const idNum = Number(id);
-
-  if (idNum == null || idNum == undefined) {
-    return <>Item not found</>;
+  let item;
+  if (id && !isNaN(Number(id))) {
+    // id is a number
+    item = ryza3.item_data[Number(id)];
+  } else if (id) {
+    // try to find by item tag
+    let tag = `ITEM_${id}`;
+    item = ryza3.item_data.find((v) => v.tag == tag);
   }
 
-  const item = ryza3.item_data[idNum];
+  if (!item) {
+    return <>Item not found</>;
+  }
 
   const drops = getDrops(item);
 

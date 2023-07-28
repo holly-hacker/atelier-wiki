@@ -20,6 +20,7 @@ export default function ItemList() {
             <th>Atk</th>
             <th>Def</th>
             <th>Spd</th>
+            <th>Tag</th>
             <th>use_tag</th>
             <th>kind_tag</th>
             <th>DLC</th>
@@ -36,6 +37,9 @@ export default function ItemList() {
                 <td>{item.atk}</td>
                 <td>{item.def}</td>
                 <td>{item.spd}</td>
+                <td>
+                  <code>{item.tag}</code>
+                </td>
                 <td>
                   <code>{item.use_tag}</code>
                 </td>

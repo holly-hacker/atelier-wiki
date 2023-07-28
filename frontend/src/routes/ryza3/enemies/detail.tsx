@@ -5,13 +5,19 @@ import { enemyDisplayName } from "../ryza3_data_util";
 export default function EnemyDetail() {
   const { id } = useParams();
 
-  const id_num = Number(id);
-
-  if (id_num == null || id_num == undefined) {
-    return <>Enemy not found</>;
+  let enemy;
+  if (id && !isNaN(Number(id))) {
+    // id is a number
+    enemy = ryza3.enemy_data[Number(id)];
+  } else if (id) {
+    // try to find by monster tag
+    let tag = `MONSTER_${id}`;
+    enemy = ryza3.enemy_data.find((v) => v.monster_tag == tag);
   }
 
-  const enemy = ryza3.enemy_data[id_num];
+  if (!enemy) {
+    return <>Enemy not found</>;
+  }
 
   return (
     <>
