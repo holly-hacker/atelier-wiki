@@ -70,7 +70,7 @@ export default function EnemyDetail() {
                       Resistances:{" "}
                       {status.bad_resist.map((r) => `${r}%`).join(", ")}
                     </li>
-                    <li>Resistance "non": {status.resist_non}</li>
+                    <li>Resistance &quot;non&quot;: {status.resist_non}</li>
                     <li>
                       Attributes:
                       <ul>
