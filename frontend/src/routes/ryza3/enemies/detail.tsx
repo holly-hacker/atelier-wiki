@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
-import { enemyDisplayName } from "../ryza3_data_util";
+import { enemyDisplayName, findItemByTag } from "../ryza3_data_util";
+import { ItemLink } from "../utility_components/links";
 
 export default function EnemyDetail() {
   const { id } = useParams();
@@ -90,38 +91,45 @@ export default function EnemyDetail() {
                     <li>
                       Drops:
                       <ul>
-                        {status.drops.map((drop, i) => (
-                          <li key={i}>
-                            {/* TODO: link to item */}
-                            {drop.rate}% {drop.num}x{" "}
-                            <code>{drop.item_tag}</code>
-                            <ul>
-                              <li>
-                                Quality: {drop.quality_min} (x
-                                {drop.quality_min_adj}) - {drop.quality_max} (x
-                                {drop.quality_max_adj})
-                              </li>
-                              <li>
-                                Trait: {drop.potential_min} (x
-                                {drop.potential_min_adj}) - {drop.potential_max}{" "}
-                                (x
-                                {drop.potential_max_adj})
-                              </li>
-                              <li>
-                                Trait num: {drop.potential_num_min} (+
-                                {drop.potential_num_min_adj}?) -{" "}
-                                {drop.potential_num_max} (+
-                                {drop.potential_num_max_adj}?)
-                              </li>
-                              <li>
-                                Trait level: {drop.potential_lv_min} (+
-                                {drop.potential_lv_min_adj}?) -{" "}
-                                {drop.potential_lv_max} (+
-                                {drop.potential_lv_max_adj}?)
-                              </li>
-                            </ul>
-                          </li>
-                        ))}
+                        {status.drops.map((drop, i) => {
+                          let item = findItemByTag(drop.item_tag);
+                          return (
+                            <li key={i}>
+                              {drop.rate}% {drop.num}x{" "}
+                              {item ? (
+                                <ItemLink item={item} />
+                              ) : (
+                                <code>{drop.item_tag}</code>
+                              )}
+                              <ul>
+                                <li>
+                                  Quality: {drop.quality_min} (x
+                                  {drop.quality_min_adj}) - {drop.quality_max}{" "}
+                                  (x
+                                  {drop.quality_max_adj})
+                                </li>
+                                <li>
+                                  Trait: {drop.potential_min} (x
+                                  {drop.potential_min_adj}) -{" "}
+                                  {drop.potential_max} (x
+                                  {drop.potential_max_adj})
+                                </li>
+                                <li>
+                                  Trait num: {drop.potential_num_min} (+
+                                  {drop.potential_num_min_adj}?) -{" "}
+                                  {drop.potential_num_max} (+
+                                  {drop.potential_num_max_adj}?)
+                                </li>
+                                <li>
+                                  Trait level: {drop.potential_lv_min} (+
+                                  {drop.potential_lv_min_adj}?) -{" "}
+                                  {drop.potential_lv_max} (+
+                                  {drop.potential_lv_max_adj}?)
+                                </li>
+                              </ul>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </li>
                   </ul>
