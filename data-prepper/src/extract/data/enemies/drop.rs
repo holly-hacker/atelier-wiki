@@ -31,7 +31,7 @@ pub struct DropData {
 
     pub super_pot_rate: Vec<u32>,
     pub factor: Vec<String>,
-    pub eff: Vec<String>,
+    pub eff: Vec<Option<String>>,
 
     // this vec seems to be unrelated to the list of drops
     pub sp_item_tag: Vec<String>,
@@ -79,7 +79,7 @@ impl DropData {
 
             let super_pot_rate = reader.read_list("super_pot_rate_*")?;
             let factor = reader.read_list("factor_*")?;
-            let eff = reader.read_list("eff_*")?;
+            let eff = reader.read_sparse_list("eff_*")?;
 
             let sp_item_tag = reader.read_list("sp_item_tag_*")?;
 

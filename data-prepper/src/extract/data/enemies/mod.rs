@@ -167,7 +167,7 @@ pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<V
                             potential_lv_max_adj: drops[i].potential_lv_max_adj[j],
                             super_pot_rate: drops[i].super_pot_rate[j],
                             factor: drops[i].factor[j].clone(),
-                            eff: drops[i].eff.get(j).cloned(),
+                            eff: drops[i].eff.get(j).cloned().flatten(),
                         })
                         .collect(),
                 })

@@ -24,10 +24,10 @@ where
     Ok(result)
 }
 
-pub struct ElementReader<'x, 'a, 'b>(pub &'x roxmltree::Node<'a, 'b>);
+pub struct ElementReader<'x, 'attr, 'xml_str>(pub &'x roxmltree::Node<'attr, 'xml_str>);
 
 // TODO: consider a mode where the read properties are tracked, allowing to check for missing properties
-impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
+impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
     pub fn read<T>(&self, name: &str) -> anyhow::Result<T>
     where
         T: FromStr,
@@ -51,45 +51,168 @@ impl<'x, 'a, 'b> ElementReader<'x, 'a, 'b> {
             .transpose()
     }
 
-    pub fn read_list<T>(&self, name_pattern: &'static str) -> anyhow::Result<Vec<T>>
+    /// Read a continuous list of values.
+    ///
+    /// This function returns an error if the list is not continuous, ie. if there are holes in the list, or if there
+    /// are duplicated values.
+    pub fn read_list<T>(&self, name_pattern: &str) -> anyhow::Result<Vec<T>>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
     {
-        // TODO: ensure order is correct
-        self.0
+        // extract all attributes that match the pattern
+        let mut values_with_indices = self
+            .0
             .attributes()
             .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
-            .filter_map(|(idx, value)| {
-                idx.parse::<usize>()
-                    .map(|idx_parsed| (idx_parsed, value))
-                    .ok()
-            })
-            .map(|(idx, value)| {
+            .collect::<Vec<_>>();
+
+        values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
+
+        // we have a vec<(index, value)> tuples, now extract it to vec<value> and ensure the indices are correct
+        let parsed_list = values_with_indices
+            .into_iter()
+            .enumerate()
+            .map(|(i_real, (i_attr, value))| {
+                if i_real != i_attr {
+                    anyhow::bail!("index mismatch: expected {i_real}, got {i_attr} for pattern {name_pattern}")
+                }
+
                 value.parse().with_context(|| {
-                    format!("parse value `{value}` for '{name_pattern}' index {idx}")
+                    format!("parse value `{value}` for '{name_pattern}' index {i_real}")
                 })
             })
-            .collect::<anyhow::Result<Vec<_>>>()
+            .collect::<anyhow::Result<Vec<_>>>()?;
+
+        Ok(parsed_list)
     }
 
-    fn match_pattern<'h>(needle: &'static str, haystack: &'h str) -> Option<&'h str> {
+    /// Read a sparse list, ie. a list that may contain hole.
+    ///
+    /// This function returns an error if there are duplicated values.
+    pub fn read_sparse_list<T>(&self, name_pattern: &'static str) -> anyhow::Result<Vec<Option<T>>>
+    where
+        T: FromStr,
+        <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
+        // T: 'xml_str,
+    {
+        // extract all attributes that match the pattern
+        let mut values_with_indices = self
+            .0
+            .attributes()
+            .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .collect::<Vec<_>>();
+
+        values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
+
+        let len = values_with_indices.iter().map(|(i, _)| i).max();
+
+        let Some(&len) = len else {
+            return Ok(Vec::new());
+        };
+
+        // we have a vec<(index, value)> tuples, now extract it to vec<option<value>> for each index until the max
+        let parsed_list = (0..=len)
+            .map(|i| {
+                let mut opt_iter = values_with_indices
+                    .iter()
+                    .filter(move |(i_attr, _)| *i_attr == i);
+
+                // NOTE: I initially implemented this using itertool's at_most_one, but this gave very weird lifetime
+                // errors.
+                let one = opt_iter.next();
+                let two = opt_iter.next();
+
+                if two.is_some() {
+                    anyhow::bail!("duplicate index {i} for pattern {name_pattern}");
+                }
+
+                one.map(|(i, value)| {
+                    value.parse().with_context(|| {
+                        format!("parse value `{value}` for '{name_pattern}' index {i}")
+                    })
+                })
+                .transpose()
+            })
+            .collect::<anyhow::Result<Vec<Option<_>>>>()?;
+
+        Ok(parsed_list)
+    }
+
+    /// Read a sparse list, ie. a list that may contain hole, and flatten it. This essentially "hides" the holes in the
+    /// function.
+    ///
+    /// This function returns an error if there are duplicated values.
+    ///
+    /// This function is an optimized specialization of
+    /// `reader.read_sparse_list(my_pattern)?.into_iter().flatten().collect();`.
+    pub fn read_flattened_sparse_list<T>(
+        &self,
+        name_pattern: &'static str,
+    ) -> anyhow::Result<Vec<T>>
+    where
+        T: FromStr,
+        <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
+    {
+        // extract all attributes that match the pattern
+        let mut values_with_indices = self
+            .0
+            .attributes()
+            .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .collect::<Vec<_>>();
+
+        values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
+
+        let len = values_with_indices.iter().map(|(i, _)| i).max();
+
+        let Some(&len) = len else {
+            return Ok(Vec::new());
+        };
+
+        // we have a vec<(index, value)> tuples, now extract it to vec<option<value>> for each index until the max
+        let parsed_list = (0..=len)
+            .filter_map(|i| {
+                let mut opt_iter = values_with_indices
+                    .iter()
+                    .filter(move |(i_attr, _)| *i_attr == i);
+
+                // NOTE: I initially implemented this using itertool's at_most_one, but this gave very weird lifetime
+                // errors.
+                let one = opt_iter.next();
+                let two = opt_iter.next();
+
+                if two.is_some() {
+                    return Some(Err(anyhow::anyhow!(
+                        "duplicate index {i} for pattern {name_pattern}"
+                    )));
+                }
+
+                one.map(|(i, value)| {
+                    value.parse().with_context(|| {
+                        format!("parse value `{value}` for '{name_pattern}' index {i}")
+                    })
+                })
+            })
+            .collect::<anyhow::Result<Vec<_>>>()?;
+
+        Ok(parsed_list)
+    }
+
+    fn match_pattern(needle: &str, haystack: &str) -> Option<usize> {
         let Some(index) = needle.find('*') else {
-            return if needle == haystack {
-                Some(haystack)
-            } else {
-                None
-            }
+            panic!("pattern `{needle}` does not contain a `*`, which is required");
         };
 
         let left = &needle[..index];
         let right = &needle[index + 1..];
 
-        if haystack.starts_with(left) && haystack.ends_with(right) {
-            Some(&haystack[left.len()..haystack.len() - right.len()])
-        } else {
-            None
+        if !(haystack.starts_with(left) && haystack.ends_with(right)) {
+            return None;
         }
+
+        let matched = &haystack[left.len()..haystack.len() - right.len()];
+
+        matched.parse().ok()
     }
 
     pub fn is_present(&self, name: &str) -> bool {
