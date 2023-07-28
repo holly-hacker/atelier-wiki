@@ -9,7 +9,7 @@ export type Item={
 /**
  * The item tag. This is the closest we get to a string id but it does not exist for all items.
  */
-"tag":(string|null);"name":(string|null);"temp_name":(string|null);"temp_end_event":(string|null);"sort":types.I32;"img_no":types.I32;"price":types.U32;"lv":types.U32;"element":(types.U32|null);"element_value":(types.U32|null);"elem_fire":boolean;"elem_ice":boolean;"elem_thunder":boolean;"elem_air":boolean;"pc":(types.I32)[];"hp":(types.I32|null);"atk":(types.I32|null);"def":(types.I32|null);"spd":(types.I32|null);"w_hp":(types.F32|null);"w_mp":(types.F32|null);"w_atk":(types.F32|null);"w_def":(types.F32|null);"w_spd":(types.F32|null);
+"tag":(string|null);"library_note":(string|null);"name":(string|null);"temp_name":(string|null);"temp_end_event":(string|null);"sort":types.I32;"img_no":types.I32;"price":types.U32;"lv":types.U32;"element":(types.U32|null);"element_value":(types.U32|null);"elem_fire":boolean;"elem_ice":boolean;"elem_thunder":boolean;"elem_air":boolean;"pc":(types.I32)[];"hp":(types.I32|null);"atk":(types.I32|null);"def":(types.I32|null);"spd":(types.I32|null);"w_hp":(types.F32|null);"w_mp":(types.F32|null);"w_atk":(types.F32|null);"w_def":(types.F32|null);"w_spd":(types.F32|null);
 /**
  * The DLC required for this item. In practice, this is always a single item.
  */
@@ -20,6 +20,6 @@ export type EnemyStatus={"exp":types.U32;"money":types.U32;"exp_rosca":types.U32
  * `sp_item_tag` from drop data
  */
 "sp_item_tag":string;"drops":(types.EnemyDrop)[];};
-export type Enemy={"name":string;"is_big":boolean;"img_no":string;"wait_action":boolean;"library_rank":(types.U32)[];"dlc":(string)[];"shoot_up":boolean;"monster_tag":string;"chara_tag":string;"race_tag":string;"size":string;"division":string;"statusses":(types.EnemyStatus)[];};
+export type Enemy={"name":string;"library_note":(string|null);"is_big":boolean;"img_no":string;"wait_action":boolean;"library_rank":(types.U32)[];"dlc":(string)[];"shoot_up":boolean;"monster_tag":string;"chara_tag":string;"race_tag":string;"size":string;"division":string;"statusses":(types.EnemyStatus)[];};
 export type Ryza3Data={"item_data":(types.Item)[];"enemy_data":(types.Enemy)[];};
 }

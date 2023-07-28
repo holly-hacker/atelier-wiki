@@ -3,17 +3,17 @@ use crate::extract::{
     pak_index::PakIndex,
 };
 
-pub struct LibraryItem {
-    pub item_tag: String,
+pub struct LibraryMonster {
+    pub monster_tag: String,
     pub note_id: Vec<String>,
     // TODO: this should be Vec<Option<i32>>
     pub ep: Vec<Option<i32>>,
     pub permit: bool,
 }
 
-impl LibraryItem {
+impl LibraryMonster {
     pub fn read(pak_index: &mut PakIndex) -> anyhow::Result<Vec<Self>> {
-        util::read_xml(pak_index, r"\saves\library\libraryitem.xml", |d| {
+        util::read_xml(pak_index, r"\saves\library\librarymonster.xml", |d| {
             Self::read_from_doc(d)
         })
     }
@@ -24,13 +24,13 @@ impl LibraryItem {
         let elements = document
             .root_element()
             .descendants()
-            .filter(|n| n.tag_name().name() == "LibraryItem");
+            .filter(|n| n.tag_name().name() == "LibraryMonster");
 
         for element in elements {
             let reader = ElementReader(&element);
 
             let item = Self {
-                item_tag: reader.read("itemTag")?,
+                monster_tag: reader.read("monsterTag")?,
                 note_id: reader.read_list("note_id_*")?,
                 ep: reader.read_sparse_list("ep*")?,
                 permit: reader.is_present("permit"),

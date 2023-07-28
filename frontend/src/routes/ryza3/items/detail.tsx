@@ -26,6 +26,7 @@ export default function ItemDetail() {
   return (
     <>
       <h1>{itemDisplayName(item)}</h1>
+      {item.library_note && <p>{item.library_note}</p>}
       <ul>
         {item.tag && (
           <li>

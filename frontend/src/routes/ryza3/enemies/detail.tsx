@@ -23,6 +23,7 @@ export default function EnemyDetail() {
   return (
     <>
       <h1>{enemyDisplayName(enemy)}</h1>
+      {enemy.library_note && <p>{enemy.library_note}</p>}
       <ul>
         <li>Is big: {enemy.is_big}</li>
         <li>

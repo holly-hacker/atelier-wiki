@@ -16,6 +16,8 @@ pub struct Item {
     /// The item tag. This is the closest we get to a string id but it does not exist for all items.
     pub tag: Option<String>,
 
+    pub library_note: Option<String>,
+
     pub name: Option<String>,
     pub temp_name: Option<String>,
     pub temp_end_event: Option<String>,
@@ -78,7 +80,14 @@ impl Item {
                 Ok(Self {
                     tag: item_index
                         .and_then(|i| library_items.get(i))
-                        .map(|x| x.item_tag.clone()),
+                        .map(|l| l.item_tag.clone()),
+                    library_note: item_index.and_then(|i| library_items.get(i)).map(|l| {
+                        l.note_id
+                            .iter()
+                            .filter_map(|id| strings.id_lookup.get(id).cloned())
+                            .collect::<Vec<_>>()
+                            .join("\n")
+                    }),
 
                     name: d.name_id.and_then(|id| strings.id_lookup.get(&id).cloned()),
                     temp_name: d
