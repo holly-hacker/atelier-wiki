@@ -92,7 +92,7 @@ export default function ItemDetail() {
 }
 
 function get_drops(
-  item: types.Item
+  item: types.Item,
 ): { drop: types.EnemyDrop; status: types.EnemyStatus; enemy: types.Enemy }[] {
   if (!item.tag) return [];
 
