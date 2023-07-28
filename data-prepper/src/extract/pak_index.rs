@@ -1,7 +1,13 @@
-use std::{collections::HashMap, fs::File, io::Read, path::Path};
+use std::{
+    collections::HashMap,
+    fs::File,
+    io::Read,
+    path::{Path, PathBuf},
+};
 
 use anyhow::Context;
 use gust_pak::{common::GameVersion, GustPak, PakEntry};
+use rayon::prelude::*;
 use tracing::{debug, trace};
 
 pub struct PakIndex {
@@ -11,50 +17,62 @@ pub struct PakIndex {
     files: Vec<FileInfo>,
 }
 
+#[derive(Debug)]
 struct FileInfo {
+    /// The original filesystem path to the file
+    path: PathBuf,
+    /// A handle to the open file
     file: File,
+    /// The index in the file where the data starts
     data_start: u64,
 }
 
 impl PakIndex {
     pub fn read(pak_dir: &Path, game_version: GameVersion) -> anyhow::Result<Self> {
-        let mut map = HashMap::new();
-        let mut files = vec![];
-
-        // TODO: ensure order is correct!
         let data_dir = pak_dir.read_dir().context("read data dir")?;
 
         // only select the pak files
-        let pak_files = data_dir.filter(|entry| {
-            let entry = entry.as_ref().unwrap();
-            entry.file_type().unwrap().is_file() && entry.path().extension() == Some("PAK".as_ref())
-        });
+        let pak_files = data_dir
+            .map(|d| d.unwrap())
+            .filter(|entry| {
+                entry.file_type().unwrap().is_file()
+                    && entry.path().extension() == Some("PAK".as_ref())
+            })
+            .collect::<Vec<_>>();
+
+        let mut map = HashMap::new();
+        let mut files = vec![];
+        let mut duplicate_count = 0;
+
+        debug!("Reading pak files");
+        let mut indices = pak_files
+            .par_iter()
+            .map(|pak_file| {
+                let pak_file_path = pak_file.path();
+                debug!(?pak_file_path, "Reading pak file");
+                let mut file = File::open(&pak_file_path).context("open pak file")?;
+
+                let index =
+                    GustPak::read_index(&mut file, game_version).context("read pak file index")?;
+
+                Ok((index, file, pak_file_path))
+            })
+            .collect::<anyhow::Result<Vec<_>>>()
+            .context("read indices")?;
 
         // NOTE: the actual insertion must be in file order, because some files will overwrite others
         // this is important if we paralellize this in the future
-        let mut duplicate_count = 0;
-        for entry in pak_files {
-            // todo: read index
-            let entry = entry.context("enumerate pak file")?;
-            let pak_file_path = entry.path();
-            debug!(?pak_file_path, "Reading pak file");
-            let mut file = File::open(&pak_file_path).context("open pak file")?;
+        debug!("Sorting pak files");
+        indices.sort_by(|(_, _, a), (_, _, b)| a.cmp(b));
 
-            let index =
-                GustPak::read_index(&mut file, game_version).context("read pak file index")?;
-
-            let file_info = FileInfo {
-                file,
-                data_start: index.get_data_start(),
-            };
-            let file_index = files.len();
-
+        debug!("Reading pak entries into list");
+        for (i, (index, file, pak_file_path)) in indices.into_iter().enumerate() {
             for pak_entry in index.entries.iter() {
                 let owned_entry = pak_entry.into_owned();
                 let file_name = owned_entry.as_ref().get_file_name().to_string();
                 trace!(?pak_file_path, file_name, "Found pak entry");
 
-                let old_value = map.insert(file_name, (file_index, owned_entry));
+                let old_value = map.insert(file_name, (i, owned_entry));
                 if let Some((old_file_index, old_pak_entry)) = old_value.as_ref() {
                     duplicate_count += 1;
 
@@ -69,9 +87,16 @@ impl PakIndex {
                 }
             }
 
-            files.push(file_info);
+            files.push(FileInfo {
+                path: pak_file_path,
+                file,
+                data_start: index.get_data_start(),
+            });
         }
         debug!("Overwrote existing entries {duplicate_count} times");
+
+        // assert files are still sorted
+        debug_assert!(files.windows(2).all(|w| w[0].path <= w[1].path));
 
         Ok(Self {
             map,
