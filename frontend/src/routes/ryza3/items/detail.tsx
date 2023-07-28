@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
 import { itemDisplayName } from "../ryza3_data_util";
 import types from "@/atelier-data-types";
+import { EnemyLink } from "../utility_components/links";
 
 export default function ItemDetail() {
   const { id } = useParams();
@@ -70,10 +71,9 @@ export default function ItemDetail() {
             {drops.map(({ drop, status, enemy }, i) => {
               return (
                 <li key={i}>
-                  {/* TODO: Fix up this link */}
-                  <Link to={`/ryza3/enemy/${enemy.monster_tag}`}>
+                  <EnemyLink enemy={enemy}>
                     {enemy.name} (lv {status.lv})
-                  </Link>
+                  </EnemyLink>
                   : Drop rate: {drop.num}x {drop.rate}%
                 </li>
               );

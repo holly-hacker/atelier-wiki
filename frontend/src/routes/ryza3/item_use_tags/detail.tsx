@@ -1,6 +1,6 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
-import { itemDisplayName } from "../ryza3_data_util";
+import { ItemLink } from "../utility_components/links";
 
 export default function ItemUseTagDetail() {
   const { tag } = useParams();
@@ -25,7 +25,7 @@ export default function ItemUseTagDetail() {
         {item.map(({ item, idx }) => {
           return (
             <li key={idx}>
-              <Link to={`/ryza3/items/${idx}`}>{itemDisplayName(item)}</Link>
+              <ItemLink item={item} />
             </li>
           );
         })}
