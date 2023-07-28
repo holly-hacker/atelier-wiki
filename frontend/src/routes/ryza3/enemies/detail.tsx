@@ -81,11 +81,14 @@ export default function EnemyDetail() {
                     <li>
                       Attributes:
                       <ul>
-                        {status.att.map((att, i) => (
-                          <li key={i}>
-                            <code>{att}</code>
-                          </li>
-                        ))}
+                        {status.att.map(
+                          (att, i) =>
+                            att !== "ATT_NONE" && (
+                              <li key={i}>
+                                <code>{att}</code>
+                              </li>
+                            ),
+                        )}
                       </ul>
                     </li>
                     <li>

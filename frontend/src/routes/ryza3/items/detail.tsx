@@ -27,6 +27,11 @@ export default function ItemDetail() {
     <>
       <h1>{itemDisplayName(item)}</h1>
       <ul>
+        {item.tag && (
+          <li>
+            Item tag: <code>{item.tag}</code>
+          </li>
+        )}
         <li>Price: {item.price}</li>
         <li>Level: {item.lv}</li>
         <li>
@@ -34,9 +39,6 @@ export default function ItemDetail() {
           {item.elem_ice && "❄️ "}
           {item.elem_thunder && "⚡ "}
           {item.elem_air && "🍃 "}
-        </li>
-        <li>
-          Item tag: <code>{item.tag}</code>
         </li>
         <li>
           Use tag:{" "}
@@ -91,7 +93,7 @@ export default function ItemDetail() {
           </details>
         </>
       ) : (
-        <p>Does not drop from monsters</p>
+        <p>This item does not drop from monsters</p>
       )}
     </>
   );
