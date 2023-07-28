@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemKindsList() {
   const kinds = ryza3.item_data.map((item) => item.kind_tag);
-  const unique_kinds = [...new Set(kinds)];
+  const uniqueKinds = [...new Set(kinds)];
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function ItemKindsList() {
           <th>Item kind</th>
           <th>Count</th>
         </tr>
-        {unique_kinds.map((kind, i) => {
+        {uniqueKinds.map((kind, i) => {
           return (
             <tr key={i}>
               <td>

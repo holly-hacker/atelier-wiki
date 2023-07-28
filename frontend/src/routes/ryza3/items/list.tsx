@@ -1,9 +1,9 @@
 import { ryza3 } from "@/data.ts";
 import { Link } from "react-router-dom";
-import { item_display_name } from "../ryza3_data_util";
+import { itemDisplayName } from "../ryza3_data_util";
 
 export default function ItemList() {
-  const item_data = ryza3.item_data;
+  const itemData = ryza3.item_data;
 
   return (
     <>
@@ -11,7 +11,7 @@ export default function ItemList() {
       <div>
         List of all items should come here.
         <br />
-        {item_data.length} items found.
+        {itemData.length} items found.
         <table>
           <tr>
             <th>Name</th>
@@ -25,13 +25,11 @@ export default function ItemList() {
             <th>kind_tag</th>
             <th>DLC</th>
           </tr>
-          {item_data.map((item, i) => {
+          {itemData.map((item, i) => {
             return (
               <tr key={i}>
                 <td>
-                  <Link to={`/ryza3/items/${i}`}>
-                    {item_display_name(item)}
-                  </Link>
+                  <Link to={`/ryza3/items/${i}`}>{itemDisplayName(item)}</Link>
                 </td>
                 <td>{item.price}</td>
                 <td>{item.lv}</td>

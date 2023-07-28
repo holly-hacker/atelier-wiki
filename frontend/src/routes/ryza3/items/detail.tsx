@@ -1,24 +1,24 @@
 import { Link, useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
-import { item_display_name } from "../ryza3_data_util";
+import { itemDisplayName } from "../ryza3_data_util";
 import types from "@/atelier-data-types";
 
 export default function ItemDetail() {
   const { id } = useParams();
 
-  const id_num = Number(id);
+  const idNum = Number(id);
 
-  if (id_num == null || id_num == undefined) {
+  if (idNum == null || idNum == undefined) {
     return <>Item not found</>;
   }
 
-  const item = ryza3.item_data[id_num];
+  const item = ryza3.item_data[idNum];
 
-  const drops = get_drops(item);
+  const drops = getDrops(item);
 
   return (
     <>
-      <h1>{item_display_name(item)}</h1>
+      <h1>{itemDisplayName(item)}</h1>
       <ul>
         <li>Price: {item.price}</li>
         <li>Level: {item.lv}</li>
@@ -91,7 +91,7 @@ export default function ItemDetail() {
   );
 }
 
-function get_drops(
+function getDrops(
   item: types.Item,
 ): { drop: types.EnemyDrop; status: types.EnemyStatus; enemy: types.Enemy }[] {
   if (!item.tag) return [];

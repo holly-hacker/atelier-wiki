@@ -1,6 +1,6 @@
 import { ryza3 } from "@/data.ts";
 import { Link } from "react-router-dom";
-import { enemy_display_name } from "../ryza3_data_util";
+import { enemyDisplayName } from "../ryza3_data_util";
 
 export default function EnemyList() {
   const enemy_data = ryza3.enemy_data;
@@ -24,7 +24,7 @@ export default function EnemyList() {
               <tr key={i}>
                 <td>
                   <Link to={`/ryza3/enemy/${i}`}>
-                    {enemy_display_name(enemy)}
+                    {enemyDisplayName(enemy)}
                   </Link>
                 </td>
                 <td>

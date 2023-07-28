@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
-import { enemy_display_name } from "../ryza3_data_util";
+import { enemyDisplayName } from "../ryza3_data_util";
 
 export default function EnemyDetail() {
   const { id } = useParams();
@@ -15,7 +15,7 @@ export default function EnemyDetail() {
 
   return (
     <>
-      <h1>{enemy_display_name(enemy)}</h1>
+      <h1>{enemyDisplayName(enemy)}</h1>
       <ul>
         <li>Is big: {enemy.is_big}</li>
         <li>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemCategoriesList() {
   const categories = ryza3.item_data.flatMap((item) => item.cat);
-  const unique_categories = [...new Set(categories)];
+  const uniqueCategories = [...new Set(categories)];
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function ItemCategoriesList() {
           <th>Category</th>
           <th>Count</th>
         </tr>
-        {unique_categories.map((category, i) => {
+        {uniqueCategories.map((category, i) => {
           return (
             <tr key={i}>
               <td>

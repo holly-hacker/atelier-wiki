@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemUseTagsList() {
   const tags = ryza3.item_data.map((item) => item.use_tag);
-  const unique_tags = [...new Set(tags)];
+  const uniqueTags = [...new Set(tags)];
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function ItemUseTagsList() {
           <th>Item kind</th>
           <th>Count</th>
         </tr>
-        {unique_tags.map((kind, i) => {
+        {uniqueTags.map((kind, i) => {
           return (
             <tr key={i}>
               <td>
