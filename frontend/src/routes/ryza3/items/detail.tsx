@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { ryza3 } from "@/data.ts";
 import { item_display_name } from "../ryza3_data_util";
+import types from "@/atelier-data-types";
 
 export default function ItemDetail() {
   const { id } = useParams();
@@ -12,6 +13,8 @@ export default function ItemDetail() {
   }
 
   const item = ryza3.item_data[id_num];
+
+  const drops = get_drops(item);
 
   return (
     <>
@@ -59,6 +62,51 @@ export default function ItemDetail() {
         <summary>Json data</summary>
         <pre>{JSON.stringify(item, null, 4)}</pre>
       </details>
+
+      <h2>Monster drops</h2>
+      {drops.length > 0 ? (
+        <>
+          <ul>
+            {drops.map(({ drop, status, enemy }, i) => {
+              return (
+                <li key={i}>
+                  {/* TODO: Fix up this link */}
+                  <Link to={`/ryza3/enemy/${enemy.monster_tag}`}>
+                    {enemy.name} (lv {status.lv})
+                  </Link>
+                  : Drop rate: {drop.num}x {drop.rate}%
+                </li>
+              );
+            })}
+          </ul>
+          <details>
+            <summary>Json data</summary>
+            <pre>{JSON.stringify(drops, null, 4)}</pre>
+          </details>
+        </>
+      ) : (
+        <p>Does not drop from monsters</p>
+      )}
     </>
   );
+}
+
+function get_drops(
+  item: types.Item
+): { drop: types.EnemyDrop; status: types.EnemyStatus; enemy: types.Enemy }[] {
+  if (!item.tag) return [];
+
+  const drops = [];
+
+  for (const enemy of ryza3.enemy_data) {
+    for (const status of enemy.statusses) {
+      for (const drop of status.drops) {
+        if (drop.item_tag == item.tag) {
+          drops.push({ drop, status, enemy });
+        }
+      }
+    }
+  }
+
+  return drops;
 }
