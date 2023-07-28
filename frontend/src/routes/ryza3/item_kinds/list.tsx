@@ -9,20 +9,24 @@ export default function ItemKindsList() {
     <>
       <h1>Item kinds</h1>A list of all item kinds.
       <table>
-        <tr>
-          <th>Item kind</th>
-          <th>Count</th>
-        </tr>
-        {uniqueKinds.map((kind, i) => {
-          return (
-            <tr key={i}>
-              <td>
-                <Link to={`/ryza3/item_kinds/${kind}`}>{kind}</Link>
-              </td>
-              <td>{kinds.filter((c) => c === kind).length}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>Item kind</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {uniqueKinds.map((kind, i) => {
+            return (
+              <tr key={i}>
+                <td>
+                  <Link to={`/ryza3/item_kinds/${kind}`}>{kind}</Link>
+                </td>
+                <td>{kinds.filter((c) => c === kind).length}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );

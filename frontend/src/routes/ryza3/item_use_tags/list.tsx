@@ -9,20 +9,24 @@ export default function ItemUseTagsList() {
     <>
       <h1>Item tags</h1>A list of all item tags.
       <table>
-        <tr>
-          <th>Item kind</th>
-          <th>Count</th>
-        </tr>
-        {uniqueTags.map((kind, i) => {
-          return (
-            <tr key={i}>
-              <td>
-                <Link to={`/ryza3/item_use_tags/${kind}`}>{kind}</Link>
-              </td>
-              <td>{tags.filter((c) => c === kind).length}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>Item kind</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {uniqueTags.map((kind, i) => {
+            return (
+              <tr key={i}>
+                <td>
+                  <Link to={`/ryza3/item_use_tags/${kind}`}>{kind}</Link>
+                </td>
+                <td>{tags.filter((c) => c === kind).length}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );

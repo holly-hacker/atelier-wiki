@@ -9,22 +9,26 @@ export default function ItemCategoriesList() {
     <>
       <h1>Item categories</h1>A list of all item categories.
       <table>
-        <tr>
-          <th>Category</th>
-          <th>Count</th>
-        </tr>
-        {uniqueCategories.map((category, i) => {
-          return (
-            <tr key={i}>
-              <td>
-                <Link to={`/ryza3/item_categories/${category}`}>
-                  {category}
-                </Link>
-              </td>
-              <td>{categories.filter((c) => c === category).length}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {uniqueCategories.map((category, i) => {
+            return (
+              <tr key={i}>
+                <td>
+                  <Link to={`/ryza3/item_categories/${category}`}>
+                    {category}
+                  </Link>
+                </td>
+                <td>{categories.filter((c) => c === category).length}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
