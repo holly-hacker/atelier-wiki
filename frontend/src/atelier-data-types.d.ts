@@ -20,6 +20,6 @@ export type EnemyStatus={"exp":types.U32;"money":types.U32;"exp_rosca":types.U32
  * `sp_item_tag` from drop data
  */
 "sp_item_tag":string;"drops":(types.EnemyDrop)[];};
-export type Enemy={"name":string;"library_note":(string|null);"is_big":boolean;"img_no":string;"wait_action":boolean;"library_rank":(types.U32)[];"dlc":(string)[];"shoot_up":boolean;"monster_tag":string;"chara_tag":string;"race_tag":string;"size":string;"division":string;"statusses":(types.EnemyStatus)[];};
+export type Enemy={"name":string;"library_note":(string|null);"is_big":boolean;"img_no":string;"wait_action":boolean;"library_rank_health":types.U32;"library_rank_attack":types.U32;"library_rank_speed":types.U32;"library_rank_defense":types.U32;"dlc":(string)[];"shoot_up":boolean;"monster_tag":string;"chara_tag":string;"race_tag":string;"size":string;"division":string;"statusses":(types.EnemyStatus)[];};
 export type Ryza3Data={"item_data":(types.Item)[];"enemy_data":(types.Enemy)[];};
 }

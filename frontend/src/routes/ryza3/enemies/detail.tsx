@@ -24,6 +24,26 @@ export default function EnemyDetail() {
     <>
       <h1>{enemyDisplayName(enemy)}</h1>
       {enemy.library_note && <p>{enemy.library_note}</p>}
+      <table>
+        <tbody>
+          <tr>
+            <th>Health</th>
+            <td>{"⭐".repeat(enemy.library_rank_health)}</td>
+          </tr>
+          <tr>
+            <th>Attack</th>
+            <td>{"⭐".repeat(enemy.library_rank_attack)}</td>
+          </tr>
+          <tr>
+            <th>Speed</th>
+            <td>{"⭐".repeat(enemy.library_rank_speed)}</td>
+          </tr>
+          <tr>
+            <th>Defense</th>
+            <td>{"⭐".repeat(enemy.library_rank_defense)}</td>
+          </tr>
+        </tbody>
+      </table>
       <ul>
         <li>Is big: {enemy.is_big}</li>
         <li>
