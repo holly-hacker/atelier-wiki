@@ -1,0 +1,4 @@
+src/data/*.json
+src/atelier-data-types.d.ts
+
+.prettierrc.json
