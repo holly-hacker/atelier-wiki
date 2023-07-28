@@ -10131,8 +10131,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10166,8 +10166,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10201,8 +10201,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10236,8 +10236,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10271,8 +10271,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_011",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10306,8 +10306,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_012",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10341,8 +10341,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_013",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10376,8 +10376,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_014",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10411,8 +10411,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_015",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10446,8 +10446,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_016",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10481,8 +10481,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MAT_RESERVE_017",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -10936,8 +10936,8 @@
       ]
     },
     {
-      "tag": "ITEM_MAT_DROPITEM_ETHER",
-      "library_note": "A stone golem's power core. It's unimaginably more powerful than golem cores.",
+      "tag": "ITEM_MAT_RESERVE_030",
+      "library_note": "",
       "name": "Ether Core",
       "temp_name": null,
       "temp_end_event": null,
@@ -11185,8 +11185,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_MATERIAL_RESERVE_006",
-      "library_note": "Pendant created for a competition. It was made to the standards of the Fairystone Guild.",
+      "tag": "ITEM_MAT_QUEST_007",
+      "library_note": "",
       "name": "Fairystone Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -11255,8 +11255,8 @@
       ]
     },
     {
-      "tag": "ITEM_ACCESSORY_002",
-      "library_note": "As an ornament, it's just a typical pendant. One feels less fatigue just by wearing it for some reason.",
+      "tag": "ITEM_MAT_QUEST_009",
+      "library_note": "",
       "name": "Energy Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -11290,8 +11290,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_003",
-      "library_note": "Dolls of fairies. Because all are handmade, each face is slightly different.",
+      "tag": "ITEM_MAT_QUEST_010",
+      "library_note": "",
       "name": "Fairy Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -11325,8 +11325,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_005",
-      "library_note": "A doll made to look exactly like a real Puni. It's said that not even the person who made it can distinguish it from the real thing.",
+      "tag": "ITEM_MAT_QUEST_011",
+      "library_note": "",
       "name": "Puni Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -11360,8 +11360,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_032",
-      "library_note": "A picture of a rural scenery. Because it's a simple rural landscape, it's not among the most popular.",
+      "tag": "ITEM_MAT_QUEST_012",
+      "library_note": "",
       "name": "Farm Photo",
       "temp_name": null,
       "temp_end_event": null,
@@ -11430,8 +11430,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_033",
-      "library_note": "A picture of scenes of a rural town. Its a famous landscape, but nobody knows where the picture was taken.",
+      "tag": "ITEM_MAT_QUEST_014",
+      "library_note": "",
       "name": "Countryside Photo",
       "temp_name": null,
       "temp_end_event": null,
@@ -11465,8 +11465,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_065",
-      "library_note": "A distorted devil doll. It's warm when hugged.",
+      "tag": "ITEM_MAT_QUEST_015",
+      "library_note": "",
       "name": "Small Devil Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -11500,8 +11500,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_056",
-      "library_note": "A picture of the capital. It seems to have been taken in the morning, when there were few people around.",
+      "tag": "ITEM_MAT_QUEST_RESERVE_001",
+      "library_note": "",
       "name": "Photo of the Capital",
       "temp_name": null,
       "temp_end_event": null,
@@ -11535,8 +11535,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_053",
-      "library_note": "A weasel doll. It appears to be quite popular among people who cannot have pets.",
+      "tag": "ITEM_MAT_QUEST_RESERVE_002",
+      "library_note": "",
       "name": "Weasel Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -11570,8 +11570,8 @@
       ]
     },
     {
-      "tag": "ITEM_FURNITURE_ARTICLE_040",
-      "library_note": "A stuffed animal in the shape of a pumpkin-headed fairy. A doll modelled after a mischievous fairy.",
+      "tag": "ITEM_MAT_QUEST_RESERVE_003",
+      "library_note": "",
       "name": "Pumpkin Doll",
       "temp_name": null,
       "temp_end_event": null,
@@ -11605,8 +11605,8 @@
       ]
     },
     {
-      "tag": "ITEM_ACCESSORY_001",
-      "library_note": "A charm that imitates an Uni. It uses a real Uni, and is a very popular gift.",
+      "tag": "ITEM_MAT_QUEST_RESERVE_004",
+      "library_note": "",
       "name": "Uni Charm",
       "temp_name": null,
       "temp_end_event": null,
@@ -11710,8 +11710,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_MATERIAL_058",
-      "library_note": "Toxin diluted with water. If the correct amount is used, it can also be used as an ingredient for medicines.",
+      "tag": "ITEM_MAT_QUEST_RESERVE_007",
+      "library_note": "",
       "name": "Poisonous Liquid",
       "temp_name": null,
       "temp_end_event": null,
@@ -11815,8 +11815,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_MATERIAL_059",
-      "library_note": "Various types of concentrated poisons. A poison that is dangerous just by opening the lid.",
+      "tag": "ITEM_MAT_QUEST_RESERVE_010",
+      "library_note": "",
       "name": "The Grim Reaper",
       "temp_name": null,
       "temp_end_event": null,
@@ -12792,8 +12792,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12825,8 +12825,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12858,8 +12858,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12891,8 +12891,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12924,8 +12924,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12957,8 +12957,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -12990,8 +12990,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13023,8 +13023,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13056,8 +13056,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13089,8 +13089,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_ATTACK_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13592,8 +13592,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13625,8 +13625,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13658,8 +13658,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13691,8 +13691,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13724,8 +13724,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13757,8 +13757,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13790,8 +13790,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13823,8 +13823,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13856,8 +13856,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -13889,8 +13889,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_HEAL_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14063,8 +14063,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_HORN",
-      "library_note": "A common horn. Despite being ordinary, it's said that its sound can make any person excited.",
+      "tag": "ITEM_MIX_FALSE_BOUQUET",
+      "library_note": "It may look like a bouquet, but it's actually made of dangerous elements such as poisonous plants.",
       "name": "Fake Bouquet",
       "temp_name": null,
       "temp_end_event": null,
@@ -14110,8 +14110,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_MYSTERIOUS_ROBE",
-      "library_note": "Wings with mystical colors. Spread it over yourself to protect against all kinds of attacks.",
+      "tag": "ITEM_MIX_INFERIOR_PRISON",
+      "library_note": "A tree branch that covers the outside of golden baskets. The branches are tightly intertwined to keep the basket trapped.",
       "name": "Prison of Decline",
       "temp_name": null,
       "temp_end_event": null,
@@ -14157,8 +14157,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_DEVIL_PAINTING",
-      "library_note": "A drawing said to have been made by the devil. It gives the enemy the same kind of sorrow depicted in the drawing.",
+      "tag": "ITEM_MIX_HAZE_BREATH",
+      "library_note": "A purely white glass bottle. It's filled with a white mist, which immediately wraps up the surroundings if the glass is broken.",
       "name": "Haze Breath",
       "temp_name": null,
       "temp_end_event": null,
@@ -14204,8 +14204,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_MIRACLE_DRUG_EBONYAL",
-      "library_note": "A medicine that gives incredible strength for a moment, but at the same time, it destroys overworked bodies.",
+      "tag": "ITEM_MIX_HORN",
+      "library_note": "A common horn. Despite being ordinary, it's said that its sound can make any person excited.",
       "name": "Barbaric Horn Whistle",
       "temp_name": null,
       "temp_end_event": null,
@@ -14251,8 +14251,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_ORIGIN_CLOCK",
-      "library_note": "A mysterious hourglass. It's said to provide superior powers while the sand is falling.",
+      "tag": "ITEM_MIX_DEVIL_PAINTING",
+      "library_note": "A drawing said to have been made by the devil. It gives the enemy the same kind of sorrow depicted in the drawing.",
       "name": "Depiction of a Devil",
       "temp_name": null,
       "temp_end_event": null,
@@ -14298,8 +14298,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_FALSE_BOUQUET",
-      "library_note": "It may look like a bouquet, but it's actually made of dangerous elements such as poisonous plants.",
+      "tag": "ITEM_MIX_MYSTERIOUS_ROBE",
+      "library_note": "Wings with mystical colors. Spread it over yourself to protect against all kinds of attacks.",
       "name": "Mystic Robe",
       "temp_name": null,
       "temp_end_event": null,
@@ -14345,8 +14345,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_INFERIOR_PRISON",
-      "library_note": "A tree branch that covers the outside of golden baskets. The branches are tightly intertwined to keep the basket trapped.",
+      "tag": "ITEM_MIX_MIRACLE_DRUG_EBONYAL",
+      "library_note": "A medicine that gives incredible strength for a moment, but at the same time, it destroys overworked bodies.",
       "name": "Miracle Ebonyal",
       "temp_name": null,
       "temp_end_event": null,
@@ -14392,8 +14392,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_ASTRONOMICAL_CLOCK",
-      "library_note": "A watch that gives power to control time. It changes the flow of time by watching the movement of the stars.",
+      "tag": "ITEM_MIX_ORIGIN_CLOCK",
+      "library_note": "A mysterious hourglass. It's said to provide superior powers while the sand is falling.",
       "name": "Hourglass of Origin",
       "temp_name": null,
       "temp_end_event": null,
@@ -14439,8 +14439,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_HAZE_BREATH",
-      "library_note": "A purely white glass bottle. It's filled with a white mist, which immediately wraps up the surroundings if the glass is broken.",
+      "tag": "ITEM_MIX_ASTRONOMICAL_CLOCK",
+      "library_note": "A watch that gives power to control time. It changes the flow of time by watching the movement of the stars.",
       "name": "Astronomical Clock",
       "temp_name": null,
       "temp_end_event": null,
@@ -14627,8 +14627,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14660,8 +14660,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14693,8 +14693,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14726,8 +14726,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14759,8 +14759,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14792,8 +14792,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14825,8 +14825,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14858,8 +14858,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14891,8 +14891,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -14924,8 +14924,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_SUPPORT_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15615,8 +15615,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15648,8 +15648,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15681,8 +15681,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15714,8 +15714,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15747,8 +15747,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15780,8 +15780,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15813,8 +15813,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15846,8 +15846,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15879,8 +15879,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -15912,8 +15912,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_COLLECT_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18859,8 +18859,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18892,8 +18892,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18925,8 +18925,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18958,8 +18958,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -18991,8 +18991,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_011",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19024,8 +19024,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_012",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19057,8 +19057,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_013",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19090,8 +19090,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_014",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19123,8 +19123,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_015",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19156,8 +19156,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_016",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19189,8 +19189,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_017",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19222,8 +19222,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_018",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19255,8 +19255,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_019",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -19288,8 +19288,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_MIX_MATERIAL_RESERVE_020",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21712,8 +21712,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21745,8 +21745,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21778,8 +21778,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21811,8 +21811,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21844,8 +21844,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21877,8 +21877,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21910,8 +21910,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21943,8 +21943,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_011",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -21976,8 +21976,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_012",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -22009,8 +22009,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_013",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -22042,8 +22042,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_014",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -22075,8 +22075,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_RESERVE_015",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25255,8 +25255,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25288,8 +25288,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25321,8 +25321,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25354,8 +25354,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25387,8 +25387,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25420,8 +25420,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25453,8 +25453,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25486,8 +25486,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25519,8 +25519,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -25552,8 +25552,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ARMOR_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26325,8 +26325,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26358,8 +26358,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26391,8 +26391,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26424,8 +26424,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26457,8 +26457,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26490,8 +26490,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26523,8 +26523,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26556,8 +26556,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -26589,8 +26589,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_ACCESSORY_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -27859,8 +27859,8 @@
       ]
     },
     {
-      "tag": "ITEM_KEY_ITEM_RESERVE_001",
-      "library_note": "",
+      "tag": "ITEM_KEY_ITEM_036",
+      "library_note": "Federica's pendant. It bears a traditional Sardonican crest.",
       "name": "Federica's Pendant",
       "temp_name": null,
       "temp_end_event": null,
@@ -27894,7 +27894,7 @@
       ]
     },
     {
-      "tag": "ITEM_KEY_ITEM_RESERVE_002",
+      "tag": "ITEM_KEY_ITEM_037",
       "library_note": "",
       "name": "Small Tablet",
       "temp_name": null,
@@ -28382,8 +28382,8 @@
       ]
     },
     {
-      "tag": "ITEM_MAT_RESERVE_DUET",
-      "library_note": "A solvent for smooth joining Fairystones and glass. Not very pure when undiluted.",
+      "tag": "ITEM_KEY_ITEM_RESERVE_001",
+      "library_note": "",
       "name": "Duet Stock Solution",
       "temp_name": "Iridescent Mucus",
       "temp_end_event": "EVENT_MM02_140",
@@ -28417,8 +28417,8 @@
       ]
     },
     {
-      "tag": "ITEM_MIX_MATERIAL_077",
-      "library_note": "A solvent with higher purity than that of Duet Stock Solution. Used to join Fairystones and glass.",
+      "tag": "ITEM_KEY_ITEM_RESERVE_002",
+      "library_note": "",
       "name": "Duet Solvent Solution",
       "temp_name": "Iridescent High-Purity Mucus",
       "temp_end_event": "EVENT_MM02_140",
@@ -28452,8 +28452,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28485,8 +28485,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28518,8 +28518,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28551,8 +28551,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28584,8 +28584,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28617,8 +28617,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28650,8 +28650,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28683,8 +28683,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28716,8 +28716,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_011",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28749,8 +28749,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_012",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28782,8 +28782,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_013",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28815,8 +28815,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_014",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28848,8 +28848,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_015",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28881,8 +28881,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_016",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28914,8 +28914,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_017",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28947,8 +28947,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_018",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -28980,8 +28980,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_019",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -29013,8 +29013,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_KEY_ITEM_RESERVE_020",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -29711,8 +29711,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BOOK_020",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31111,8 +31111,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_EVENT_ICON_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31669,8 +31669,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31702,8 +31702,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31735,8 +31735,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31768,8 +31768,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31801,8 +31801,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31834,8 +31834,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31867,8 +31867,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31900,8 +31900,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31933,8 +31933,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -31966,8 +31966,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DISF_ICON_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32494,8 +32494,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32527,8 +32527,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32560,8 +32560,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32593,8 +32593,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32626,8 +32626,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32659,8 +32659,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32692,8 +32692,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32725,8 +32725,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32758,8 +32758,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -32791,8 +32791,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_BUILDING_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35164,8 +35164,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35197,8 +35197,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35230,8 +35230,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35263,8 +35263,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35296,8 +35296,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35329,8 +35329,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35362,8 +35362,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35395,8 +35395,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35428,8 +35428,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35461,8 +35461,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35494,8 +35494,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_011",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35527,8 +35527,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_012",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35560,8 +35560,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_013",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35593,8 +35593,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_014",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35626,8 +35626,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_015",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35659,8 +35659,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_016",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35692,8 +35692,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_017",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35725,8 +35725,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_018",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35758,8 +35758,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_019",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -35791,8 +35791,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_FURNITURE_ARTICLE_RESERVE_020",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36750,8 +36750,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_001",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36783,8 +36783,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_002",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36816,8 +36816,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_003",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36849,8 +36849,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_004",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36882,8 +36882,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_005",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36915,8 +36915,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_006",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36948,8 +36948,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_007",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -36981,8 +36981,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_008",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -37014,8 +37014,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_009",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -37047,8 +37047,8 @@
       "cat": []
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC2_RESERVE_010",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,
@@ -39993,8 +39993,8 @@
       ]
     },
     {
-      "tag": null,
-      "library_note": null,
+      "tag": "ITEM_DLC4_RESERVE_013",
+      "library_note": "",
       "name": null,
       "temp_name": null,
       "temp_end_event": null,

@@ -70,18 +70,11 @@ impl Item {
 
         let items = item_data
             .into_iter()
-            .map(|d| {
-                let item_index = d
-                    .name_id
-                    .as_ref()
-                    .map(|id| id["STR_ITEM_NAME_".len()..].parse::<usize>())
-                    .transpose()
-                    .context("extract item id from item name id")?;
+            .enumerate()
+            .map(|(item_index, d)| {
                 Ok(Self {
-                    tag: item_index
-                        .and_then(|i| library_items.get(i))
-                        .map(|l| l.item_tag.clone()),
-                    library_note: item_index.and_then(|i| library_items.get(i)).map(|l| {
+                    tag: library_items.get(item_index).map(|l| l.item_tag.clone()),
+                    library_note: library_items.get(item_index).map(|l| {
                         l.note_id
                             .iter()
                             .filter_map(|id| strings.id_lookup.get(id).cloned())
