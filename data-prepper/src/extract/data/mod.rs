@@ -3,7 +3,7 @@ use serde::Serialize;
 use tracing::info;
 use typescript_type_def::TypeDef;
 
-use super::pak_index::PakIndex;
+use crate::utils::PakIndex;
 
 mod enemies;
 mod items;

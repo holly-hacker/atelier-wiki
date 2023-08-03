@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use anyhow::Context;
 
-use crate::extract::pak_index::PakIndex;
+use crate::utils::PakIndex;
 
 use super::util::{self, ElementReader};
 

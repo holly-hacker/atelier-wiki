@@ -1,6 +1,6 @@
-use crate::extract::{
-    data::util::{self, ElementReader},
-    pak_index::PakIndex,
+use crate::{
+    extract::data::util::{self, ElementReader},
+    utils::PakIndex,
 };
 
 #[derive(Debug, Clone)]

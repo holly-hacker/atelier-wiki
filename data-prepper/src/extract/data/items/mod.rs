@@ -6,7 +6,7 @@ use serde::Serialize;
 use tracing::debug;
 use typescript_type_def::TypeDef;
 
-use crate::extract::pak_index::PakIndex;
+use crate::utils::PakIndex;
 
 use super::strings::StringsData;
 

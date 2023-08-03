@@ -2,7 +2,7 @@ use std::{io::Read, str::FromStr};
 
 use anyhow::Context;
 
-use crate::extract::pak_index::PakIndex;
+use crate::utils::PakIndex;
 
 pub fn read_xml<T, F>(pak_index: &mut PakIndex, path: &str, parse_fn: F) -> anyhow::Result<T>
 where

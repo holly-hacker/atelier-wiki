@@ -1,5 +1,6 @@
 mod extract;
 mod typedefs;
+mod utils;
 
 use anyhow::Context;
 use argh::FromArgs;

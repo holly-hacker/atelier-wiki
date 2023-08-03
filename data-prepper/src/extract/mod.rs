@@ -1,15 +1,13 @@
 mod data;
-mod pak_index;
 
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
 pub use data::Ryza3Data;
-use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 
-use crate::extract::pak_index::PakIndex;
+use crate::utils::{extract_game_version, PakIndex};
 
 /// Extract and prepare the game data from the game install directory
 #[derive(FromArgs)]
@@ -47,6 +45,7 @@ pub fn extract(args: ExtractArgs) -> anyhow::Result<()> {
     let mut pak_index = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
     info!("Loaded pak file index with {} entries", pak_index.len());
 
+    // TODO: only if game version is A24
     let data = data::Ryza3Data::read_all(&mut pak_index).context("read data files")?;
     let formatted_data = serde_json::to_string_pretty(&data).context("format data")?;
 
@@ -61,13 +60,4 @@ pub fn extract(args: ExtractArgs) -> anyhow::Result<()> {
     info!("Wrote data to {:?}", output_file_path);
 
     Ok(())
-}
-
-fn extract_game_version(path: &Path) -> Option<GameVersion> {
-    // currently, only detect Atelier Ryza 3. we can add more later
-    if path.join("Atelier_Ryza_3.exe").exists() {
-        Some(GameVersion::A24)
-    } else {
-        None
-    }
 }
