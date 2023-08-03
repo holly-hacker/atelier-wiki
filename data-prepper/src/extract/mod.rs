@@ -1,11 +1,15 @@
 mod data;
 
-use std::path::{Path, PathBuf};
+use std::{
+    fs::File,
+    path::{Path, PathBuf},
+};
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
 pub use data::Ryza3Data;
 use gust_pak::common::GameVersion;
+use serde::Serialize;
 use tracing::{debug, info};
 
 use crate::utils::{extract_game_version, PakIndex};
@@ -55,18 +59,37 @@ impl Args {
 }
 
 fn extract_ryza3(mut pak_index: PakIndex, output_directory: &Path) -> anyhow::Result<()> {
+    let output_directory = output_directory.join("ryza3");
     let data = data::Ryza3Data::read_all(&mut pak_index).context("read data files")?;
-    let formatted_data = serde_json::to_string_pretty(&data).context("format data")?;
 
     debug!("Creating output directory");
-    std::fs::create_dir_all(output_directory).context("create output directory")?;
+    std::fs::create_dir_all(&output_directory).context("create output directory")?;
 
     debug!("Writing files");
-    let output_file_path = output_directory.join("ryza3.json");
-    let mut output_file = std::fs::File::create(&output_file_path)
-        .with_context(|| format!("create output file {:?}", output_file_path))?;
+
+    info!("Writing item data");
+    write_data_to_file(&output_directory.join("items.json"), &data.item_data)
+        .context("write item data")?;
+
+    info!("Writing enemy data");
+    write_data_to_file(&output_directory.join("enemies.json"), &data.enemy_data)
+        .context("write enemy data")?;
+
+    info!("Wrote ryza3 data to {:?}", output_directory);
+
+    Ok(())
+}
+
+fn write_data_to_file<T>(path: &Path, data: &T) -> anyhow::Result<()>
+where
+    T: Serialize,
+{
+    let mut output_file =
+        File::create(path).with_context(|| format!("create output file {:?}", path))?;
+
+    let formatted_data = serde_json::to_string_pretty(data).context("format data")?;
+
     std::io::copy(&mut formatted_data.as_bytes(), &mut output_file).context("write output file")?;
-    info!("Wrote data to {:?}", output_file_path);
 
     Ok(())
 }

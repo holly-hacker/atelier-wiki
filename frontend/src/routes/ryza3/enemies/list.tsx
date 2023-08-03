@@ -1,14 +1,12 @@
-import { ryza3 } from "@/data.ts";
+import enemies from "@/data/ryza3/enemies.json";
 import { EnemyLink } from "../utility_components/links";
 
 export default function EnemyList() {
-  const enemy_data = ryza3.enemy_data;
-
   return (
     <>
       <h1>Ryza 3 enemy list</h1>
       <div>
-        {enemy_data.length} enemies found.
+        {enemies.length} enemies found.
         <table>
           <thead>
             <tr>
@@ -21,7 +19,7 @@ export default function EnemyList() {
             </tr>
           </thead>
           <tbody>
-            {enemy_data.map((enemy, i) => {
+            {enemies.map((enemy, i) => {
               return (
                 <tr key={i}>
                   <td>

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ryza3 } from "@/data.ts";
+import items from "@/data/ryza3/items.json";
 import { ItemLink } from "../utility_components/links";
 
 export default function ItemCategoryDetail() {
@@ -9,7 +9,7 @@ export default function ItemCategoryDetail() {
     return <>No category selected.</>;
   }
 
-  const item = ryza3.item_data
+  const item = items
     .map((item, idx) => ({ item, idx }))
     .filter(({ item: v }) => v.cat.includes(category));
 

@@ -1,8 +1,8 @@
-import { ryza3 } from "@/data.ts";
+import items from "@/data/ryza3/items.json";
 import { Link } from "react-router-dom";
 
 export default function ItemKindsList() {
-  const kinds = ryza3.item_data.map((item) => item.kind_tag);
+  const kinds = items.map((item) => item.kind_tag);
   const uniqueKinds = [...new Set(kinds)];
 
   return (

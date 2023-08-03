@@ -1,5 +1,5 @@
-import types from "@/atelier-data-types";
-import { ryza3 } from "@/data";
+import types from "@/data/types/ryza3";
+import items from "@/data/ryza3/items.json";
 
 export function itemDisplayName(item: types.Item): string {
   // NOTE: sort is not always correct, there are some items that share a `sort` value
@@ -14,5 +14,5 @@ export function enemyDisplayName(enemy: types.Enemy): string {
 }
 
 export function findItemByTag(tag: string): types.Item | undefined {
-  return ryza3.item_data.find((item) => item.tag === tag);
+  return items.find((item) => item.tag === tag);
 }

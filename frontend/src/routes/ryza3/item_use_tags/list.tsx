@@ -1,8 +1,8 @@
-import { ryza3 } from "@/data.ts";
+import items from "@/data/ryza3/items.json";
 import { Link } from "react-router-dom";
 
 export default function ItemUseTagsList() {
-  const tags = ryza3.item_data.map((item) => item.use_tag);
+  const tags = items.map((item) => item.use_tag);
   const uniqueTags = [...new Set(tags)];
 
   return (

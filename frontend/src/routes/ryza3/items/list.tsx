@@ -1,16 +1,14 @@
-import { ryza3 } from "@/data.ts";
+import items from "@/data/ryza3/items.json";
 import { ItemLink } from "../utility_components/links";
 
 export default function ItemList() {
-  const itemData = ryza3.item_data;
-
   return (
     <>
       <h1>Ryza 3 item list</h1>
       <div>
         List of all items should come here.
         <br />
-        {itemData.length} items found.
+        {items.length} items found.
         <table>
           <thead>
             <tr>
@@ -28,7 +26,7 @@ export default function ItemList() {
             </tr>
           </thead>
           <tbody>
-            {itemData.map((item, i) => {
+            {items.map((item, i) => {
               return (
                 <tr key={i}>
                   <td>

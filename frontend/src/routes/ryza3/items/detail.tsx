@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router-dom";
-import { ryza3 } from "@/data.ts";
+import items from "@/data/ryza3/items.json";
+import enemies from "@/data/ryza3/enemies.json";
 import { itemDisplayName } from "../ryza3_data_util";
-import types from "@/atelier-data-types";
+import types from "@/data/types/ryza3";
 import { EnemyLink } from "../utility_components/links";
 
 export default function ItemDetail() {
@@ -10,11 +11,11 @@ export default function ItemDetail() {
   let item;
   if (id && !isNaN(Number(id))) {
     // id is a number
-    item = ryza3.item_data[Number(id)];
+    item = items[Number(id)];
   } else if (id) {
     // try to find by item tag
     let tag = `ITEM_${id}`;
-    item = ryza3.item_data.find((v) => v.tag == tag);
+    item = items.find((v) => v.tag == tag);
   }
 
   if (!item) {
@@ -107,7 +108,7 @@ function getDrops(
 
   const drops = [];
 
-  for (const enemy of ryza3.enemy_data) {
+  for (const enemy of enemies) {
     for (const status of enemy.statusses) {
       for (const drop of status.drops) {
         if (drop.item_tag == item.tag) {

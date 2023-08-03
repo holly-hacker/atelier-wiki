@@ -1,7 +1,7 @@
-import types from "@/atelier-data-types";
+import types from "@/data/types/ryza3";
 import { Link } from "react-router-dom";
 import { enemyDisplayName, itemDisplayName } from "../ryza3_data_util";
-import { ryza3 } from "@/data";
+import items from "@/data/ryza3/items.json";
 
 export function ItemLink({
   item,
@@ -19,7 +19,7 @@ export function ItemLink({
     id = id.replace(/^ITEM_/, "");
   } else {
     // use the item index
-    id = String(ryza3.item_data.findIndex((v) => v === item));
+    id = String(items.findIndex((v) => v === item));
   }
 
   return (

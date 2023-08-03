@@ -1,8 +1,8 @@
-import { ryza3 } from "@/data.ts";
+import items from "@/data/ryza3/items.json";
 import { Link } from "react-router-dom";
 
 export default function ItemCategoriesList() {
-  const categories = ryza3.item_data.flatMap((item) => item.cat);
+  const categories = items.flatMap((item) => item.cat);
   const uniqueCategories = [...new Set(categories)];
 
   return (

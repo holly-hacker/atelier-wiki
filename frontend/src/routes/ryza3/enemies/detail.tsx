@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ryza3 } from "@/data.ts";
+import enemies from "@/data/ryza3/enemies.json";
 import { enemyDisplayName, findItemByTag } from "../ryza3_data_util";
 import { ItemLink } from "../utility_components/links";
 
@@ -9,11 +9,11 @@ export default function EnemyDetail() {
   let enemy;
   if (id && !isNaN(Number(id))) {
     // id is a number
-    enemy = ryza3.enemy_data[Number(id)];
+    enemy = enemies[Number(id)];
   } else if (id) {
     // try to find by monster tag
     let tag = `MONSTER_${id}`;
-    enemy = ryza3.enemy_data.find((v) => v.monster_tag == tag);
+    enemy = enemies.find((v) => v.monster_tag == tag);
   }
 
   if (!enemy) {
