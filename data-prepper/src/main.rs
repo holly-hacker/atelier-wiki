@@ -25,9 +25,9 @@ struct CliArgs {
 #[derive(FromArgs)]
 #[argh(subcommand)]
 enum Subcommand {
-    Extract(extract::ExtractArgs),
-    ExtractImages(extract_images::ExtractImagesArgs),
-    TypeDefs(typedefs::TypeDefsArgs),
+    Extract(extract::Args),
+    ExtractImages(extract_images::Args),
+    TypeDefs(typedefs::Args),
 }
 
 fn main() {
@@ -46,11 +46,9 @@ fn main() {
 
     let time_before_command_handling = std::time::Instant::now();
     let result = match args.subcommand {
-        Subcommand::Extract(extract_args) => {
-            extract::extract(extract_args).context("Run extract command")
-        }
+        Subcommand::Extract(args) => args.handle().context("Run extract command"),
         Subcommand::ExtractImages(args) => args.handle().context("Run extract-images command"),
-        Subcommand::TypeDefs(typedef_args) => typedefs::generate_typedefs(typedef_args),
+        Subcommand::TypeDefs(args) => args.handle().context("Extract typescript defs"),
     };
     let time_elapsed = time_before_command_handling.elapsed();
 

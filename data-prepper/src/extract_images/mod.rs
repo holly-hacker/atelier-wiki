@@ -9,7 +9,7 @@ use crate::utils::{extract_game_version, match_pattern, PakIndex};
 /// Extract and prepare the game data from the game install directory
 #[derive(FromArgs)]
 #[argh(subcommand, name = "extract-images")]
-pub struct ExtractImagesArgs {
+pub struct Args {
     /// the game install directory
     #[argh(option, short = 'i')]
     game_directory: PathBuf,
@@ -19,7 +19,7 @@ pub struct ExtractImagesArgs {
     output_directory: Option<PathBuf>,
 }
 
-impl ExtractImagesArgs {
+impl Args {
     pub fn handle(self) -> anyhow::Result<()> {
         let output_directory = self
             .output_directory
