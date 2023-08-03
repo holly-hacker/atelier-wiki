@@ -109,20 +109,23 @@ impl PakIndex {
         self.map.len()
     }
 
+    // TODO: we can read a file without a mutable reference but multiple readers on the same file may cause problems.
+    // maybe create a factory or pool of sorts per file that automatically opens new files if no handles are free?
+    // for now, keep this method as requiring a mutable ref to prevent accidental misuse
     pub fn get_file<'index>(
         &'index mut self,
         file_name: &str,
     ) -> std::io::Result<Option<impl Read + 'index>> {
-        let Some((file_index, header)) = self.map.get_mut(file_name) else {
+        let Some((file_index, header)) = self.map.get(file_name) else {
             return Ok(None);
         };
 
-        let file = &mut self.files[*file_index];
+        let file = &self.files[*file_index];
 
         let data_start = file.data_start;
 
         Ok(Some(header.as_ref().get_reader_with_data_start(
-            &mut file.file,
+            &file.file,
             data_start,
             self.game_version,
         )?))
