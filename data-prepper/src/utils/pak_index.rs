@@ -1,12 +1,12 @@
 use std::{
     collections::HashMap,
     fs::File,
-    io::Read,
+    io::{Read, Seek},
     path::{Path, PathBuf},
 };
 
 use anyhow::Context;
-use gust_pak::{common::GameVersion, GustPak, PakEntry};
+use gust_pak::{common::GameVersion, GustPak, PakEntry, PakEntryRef};
 use rayon::prelude::*;
 use tracing::{debug, trace};
 
@@ -115,7 +115,7 @@ impl PakIndex {
     pub fn get_file<'index>(
         &'index mut self,
         file_name: &str,
-    ) -> std::io::Result<Option<impl Read + 'index>> {
+    ) -> std::io::Result<Option<impl Read + Seek + 'index>> {
         let Some((file_index, header)) = self.map.get(file_name) else {
             return Ok(None);
         };
@@ -129,5 +129,9 @@ impl PakIndex {
             data_start,
             self.game_version,
         )?))
+    }
+
+    pub fn iter_entries(&self) -> impl Iterator<Item = PakEntryRef<'_>> {
+        self.map.values().map(|(_, entry)| entry.as_ref())
     }
 }

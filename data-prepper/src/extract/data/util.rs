@@ -2,7 +2,7 @@ use std::{io::Read, str::FromStr};
 
 use anyhow::Context;
 
-use crate::utils::PakIndex;
+use crate::utils::{match_pattern, PakIndex};
 
 pub fn read_xml<T, F>(pak_index: &mut PakIndex, path: &str, parse_fn: F) -> anyhow::Result<T>
 where
@@ -55,7 +55,7 @@ impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
     ///
     /// This function returns an error if the list is not continuous, ie. if there are holes in the list, or if there
     /// are duplicated values.
-    pub fn read_list<T>(&self, name_pattern: &str) -> anyhow::Result<Vec<T>>
+    pub fn read_list<T>(&self, name_pattern: &'static str) -> anyhow::Result<Vec<T>>
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
@@ -64,7 +64,7 @@ impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
         let mut values_with_indices = self
             .0
             .attributes()
-            .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .flat_map(|a| match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
             .collect::<Vec<_>>();
 
         values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
@@ -100,7 +100,7 @@ impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
         let mut values_with_indices = self
             .0
             .attributes()
-            .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .flat_map(|a| match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
             .collect::<Vec<_>>();
 
         values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
@@ -158,7 +158,7 @@ impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
         let mut values_with_indices = self
             .0
             .attributes()
-            .flat_map(|a| Self::match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .flat_map(|a| match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
             .collect::<Vec<_>>();
 
         values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
@@ -196,23 +196,6 @@ impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
             .collect::<anyhow::Result<Vec<_>>>()?;
 
         Ok(parsed_list)
-    }
-
-    fn match_pattern(needle: &str, haystack: &str) -> Option<usize> {
-        let Some(index) = needle.find('*') else {
-            panic!("pattern `{needle}` does not contain a `*`, which is required");
-        };
-
-        let left = &needle[..index];
-        let right = &needle[index + 1..];
-
-        if !(haystack.starts_with(left) && haystack.ends_with(right)) {
-            return None;
-        }
-
-        let matched = &haystack[left.len()..haystack.len() - right.len()];
-
-        matched.parse().ok()
     }
 
     pub fn is_present(&self, name: &str) -> bool {

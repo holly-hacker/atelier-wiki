@@ -1,4 +1,5 @@
 mod extract;
+mod extract_images;
 mod typedefs;
 mod utils;
 
@@ -25,6 +26,7 @@ struct CliArgs {
 #[argh(subcommand)]
 enum Subcommand {
     Extract(extract::ExtractArgs),
+    ExtractImages(extract_images::ExtractImagesArgs),
     TypeDefs(typedefs::TypeDefsArgs),
 }
 
@@ -47,6 +49,7 @@ fn main() {
         Subcommand::Extract(extract_args) => {
             extract::extract(extract_args).context("Run extract command")
         }
+        Subcommand::ExtractImages(args) => args.handle().context("Run extract-images command"),
         Subcommand::TypeDefs(typedef_args) => typedefs::generate_typedefs(typedef_args),
     };
     let time_elapsed = time_before_command_handling.elapsed();

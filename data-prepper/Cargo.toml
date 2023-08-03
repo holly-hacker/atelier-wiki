@@ -8,7 +8,9 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.72"
 argh = "0.1.10"
+gust-g1t = { git = "https://github.com/holly-hacker/atelier-tools", branch = "main" }
 gust-pak = { git = "https://github.com/holly-hacker/atelier-tools", branch = "main" }
+image = { version = "0.24.6", default-features = false, features = ["png"] }
 rayon = "1.7.0"
 roxmltree = { version = "0.18.0", default-features = false, features = ["std"] }
 serde = { version = "1.0.174", features = ["derive"] }
@@ -21,4 +23,7 @@ typescript-type-def = "0.5.7"
 opt-level = 2
 
 [profile.dev.package.roxmltree]
+opt-level = 2
+
+[profile.dev.package.png]
 opt-level = 2
