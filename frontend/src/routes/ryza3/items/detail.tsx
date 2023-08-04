@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import items from "@/data/ryza3/items.json";
 import enemies from "@/data/ryza3/enemies.json";
-import { itemDisplayName } from "../ryza3_data_util";
+import { getImageLink, itemDisplayName } from "../ryza3_data_util";
 import types from "@/data/types/ryza3";
 import { EnemyLink } from "../utility_components/links";
 
@@ -28,6 +28,9 @@ export default function ItemDetail() {
     <>
       <h1>{itemDisplayName(item)}</h1>
       {item.library_note && <p>{item.library_note}</p>}
+      {item.img_no !== null && item.img_no >= 0 && (
+        <img src={getImageLink(`items/${item.img_no}.png`)}></img>
+      )}
       <ul>
         {item.tag && (
           <li>

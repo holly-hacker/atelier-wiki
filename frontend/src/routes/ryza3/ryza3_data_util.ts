@@ -16,3 +16,8 @@ export function enemyDisplayName(enemy: types.Enemy): string {
 export function findItemByTag(tag: string): types.Item | undefined {
   return items.find((item) => item.tag === tag);
 }
+
+export function getImageLink(path: string): string {
+  // TODO: this should be configurable
+  return `https://atelier-wiki-data.variant9.dev/game-data/${path}`;
+}
