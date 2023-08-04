@@ -7,7 +7,7 @@ use crate::{
 pub struct EnemyData {
     pub name_id: String,
     pub is_big: bool,
-    pub img_no: String,
+    pub img_no: i32,
     pub wait_action: bool,
     pub library_rank: Vec<u32>,
     pub dlc: Vec<String>,

@@ -17,7 +17,7 @@ pub struct Enemy {
     pub name: String,
     pub library_note: Option<String>,
     pub is_big: bool,
-    pub img_no: String,
+    pub img_no: i32,
     pub wait_action: bool,
     pub library_rank_health: u32,
     pub library_rank_attack: u32,
