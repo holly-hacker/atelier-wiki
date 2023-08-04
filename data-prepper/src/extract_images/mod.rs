@@ -1,3 +1,5 @@
+mod packed_image;
+mod rgba8_image;
 mod upload_manager;
 
 use std::path::{Path, PathBuf};
@@ -8,7 +10,9 @@ use tracing::{debug, info};
 
 use crate::{
     config::Config,
-    extract_images::upload_manager::UploadManager,
+    extract_images::{
+        packed_image::PackedImage, rgba8_image::Rgba8Image, upload_manager::UploadManager,
+    },
     utils::{extract_game_version, match_pattern, PakIndex},
 };
 
@@ -96,7 +100,7 @@ fn extract_images(
     info!("Extracting monster portraits");
     const MONSTER_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t";
     let monsters_path = output_directory.join(PATH_ENEMIES);
-    extract_prefixed(
+    extract_prefixed_with_packed(
         pak_index,
         MONSTER_PATTERN,
         &monsters_path,
@@ -109,7 +113,7 @@ fn extract_images(
     info!("Extracting item icons");
     const ITEM_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_item_l_*.g1t";
     let items_path = output_directory.join(PATH_ITEMS);
-    extract_prefixed(
+    extract_prefixed_with_packed(
         pak_index,
         ITEM_PATTERN,
         &items_path,
@@ -122,7 +126,7 @@ fn extract_images(
     Ok(())
 }
 
-fn extract_prefixed(
+fn extract_prefixed_with_packed(
     pak_index: &mut PakIndex,
     pattern: &'static str,
     output_folder: &Path,
@@ -135,15 +139,17 @@ fn extract_prefixed(
 
     let mut entries: Vec<_> = pak_index
         .iter_entries()
-        .filter(|e| match_pattern(pattern, e.get_file_name()).is_some())
-        .map(|f| f.get_file_name().to_string())
+        .filter_map(|e| match_pattern(pattern, e.get_file_name()).map(|num| (e, num)))
+        .map(|(f, num)| (f.get_file_name().to_string(), num))
         .collect();
 
-    entries.sort();
+    entries.sort_by_key(|(_, num)| *num);
 
-    for entry in entries {
-        let num = match_pattern(pattern, &entry).context("Extract id from path")?;
+    // create spritesheet
+    let mut packed_image =
+        PackedImage::new((512, 512), (64, 64), entries.len()).context("create packed image")?;
 
+    for (entry, num) in entries {
         let mut file = pak_index
             .get_file(&entry)
             .with_context(|| format!("read {entry}"))?
@@ -157,61 +163,74 @@ fn extract_prefixed(
             bail!(
                 "Texture {entry} has invalid size {}x{}, expected 512x512",
                 texture.width,
-                texture.height
+                texture.height,
             );
         }
 
         debug!(?entry, "reading image");
         let image_bytes = g1t.read_image(texture, &mut file).context("read image")?;
+        let image = Rgba8Image::new(texture.width, image_bytes).context("image buffer to image")?;
+        debug_assert_eq!(image.height(), texture.height);
 
-        debug!(?entry, "converting image");
+        debug!(?entry, "adding image to packed image");
+        packed_image
+            .add_image(&image, num.to_string())
+            .context("add image to packed image")?;
 
-        debug!(?entry, "encoding image to png...");
-        let png_bytes = if let Some(compression) = opt_level {
-            let image_buffer = oxipng::RawImage::new(
-                texture.width,
-                texture.height,
-                oxipng::ColorType::RGBA,
-                oxipng::BitDepth::Eight,
-                image_bytes,
-            )
-            .context("load raw buffer as image")?;
-            let mut opts = oxipng::Options::from_preset(compression);
-
-            // explicitly allow modifying alpha, which gives another ~7% improvement on level 1
-            opts.optimize_alpha = true;
-
-            image_buffer
-                .create_optimized_png(&opts)
-                .context("optimize png")?
-        } else {
-            let mut png_bytes = vec![];
-
-            let mut encoder = png::Encoder::new(&mut png_bytes, texture.width, texture.height);
-            encoder.set_color(png::ColorType::Rgba);
-            encoder.set_depth(png::BitDepth::Eight);
-            encoder.set_adaptive_filter(png::AdaptiveFilterType::Adaptive);
-
-            let mut writer = encoder.write_header().context("write png header")?;
-            writer
-                .write_image_data(&image_bytes)
-                .context("write png data")?;
-
-            drop(writer);
-
-            png_bytes
-        };
-
-        let file_path = output_folder.join(format!("{num}.png"));
-        debug!(?entry, ?file_path, "saving image...");
-        std::fs::write(&file_path, &png_bytes).context("write to png file")?;
-        debug!(?entry, ?file_path, "saved image");
-
-        // store image for upload
-        upload_manager
-            .upload(&format!("{}/{}.png", object_storage_path, num), &png_bytes)
-            .context("upload to s3")?;
+        save_image(
+            image,
+            output_folder,
+            object_storage_path,
+            &format!("{}.png", num),
+            opt_level,
+            upload_manager,
+        )
+        .with_context(|| format!("save image {num}"))?;
     }
+
+    // save the packed image
+    save_image(
+        packed_image.take_image(),
+        output_folder,
+        object_storage_path,
+        "packed.png",
+        opt_level,
+        upload_manager,
+    )
+    .context("save packed image")?;
+
+    Ok(())
+}
+
+fn save_image(
+    image: Rgba8Image,
+    output_folder: &Path,
+    object_storage_path: &str,
+    file_name: &str,
+    opt_level: Option<u8>,
+    upload_manager: &mut UploadManager,
+) -> anyhow::Result<()> {
+    let file_path = output_folder.join(file_name);
+
+    debug!(?file_path, "encoding image to png...");
+    let png_bytes = match opt_level {
+        Some(compression) => image
+            .encode_oxipng(compression)
+            .context("encode using oxipng"),
+        None => image.encode_png().context("encode png"),
+    }?;
+
+    debug!(?file_path, "saving image...");
+    std::fs::write(&file_path, &png_bytes).context("write to png file")?;
+    debug!(?file_path, "saved image");
+
+    // store image for upload
+    upload_manager
+        .upload(
+            &format!("{}/{}", object_storage_path, file_name),
+            &png_bytes,
+        )
+        .context("upload to s3")?;
 
     Ok(())
 }
