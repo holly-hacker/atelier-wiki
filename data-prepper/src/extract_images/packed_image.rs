@@ -7,10 +7,14 @@ use super::rgba8_image::Rgba8Image;
 /// A packed image, also known as a spritesheet.
 pub struct PackedImage {
     image: Rgba8Image,
+
+    /// The dimensions of the original images
     original_dimensions: (u32, u32),
 
-    /// The factor by which the original image is scaled down.
+    /// The factor by which the original images are scaled down.
     scaling_factor: (u32, u32),
+
+    /// An ordered list of the images that have been stored already.
     stored_images: Vec<String>,
 }
 
@@ -54,6 +58,10 @@ impl PackedImage {
         Ok(ret)
     }
 
+    /// Add a new image to the packed image.
+    ///
+    /// This function can return an error if the input image has incorrect dimensions or if the
+    /// packed image is "full".
     pub fn add_image(&mut self, image: &Rgba8Image, name: String) -> anyhow::Result<()> {
         if image.width() != self.original_dimensions.0
             || image.height() != self.original_dimensions.1
@@ -71,11 +79,25 @@ impl PackedImage {
         let (image_width, image_height) = self.get_image_dimensions();
         let (image_x, image_y) = (index_x as u32 * image_width, index_y as u32 * image_height);
 
+        // ensure image is not out of bounds
+        debug_assert!(image_x < self.image.width());
+        if image_y >= self.image.height() {
+            bail!(
+                "image does not fit in packed image: image dimensions: {:?}, packed image dimensions: {:?}",
+                (image_x, image_y),
+                (self.image.width(), self.image.height())
+            );
+        }
+        debug_assert!(image_x + image_width <= self.image.width());
+        debug_assert!(image_y + image_height <= self.image.height());
+
         self.stored_images.push(name);
 
         // scale the image and blit it to the packed image
         let scaled_image = image.scale_down(self.scaling_factor);
-        self.image.blit(image_x, image_y, &scaled_image);
+        self.image
+            .blit(image_x, image_y, &scaled_image)
+            .context("blit image")?;
 
         Ok(())
     }

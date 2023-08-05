@@ -831,7 +831,7 @@ checksum = "b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39"
 [[package]]
 name = "oxipng"
 version = "8.0.0"
-source = "git+https://github.com/shssoichiro/oxipng.git?branch=master#02bd47ba297ffdc1210c89b6f98c0d2c4b31d155"
+source = "git+https://github.com/shssoichiro/oxipng.git?rev=02bd47ba297ffdc1210c89b6f98c0d2c4b31d155#02bd47ba297ffdc1210c89b6f98c0d2c4b31d155"
 dependencies = [
  "bitvec",
  "crossbeam-channel",

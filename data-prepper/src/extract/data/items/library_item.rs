@@ -6,7 +6,6 @@ use crate::{
 pub struct LibraryItem {
     pub item_tag: String,
     pub note_id: Vec<String>,
-    // TODO: this should be Vec<Option<i32>>
     pub ep: Vec<Option<i32>>,
     pub permit: bool,
 }

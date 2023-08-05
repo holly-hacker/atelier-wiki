@@ -10,7 +10,6 @@ use crate::utils::PakIndex;
 
 use super::strings::StringsData;
 
-// TODO: separate struct for read data?
 #[derive(Serialize, TypeDef)]
 pub struct Item {
     /// The item tag. This is the closest we get to a string id but it does not exist for all items.

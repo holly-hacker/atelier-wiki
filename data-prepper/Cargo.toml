@@ -12,7 +12,7 @@ gust-g1t = { git = "https://github.com/holly-hacker/atelier-tools", branch = "ma
 gust-pak = { git = "https://github.com/holly-hacker/atelier-tools", branch = "main" }
 hex = "0.4.3"
 md5 = "0.7.0"
-oxipng = { git = "https://github.com/shssoichiro/oxipng.git", branch = "master", default-features = false, features = [
+oxipng = { git = "https://github.com/shssoichiro/oxipng.git", rev = "02bd47ba297ffdc1210c89b6f98c0d2c4b31d155", default-features = false, features = [
     "parallel",
     "zopfli",
 ] }

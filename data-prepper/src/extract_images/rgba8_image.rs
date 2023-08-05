@@ -6,6 +6,7 @@ pub struct Rgba8Image {
 }
 
 impl Rgba8Image {
+    /// Create a new transparent image with the given dimensions.
     pub fn new_empty(width: u32, height: u32) -> Self {
         Self {
             width,
@@ -13,6 +14,7 @@ impl Rgba8Image {
         }
     }
 
+    /// Create a new image with the given RGBA8 data.
     pub fn new(width: u32, data: Vec<u8>) -> anyhow::Result<Self> {
         if data.len() % 4 != 0 {
             bail!("data length must be a multiple of 4");
@@ -47,7 +49,8 @@ impl Rgba8Image {
         (self.data, self.width)
     }
 
-    /// Scales the image down by the given factor, using a simple average.
+    /// Scales the image down by the given factor, using simple supersampling with uniform grid
+    /// distribution. This currently only supports scaling down by integer factors.
     pub fn scale_down(&self, scale: (u32, u32)) -> Self {
         let (width, height) = (self.width(), self.height());
         let (scale_x, scale_y) = scale;
@@ -99,8 +102,13 @@ impl Rgba8Image {
         new_image
     }
 
-    pub fn blit(&mut self, x: u32, y: u32, other: &Self) {
+    /// Blits another image onto this image at the given coordinates.
+    pub fn blit(&mut self, x: u32, y: u32, other: &Self) -> anyhow::Result<()> {
         let (width, height) = (other.width(), other.height());
+
+        if width + x > self.width() || height + y > self.height() {
+            bail!("blit out of bounds");
+        }
 
         for y2 in 0..height {
             for x2 in 0..width {
@@ -112,6 +120,8 @@ impl Rgba8Image {
                 self.data[index + 3] = other.data[index2 + 3];
             }
         }
+
+        Ok(())
     }
 
     pub fn encode_oxipng(self, compression: u8) -> anyhow::Result<Vec<u8>> {
