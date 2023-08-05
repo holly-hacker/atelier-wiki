@@ -6,4 +6,4 @@ prep-data GAME_DIR:
 # Extract game textures and upload them to object storage
 upload-textures GAME_DIR:
     # this needs a release build because it uses oxipng to improve file sizes
-    cd data-prepper && cargo run --release -- -v extract-images -i {{GAME_DIR}} --upload -c 1
+    cd data-prepper && cargo run --release -- -v extract-images -i {{GAME_DIR}} -o ../frontend/src/data/ --upload -c 1 -d

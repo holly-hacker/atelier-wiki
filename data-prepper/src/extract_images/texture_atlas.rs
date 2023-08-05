@@ -1,6 +1,8 @@
 #![allow(unused)]
 
 use anyhow::{bail, Context};
+use serde::Serialize;
+use typescript_type_def::TypeDef;
 
 use super::rgba8_image::Rgba8Image;
 
@@ -16,6 +18,17 @@ pub struct UniformTextureAtlas {
 
     /// An ordered list of the images that have been stored already.
     image_names: Vec<String>,
+}
+
+#[derive(Serialize, TypeDef)]
+/// Information about a texture atlas.
+pub struct UniformTextureAtlasInfo {
+    /// The number of columns in the texture atlas.
+    pub columns: u32,
+    /// The dimensions of each image.
+    pub image_dimensions: (u32, u32),
+    /// An ordered list of the images that are stored in this texture atlas.
+    pub stored_images: Vec<String>,
 }
 
 impl UniformTextureAtlas {
@@ -104,6 +117,14 @@ impl UniformTextureAtlas {
 
     pub fn into_image(self) -> Rgba8Image {
         self.image
+    }
+
+    pub fn create_info(&self) -> UniformTextureAtlasInfo {
+        UniformTextureAtlasInfo {
+            columns: self.columns() as u32,
+            image_dimensions: self.image_dimensions(),
+            stored_images: self.image_names.clone(),
+        }
     }
 
     fn columns(&self) -> usize {

@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use anyhow::Context;
 use argh::FromArgs;
@@ -21,12 +21,14 @@ impl Args {
             .unwrap_or_else(|| PathBuf::from("typedefs"));
         debug!(?output_folder);
 
-        debug!("Generating typedefs for ryza3");
-        let ts_module =
-            gen_typedefs::<super::extract::Ryza3Data>().context("generate typedefs for ryza3")?;
-        let output_file = output_folder.join("ryza3.d.ts");
-        std::fs::create_dir_all(&output_folder).context("create output folder")?;
-        std::fs::write(output_file, ts_module).context("write output file")?;
+        debug!("Generating typedefs");
+        gen_typedefs::<super::extract::Ryza3Data>(&output_folder, "ryza3.d.ts")
+            .context("generate typedefs for ryza3")?;
+        gen_typedefs::<super::extract_images::UniformTextureAtlasInfo>(
+            &output_folder,
+            "texture_atlas.d.ts",
+        )
+        .context("generate typedefs for ryza3")?;
 
         info!("Wrote all typedefs to {:?}", output_folder);
 
@@ -34,12 +36,18 @@ impl Args {
     }
 }
 
-fn gen_typedefs<T>() -> anyhow::Result<String>
+fn gen_typedefs<T>(output_folder: &Path, file_name: &str) -> anyhow::Result<()>
 where
     T: TypeDef,
 {
     let mut buf = Vec::new();
     write_definition_file::<_, T>(&mut buf, DefinitionFileOptions::default())
         .context("generate definition")?;
-    String::from_utf8(buf).context("convert typedef to string")
+    let ts_module = String::from_utf8(buf).context("convert typedef to string")?;
+
+    let output_file = output_folder.join(file_name);
+    std::fs::create_dir_all(output_folder).context("create output folder")?;
+    std::fs::write(output_file, ts_module).context("write output file")?;
+
+    Ok(())
 }

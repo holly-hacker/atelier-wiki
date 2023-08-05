@@ -7,19 +7,24 @@ use tracing::{debug, info, trace};
 
 use crate::config::UploadConfig;
 
-/// The prefix for all items in the bucket
-const PATH_PREFIX: &str = "game-data/";
-
 pub struct UploadManager {
     bucket: Option<Bucket>,
     existing_objects: HashMap<String, [u8; 16]>,
+
+    /// the prefix for all items in the bucket during this session
+    prefix: String,
 }
 
 impl UploadManager {
-    pub fn new() -> Self {
+    pub fn new_with_prefix(prefix: String) -> Self {
+        assert!(
+            prefix.ends_with('/'),
+            "object storage prefix must end with '/'"
+        );
         Self {
             bucket: None,
             existing_objects: Default::default(),
+            prefix,
         }
     }
 
@@ -41,7 +46,7 @@ impl UploadManager {
         let bucket = Bucket::new(&config.bucket, region, credentials).context("create bucket")?;
 
         let pages = bucket
-            .list(PATH_PREFIX.to_string(), None)
+            .list(self.prefix.clone(), None)
             .context("list game assets in bucket")?;
         debug!(
             "Found {} pages with {} items",
@@ -75,7 +80,7 @@ impl UploadManager {
     pub fn upload(&self, path: &str, data: &[u8]) -> anyhow::Result<()> {
         let Some(bucket) = &self.bucket else { return Ok(()); };
 
-        let object_path = format!("{}{}", PATH_PREFIX, path);
+        let object_path = format!("{}{}", self.prefix, path);
         trace!(?path, ?object_path, "uploading file");
 
         // see if the object already exists in the remote, and if the md5 matches if it does

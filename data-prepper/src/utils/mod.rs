@@ -15,6 +15,14 @@ pub fn extract_game_version(path: &Path) -> Option<GameVersion> {
     }
 }
 
+pub fn game_slug(game_version: GameVersion) -> &'static str {
+    match game_version {
+        GameVersion::A21 => "ryza1",
+        GameVersion::A22 => "ryza2",
+        GameVersion::A24 => "ryza3",
+    }
+}
+
 /// Match a pattern with a wildcard `*` against a string.
 pub fn match_pattern(needle: &'static str, haystack: &str) -> Option<usize> {
     let Some(index) = needle.find('*') else {

@@ -80,7 +80,7 @@ fn extract_ryza3(mut pak_index: PakIndex, output_directory: &Path) -> anyhow::Re
     Ok(())
 }
 
-fn write_data_to_file<T>(path: &Path, data: &T) -> anyhow::Result<()>
+pub fn write_data_to_file<T>(path: &Path, data: &T) -> anyhow::Result<()>
 where
     T: Serialize,
 {
