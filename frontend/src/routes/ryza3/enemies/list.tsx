@@ -1,5 +1,6 @@
 import enemies from "@/data/ryza3/enemies.json";
-import { EnemyLink } from "../utility_components/links";
+import enemies_texture from "@/data/ryza3/texture-atlasses/enemies.json";
+import { EnemyLink, TextureAtlasImage } from "../utility_components/links";
 
 export default function EnemyList() {
   return (
@@ -10,6 +11,7 @@ export default function EnemyList() {
         <table>
           <thead>
             <tr>
+              <th></th>
               <th>Name</th>
               <th>Race tag</th>
               <th>Tag</th>
@@ -22,6 +24,15 @@ export default function EnemyList() {
             {enemies.map((enemy, i) => {
               return (
                 <tr key={i}>
+                  <td>
+                    <EnemyLink enemy={enemy}>
+                      <TextureAtlasImage
+                        texture_atlas={enemies_texture}
+                        texture_atlas_name="enemies"
+                        name={String(enemy.img_no)}
+                      />
+                    </EnemyLink>
+                  </td>
                   <td>
                     <EnemyLink enemy={enemy} />
                   </td>

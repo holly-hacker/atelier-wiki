@@ -1,4 +1,5 @@
 import types from "@/data/types/ryza3";
+import texture_atlas from "@/data/types/texture_atlas";
 import { Link } from "react-router-dom";
 import { enemyDisplayName, itemDisplayName } from "../ryza3_data_util";
 import items from "@/data/ryza3/items.json";
@@ -42,5 +43,33 @@ export function EnemyLink({
 
   return (
     <Link to={`/ryza3/enemy/${id}`}>{children || enemyDisplayName(enemy)}</Link>
+  );
+}
+
+export function TextureAtlasImage({
+  texture_atlas,
+  texture_atlas_name,
+  name, // TODO: accept dimensions as parameter too
+}: {
+  texture_atlas: texture_atlas.UniformTextureAtlasInfo;
+  texture_atlas_name: string;
+  name: string;
+}) {
+  let index = texture_atlas.stored_images.indexOf(name);
+  let x_index = index % texture_atlas.columns;
+  let y_index = Math.floor(index / texture_atlas.columns);
+
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        height: texture_atlas.image_dimensions[0],
+        width: texture_atlas.image_dimensions[1],
+        backgroundImage: `url(https://atelier-wiki-data.variant9.dev/game-data/ryza3/${texture_atlas_name}/packed.png)`,
+        backgroundPositionX: -x_index * texture_atlas.image_dimensions[0],
+        backgroundPositionY: -y_index * texture_atlas.image_dimensions[1],
+        backgroundRepeat: "no-repeat",
+      }}
+    ></span>
   );
 }

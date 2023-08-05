@@ -1,5 +1,6 @@
 import items from "@/data/ryza3/items.json";
-import { ItemLink } from "../utility_components/links";
+import items_texture from "@/data/ryza3/texture-atlasses/items.json";
+import { ItemLink, TextureAtlasImage } from "../utility_components/links";
 
 export default function ItemList() {
   return (
@@ -12,6 +13,7 @@ export default function ItemList() {
         <table>
           <thead>
             <tr>
+              <th></th>
               <th>Name</th>
               <th>Price</th>
               <th>Level</th>
@@ -29,6 +31,15 @@ export default function ItemList() {
             {items.map((item, i) => {
               return (
                 <tr key={i}>
+                  <td>
+                    <ItemLink item={item}>
+                      <TextureAtlasImage
+                        texture_atlas={items_texture}
+                        texture_atlas_name="items"
+                        name={String(item.img_no)}
+                      />
+                    </ItemLink>
+                  </td>
                   <td>
                     <ItemLink item={item} />
                   </td>
