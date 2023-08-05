@@ -4,27 +4,27 @@ use anyhow::{bail, Context};
 
 use super::rgba8_image::Rgba8Image;
 
-/// A packed image, also known as a spritesheet.
-pub struct PackedImage {
+/// A texture atlas that stores images of the same size, with optional downscaling.
+pub struct UniformTextureAtlas {
     image: Rgba8Image,
 
-    /// The dimensions of the original images
+    /// The dimensions of the original images, before they are inserted.
     original_dimensions: (u32, u32),
 
     /// The factor by which the original images are scaled down.
     scaling_factor: (u32, u32),
 
     /// An ordered list of the images that have been stored already.
-    stored_images: Vec<String>,
+    image_names: Vec<String>,
 }
 
-impl PackedImage {
-    pub fn new(
+impl UniformTextureAtlas {
+    pub fn new_with_scaling(
         original_dimensions: (u32, u32),
         new_dimensions: (u32, u32),
-        total_image_count: usize,
+        capacity: usize,
     ) -> anyhow::Result<Self> {
-        let (columns, rows) = calculate_pack_size(total_image_count);
+        let (columns, rows) = calculate_pack_size(capacity);
 
         if original_dimensions.0 % new_dimensions.0 != 0
             || original_dimensions.1 % new_dimensions.1 != 0
@@ -49,19 +49,19 @@ impl PackedImage {
             image,
             original_dimensions,
             scaling_factor,
-            stored_images: vec![],
+            image_names: vec![],
         };
 
-        debug_assert_eq!(ret.get_columns(), columns);
-        debug_assert_eq!(ret.get_image_dimensions(), new_dimensions);
+        debug_assert_eq!(ret.columns(), columns);
+        debug_assert_eq!(ret.image_dimensions(), new_dimensions);
 
         Ok(ret)
     }
 
-    /// Add a new image to the packed image.
+    /// Add a new image to the texture atlas.
     ///
     /// This function can return an error if the input image has incorrect dimensions or if the
-    /// packed image is "full".
+    /// texture atlas is "full".
     pub fn add_image(&mut self, image: &Rgba8Image, name: String) -> anyhow::Result<()> {
         if image.width() != self.original_dimensions.0
             || image.height() != self.original_dimensions.1
@@ -73,17 +73,17 @@ impl PackedImage {
             );
         }
 
-        let new_index = self.stored_images.len();
-        let columns = self.get_columns();
+        let new_index = self.image_names.len();
+        let columns = self.columns();
         let (index_x, index_y) = (new_index % columns, new_index / columns);
-        let (image_width, image_height) = self.get_image_dimensions();
+        let (image_width, image_height) = self.image_dimensions();
         let (image_x, image_y) = (index_x as u32 * image_width, index_y as u32 * image_height);
 
-        // ensure image is not out of bounds
+        // ensure image is not out of bounds (this happens if we exceed capacity)
         debug_assert!(image_x < self.image.width());
         if image_y >= self.image.height() {
             bail!(
-                "image does not fit in packed image: image dimensions: {:?}, packed image dimensions: {:?}",
+                "image does not fit in texture atlas: image dimensions: {:?}, texture atlas dimensions: {:?}",
                 (image_x, image_y),
                 (self.image.width(), self.image.height())
             );
@@ -91,9 +91,9 @@ impl PackedImage {
         debug_assert!(image_x + image_width <= self.image.width());
         debug_assert!(image_y + image_height <= self.image.height());
 
-        self.stored_images.push(name);
+        self.image_names.push(name);
 
-        // scale the image and blit it to the packed image
+        // scale the image and blit it to the texture atlas
         let scaled_image = image.scale_down(self.scaling_factor);
         self.image
             .blit(image_x, image_y, &scaled_image)
@@ -102,20 +102,20 @@ impl PackedImage {
         Ok(())
     }
 
-    pub fn take_image(self) -> Rgba8Image {
+    pub fn into_image(self) -> Rgba8Image {
         self.image
     }
 
-    fn get_columns(&self) -> usize {
+    fn columns(&self) -> usize {
         (self.image.width() / (self.original_dimensions.0 / self.scaling_factor.0)) as usize
     }
 
-    fn get_rows(&self) -> usize {
+    fn rows(&self) -> usize {
         (self.image.height() / (self.original_dimensions.1 / self.scaling_factor.1)) as usize
     }
 
-    /// Gets the dimension of a single image in the packed image.
-    fn get_image_dimensions(&self) -> (u32, u32) {
+    /// Gets the dimension of a single image in the texture atlas.
+    fn image_dimensions(&self) -> (u32, u32) {
         (
             (self.original_dimensions.0 / self.scaling_factor.0),
             (self.original_dimensions.1 / self.scaling_factor.1),
@@ -123,9 +123,9 @@ impl PackedImage {
     }
 }
 
-fn calculate_pack_size(count: usize) -> (usize, usize) {
-    let square_width = (count as f32).sqrt().ceil() as usize;
-    let square_heigth = (count as f32 / square_width as f32).ceil() as usize;
+fn calculate_pack_size(capacity: usize) -> (usize, usize) {
+    let square_width = (capacity as f32).sqrt().ceil() as usize;
+    let square_heigth = (capacity as f32 / square_width as f32).ceil() as usize;
 
     (square_width, square_heigth)
 }

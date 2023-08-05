@@ -1,5 +1,5 @@
-mod packed_image;
 mod rgba8_image;
+mod texture_atlas;
 mod upload_manager;
 
 use std::path::{Path, PathBuf};
@@ -11,7 +11,7 @@ use tracing::{debug, info};
 use crate::{
     config::Config,
     extract_images::{
-        packed_image::PackedImage, rgba8_image::Rgba8Image, upload_manager::UploadManager,
+        rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas, upload_manager::UploadManager,
     },
     utils::{extract_game_version, match_pattern, PakIndex},
 };
@@ -100,7 +100,7 @@ fn extract_images(
     info!("Extracting monster portraits");
     const MONSTER_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t";
     let monsters_path = output_directory.join(PATH_ENEMIES);
-    extract_prefixed_with_packed(
+    extract_prefixed_with_texture_atlas(
         pak_index,
         MONSTER_PATTERN,
         &monsters_path,
@@ -113,7 +113,7 @@ fn extract_images(
     info!("Extracting item icons");
     const ITEM_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_item_l_*.g1t";
     let items_path = output_directory.join(PATH_ITEMS);
-    extract_prefixed_with_packed(
+    extract_prefixed_with_texture_atlas(
         pak_index,
         ITEM_PATTERN,
         &items_path,
@@ -126,7 +126,7 @@ fn extract_images(
     Ok(())
 }
 
-fn extract_prefixed_with_packed(
+fn extract_prefixed_with_texture_atlas(
     pak_index: &mut PakIndex,
     pattern: &'static str,
     output_folder: &Path,
@@ -145,9 +145,10 @@ fn extract_prefixed_with_packed(
 
     entries.sort_by_key(|(_, num)| *num);
 
-    // create spritesheet
-    let mut packed_image =
-        PackedImage::new((512, 512), (64, 64), entries.len()).context("create packed image")?;
+    // create texture atlas
+    let mut texture_atlas =
+        UniformTextureAtlas::new_with_scaling((512, 512), (64, 64), entries.len())
+            .context("create texture atlas")?;
 
     for (entry, num) in entries {
         let mut file = pak_index
@@ -172,10 +173,10 @@ fn extract_prefixed_with_packed(
         let image = Rgba8Image::new(texture.width, image_bytes).context("image buffer to image")?;
         debug_assert_eq!(image.height(), texture.height);
 
-        debug!(?entry, "adding image to packed image");
-        packed_image
+        debug!(?entry, "adding image to texture atlas");
+        texture_atlas
             .add_image(&image, num.to_string())
-            .context("add image to packed image")?;
+            .context("add image to texture atlas")?;
 
         save_image(
             image,
@@ -188,16 +189,16 @@ fn extract_prefixed_with_packed(
         .with_context(|| format!("save image {num}"))?;
     }
 
-    // save the packed image
+    // save the texture atlas image
     save_image(
-        packed_image.take_image(),
+        texture_atlas.into_image(),
         output_folder,
         object_storage_path,
         "packed.png",
         opt_level,
         upload_manager,
     )
-    .context("save packed image")?;
+    .context("save texture atlas")?;
 
     Ok(())
 }
