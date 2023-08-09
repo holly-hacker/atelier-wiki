@@ -1516,8 +1516,7 @@ checksum = "497961ef93d974e23eb6f433eb5fe1b7930b659f06d12dec6fc44a8f554c0bba"
 [[package]]
 name = "typescript-type-def"
 version = "0.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3c4be05eb0171e18da471e545cfff85d80b8118e5aa2d50c2d152265d7435997"
+source = "git+https://github.com/holly-hacker/rust-typescript-type-def.git?branch=feature/pretty-printed-output#bd51840a30d1cbd764fa32e6db296b67f2df5a7f"
 dependencies = [
  "typescript-type-def-derive",
 ]
@@ -1525,8 +1524,7 @@ dependencies = [
 [[package]]
 name = "typescript-type-def-derive"
 version = "0.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71aeb2295da6c2bfe665493332b4e4281d113fab3a0786e9651dcc85708095a4"
+source = "git+https://github.com/holly-hacker/rust-typescript-type-def.git?branch=feature/pretty-printed-output#bd51840a30d1cbd764fa32e6db296b67f2df5a7f"
 dependencies = [
  "darling",
  "ident_case",
