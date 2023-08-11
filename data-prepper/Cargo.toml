@@ -30,7 +30,7 @@ serde_json = "1.0.103"
 toml = { version = "0.7.6", default-features = false, features = ["parse"] }
 tracing = "0.1.37"
 tracing-subscriber = "0.3.17"
-typescript-type-def = { git = "https://github.com/holly-hacker/rust-typescript-type-def.git", branch = "feature/pretty-printed-output" } # TODO: replace with original crate when new release is published
+typescript-type-def = "0.5.8"
 
 [profile.dev.package."data-prepper"]
 opt-level = 2
