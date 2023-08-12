@@ -51,10 +51,7 @@ export default function Grid<TData>({
                 {header.isPlaceholder ? null : (
                   <div
                     {...{
-                      // TODO: this className assumes some css framework that we don't use
-                      className: header.column.getCanSort()
-                        ? "cursor-pointer select-none"
-                        : "",
+                      style: { cursor: "pointer", userSelect: "none" },
                       onClick: header.column.getToggleSortingHandler(),
                     }}
                   >
