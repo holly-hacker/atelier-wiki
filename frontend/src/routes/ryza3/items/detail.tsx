@@ -14,7 +14,7 @@ export default function ItemDetail() {
     item = items[Number(id)];
   } else if (id) {
     // try to find by item tag
-    let tag = `ITEM_${id}`;
+    const tag = `ITEM_${id}`;
     item = items.find((v) => v.tag == tag);
   }
 

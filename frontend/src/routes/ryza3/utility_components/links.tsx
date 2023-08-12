@@ -55,9 +55,9 @@ export function TextureAtlasImage({
   texture_atlas_name: string;
   name: string;
 }) {
-  let index = texture_atlas.stored_images.indexOf(name);
-  let x_index = index % texture_atlas.columns;
-  let y_index = Math.floor(index / texture_atlas.columns);
+  const index = texture_atlas.stored_images.indexOf(name);
+  const x_index = index % texture_atlas.columns;
+  const y_index = Math.floor(index / texture_atlas.columns);
 
   return (
     <span

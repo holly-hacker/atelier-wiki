@@ -26,6 +26,9 @@ export default function Grid<TData>({
   columns,
   data,
 }: {
+  // use explicit `any` because the second arg seems to be what's printed to the DOM
+  // we don't want to limit this, the error messages would suck anyway
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   columns: ColumnDef<TData, any>[];
   data: TData[];
 }) {

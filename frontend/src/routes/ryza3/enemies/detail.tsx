@@ -16,7 +16,7 @@ export default function EnemyDetail() {
     enemy = enemies[Number(id)];
   } else if (id) {
     // try to find by monster tag
-    let tag = `MONSTER_${id}`;
+    const tag = `MONSTER_${id}`;
     enemy = enemies.find((v) => v.monster_tag == tag);
   }
 
@@ -124,7 +124,7 @@ export default function EnemyDetail() {
                       Drops:
                       <ul>
                         {status.drops.map((drop, i) => {
-                          let item = findItemByTag(drop.item_tag);
+                          const item = findItemByTag(drop.item_tag);
                           return (
                             <li key={i}>
                               {drop.rate}% {drop.num}x{" "}
