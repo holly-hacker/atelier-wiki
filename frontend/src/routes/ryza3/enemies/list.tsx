@@ -42,9 +42,19 @@ export default function EnemyList() {
       header: "Size",
       cell: (i) => <code>{i.getValue()}</code>,
     }),
-    columnHelper.accessor("statusses", {
+    columnHelper.accessor((x) => x.statusses.length, {
       header: "Instance count",
-      cell: (i) => <>{i.getValue().length} instance(s)</>,
+      cell: (i) => (
+        <>
+          {i.getValue()} {i.getValue() == 1 ? "instance" : "instances"}
+        </>
+      ),
+    }),
+    columnHelper.accessor((x) => Math.min(...x.statusses.map((x) => x.lv)), {
+      header: "Min lvl",
+    }),
+    columnHelper.accessor((x) => Math.max(...x.statusses.map((x) => x.lv)), {
+      header: "Max lvl",
     }),
     columnHelper.accessor("dlc", {
       header: "DLC",
