@@ -1,33 +1,31 @@
+import Grid from "@/components/grid";
 import items from "@/data/ryza3/items.json";
+import { createColumnHelper } from "@tanstack/react-table";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ItemUseTagsList() {
-  const tags = items.map((item) => item.use_tag);
-  const uniqueTags = [...new Set(tags)];
+  const [kinds] = useState(() => items.map((item) => item.use_tag));
+  const [uniqueKinds] = useState(() => [...new Set(kinds)]);
+
+  const columnHelper = createColumnHelper<string>();
+  const columns = [
+    columnHelper.accessor((x) => x, {
+      header: "Item use tags",
+      cell: (i) => (
+        <Link to={`/ryza3/item_use_tags/${i.getValue()}`}>{i.getValue()}</Link>
+      ),
+    }),
+    columnHelper.accessor((x) => kinds.filter((c) => c === x).length, {
+      header: "Count",
+    }),
+  ];
 
   return (
     <>
-      <h1>Item tags</h1>A list of all item tags.
-      <table>
-        <thead>
-          <tr>
-            <th>Item kind</th>
-            <th>Count</th>
-          </tr>
-        </thead>
-        <tbody>
-          {uniqueTags.map((kind, i) => {
-            return (
-              <tr key={i}>
-                <td>
-                  <Link to={`/ryza3/item_use_tags/${kind}`}>{kind}</Link>
-                </td>
-                <td>{tags.filter((c) => c === kind).length}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <h1>Item use tags</h1>
+      A list of all item use tags.
+      <Grid data={uniqueKinds} columns={columns} />
     </>
   );
 }

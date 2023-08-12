@@ -6,8 +6,8 @@ import { enemyDisplayName } from "../ryza3_data_util";
 import Grid from "@/components/grid";
 
 export default function EnemyList() {
-  let columnHelper = createColumnHelper<(typeof enemies)[0]>();
-  let columns = [
+  const columnHelper = createColumnHelper<(typeof enemies)[0]>();
+  const columns = [
     columnHelper.accessor("img_no", {
       header: "Image",
       cell: (i) => (
