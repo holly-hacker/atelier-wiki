@@ -2,16 +2,20 @@ import enemies from "@/data/ryza3/enemies.json";
 import enemies_texture from "@/data/ryza3/texture-atlasses/enemies.json";
 import { EnemyLink, TextureAtlasImage } from "../utility_components/links";
 import {
+  SortingState,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import React from "react";
+import { useState } from "react";
 import { enemyDisplayName } from "../ryza3_data_util";
 
 export default function EnemyList() {
-  const [data, _] = React.useState(() => [...enemies]);
+  const [data, _] = useState(() => [...enemies]);
+  const [sorting, setSorting] = useState<SortingState>([]);
+
   let columnHelper = createColumnHelper<(typeof enemies)[0]>();
   let columns = [
     columnHelper.accessor("img_no", {
@@ -66,7 +70,12 @@ export default function EnemyList() {
   const table = useReactTable({
     data,
     columns,
+    state: {
+      sorting,
+    },
+    onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -80,12 +89,26 @@ export default function EnemyList() {
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
+                    {header.isPlaceholder ? null : (
+                      <div
+                        {...{
+                          // TODO: this className assumes some css framework that we don't use
+                          className: header.column.getCanSort()
+                            ? "cursor-pointer select-none"
+                            : "",
+                          onClick: header.column.getToggleSortingHandler(),
+                        }}
+                      >
+                        {flexRender(
                           header.column.columnDef.header,
                           header.getContext(),
                         )}
+                        {{
+                          asc: " ↑",
+                          desc: " ↓",
+                        }[header.column.getIsSorted() as string] ?? null}
+                      </div>
+                    )}
                   </th>
                 ))}
               </tr>
