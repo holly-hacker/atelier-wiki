@@ -1,8 +1,64 @@
 import enemies from "@/data/ryza3/enemies.json";
 import enemies_texture from "@/data/ryza3/texture-atlasses/enemies.json";
 import { EnemyLink, TextureAtlasImage } from "../utility_components/links";
+import {
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import React from "react";
+import { enemyDisplayName } from "../ryza3_data_util";
 
 export default function EnemyList() {
+  const [data, _] = React.useState(() => [...enemies]);
+  let columnHelper = createColumnHelper<(typeof enemies)[0]>();
+  let columns = [
+    columnHelper.accessor("img_no", {
+      header: "Image",
+      cell: (i) => (
+        <EnemyLink enemy={i.row.original}>
+          <TextureAtlasImage
+            texture_atlas={enemies_texture}
+            texture_atlas_name="enemies"
+            name={String(i.getValue())}
+          />
+        </EnemyLink>
+      ),
+    }),
+    columnHelper.accessor((x) => enemyDisplayName(x), {
+      header: "Name",
+      cell: (i) => <EnemyLink enemy={i.row.original} />,
+    }),
+    columnHelper.accessor("race_tag", {
+      header: "Race",
+      cell: (i) => <code>{i.getValue()}</code>,
+    }),
+    columnHelper.accessor("monster_tag", {
+      header: "Tag",
+      cell: (i) => <code>{i.getValue()}</code>,
+    }),
+    columnHelper.accessor("size", {
+      header: "Size",
+      cell: (i) => <code>{i.getValue()}</code>,
+    }),
+    columnHelper.accessor("statusses", {
+      header: "Instance count",
+      cell: (i) => <>{i.getValue().length} instance(s)</>,
+    }),
+    columnHelper.accessor("dlc", {
+      header: "DLC",
+      // NOTE: Ryza3 does not contain enemies that require multiple DLC
+      cell: (i) => <code>{i.getValue() && i.getValue()[0]}</code>,
+    }),
+  ];
+
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  });
+
   return (
     <>
       <h1>Ryza 3 enemy list</h1>
@@ -10,49 +66,31 @@ export default function EnemyList() {
         {enemies.length} enemies found.
         <table>
           <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Race tag</th>
-              <th>Tag</th>
-              <th>Size</th>
-              <th>Instance count</th>
-              <th>DLC</th>
-            </tr>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                  </th>
+                ))}
+              </tr>
+            ))}
           </thead>
           <tbody>
-            {enemies.map((enemy, i) => {
-              return (
-                <tr key={i}>
-                  <td>
-                    <EnemyLink enemy={enemy}>
-                      <TextureAtlasImage
-                        texture_atlas={enemies_texture}
-                        texture_atlas_name="enemies"
-                        name={String(enemy.img_no)}
-                      />
-                    </EnemyLink>
+            {table.getRowModel().rows.map((row) => (
+              <tr key={row.id}>
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
-                  <td>
-                    <EnemyLink enemy={enemy} />
-                  </td>
-                  <td>
-                    <code>{enemy.race_tag}</code>
-                  </td>
-                  <td>
-                    <code>{enemy.monster_tag}</code>
-                  </td>
-                  <td>
-                    <code>{enemy.size}</code>
-                  </td>
-                  <td>{enemy.statusses.length} instance(s)</td>
-                  {/* NOTE: Ryza3 does not contain enemies that require multiple DLC */}
-                  <td>
-                    <code>{enemy.dlc && enemy.dlc[0]}</code>
-                  </td>
-                </tr>
-              );
-            })}
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
