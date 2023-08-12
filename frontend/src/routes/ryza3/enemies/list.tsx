@@ -1,21 +1,11 @@
 import enemies from "@/data/ryza3/enemies.json";
 import enemies_texture from "@/data/ryza3/texture-atlasses/enemies.json";
 import { EnemyLink, TextureAtlasImage } from "../utility_components/links";
-import {
-  SortingState,
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { useState } from "react";
+import { createColumnHelper } from "@tanstack/react-table";
 import { enemyDisplayName } from "../ryza3_data_util";
+import Grid from "@/components/grid";
 
 export default function EnemyList() {
-  const [data, _] = useState(() => [...enemies]);
-  const [sorting, setSorting] = useState<SortingState>([]);
-
   let columnHelper = createColumnHelper<(typeof enemies)[0]>();
   let columns = [
     columnHelper.accessor("img_no", {
@@ -67,66 +57,11 @@ export default function EnemyList() {
     }),
   ];
 
-  const table = useReactTable({
-    data,
-    columns,
-    state: {
-      sorting,
-    },
-    onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-  });
-
   return (
     <>
       <h1>Ryza 3 enemy list</h1>
-      <div>
-        {enemies.length} enemies found.
-        <table>
-          <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th key={header.id}>
-                    {header.isPlaceholder ? null : (
-                      <div
-                        {...{
-                          // TODO: this className assumes some css framework that we don't use
-                          className: header.column.getCanSort()
-                            ? "cursor-pointer select-none"
-                            : "",
-                          onClick: header.column.getToggleSortingHandler(),
-                        }}
-                      >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
-                        {{
-                          asc: " ↑",
-                          desc: " ↓",
-                        }[header.column.getIsSorted() as string] ?? null}
-                      </div>
-                    )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <div>{enemies.length} enemies found.</div>
+      <Grid data={enemies} columns={columns} />
     </>
   );
 }
