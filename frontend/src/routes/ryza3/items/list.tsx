@@ -46,7 +46,7 @@ export default function ItemList() {
     columnHelper.accessor("dlc", {
       header: "DLC",
       // NOTE: Ryza3 does not contain enemies that require multiple DLC
-      cell: (i) => <code>{i.getValue() && i.getValue()[0]}</code>,
+      cell: (i) => <code>{i.getValue()}</code>,
     }),
   ];
 

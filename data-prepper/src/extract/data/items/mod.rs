@@ -46,8 +46,8 @@ pub struct Item {
     pub w_def: Option<f32>,
     pub w_spd: Option<f32>,
 
-    /// The DLC required for this item. In practice, this is always a single item.
-    pub dlc: Vec<String>,
+    /// The DLC required for this item.
+    pub dlc: Option<String>,
 
     pub use_tag: String,
     pub kind_tag: String,
@@ -106,7 +106,7 @@ impl Item {
                     w_atk: d.w_atk,
                     w_def: d.w_def,
                     w_spd: d.w_spd,
-                    dlc: d.dlc,
+                    dlc: d.dlc.get(0).cloned(),
                     use_tag: d.use_tag,
                     kind_tag: d.kind_tag,
                     bme: d.bme,

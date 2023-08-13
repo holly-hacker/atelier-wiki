@@ -37,9 +37,9 @@ export namespace types {
         "w_spd": (types.F32 | null);
 
         /**
-         * The DLC required for this item. In practice, this is always a single item.
+         * The DLC required for this item.
          */
-        "dlc": (string)[];
+        "dlc": (string | null);
         "use_tag": string;
         "kind_tag": string;
         "bme": (string | null);
@@ -111,7 +111,7 @@ export namespace types {
         "library_rank_attack": types.U32;
         "library_rank_speed": types.U32;
         "library_rank_defense": types.U32;
-        "dlc": (string)[];
+        "dlc": (string | null);
         "shoot_up": boolean;
         "monster_tag": string;
         "chara_tag": string;
