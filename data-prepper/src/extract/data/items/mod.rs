@@ -1,3 +1,10 @@
+//! Files of interest:
+//! - [x] item\itemdata.xml: General item data
+//! - [x] library\libraryitem.xml: Item info in in-game library, contains description.
+//! - [ ] feeding\*.xml: Item drops for puni feeding
+//! - [ ] shop\*.xml: Shop items
+//! - [ ] item\item_use_data.xml: Item effects in battle
+
 mod item_data;
 mod library_item;
 

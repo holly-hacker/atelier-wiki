@@ -24,10 +24,10 @@ where
     Ok(result)
 }
 
-pub struct ElementReader<'x, 'attr, 'xml_str>(pub &'x roxmltree::Node<'attr, 'xml_str>);
+pub struct ElementReader<'node, 'attr, 'xml_str>(pub &'node roxmltree::Node<'attr, 'xml_str>);
 
 // TODO: consider a mode where the read properties are tracked, allowing to check for missing properties
-impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
+impl<'node, 'attr, 'xml_str> ElementReader<'node, 'attr, 'xml_str> {
     pub fn read<T>(&self, name: &str) -> anyhow::Result<T>
     where
         T: FromStr,
@@ -94,7 +94,6 @@ impl<'x, 'attr, 'xml_str> ElementReader<'x, 'attr, 'xml_str> {
     where
         T: FromStr,
         <T as FromStr>::Err: std::error::Error + Send + Sync + 'static,
-        // T: 'xml_str,
     {
         // extract all attributes that match the pattern
         let mut values_with_indices = self

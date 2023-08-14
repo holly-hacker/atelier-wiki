@@ -1,3 +1,11 @@
+//! Files of interest:
+//! - [x] enemy\enemy_data.xml: General info of an enemy.
+//! - [x] enemy\enemy_status.xml: An "instance" of a monster, which has a specific level.
+//! - [x] enemy\drop_data.xml: Dropped items by an enemy status.
+//! - [x] enemy\librarymonster.xml: Enemy info in in-game library, contains description.
+//! - [ ] encount\encount_data.xml: Info on enemy encounter groups?
+//! - [ ] fieldmap\charaenemy\charaenemy_sg_data.xml: Info about enemy encounters for the world map?
+
 use anyhow::Context;
 use serde::Serialize;
 use tracing::debug;

@@ -53,7 +53,7 @@ impl ItemData {
         })
     }
 
-    pub fn read_from_doc(document: roxmltree::Document) -> anyhow::Result<Vec<Self>> {
+    fn read_from_doc(document: roxmltree::Document) -> anyhow::Result<Vec<Self>> {
         let mut ret = vec![];
 
         // NOTE: encoding in header seems to be SHIFT-JIS, may need to account for that?
