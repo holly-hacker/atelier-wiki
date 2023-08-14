@@ -71,6 +71,10 @@ fn extract_ryza3(mut pak_index: PakIndex, output_directory: &Path) -> anyhow::Re
     write_data_to_file(&output_directory.join("items.json"), &data.item_data)
         .context("write item data")?;
 
+    info!("Writing recipe data");
+    write_data_to_file(&output_directory.join("recipes.json"), &data.recipe_data)
+        .context("write recipe data")?;
+
     info!("Writing enemy data");
     write_data_to_file(&output_directory.join("enemies.json"), &data.enemy_data)
         .context("write enemy data")?;
