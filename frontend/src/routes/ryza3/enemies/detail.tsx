@@ -56,7 +56,7 @@ function EnemyStats({ enemy }: { enemy: types.Enemy }) {
     <table>
       <tbody>
         {stats.map(([name, value]) => (
-          <tr id={name}>
+          <tr key={name}>
             <th>{name}</th>
             <td>
               <StarRating value={value} />
@@ -73,7 +73,7 @@ function StarRating({ value }: { value: number }) {
     <>
       {"⭐".repeat(value)}
       <span style={{ filter: "grayscale(100%)" }}>
-        {"⭐".repeat(5 - value)}
+        {"⭐".repeat(Math.max(5 - value, 0))}
       </span>
     </>
   );
