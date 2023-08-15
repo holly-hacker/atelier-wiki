@@ -39,10 +39,12 @@ export default function ItemDetail() {
     ),
   ];
 
-  const reverse_recipes = recipes.recipes.filter((r) =>
-    // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard
-    // earlier. See microsoft/TypeScript#9998
-    r.ingredients.some((i) => i.tag == item!.tag),
+  const reverse_recipes = recipes.recipes.filter(
+    (r) =>
+      // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard
+      // earlier. See microsoft/TypeScript#9998
+      r.ingredients.some((i) => i.tag == item!.tag) ||
+      r.fields.flatMap((r) => r).some((r) => r.explicit_material == item!.tag),
   );
 
   return (
