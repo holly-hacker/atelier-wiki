@@ -37,8 +37,9 @@ export default function ItemDetail() {
       )}
 
       <ItemDetailSection item={item} />
-      <ItemRecipeSection item={item} />
+      {/* the "Usage In Recipe" section is usually way smaller than the recipe section, so show it first */}
       <ItemReverseRecipeSection item={item} />
+      <ItemRecipeSection item={item} />
       <ItemDropSourcesSection item={item} />
     </>
   );
@@ -113,6 +114,18 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
     ),
   ];
 
+  let morph_targets = recipe.fields.flatMap((field, f_idx) =>
+    field
+      .filter((ring) => ring.effect_type == 6)
+      .map((ring) => ({
+        mat_tag: ring.explicit_material!,
+        new_item_tag: ring.effect_parameters[0].value.substring(
+          "ITEM_RECIPE_".length,
+        ),
+        requires_link_morph: f_idx != 0,
+      })),
+  );
+
   return (
     <>
       <h2>Recipe</h2>
@@ -124,55 +137,69 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
         <li>
           Time to craft: {recipe.hour} hour{recipe.hour != 1 && "s"}
         </li>
-        <li>
-          Core items with effects:
+      </ul>
+
+      <h3>Morph targets</h3>
+      {morph_targets.length > 0 ? (
+        <ul>
+          {morph_targets.map((target, i) => {
+            return (
+              <li key={i}>
+                <ItemLink item={findItemByTag(target.new_item_tag)!} />
+                {target.requires_link_morph && " (requires link morph)"}
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <>This item does not morph into other items.</>
+      )}
+      <h3>Core items with effects</h3>
+      <ul>
+        {recipe.ingredients.map((ingredient, i) => {
+          return (
+            <li key={i}>
+              {ingredient.is_category ? (
+                <Link to={`/ryza3/item_categories/${ingredient.tag}`}>
+                  <code>{ingredient.tag}</code>
+                </Link>
+              ) : (
+                <ItemLink item={findItemByTag(ingredient.tag)!} />
+              )}
+              <ul>
+                {[
+                  ingredient.initial_effect,
+                  ...ingredient.additional_effects,
+                ].map((effect, i) => {
+                  return (
+                    <li key={i}>
+                      {effect ? (
+                        <code>{effect}</code>
+                      ) : (
+                        <em>No initial effect</em>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+      {explicit_recipe_items && explicit_recipe_items.length != 0 && (
+        <>
+          <h3>Additional required materials</h3>
           <ul>
-            {recipe.ingredients.map((ingredient, i) => {
+            {explicit_recipe_items.map((item_tag, i) => {
               return (
                 <li key={i}>
-                  {ingredient.is_category ? (
-                    <Link to={`/ryza3/item_categories/${ingredient.tag}`}>
-                      <code>{ingredient.tag}</code>
-                    </Link>
-                  ) : (
-                    <ItemLink item={findItemByTag(ingredient.tag)!} />
-                  )}
-                  <ul>
-                    {[
-                      ingredient.initial_effect,
-                      ...ingredient.additional_effects,
-                    ].map((effect, i) => {
-                      return (
-                        <li key={i}>
-                          {effect ? (
-                            <code>{effect}</code>
-                          ) : (
-                            <em>No initial effect</em>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <ItemLink item={findItemByTag(item_tag!)!} />
                 </li>
               );
             })}
           </ul>
-        </li>
-        {explicit_recipe_items && explicit_recipe_items.length != 0 && (
-          <li>
-            Additional materials:
-            <ul>
-              {explicit_recipe_items.map((item_tag, i) => {
-                return (
-                  <li key={i}>
-                    <ItemLink item={findItemByTag(item_tag!)!} />
-                  </li>
-                );
-              })}
-            </ul>
-          </li>
-        )}
-      </ul>
+        </>
+      )}
       <h3>Recipe grid</h3>
       <RecipeDisplay recipe={recipe} />
       <details>
@@ -184,15 +211,15 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
 }
 
 function ItemReverseRecipeSection({ item }: { item: types.Item }) {
+  // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard
+  // earlier. See microsoft/TypeScript#9998
   const reverse_recipes = recipes.recipes.filter(
     (r) =>
-      // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard
-      // earlier. See microsoft/TypeScript#9998
       r.ingredients.some((i) => i.tag == item!.tag) ||
       r.fields.flatMap((r) => r).some((r) => r.explicit_material == item!.tag),
   );
 
-  let header = <h2>Usage in recipes</h2>;
+  const header = <h2>Usage in recipes</h2>;
 
   if (reverse_recipes.length == 0) {
     return (
@@ -208,9 +235,31 @@ function ItemReverseRecipeSection({ item }: { item: types.Item }) {
       {header}
       <ul>
         {reverse_recipes.map((recipe, i) => {
+          // detect items that are only used with type 6, which is recipe morph (called Imagined recipe) by the game.
+          // if an item is only used for recipe morphs, show an indication becsause usually you wont be using them.
+
+          // NOTE: it seems that some items (eg. `ITEM_MIX_WIND_SHOES`) incorrectly list their core ingredients to
+          // include items they don't use (`ITEM_MIX_MATERIAL_056`/Spirit Bottle), so we need to account for cases where
+          // the item is not used at all in the recipe.
+          const is_recipe_upgrade = recipe.fields
+            .flatMap((field) => field)
+            .filter(
+              (ring) =>
+                (ring.explicit_material !== null &&
+                  ring.explicit_material == item.tag) ||
+                (ring.restrict !== null &&
+                  recipe.ingredients[ring.restrict].tag == item.tag),
+            )
+            .reduce(
+              (acc, r) => (acc ?? false) && r.effect_type == 6,
+              null as boolean | null,
+            );
+
           return (
             <li key={i}>
               <ItemLink item={findItemByTag(recipe.item_tag)!} />
+              {is_recipe_upgrade === true && " (recipe morph)"}
+              {is_recipe_upgrade === null && " (not actually used)"}
             </li>
           );
         })}
