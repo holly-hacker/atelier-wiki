@@ -1,14 +1,19 @@
 import { Link, useParams } from "react-router-dom";
 import items from "@/data/ryza3/items.json";
 import enemies from "@/data/ryza3/enemies.json";
-import { getImageLink, itemDisplayName } from "../ryza3_data_util";
+import recipes from "@/data/ryza3/recipes.json";
+import {
+  findItemByTag,
+  getImageLink,
+  itemDisplayName,
+} from "../ryza3_data_util";
 import types from "@/data/types/ryza3";
-import { EnemyLink } from "../utility_components/links";
+import { EnemyLink, ItemLink } from "../utility_components/links";
 
 export default function ItemDetail() {
   const { id } = useParams();
 
-  let item;
+  let item: types.Item | undefined;
   if (id && !isNaN(Number(id))) {
     // id is a number
     item = items[Number(id)];
@@ -23,6 +28,22 @@ export default function ItemDetail() {
   }
 
   const drops = getDrops(item);
+
+  const recipe = getRecipe(item);
+  const explicit_recipe_items = recipe && [
+    ...new Set(
+      recipe.fields
+        .flatMap((r) => r)
+        .map((r) => r.explicit_material!)
+        .filter((r) => r != null),
+    ),
+  ];
+
+  const reverse_recipes = recipes.recipes.filter((r) =>
+    // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard
+    // earlier. See microsoft/TypeScript#9998
+    r.ingredients.some((i) => i.tag == item!.tag),
+  );
 
   return (
     <>
@@ -77,6 +98,88 @@ export default function ItemDetail() {
         <pre>{JSON.stringify(item, null, 4)}</pre>
       </details>
 
+      {recipe && (
+        <>
+          <h2>Recipe</h2>
+          <ul>
+            <li>
+              Category: <code>{recipe.recipe_category}</code>
+            </li>
+            <li>Amount crafted: {recipe.make_num}</li>
+            <li>
+              Time to craft: {recipe.hour} hour{recipe.hour != 1 && "s"}
+            </li>
+            <li>
+              Core items with effects:
+              <ul>
+                {recipe.ingredients.map((ingredient, i) => {
+                  return (
+                    <li key={i}>
+                      {ingredient.is_category ? (
+                        <Link to={`/ryza3/item_categories/${ingredient.tag}`}>
+                          <code>{ingredient.tag}</code>
+                        </Link>
+                      ) : (
+                        <ItemLink item={findItemByTag(ingredient.tag)!} />
+                      )}
+                      <ul>
+                        {[
+                          ingredient.initial_effect,
+                          ...ingredient.additional_effects,
+                        ].map((effect, i) => {
+                          return (
+                            <li key={i}>
+                              {effect ? (
+                                <code>{effect}</code>
+                              ) : (
+                                <em>No initial effect</em>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+            {explicit_recipe_items && explicit_recipe_items.length != 0 && (
+              <li>
+                Additional materials:
+                <ul>
+                  {explicit_recipe_items.map((item_tag, i) => {
+                    return (
+                      <li key={i}>
+                        <ItemLink item={findItemByTag(item_tag!)!} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            )}
+          </ul>
+          <details>
+            <summary>Json data</summary>
+            <pre>{JSON.stringify(recipe, null, 4)}</pre>
+          </details>
+        </>
+      )}
+
+      <h2>Usage in recipes</h2>
+      {reverse_recipes.length > 0 ? (
+        <ul>
+          {reverse_recipes.map((recipe, i) => {
+            return (
+              <li key={i}>
+                <ItemLink item={findItemByTag(recipe.item_tag)!} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>This item is not directly used in any recipes.</p>
+      )}
+
       <h2>Monster drops</h2>
       {drops.length > 0 ? (
         <>
@@ -98,7 +201,7 @@ export default function ItemDetail() {
           </details>
         </>
       ) : (
-        <p>This item does not drop from monsters</p>
+        <p>This item does not drop from monsters.</p>
       )}
     </>
   );
@@ -122,4 +225,16 @@ function getDrops(
   }
 
   return drops;
+}
+
+function getRecipe(item: types.Item): types.Recipe | null {
+  if (!item.tag) return null;
+
+  for (const recipe of recipes.recipes) {
+    if (recipe.item_tag == item.tag) {
+      return recipe;
+    }
+  }
+
+  return null;
 }
