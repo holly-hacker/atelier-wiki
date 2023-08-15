@@ -9,6 +9,7 @@ import {
 } from "../ryza3_data_util";
 import types from "@/data/types/ryza3";
 import { EnemyLink, ItemLink } from "../utility_components/links";
+import RecipeDisplay from "../utility_components/recipe_display";
 
 export default function ItemDetail() {
   const { id } = useParams();
@@ -172,6 +173,8 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
           </li>
         )}
       </ul>
+      <h3>Recipe grid</h3>
+      <RecipeDisplay recipe={recipe} />
       <details>
         <summary>Json data</summary>
         <pre>{JSON.stringify(recipe, null, 4)}</pre>
