@@ -261,7 +261,9 @@ fn map_recipe_data(
             tag: ingredient.mat_tag,
             is_category: ingredient.is_category,
             additional_effects: ingredient.add_eff,
-            initial_effect: ingredient.mass_effect,
+            initial_effect: ingredient
+                .mass_effect
+                .filter(|e| e != "ITEM_EFF_EFFECT_NONE"),
         };
 
         // trim `ITEM_EFF_EFFECT_NONE` entries from the end of additional_effects
