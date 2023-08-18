@@ -1,5 +1,6 @@
 import types from "@/data/types/ryza3";
 import * as d3 from "d3";
+import { useEffect, useRef, useState } from "react";
 
 // the radius of a ring, where the distance between 2 rings is 2 units
 const ringRadius = 0.6;
@@ -17,6 +18,11 @@ const arrow_angle = 60;
 const use_hex_grid = true;
 
 export default function RecipeDisplay({ recipe }: { recipe: types.Recipe }) {
+  let svgRef = useRef(null);
+  const [k, setK] = useState(1);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
   const field_index = 0; // TODO: only showing the first field for now
   const field = recipe.fields[field_index];
 
@@ -27,10 +33,31 @@ export default function RecipeDisplay({ recipe }: { recipe: types.Recipe }) {
 
   const elementColors = ["red", "blue", "yellow", "green"];
 
+  useEffect(() => {
+    const zoom = d3.zoom().on("zoom", (event) => {
+      const { x, y, k } = event.transform;
+      setK(k);
+      setX(x);
+      setY(y);
+    });
+    // @ts-ignore: probably incorrect typedefs
+    d3.select(svgRef.current).call(zoom);
+  }, []);
+
   return (
-    <svg width={width} height={height} style={{ border: "1px solid black" }}>
+    <svg
+      ref={svgRef}
+      width={width}
+      height={height}
+      style={{ border: "1px solid black" }}
+    >
       <rect width="100%" height="100%" fill="#f8f8f8"></rect>
-      <g fill="transparent" stroke="currentColor" strokeWidth="1.5">
+      <g
+        fill="transparent"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        transform={`translate(${x} ${y}) scale(${k})`}
+      >
         {/* Draw lines for dependencies */}
         <RingConnectionLines
           field={field}
