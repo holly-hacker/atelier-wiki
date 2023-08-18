@@ -1,12 +1,43 @@
 import items from "@/data/ryza3/items.json";
 import items_texture from "@/data/ryza3/texture-atlasses/items.json";
 import { ItemLink, TextureAtlasImage } from "../utility_components/links";
-import { createColumnHelper } from "@tanstack/react-table";
+import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import Grid from "@/components/grid";
+import types from "@/data/types/ryza3";
+import { useState } from "react";
 
 export default function ItemList() {
+  let [showHidden, setShowHidden] = useState(false);
+
+  const filtered_items = items.filter((i) => showHidden || i.name !== null);
+
+  return (
+    <>
+      <h1>Ryza 3 item list</h1>
+      <small>Note: Operations on this page may be fairly slow</small>
+      <div>
+        <p>
+          {filtered_items.length}/{items.length} items shown.
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            checked={showHidden}
+            onChange={() => setShowHidden(!showHidden)}
+          />
+          <label>Show unimplemented items</label>
+        </p>
+
+        <Grid data={filtered_items} columns={getColumnDefs()} />
+      </div>
+    </>
+  );
+}
+
+function getColumnDefs(): ColumnDef<types.Item, any>[] {
   const columnHelper = createColumnHelper<(typeof items)[0]>();
-  const columns = [
+  return [
     columnHelper.accessor("img_no", {
       header: "Image",
       cell: (i) => {
@@ -49,14 +80,4 @@ export default function ItemList() {
       cell: (i) => <code>{i.getValue()}</code>,
     }),
   ];
-
-  return (
-    <>
-      <h1>Ryza 3 item list</h1>
-      <div>
-        {items.length} items found.
-        <Grid data={items} columns={columns} />
-      </div>
-    </>
-  );
 }
