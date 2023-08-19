@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import items from "@/data/ryza3/items.json";
+import item_effects from "@/data/ryza3/item_effects.json";
 import enemies from "@/data/ryza3/enemies.json";
 import recipes from "@/data/ryza3/recipes.json";
 import {
@@ -114,7 +115,7 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
     ),
   ];
 
-  let morph_targets = recipe.fields.flatMap((field, f_idx) =>
+  const morph_targets = recipe.fields.flatMap((field, f_idx) =>
     field
       .filter((ring) => ring.effect_type == 6)
       .map((ring) => ({
@@ -170,14 +171,52 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
                 {[
                   ingredient.initial_effect,
                   ...ingredient.additional_effects,
-                ].map((effect, i) => {
+                ].map((effect_tag, i) => {
+                  if (!effect_tag) {
+                    return (
+                      <li key={i}>
+                        <em>No initial effect</em>
+                      </li>
+                    );
+                  }
+
+                  const effect = item_effects.item_effects[effect_tag];
+
+                  const formatEffectAttributes = (
+                    attr: types.EffectAttribute,
+                  ) => {
+                    const formatMinMax = (
+                      min: string | null,
+                      max: string | null,
+                    ) => {
+                      if (!min && !max) return null;
+                      if (min == max) return `${min}`;
+                      if (min && !max) return `${min}+`;
+                      if (!min && max) return `<=${max}`;
+                      return `${min}-${max}`;
+                    };
+
+                    const args = [
+                      formatMinMax(attr.min_1, attr.max_1),
+                      formatMinMax(attr.min_2, attr.max_2),
+                    ]
+                      .filter((v) => v != null)
+                      .join(", ");
+                    return `${attr.action}(${args})`;
+                  };
+
                   return (
                     <li key={i}>
-                      {effect ? (
-                        <code>{effect}</code>
-                      ) : (
-                        <em>No initial effect</em>
-                      )}
+                      <b>{item_effects.item_effects[effect_tag].name}</b>
+                      {" - "}
+                      {item_effects.item_effects[effect_tag].description}{" "}
+                      <ul>
+                        {effect.attributes.map((a, i) => (
+                          <li key={i}>
+                            <code>{formatEffectAttributes(a)}</code>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
                   );
                 })}
