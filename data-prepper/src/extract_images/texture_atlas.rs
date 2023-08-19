@@ -159,7 +159,7 @@ mod tests {
     fn calculate_pack_size_test() {
         assert_eq!(calculate_pack_size(1), (1, 1));
         assert_eq!(calculate_pack_size(16), (4, 4));
-        assert_eq!(calculate_pack_size(15), (5, 3));
-        assert_eq!(calculate_pack_size(17), (17, 1));
+        assert_eq!(calculate_pack_size(15), (4, 4));
+        assert_eq!(calculate_pack_size(17), (5, 4));
     }
 }
