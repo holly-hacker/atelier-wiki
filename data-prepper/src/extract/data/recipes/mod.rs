@@ -16,7 +16,7 @@ use self::{
     mixfielddata::Field,
 };
 
-use super::strings::StringsData;
+use super::strings_table::StringsTable;
 
 mod itemrecipedata;
 mod mixfielddata;
@@ -171,7 +171,7 @@ pub struct FeatureDescription {
 }
 
 impl RecipeData {
-    pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Self> {
+    pub fn read(pak_index: &mut PakIndex, strings: &StringsTable) -> anyhow::Result<Self> {
         debug!("Reading item recipe data");
         let recipe_data =
             itemrecipedata::ItemRecipeData::read(pak_index).context("read item recipe data")?;
@@ -411,7 +411,7 @@ fn map_recipe_data(
 
 fn get_feature_descriptions(
     mix_field_data: &mixfielddata::ExtendedFieldData,
-    strings: &StringsData,
+    strings: &StringsTable,
 ) -> anyhow::Result<BTreeMap<u32, FeatureDescription>> {
     let mut map = BTreeMap::<u32, FeatureDescription>::default();
 

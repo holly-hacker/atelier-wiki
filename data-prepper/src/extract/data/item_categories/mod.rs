@@ -6,7 +6,7 @@ use typescript_type_def::TypeDef;
 
 use crate::extract::executable::Ryza3ExecutableData;
 
-use super::strings::StringsData;
+use super::strings_table::StringsTable;
 
 #[derive(Serialize, TypeDef)]
 pub struct ItemCategoryData {
@@ -16,7 +16,7 @@ pub struct ItemCategoryData {
 impl ItemCategoryData {
     pub fn read(
         executable_data: &Ryza3ExecutableData,
-        strings: &StringsData,
+        strings: &StringsTable,
     ) -> anyhow::Result<Self> {
         let categories = executable_data
             .item_categories

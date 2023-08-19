@@ -6,12 +6,12 @@ use crate::utils::PakIndex;
 
 use super::util::{self, ElementReader};
 
-pub struct StringsData {
+pub struct StringsTable {
     pub id_lookup: HashMap<String, String>,
     pub no_lookup: HashMap<usize, String>,
 }
 
-impl StringsData {
+impl StringsTable {
     pub fn read(pak_index: &mut PakIndex) -> anyhow::Result<Self> {
         util::read_xml(
             pak_index,
@@ -19,6 +19,7 @@ impl StringsData {
             Self::read_from_doc,
         )
     }
+
     fn read_from_doc(document: roxmltree::Document) -> anyhow::Result<Self> {
         let mut id_lookup = HashMap::new();
         let mut no_lookup = HashMap::new();

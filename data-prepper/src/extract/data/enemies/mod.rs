@@ -13,7 +13,7 @@ use typescript_type_def::TypeDef;
 
 use crate::utils::PakIndex;
 
-use super::strings::StringsData;
+use super::strings_table::StringsTable;
 
 mod data;
 mod drop;
@@ -98,7 +98,7 @@ pub struct EnemyDrop {
     pub eff: Option<String>,
 }
 
-pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Enemy>> {
+pub fn read(pak_index: &mut PakIndex, strings: &StringsTable) -> anyhow::Result<Vec<Enemy>> {
     debug!("Reading enemy data");
     let data = data::EnemyData::read(pak_index).context("read enemy_data")?;
 

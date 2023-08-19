@@ -15,7 +15,7 @@ use typescript_type_def::TypeDef;
 
 use crate::utils::PakIndex;
 
-use super::strings::StringsData;
+use super::strings_table::StringsTable;
 
 #[derive(Serialize, TypeDef)]
 pub struct Item {
@@ -66,7 +66,7 @@ pub struct Item {
 }
 
 impl Item {
-    pub fn read(pak_index: &mut PakIndex, strings: &StringsData) -> anyhow::Result<Vec<Self>> {
+    pub fn read(pak_index: &mut PakIndex, strings: &StringsTable) -> anyhow::Result<Vec<Self>> {
         debug!("Reading item data");
         let item_data = item_data::ItemData::read(pak_index).context("read item data")?;
 

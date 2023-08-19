@@ -12,7 +12,7 @@ mod item_categories;
 mod item_effects;
 mod items;
 mod recipes;
-mod strings;
+mod strings_table;
 mod util;
 
 #[derive(Serialize, TypeDef)]
@@ -30,37 +30,39 @@ impl Ryza3Data {
         executable_data: &Ryza3ExecutableData,
     ) -> anyhow::Result<Self> {
         // TODO: consider reading other languages too
-        let strings = strings::StringsData::read(pak_index).context("read strings")?;
+        let strings_table = strings_table::StringsTable::read(pak_index).context("read strings")?;
 
         info!(
             "Read {} strings by id and {} strings by number",
-            strings.id_lookup.len(),
-            strings.no_lookup.len()
+            strings_table.id_lookup.len(),
+            strings_table.no_lookup.len()
         );
 
         // NOTE: itemdata_no appears to be the exact same file
-        let item_data = items::Item::read(pak_index, &strings).context("read items")?;
+        let item_data = items::Item::read(pak_index, &strings_table).context("read items")?;
         info!("Read data for {} items", item_data.len());
 
-        let item_category_data = item_categories::ItemCategoryData::read(executable_data, &strings)
-            .context("read item categories")?;
+        let item_category_data =
+            item_categories::ItemCategoryData::read(executable_data, &strings_table)
+                .context("read item categories")?;
         info!(
             "Read data for {} item categories",
             item_category_data.categories.len()
         );
 
         let item_effect_data =
-            item_effects::ItemEffectData::read(pak_index, executable_data, &strings)
+            item_effects::ItemEffectData::read(pak_index, executable_data, &strings_table)
                 .context("read item effects")?;
         info!(
             "Read data for {} item effects",
             item_effect_data.item_effects.len()
         );
 
-        let recipe_data = recipes::RecipeData::read(pak_index, &strings).context("read recipes")?;
+        let recipe_data =
+            recipes::RecipeData::read(pak_index, &strings_table).context("read recipes")?;
         info!("Read data for {} recipes", recipe_data.recipes.len());
 
-        let enemy_data = enemies::read(pak_index, &strings).context("read enemies")?;
+        let enemy_data = enemies::read(pak_index, &strings_table).context("read enemies")?;
         info!("Read data for {} enemies", enemy_data.len());
 
         Ok(Self {

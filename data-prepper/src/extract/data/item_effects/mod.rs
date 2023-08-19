@@ -9,7 +9,7 @@ use typescript_type_def::TypeDef;
 
 use crate::{extract::executable::Ryza3ExecutableData, utils::PakIndex};
 
-use super::strings::StringsData;
+use super::strings_table::StringsTable;
 
 #[derive(Serialize, TypeDef)]
 pub struct ItemEffectData {
@@ -46,7 +46,7 @@ impl ItemEffectData {
     pub fn read(
         pak_index: &mut PakIndex,
         executable_data: &Ryza3ExecutableData,
-        strings: &StringsData,
+        strings: &StringsTable,
     ) -> anyhow::Result<Self> {
         debug!("Reading item effects");
         let item_effects = item_effect::ItemEffect::read(pak_index).context("read item effects")?;
