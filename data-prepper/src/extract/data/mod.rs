@@ -5,7 +5,10 @@ use typescript_type_def::TypeDef;
 
 use crate::utils::PakIndex;
 
+use super::executable::Ryza3ExecutableData;
+
 mod enemies;
+mod item_effects;
 mod items;
 mod recipes;
 mod strings;
@@ -14,12 +17,16 @@ mod util;
 #[derive(Serialize, TypeDef)]
 pub struct Ryza3Data {
     pub item_data: Vec<items::Item>,
+    pub item_effect_data: item_effects::ItemEffectData,
     pub recipe_data: recipes::RecipeData,
     pub enemy_data: Vec<enemies::Enemy>,
 }
 
 impl Ryza3Data {
-    pub fn read_all(pak_index: &mut PakIndex) -> anyhow::Result<Self> {
+    pub fn read_all(
+        pak_index: &mut PakIndex,
+        executable_data: &Ryza3ExecutableData,
+    ) -> anyhow::Result<Self> {
         // TODO: consider reading other languages too
         let strings = strings::StringsData::read(pak_index).context("read strings")?;
 
@@ -33,6 +40,14 @@ impl Ryza3Data {
         let item_data = items::Item::read(pak_index, &strings).context("read items")?;
         info!("Read data for {} items", item_data.len());
 
+        let item_effect_data =
+            item_effects::ItemEffectData::read(pak_index, executable_data, &strings)
+                .context("read item effects")?;
+        info!(
+            "Read data for {} item effects",
+            item_effect_data.item_effects.len()
+        );
+
         let recipe_data = recipes::RecipeData::read(pak_index, &strings).context("read recipes")?;
         info!("Read data for {} recipes", recipe_data.recipes.len());
 
@@ -41,6 +56,7 @@ impl Ryza3Data {
 
         Ok(Self {
             item_data,
+            item_effect_data,
             recipe_data,
             enemy_data,
         })

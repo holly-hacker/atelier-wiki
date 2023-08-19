@@ -12,6 +12,7 @@ gust-g1t = { git = "https://github.com/holly-hacker/atelier-tools", branch = "ma
 gust-pak = { git = "https://github.com/holly-hacker/atelier-tools", branch = "main" }
 hex = "0.4.3"
 md5 = "0.7.0"
+memchr = "2.5.0"
 oxipng = { git = "https://github.com/shssoichiro/oxipng.git", rev = "02bd47ba297ffdc1210c89b6f98c0d2c4b31d155", default-features = false, features = [
     "parallel",
     "zopfli",
@@ -32,7 +33,7 @@ tracing = "0.1.37"
 tracing-subscriber = "0.3.17"
 typescript-type-def = "0.5.8"
 
-[profile.dev.package."data-prepper"]
+[profile.dev.package.data-prepper]
 opt-level = 1
 
 [profile.dev.package.roxmltree]
@@ -41,8 +42,8 @@ opt-level = 2
 [profile.dev.package.png]
 opt-level = 2
 
-[profile.dev.package."simd-adler32"]
+[profile.dev.package.simd-adler32]
 opt-level = 2
 
-[profile.dev.package."dds-decoder"]
+[profile.dev.package.dds-decoder]
 opt-level = 2

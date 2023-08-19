@@ -328,6 +328,7 @@ dependencies = [
  "gust-pak",
  "hex",
  "md5",
+ "memchr",
  "oxipng",
  "png",
  "rayon",

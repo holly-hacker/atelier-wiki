@@ -1,4 +1,5 @@
 mod data;
+mod executable;
 
 use std::{
     fs::File,
@@ -51,31 +52,50 @@ impl Args {
         let pak_index = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
         info!("Loaded pak file index with {} entries", pak_index.len());
 
+        // extract data from game files
         match game_version {
-            GameVersion::A24 => extract_ryza3(pak_index, &output_directory),
+            GameVersion::A24 => extract_ryza3(&self.game_directory, pak_index, &output_directory),
             _ => bail!("Unsupported game version {:?}", game_version),
         }
     }
 }
 
-fn extract_ryza3(mut pak_index: PakIndex, output_directory: &Path) -> anyhow::Result<()> {
+fn extract_ryza3(
+    game_directory: &Path,
+    mut pak_index: PakIndex,
+    output_directory: &Path,
+) -> anyhow::Result<()> {
     let output_directory = output_directory.join("ryza3");
-    let data = data::Ryza3Data::read_all(&mut pak_index).context("read data files")?;
+
+    debug!("reading executable data");
+    let executable_data = executable::Ryza3ExecutableData::read_all(game_directory)
+        .context("read executable data")?;
+
+    debug!("reading game data");
+    let data =
+        data::Ryza3Data::read_all(&mut pak_index, &executable_data).context("read data files")?;
 
     debug!("Creating output directory");
     std::fs::create_dir_all(&output_directory).context("create output directory")?;
 
-    debug!("Writing files");
+    info!("Writing files");
 
-    info!("Writing item data");
+    debug!("Writing item data");
     write_data_to_file(&output_directory.join("items.json"), &data.item_data)
         .context("write item data")?;
 
-    info!("Writing recipe data");
+    debug!("Writing item effects data");
+    write_data_to_file(
+        &output_directory.join("item_effects.json"),
+        &data.item_effect_data,
+    )
+    .context("write item data")?;
+
+    debug!("Writing recipe data");
     write_data_to_file(&output_directory.join("recipes.json"), &data.recipe_data)
         .context("write recipe data")?;
 
-    info!("Writing enemy data");
+    debug!("Writing enemy data");
     write_data_to_file(&output_directory.join("enemies.json"), &data.enemy_data)
         .context("write enemy data")?;
 
