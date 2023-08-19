@@ -88,7 +88,10 @@ impl Item {
                             .join("\n")
                     }),
 
-                    name: d.name_id.and_then(|id| strings.id_lookup.get(&id).cloned()),
+                    name: d
+                        .name_id
+                        .and_then(|id| strings.id_lookup.get(&id).cloned())
+                        .filter(|s| !s.is_empty()),
                     temp_name: d
                         .temp_name_id
                         .and_then(|id| strings.id_lookup.get(&id).cloned()),

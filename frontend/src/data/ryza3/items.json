@@ -28070,7 +28070,7 @@
   {
     "tag": "ITEM_KEY_ITEM_042",
     "library_note": "",
-    "name": "",
+    "name": null,
     "temp_name": null,
     "temp_end_event": null,
     "sort": 747,
@@ -32462,7 +32462,7 @@
   {
     "tag": "ITEM_BUILDING_015",
     "library_note": "",
-    "name": "",
+    "name": null,
     "temp_name": null,
     "temp_end_event": null,
     "sort": 875,
