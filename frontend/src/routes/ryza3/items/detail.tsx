@@ -198,7 +198,9 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
                     ]
                       .filter((v) => v != null)
                       .join(", ");
-                    return `${attr.action}(${args})`;
+
+                    const trimmed_action = attr.action.replace(/^ACT_/, "");
+                    return `${trimmed_action}(${args})`;
                   };
 
                   return (
