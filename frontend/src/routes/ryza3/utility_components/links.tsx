@@ -1,7 +1,11 @@
 import types from "@/data/types/ryza3";
 import texture_atlas from "@/data/types/texture_atlas";
 import { Link } from "react-router-dom";
-import { enemyDisplayName, itemDisplayName } from "../ryza3_data_util";
+import {
+  enemyDisplayName,
+  itemCategoryDisplayName,
+  itemDisplayName,
+} from "../ryza3_data_util";
 import items from "@/data/ryza3/items.json";
 
 export function ItemLink({
@@ -43,6 +47,22 @@ export function EnemyLink({
 
   return (
     <Link to={`/ryza3/enemy/${id}`}>{children || enemyDisplayName(enemy)}</Link>
+  );
+}
+
+export function CategoryLink({
+  category_tag,
+  children,
+}: {
+  category_tag: string;
+  children?: React.ReactNode;
+}) {
+  const short_category_tag = category_tag.replace(/^ITEM_CATEGORY_/, "");
+
+  return (
+    <Link to={`/ryza3/item_categories/${short_category_tag}`}>
+      {children || itemCategoryDisplayName(category_tag)}
+    </Link>
   );
 }
 

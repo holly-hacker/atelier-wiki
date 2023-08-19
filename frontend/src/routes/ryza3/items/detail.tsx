@@ -9,7 +9,7 @@ import {
   itemDisplayName,
 } from "../ryza3_data_util";
 import types from "@/data/types/ryza3";
-import { EnemyLink, ItemLink } from "../utility_components/links";
+import { CategoryLink, EnemyLink, ItemLink } from "../utility_components/links";
 import RecipeDisplay from "../utility_components/recipe_display";
 
 export default function ItemDetail() {
@@ -82,9 +82,7 @@ function ItemDetailSection({ item }: { item: types.Item }) {
             {item.cat.map((cat, i) => {
               return (
                 <li key={i}>
-                  <Link to={`/ryza3/item_categories/${cat}`}>
-                    <code>{cat}</code>
-                  </Link>
+                  <CategoryLink category_tag={cat} />
                 </li>
               );
             })}
@@ -161,9 +159,7 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
           return (
             <li key={i}>
               {ingredient.is_category ? (
-                <Link to={`/ryza3/item_categories/${ingredient.tag}`}>
-                  <code>{ingredient.tag}</code>
-                </Link>
+                <CategoryLink category_tag={ingredient.tag} />
               ) : (
                 <ItemLink item={findItemByTag(ingredient.tag)!} />
               )}

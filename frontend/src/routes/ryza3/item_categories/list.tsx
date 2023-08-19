@@ -2,7 +2,7 @@ import Grid from "@/components/grid";
 import items from "@/data/ryza3/items.json";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { CategoryLink } from "../utility_components/links";
 
 export default function ItemCategoriesList() {
   const [categories] = useState(() => items.flatMap((item) => item.cat));
@@ -12,11 +12,7 @@ export default function ItemCategoriesList() {
   const columns = [
     columnHelper.accessor((x) => x, {
       header: "Category",
-      cell: (i) => (
-        <Link to={`/ryza3/item_categories/${i.getValue()}`}>
-          {i.getValue()}
-        </Link>
-      ),
+      cell: (i) => <CategoryLink category_tag={i.getValue()} />,
     }),
     columnHelper.accessor((x) => categories.filter((c) => c === x).length, {
       header: "Count",
