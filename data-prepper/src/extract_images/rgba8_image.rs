@@ -147,9 +147,8 @@ impl Rgba8Image {
             .context("create optimized png")
     }
 
-    pub fn encode_png(self) -> anyhow::Result<Vec<u8>> {
+    pub fn encode_png(&self) -> anyhow::Result<Vec<u8>> {
         let (width, height) = (self.width(), self.height());
-        let (data, _) = self.unpack();
 
         let mut png_bytes = vec![];
 
@@ -159,7 +158,9 @@ impl Rgba8Image {
         encoder.set_adaptive_filter(png::AdaptiveFilterType::Adaptive);
 
         let mut writer = encoder.write_header().context("write png header")?;
-        writer.write_image_data(&data).context("write png data")?;
+        writer
+            .write_image_data(&self.data)
+            .context("write png data")?;
 
         drop(writer);
 
