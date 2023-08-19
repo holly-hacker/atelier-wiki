@@ -46,6 +46,9 @@ export namespace types {
         "bmee": (string | null);
         "cat": (string)[];
     };
+    export type ItemCategoryData = {
+        "categories": Record<string, string>;
+    };
     export type EffectAttribute = {
         "action": string;
         "attribute": (string | null);
@@ -367,6 +370,7 @@ export namespace types {
     };
     export type Ryza3Data = {
         "item_data": (types.Item)[];
+        "item_category_data": types.ItemCategoryData;
         "item_effect_data": types.ItemEffectData;
         "recipe_data": types.RecipeData;
         "enemy_data": (types.Enemy)[];

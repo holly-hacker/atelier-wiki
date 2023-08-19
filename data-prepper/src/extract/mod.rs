@@ -84,6 +84,13 @@ fn extract_ryza3(
     write_data_to_file(&output_directory.join("items.json"), &data.item_data)
         .context("write item data")?;
 
+    debug!("Writing item category data");
+    write_data_to_file(
+        &output_directory.join("item_categories.json"),
+        &data.item_category_data,
+    )
+    .context("write item category data")?;
+
     debug!("Writing item effects data");
     write_data_to_file(
         &output_directory.join("item_effects.json"),

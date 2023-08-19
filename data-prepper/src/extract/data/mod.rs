@@ -8,6 +8,7 @@ use crate::utils::PakIndex;
 use super::executable::Ryza3ExecutableData;
 
 mod enemies;
+mod item_categories;
 mod item_effects;
 mod items;
 mod recipes;
@@ -17,6 +18,7 @@ mod util;
 #[derive(Serialize, TypeDef)]
 pub struct Ryza3Data {
     pub item_data: Vec<items::Item>,
+    pub item_category_data: item_categories::ItemCategoryData,
     pub item_effect_data: item_effects::ItemEffectData,
     pub recipe_data: recipes::RecipeData,
     pub enemy_data: Vec<enemies::Enemy>,
@@ -40,6 +42,13 @@ impl Ryza3Data {
         let item_data = items::Item::read(pak_index, &strings).context("read items")?;
         info!("Read data for {} items", item_data.len());
 
+        let item_category_data = item_categories::ItemCategoryData::read(executable_data, &strings)
+            .context("read item categories")?;
+        info!(
+            "Read data for {} item categories",
+            item_category_data.categories.len()
+        );
+
         let item_effect_data =
             item_effects::ItemEffectData::read(pak_index, executable_data, &strings)
                 .context("read item effects")?;
@@ -56,6 +65,7 @@ impl Ryza3Data {
 
         Ok(Self {
             item_data,
+            item_category_data,
             item_effect_data,
             recipe_data,
             enemy_data,
