@@ -166,4 +166,13 @@ impl Rgba8Image {
 
         Ok(png_bytes)
     }
+
+    pub fn encode_webp(&self) -> anyhow::Result<Vec<u8>> {
+        let (width, height) = (self.width(), self.height());
+
+        let encoder = webp::Encoder::new(&self.data, webp::PixelLayout::Rgba, width, height);
+        let encoded = encoder.encode(75.);
+
+        Ok(encoded.to_vec())
+    }
 }

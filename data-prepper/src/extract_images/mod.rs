@@ -36,7 +36,7 @@ pub struct Args {
     #[argh(switch, short = 'd')]
     dont_write_images: bool,
 
-    /// level of oxipng compression to use. if not present, use standard png encoder
+    /// level of oxipng compression to use. if not present, use standard png encoder for png
     #[argh(option, short = 'c')]
     compression: Option<u8>,
 
@@ -208,7 +208,7 @@ impl Args {
             texture_atlas.into_image(),
             &image_output_folder,
             subdirectory,
-            "packed.png",
+            "packed.webp",
             upload_manager,
         )
         .context("save texture atlas")?;
@@ -226,17 +226,26 @@ impl Args {
     ) -> anyhow::Result<()> {
         let file_path = output_folder.join(file_name);
 
-        debug!(?file_path, "encoding image to png...");
-        let png_bytes = match self.compression {
-            Some(compression) => image
-                .encode_oxipng(compression)
-                .context("encode using oxipng"),
-            None => image.encode_png().context("encode png"),
-        }?;
+        let ext = file_path
+            .extension()
+            .and_then(|s| s.to_str())
+            .unwrap_or_default();
+
+        debug!(?file_path, "encoding image to {ext}...");
+        let image_bytes = match ext {
+            "png" => match self.compression {
+                Some(compression) => image
+                    .encode_oxipng(compression)
+                    .context("encode using oxipng"),
+                None => image.encode_png().context("encode png"),
+            }?,
+            "webp" => image.encode_webp().context("encode webp")?,
+            _ => bail!("Unknown image extension {}", ext),
+        };
 
         if !self.dont_write_images {
             debug!(?file_path, "saving image...");
-            std::fs::write(&file_path, &png_bytes).context("write to png file")?;
+            std::fs::write(&file_path, &image_bytes).context("write to image file")?;
             debug!(?file_path, "saved image");
         }
 
@@ -244,7 +253,7 @@ impl Args {
         upload_manager
             .upload(
                 &format!("{}/{}", object_storage_path, file_name),
-                &png_bytes,
+                &image_bytes,
             )
             .context("upload to s3")?;
 
