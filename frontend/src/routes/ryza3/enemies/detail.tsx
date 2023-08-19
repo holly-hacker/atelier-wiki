@@ -46,7 +46,7 @@ export default function EnemyDetail() {
 }
 
 function EnemyStats({ enemy }: { enemy: types.Enemy }) {
-  let stats: [string, number][] = [
+  const stats: [string, number][] = [
     ["Health", enemy.library_rank_health],
     ["Attack", enemy.library_rank_attack],
     ["Speed", enemy.library_rank_speed],

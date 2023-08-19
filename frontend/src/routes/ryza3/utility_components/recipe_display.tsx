@@ -18,7 +18,7 @@ const arrow_angle = 60;
 const use_hex_grid = true;
 
 export default function RecipeDisplay({ recipe }: { recipe: types.Recipe }) {
-  let svgRef = useRef(null);
+  const svgRef = useRef(null);
   const [k, setK] = useState(1);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);

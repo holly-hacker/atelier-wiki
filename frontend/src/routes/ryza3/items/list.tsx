@@ -7,7 +7,7 @@ import types from "@/data/types/ryza3";
 import { useState } from "react";
 
 export default function ItemList() {
-  let [showHidden, setShowHidden] = useState(false);
+  const [showHidden, setShowHidden] = useState(false);
 
   const filtered_items = items.filter((i) => showHidden || i.name !== null);
 
