@@ -48,19 +48,33 @@ fn read_item_effects(file: &[u8]) -> anyhow::Result<Vec<String>> {
 
     let mut ret = vec![];
 
-    // for perf, don't use capture groups because we don't really need them
-    // let regex = regex::bytes::Regex::new("\0ITEM_EFF_[A-Z0-9_]+\0").expect("create regex");
+    let mut min_pos = usize::MAX;
+    let mut max_pos = usize::MIN;
     for pos in memchr::memmem::find_iter(file, b"\0ITEM_EFF_").map(|i| i + 1) {
         // read until the next null-byte
         let len = memchr::memchr(b'\0', &file[pos..]).unwrap_or(file.len());
 
         if len > "ITEM_EFF_".len() {
+            min_pos = min_pos.min(pos);
+            max_pos = max_pos.max(pos);
+
             let item_effect = std::str::from_utf8(&file[pos..pos + len])
                 .with_context(|| format!("parse item effect at {}", pos))?
                 .to_owned();
 
             ret.push(item_effect);
         }
+    }
+
+    if ret.is_empty() {
+        bail!("no item effects found in binary");
+    }
+
+    // ensure all the positions we read are within the same region
+    const MAX_POS_SPREAD: usize = 3500 * 64;
+    let pos_spread = max_pos - min_pos;
+    if pos_spread > MAX_POS_SPREAD {
+        bail!("item effects are too far apart (expected less than 0x{MAX_POS_SPREAD:X} but found 0x{pos_spread:X})");
     }
 
     Ok(ret)
