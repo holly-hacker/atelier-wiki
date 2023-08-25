@@ -17,16 +17,12 @@ export default function ItemList() {
       <small>Note: Operations on this page may be fairly slow</small>
       <div>
         <p>
-          {filtered_items.length}/{items.length} items shown.
-        </p>
-
-        <p>
           <input
             type="checkbox"
             checked={showHidden}
             onChange={() => setShowHidden(!showHidden)}
           />
-          <label>Show unimplemented items</label>
+          <label>Include unimplemented items</label>
         </p>
 
         <Grid data={filtered_items} columns={getColumnDefs()} />

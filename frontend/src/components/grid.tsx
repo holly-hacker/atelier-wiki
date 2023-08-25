@@ -56,59 +56,62 @@ export default function Grid<TData>({
   });
 
   return (
-    <table>
-      <thead>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <th key={header.id}>
-                {header.isPlaceholder ? null : (
-                  // header
-                  <>
-                    <div
-                      {...{
-                        style: { cursor: "pointer", userSelect: "none" },
-                        onClick: header.column.getToggleSortingHandler(),
-                      }}
-                    >
-                      {/* header value (can be arbitrary html) */}
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+    <>
+      {table.getRowModel().rows.length}/{data.length} rows shown
+      <table>
+        <thead>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th key={header.id}>
+                  {header.isPlaceholder ? null : (
+                    // header
+                    <>
+                      <div
+                        {...{
+                          style: { cursor: "pointer", userSelect: "none" },
+                          onClick: header.column.getToggleSortingHandler(),
+                        }}
+                      >
+                        {/* header value (can be arbitrary html) */}
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
 
-                      {/* sorting indicator */}
-                      {{
-                        asc: " ↑",
-                        desc: " ↓",
-                      }[header.column.getIsSorted() as string] ?? null}
-                    </div>
-
-                    {header.column.getCanFilter() &&
-                    header.column.columnDef.filterFn == "equalsString" ? (
-                      <div>
-                        <EqualsStringFilter column={header.column} />
+                        {/* sorting indicator */}
+                        {{
+                          asc: " ↑",
+                          desc: " ↓",
+                        }[header.column.getIsSorted() as string] ?? null}
                       </div>
-                    ) : null}
-                  </>
-                )}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <tr key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+
+                      {header.column.getCanFilter() &&
+                      header.column.columnDef.filterFn == "equalsString" ? (
+                        <div>
+                          <EqualsStringFilter column={header.column} />
+                        </div>
+                      ) : null}
+                    </>
+                  )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {table.getRowModel().rows.map((row) => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map((cell) => (
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 
