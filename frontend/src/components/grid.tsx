@@ -1,12 +1,16 @@
 import {
+  Column,
   ColumnDef,
+  ColumnFiltersState,
   SortingState,
   flexRender,
   getCoreRowModel,
+  getFacetedUniqueValues,
+  getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 /**
  * Create a standard grid based on `react-table`.
@@ -33,15 +37,22 @@ export default function Grid<TData>({
   data: TData[];
 }) {
   const [sorting, setSorting] = useState<SortingState>([]);
+
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+
   const table = useReactTable({
     data,
     columns,
     state: {
       sorting,
+      columnFilters,
     },
     onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getFacetedUniqueValues: getFacetedUniqueValues(),
   });
 
   return (
@@ -52,21 +63,34 @@ export default function Grid<TData>({
             {headerGroup.headers.map((header) => (
               <th key={header.id}>
                 {header.isPlaceholder ? null : (
-                  <div
-                    {...{
-                      style: { cursor: "pointer", userSelect: "none" },
-                      onClick: header.column.getToggleSortingHandler(),
-                    }}
-                  >
-                    {flexRender(
-                      header.column.columnDef.header,
-                      header.getContext(),
-                    )}
-                    {{
-                      asc: " ↑",
-                      desc: " ↓",
-                    }[header.column.getIsSorted() as string] ?? null}
-                  </div>
+                  // header
+                  <>
+                    <div
+                      {...{
+                        style: { cursor: "pointer", userSelect: "none" },
+                        onClick: header.column.getToggleSortingHandler(),
+                      }}
+                    >
+                      {/* header value (can be arbitrary html) */}
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+
+                      {/* sorting indicator */}
+                      {{
+                        asc: " ↑",
+                        desc: " ↓",
+                      }[header.column.getIsSorted() as string] ?? null}
+                    </div>
+
+                    {header.column.getCanFilter() &&
+                    header.column.columnDef.filterFn == "equalsString" ? (
+                      <div>
+                        <EqualsStringFilter column={header.column} />
+                      </div>
+                    ) : null}
+                  </>
                 )}
               </th>
             ))}
@@ -85,5 +109,33 @@ export default function Grid<TData>({
         ))}
       </tbody>
     </table>
+  );
+}
+
+function EqualsStringFilter<TData>({
+  column,
+}: {
+  column: Column<TData, unknown>;
+}) {
+  const facetedUniqueValues = column.getFacetedUniqueValues();
+  const uniqueValues = useMemo(() => {
+    return Array.from(facetedUniqueValues.keys()).sort();
+  }, [facetedUniqueValues]);
+
+  // TODO: consider react-select to allow selecting multiple values
+  return (
+    <select
+      style={{ width: "90%" }}
+      onChange={(e) => column.setFilterValue(e.target.value || undefined)}
+    >
+      <option value="">All</option>
+      {uniqueValues
+        .filter((v) => v !== "") // empty string is used for "no filter"
+        .map((v) => (
+          <option key={v} value={v}>
+            {v}
+          </option>
+        ))}
+    </select>
   );
 }

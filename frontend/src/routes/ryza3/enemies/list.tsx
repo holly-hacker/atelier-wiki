@@ -35,6 +35,7 @@ export default function EnemyList() {
     columnHelper.accessor("size", {
       header: "Size",
       cell: (i) => <code>{i.getValue()}</code>,
+      filterFn: "equalsString",
     }),
     columnHelper.accessor((x) => x.statusses.length, {
       header: "Instance count",
@@ -54,6 +55,7 @@ export default function EnemyList() {
       header: "DLC",
       // NOTE: Ryza3 does not contain enemies that require multiple DLC
       cell: (i) => <code>{i.getValue()}</code>,
+      filterFn: "equalsString",
     }),
   ];
 

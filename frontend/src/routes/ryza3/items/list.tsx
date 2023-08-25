@@ -35,6 +35,7 @@ export default function ItemList() {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getColumnDefs(): ColumnDef<types.Item, any>[] {
   const columnHelper = createColumnHelper<(typeof items)[0]>();
   return [
@@ -69,15 +70,18 @@ function getColumnDefs(): ColumnDef<types.Item, any>[] {
     columnHelper.accessor("use_tag", {
       header: "Use Tag",
       cell: (i) => <code>{i.getValue()}</code>,
+      filterFn: "equalsString",
     }),
     columnHelper.accessor("kind_tag", {
       header: "Kind Tag",
       cell: (i) => <code>{i.getValue()}</code>,
+      filterFn: "equalsString",
     }),
     columnHelper.accessor("dlc", {
       header: "DLC",
       // NOTE: Ryza3 does not contain enemies that require multiple DLC
       cell: (i) => <code>{i.getValue()}</code>,
+      filterFn: "equalsString",
     }),
   ];
 }
