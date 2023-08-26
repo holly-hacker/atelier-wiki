@@ -1,5 +1,5 @@
 use std::{
-    collections::HashMap,
+    collections::BTreeMap,
     fs::File,
     io::{Read, Seek},
     path::{Path, PathBuf},
@@ -12,7 +12,7 @@ use tracing::{debug, trace};
 
 pub struct PakIndex {
     /// Map whose key contains an index into the file vec, and the pak entry.
-    pub map: HashMap<String, (usize, PakEntry)>,
+    pub map: BTreeMap<String, (usize, PakEntry)>,
     game_version: GameVersion,
     files: Vec<FileInfo>,
 }
@@ -40,7 +40,7 @@ impl PakIndex {
             })
             .collect::<Vec<_>>();
 
-        let mut map = HashMap::new();
+        let mut map = BTreeMap::new();
         let mut files = vec![];
         let mut duplicate_count = 0;
 
