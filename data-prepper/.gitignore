@@ -9,3 +9,7 @@ typedefs.d.ts
 
 # don't store actual config files as they may contain personal settings or sensitive data
 config.toml
+
+# RustRover files
+.idea
+
