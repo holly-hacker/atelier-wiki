@@ -1,0 +1,2012 @@
+{
+  "s001_i_secretbase_01.xml": {
+    "cut_down_tree": []
+  },
+  "s002_t_secretbase_02.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          3940.84,
+          66.22,
+          2872.65
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3973.28,
+          66.5,
+          2866.37
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3972.5,
+          66.43,
+          2871.47
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3943.56,
+          66.05,
+          2874.02
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      }
+    ]
+  },
+  "s003_t_rasen.xml": {
+    "cut_down_tree": []
+  },
+  "s004_t_pasture.xml": {
+    "cut_down_tree": []
+  },
+  "s005_t_boden.xml": {
+    "cut_down_tree": []
+  },
+  "s006_t_oldtown.xml": {
+    "cut_down_tree": []
+  },
+  "s007_t_highground.xml": {
+    "cut_down_tree": []
+  },
+  "s008_t_port.xml": {
+    "cut_down_tree": []
+  },
+  "s009_i_attic.xml": {
+    "cut_down_tree": []
+  },
+  "s00_load_test_adj_01.xml": {
+    "cut_down_tree": []
+  },
+  "s00_pg_test_free_climb_00.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          16.18,
+          50.0,
+          148.54
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          null,
+          null
+        ],
+        "sickle": [
+          null,
+          1
+        ],
+        "axe": [
+          null,
+          6
+        ],
+        "hammer": [
+          null,
+          1
+        ]
+      }
+    ]
+  },
+  "s010_i_livingroom.xml": {
+    "cut_down_tree": []
+  },
+  "s011_i_house_klaudia.xml": {
+    "cut_down_tree": []
+  },
+  "s012_i_school.xml": {
+    "cut_down_tree": []
+  },
+  "s013_l_elipse.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          1802.31,
+          13.11,
+          3246.73
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          2
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1789.5,
+          10.59,
+          3211.54
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          2
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1814.59,
+          3.6,
+          3179.61
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1791.84,
+          9.77,
+          3207.31
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1817.61,
+          3.7,
+          3208.28
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1793.28,
+          7.13,
+          2900.12
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1495.44,
+          9.6,
+          3414.97
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1507.93,
+          10.23,
+          3431.81
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1488.85,
+          9.96,
+          3439.98
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1494.49,
+          8.58,
+          3399.23
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1496.23,
+          10.06,
+          3430.45
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1817.87,
+          2.49,
+          3109.61
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1858.45,
+          3.25,
+          3323.51
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1813.95,
+          3.23,
+          3053.29
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          727.06,
+          4.11,
+          3053.17
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          731.04,
+          3.85,
+          3043.36
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          747.99,
+          3.3,
+          2999.75
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1586.91,
+          4.21,
+          2939.61
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1590.8,
+          3.97,
+          2947.51
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1805.59,
+          3.31,
+          3116.82
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1146.16,
+          3.63,
+          2983.69
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1101.59,
+          3.79,
+          3001.83
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1812.66,
+          2.66,
+          3077.91
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1210.31,
+          4.37,
+          2827.49
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1808.99,
+          3.55,
+          3140.88
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1780.01,
+          6.41,
+          2896.92
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1169.81,
+          4.06,
+          3715.89
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1156.44,
+          3.7,
+          3715.84
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1009.61,
+          24.0,
+          3457.8
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1899.22,
+          7.51,
+          2992.6
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1867.49,
+          7.21,
+          2975.56
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1887.39,
+          9.64,
+          2975.25
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1859.42,
+          7.18,
+          2962.63
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      },
+      {
+        "position": [
+          1872.75,
+          4.96,
+          2992.78
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_SICKLE",
+          3
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S013_PALMTREE_01_HAMMER",
+          null
+        ]
+      }
+    ]
+  },
+  "s014_m_pass_01.xml": {
+    "cut_down_tree": []
+  },
+  "s015_s_pass_02.xml": {
+    "cut_down_tree": []
+  },
+  "s016_s_pass_03.xml": {
+    "cut_down_tree": []
+  },
+  "s017_s_mansion_01.xml": {
+    "cut_down_tree": []
+  },
+  "s018_s_mansion_02.xml": {
+    "cut_down_tree": []
+  },
+  "s019_s_mansion_03.xml": {
+    "cut_down_tree": []
+  },
+  "s020_m_highway_01.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          3322.22,
+          67.74,
+          3062.51
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3217.92,
+          66.14,
+          3097.25
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3211.66,
+          65.9,
+          3100.89
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3303.18,
+          66.41,
+          3067.19
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3276.84,
+          65.78,
+          3068.58
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3346.26,
+          65.69,
+          3081.17
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          3351.95,
+          66.0,
+          3075.44
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S002_PALMTREE_01_HAMMER",
+          1
+        ]
+      }
+    ]
+  },
+  "s021_m_highway_02.xml": {
+    "cut_down_tree": []
+  },
+  "s022_m_highway_03.xml": {
+    "cut_down_tree": []
+  },
+  "s023_s_highway_04.xml": {
+    "cut_down_tree": []
+  },
+  "s024_s_fairyforest_01.xml": {
+    "cut_down_tree": []
+  },
+  "s025_m_fairyforest_02.xml": {
+    "cut_down_tree": []
+  },
+  "s026_m_fairyforest_03.xml": {
+    "cut_down_tree": []
+  },
+  "s027_s_mapleforest_01.xml": {
+    "cut_down_tree": []
+  },
+  "s028_m_mapleforest_02.xml": {
+    "cut_down_tree": []
+  },
+  "s029_s_tunnel_01.xml": {
+    "cut_down_tree": []
+  },
+  "s030_s_tunnel_02.xml": {
+    "cut_down_tree": []
+  },
+  "s031_s_tunnel_03.xml": {
+    "cut_down_tree": []
+  },
+  "s032_s_cove_01.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          2244.95,
+          29.41,
+          3010.69
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          2316.45,
+          30.38,
+          3073.82
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          2198.51,
+          29.89,
+          3001.08
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          2176.98,
+          29.87,
+          3006.31
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_SICKLE",
+          4
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_AXE",
+          5
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S032_PALMTREE_01_HAMMER",
+          1
+        ]
+      }
+    ]
+  },
+  "s033_s_cove_02.xml": {
+    "cut_down_tree": []
+  },
+  "s034_s_cove_03.xml": {
+    "cut_down_tree": []
+  },
+  "s035_s_citadel_01.xml": {
+    "cut_down_tree": []
+  },
+  "s039_s_volcano_01.xml": {
+    "cut_down_tree": []
+  },
+  "s040_s_volcano_02.xml": {
+    "cut_down_tree": []
+  },
+  "s041_s_volcano_03.xml": {
+    "cut_down_tree": []
+  },
+  "s042_s_valley_01.xml": {
+    "cut_down_tree": []
+  },
+  "s043_s_valley_02.xml": {
+    "cut_down_tree": []
+  },
+  "s044_s_valley_03.xml": {
+    "cut_down_tree": []
+  },
+  "s045_s_tower_01.xml": {
+    "cut_down_tree": []
+  },
+  "s046_s_underground_01.xml": {
+    "cut_down_tree": []
+  },
+  "s047_s_underground_02.xml": {
+    "cut_down_tree": []
+  },
+  "s048_t_glasscity.xml": {
+    "cut_down_tree": []
+  },
+  "s049_i_house_glasscity_01.xml": {
+    "cut_down_tree": []
+  },
+  "s050_i_house_glasscity_02.xml": {
+    "cut_down_tree": []
+  },
+  "s051_i_house_glasscity_03.xml": {
+    "cut_down_tree": []
+  },
+  "s052_l_greatwall.xml": {
+    "cut_down_tree": []
+  },
+  "s055_m_mountainroad_01.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          1490.75,
+          45.13,
+          286.74
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1512.63,
+          44.56,
+          270.8
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1487.58,
+          44.44,
+          270.99
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1427.51,
+          45.04,
+          305.13
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1412.17,
+          45.02,
+          296.9
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1435.09,
+          44.23,
+          284.37
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1444.3,
+          44.35,
+          282.35
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1464.57,
+          44.59,
+          277.67
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S055_PALMTREE_01_HAMMER",
+          1
+        ]
+      }
+    ]
+  },
+  "s056_s_mountainroad_02.xml": {
+    "cut_down_tree": []
+  },
+  "s057_s_mountainroad_03.xml": {
+    "cut_down_tree": []
+  },
+  "s058_s_bigbridge.xml": {
+    "cut_down_tree": []
+  },
+  "s059_s_rainbowriver_01.xml": {
+    "cut_down_tree": []
+  },
+  "s060_s_rainbowriver_02.xml": {
+    "cut_down_tree": []
+  },
+  "s061_s_rainbowriver_03.xml": {
+    "cut_down_tree": []
+  },
+  "s062_s_glasscave_01.xml": {
+    "cut_down_tree": []
+  },
+  "s063_s_glasscave_02.xml": {
+    "cut_down_tree": []
+  },
+  "s064_s_glasscave_03.xml": {
+    "cut_down_tree": []
+  },
+  "s065_l_ruinsforest.xml": {
+    "cut_down_tree": []
+  },
+  "s066_s_hill_01.xml": {
+    "cut_down_tree": []
+  },
+  "s067_s_hill_02.xml": {
+    "cut_down_tree": []
+  },
+  "s068_s_hill_03.xml": {
+    "cut_down_tree": []
+  },
+  "s069_s_rural_01.xml": {
+    "cut_down_tree": []
+  },
+  "s070_m_rural_02.xml": {
+    "cut_down_tree": []
+  },
+  "s071_m_rockmountain_01.xml": {
+    "cut_down_tree": []
+  },
+  "s072_s_rockmountain_02.xml": {
+    "cut_down_tree": []
+  },
+  "s073_s_rockmountain_03.xml": {
+    "cut_down_tree": []
+  },
+  "s074_s_temple_01.xml": {
+    "cut_down_tree": []
+  },
+  "s075_s_temple_02.xml": {
+    "cut_down_tree": []
+  },
+  "s076_s_temple_03.xml": {
+    "cut_down_tree": []
+  },
+  "s077_l_ancientforest.xml": {
+    "cut_down_tree": []
+  },
+  "s078_m_foggyvalley_01.xml": {
+    "cut_down_tree": []
+  },
+  "s079_s_foggyvalley_02.xml": {
+    "cut_down_tree": []
+  },
+  "s080_s_ancientruins_01.xml": {
+    "cut_down_tree": []
+  },
+  "s081_s_ancientruins_02.xml": {
+    "cut_down_tree": []
+  },
+  "s082_s_ancientruins_03.xml": {
+    "cut_down_tree": []
+  },
+  "s083_s_lastdungion_01.xml": {
+    "cut_down_tree": []
+  },
+  "s084_s_lastdungion_02.xml": {
+    "cut_down_tree": []
+  },
+  "s085_s_lastdungion_03.xml": {
+    "cut_down_tree": []
+  },
+  "s086_s_lastdungion_04.xml": {
+    "cut_down_tree": []
+  },
+  "s087_s_event_01.xml": {
+    "cut_down_tree": []
+  },
+  "s090_i_house_ruinforest_01.xml": {
+    "cut_down_tree": []
+  },
+  "s091_i_atelier_k.xml": {
+    "cut_down_tree": []
+  },
+  "s092_i_atelier_c.xml": {
+    "cut_down_tree": []
+  },
+  "s093_i_atelier_n.xml": {
+    "cut_down_tree": []
+  },
+  "s094_i_atelier_a.xml": {
+    "cut_down_tree": []
+  },
+  "s110_l_dlc04_desert_01.xml": {
+    "cut_down_tree": [
+      {
+        "position": [
+          1286.88,
+          73.8,
+          1213.12
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1348.2,
+          72.51,
+          1197.73
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1301.34,
+          68.79,
+          1253.46
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1093.77,
+          95.82,
+          1145.9
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1093.25,
+          96.03,
+          1143.94
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1253.05,
+          99.26,
+          1037.3
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1163.82,
+          99.63,
+          1021.94
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1086.46,
+          110.79,
+          1008.68
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1089.7,
+          109.77,
+          1011.7
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      },
+      {
+        "position": [
+          1047.05,
+          95.52,
+          1169.77
+        ],
+        "rate": 100,
+        "save": false,
+        "rod": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_ROD",
+          null
+        ],
+        "sickle": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_SICKLE",
+          1
+        ],
+        "axe": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_AXE",
+          6
+        ],
+        "hammer": [
+          "FIELDMAP_COLLECT_PLACE_S110_PALMTREE_02_HAMMER",
+          1
+        ]
+      }
+    ]
+  },
+  "s111_l_dlc04_desert_02.xml": {
+    "cut_down_tree": []
+  },
+  "s112_l_dlc04_desert_03.xml": {
+    "cut_down_tree": []
+  },
+  "s113_l_dlc04_desert_04.xml": {
+    "cut_down_tree": []
+  },
+  "s115_i_atelier_r.xml": {
+    "cut_down_tree": []
+  },
+  "s120_m_dlc04_desert_01.xml": {
+    "cut_down_tree": []
+  },
+  "s121_s_dlc04_desert_02.xml": {
+    "cut_down_tree": []
+  },
+  "s130_m_dlc05_frontier_01.xml": {
+    "cut_down_tree": []
+  },
+  "s131_m_dlc05_frontier_02.xml": {
+    "cut_down_tree": []
+  },
+  "s135_i_atelier_f.xml": {
+    "cut_down_tree": []
+  },
+  "s338_reserve_282.xml": {
+    "cut_down_tree": []
+  },
+  "s999_m_under_ruins_03.xml": {
+    "cut_down_tree": []
+  }
+}

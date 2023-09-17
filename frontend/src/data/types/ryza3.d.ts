@@ -294,6 +294,54 @@ export namespace types {
          */
         "feature_descriptions": Record<types.U32, types.FeatureDescription>;
     };
+    export type Usize = number;
+    export type GimmickData = {
+
+        /**
+         * The position of this gimmick.
+         */
+        "position": [types.F32, types.F32, types.F32];
+
+        /**
+         * The rotation of this gimmick.
+         */
+        "rate": types.Usize;
+
+        /**
+         * Whether the state of this gimmick is saved.
+         */
+        "save": boolean;
+    };
+    export type CutDownTree = (types.GimmickData & {
+
+        /**
+         * Drop information when using rod.
+         */
+        "rod": [(string | null), (types.Usize | null)];
+
+        /**
+         * Drop information when using sickle.
+         */
+        "sickle": [(string | null), (types.Usize | null)];
+
+        /**
+         * Drop information when using axe.
+         */
+        "axe": [(string | null), (types.Usize | null)];
+
+        /**
+         * Drop information when using hammer.
+         */
+        "hammer": [(string | null), (types.Usize | null)];
+    });
+    export type FieldDataSet = {
+
+        /**
+         * Trees that can be cut down for resources.
+         */
+        "cut_down_tree": (types.CutDownTree)[];
+    };
+    export type FieldData = Record<string, types.FieldDataSet>;
     export type EnemyDrop = {
         "item_tag": string;
         "rate": types.U32;
@@ -373,6 +421,7 @@ export namespace types {
         "item_category_data": types.ItemCategoryData;
         "item_effect_data": types.ItemEffectData;
         "recipe_data": types.RecipeData;
+        "field_data": types.FieldData;
         "enemy_data": (types.Enemy)[];
     };
 }
