@@ -28863,7 +28863,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_30": {
       "name": "Mark of Aggression 1",
-      "description": "Attacker level is calculated, making it easier to fulfill the attacker role.",
+      "description": "Increases the Attacker level, making it easier to take on the Attacker role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -28887,7 +28887,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_31": {
       "name": "Mark of Aggression 2",
-      "description": "Attacker level is calculated, making it easier to fulfill the attacker role.",
+      "description": "Increases the Attacker level, making it easier to take on the Attacker role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -28911,7 +28911,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_32": {
       "name": "Mark of Aggression 3",
-      "description": "Attacker level is calculated, making it easier to fulfill the attacker role.",
+      "description": "Increases the Attacker level, making it easier to take on the Attacker role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -28935,7 +28935,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_33": {
       "name": "Mark of Aggression 4",
-      "description": "Attacker level is calculated, making it easier to fulfill the attacker role.",
+      "description": "Increases the Attacker level, making it easier to take on the Attacker role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -28959,7 +28959,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_34": {
       "name": "Mark of Aggression 5",
-      "description": "Attacker level is calculated, making it easier to fulfill the attacker role.",
+      "description": "Increases the Attacker level, making it easier to take on the Attacker role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -28983,7 +28983,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_35": {
       "name": "Mark of Aggression 6",
-      "description": "Attacker level is calculated, making it easier to fulfill the attacker role.",
+      "description": "Increases the Attacker level, making it easier to take on the Attacker role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29007,7 +29007,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_36": {
       "name": "Mark of Protection 1",
-      "description": "Defender level is calculated, making it easier to fulfill the defender role.",
+      "description": "Increases the Defender level, making it easier to take on the Defender role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29031,7 +29031,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_37": {
       "name": "Mark of Protection 2",
-      "description": "Defender level is calculated, making it easier to fulfill the defender role.",
+      "description": "Increases the Defender level, making it easier to take on the Defender role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29055,7 +29055,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_38": {
       "name": "Mark of Protection 3",
-      "description": "Defender level is calculated, making it easier to fulfill the defender role.",
+      "description": "Increases the Defender level, making it easier to take on the Defender role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29079,7 +29079,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_39": {
       "name": "Mark of Protection 4",
-      "description": "Defender level is calculated, making it easier to fulfill the defender role.",
+      "description": "Increases the Defender level, making it easier to take on the Defender role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29127,7 +29127,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_40": {
       "name": "Mark of Protection 5",
-      "description": "Defender level is calculated, making it easier to fulfill the defender role.",
+      "description": "Increases the Defender level, making it easier to take on the Defender role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29151,7 +29151,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_41": {
       "name": "Mark of Protection 6",
-      "description": "Defender level is calculated, making it easier to fulfill the defender role.",
+      "description": "Increases the Defender level, making it easier to take on the Defender role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29175,7 +29175,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_42": {
       "name": "Mark of Assistance 1",
-      "description": "Supporter level is calculated, making it easier to fulfill the supporter role.",
+      "description": "Increases the Supporter level, making it easier to take on the Supporter role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29199,7 +29199,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_43": {
       "name": "Mark of Assistance 2",
-      "description": "Supporter level is calculated, making it easier to fulfill the supporter role.",
+      "description": "Increases the Supporter level, making it easier to take on the Supporter role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29223,7 +29223,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_44": {
       "name": "Mark of Assistance 3",
-      "description": "Supporter level is calculated, making it easier to fulfill the supporter role.",
+      "description": "Increases the Supporter level, making it easier to take on the Supporter role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29247,7 +29247,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_45": {
       "name": "Mark of Assistance 4",
-      "description": "Supporter level is calculated, making it easier to fulfill the supporter role.",
+      "description": "Increases the Supporter level, making it easier to take on the Supporter role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29271,7 +29271,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_46": {
       "name": "Mark of Assistance 5",
-      "description": "Supporter level is calculated, making it easier to fulfill the supporter role.",
+      "description": "Increases the Supporter level, making it easier to take on the Supporter role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -29295,7 +29295,7 @@
     },
     "ITEM_EFF_EQUIP_BOOST_ACC_RESERVE_47": {
       "name": "Mark of Assistance 6",
-      "description": "Supporter level is calculated, making it easier to fulfill the supporter role.",
+      "description": "Increases the Supporter level, making it easier to take on the Supporter role.",
       "kind": "ITEM_EFFECT_KIND_EQUIP",
       "base_attribute": null,
       "attributes": [
@@ -34659,7 +34659,7 @@
     },
     "ITEM_EFF_EQUIP_ROLE_CHANGE_04": {
       "name": "Mark of Accel Battler",
-      "description": "Role becomes Excel Battler.",
+      "description": "Role becomes Accel Battler.",
       "kind": "ITEM_EFFECT_KIND_KEY_SYMBOL",
       "base_attribute": null,
       "attributes": [
@@ -34674,8 +34674,8 @@
       ]
     },
     "ITEM_EFF_EQUIP_ROLE_CHANGE_05": {
-      "name": "Mark of Mighty Load",
-      "description": "Role becomes Mighty Lord.",
+      "name": "Mark of Mighty Master",
+      "description": "Role becomes Mighty Master.",
       "kind": "ITEM_EFFECT_KIND_KEY_SYMBOL",
       "base_attribute": null,
       "attributes": [
@@ -34738,8 +34738,8 @@
       ]
     },
     "ITEM_EFF_EQUIP_ROLE_CHANGE_09": {
-      "name": "Mark of Playmaker",
-      "description": "Role becomes Playmaker.",
+      "name": "Mark of Play Maker",
+      "description": "Role becomes Play Maker.",
       "kind": "ITEM_EFFECT_KIND_KEY_SYMBOL",
       "base_attribute": null,
       "attributes": [
@@ -51209,7 +51209,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_031": {
-      "name": "Small Devil Special Attack",
+      "name": "Small Devil Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
@@ -51225,7 +51225,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_032": {
-      "name": "Elemental Special Attack",
+      "name": "Elemental Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
@@ -51241,7 +51241,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_033": {
-      "name": "Dryad Special Attack",
+      "name": "Dryad Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
@@ -51257,7 +51257,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_034": {
-      "name": "Sloth Special Attack",
+      "name": "Sloth Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
@@ -51273,7 +51273,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_035": {
-      "name": "Raptor Special Attack",
+      "name": "Raptor Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
@@ -51289,7 +51289,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_036": {
-      "name": "Chameleon Special Attack",
+      "name": "Chameleon Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
@@ -51305,7 +51305,7 @@
       ]
     },
     "ITEM_EFF_POTENTIAL_037": {
-      "name": "Fenrir Special Attack",
+      "name": "Fenrir Slayer",
       "description": null,
       "kind": "ITEM_EFFECT_KIND_CRITICAL_RACE",
       "base_attribute": null,
