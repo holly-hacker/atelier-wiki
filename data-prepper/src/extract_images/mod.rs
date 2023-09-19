@@ -144,7 +144,7 @@ impl Args {
 
         let mut entries: Vec<_> = pak_index
             .iter_entries()
-            .filter_map(|e| match_pattern(pattern, e.get_file_name()).map(|num| (e, num)))
+            .filter_map(|e| match_pattern::<usize>(pattern, e.get_file_name()).map(|num| (e, num)))
             .map(|(f, num)| (f.get_file_name().to_string(), num))
             .collect();
 

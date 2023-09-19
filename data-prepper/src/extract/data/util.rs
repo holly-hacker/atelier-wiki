@@ -64,7 +64,9 @@ impl<'node, 'attr, 'xml_str> ElementReader<'node, 'attr, 'xml_str> {
         let mut values_with_indices = self
             .0
             .attributes()
-            .flat_map(|a| match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .flat_map(|a| {
+                match_pattern::<usize>(name_pattern, a.name()).map(|idx| (idx, a.value()))
+            })
             .collect::<Vec<_>>();
 
         values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
@@ -99,7 +101,9 @@ impl<'node, 'attr, 'xml_str> ElementReader<'node, 'attr, 'xml_str> {
         let mut values_with_indices = self
             .0
             .attributes()
-            .flat_map(|a| match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .flat_map(|a| {
+                match_pattern::<usize>(name_pattern, a.name()).map(|idx| (idx, a.value()))
+            })
             .collect::<Vec<_>>();
 
         values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));
@@ -157,7 +161,9 @@ impl<'node, 'attr, 'xml_str> ElementReader<'node, 'attr, 'xml_str> {
         let mut values_with_indices = self
             .0
             .attributes()
-            .flat_map(|a| match_pattern(name_pattern, a.name()).map(|idx| (idx, a.value())))
+            .flat_map(|a| {
+                match_pattern::<usize>(name_pattern, a.name()).map(|idx| (idx, a.value()))
+            })
             .collect::<Vec<_>>();
 
         values_with_indices.sort_by(|(i1, _), (i2, _)| i1.cmp(i2));

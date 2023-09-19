@@ -1,6 +1,6 @@
 mod pak_index;
 
-use std::path::Path;
+use std::{path::Path, str::FromStr};
 
 use gust_pak::common::GameVersion;
 
@@ -24,7 +24,17 @@ pub fn game_slug(game_version: GameVersion) -> &'static str {
 }
 
 /// Match a pattern with a wildcard `*` against a string.
-pub fn match_pattern(needle: &'static str, haystack: &str) -> Option<usize> {
+pub fn match_pattern<T>(needle: &'static str, haystack: &str) -> Option<T>
+where
+    T: FromStr,
+{
+    match_pattern_str(needle, haystack).and_then(|found| found.parse().ok())
+}
+
+pub fn match_pattern_str<'input>(
+    needle: &'static str,
+    haystack: &'input str,
+) -> Option<&'input str> {
     let Some(index) = needle.find('*') else {
         panic!("pattern `{needle}` does not contain a `*`, which is required");
     };
@@ -38,7 +48,7 @@ pub fn match_pattern(needle: &'static str, haystack: &str) -> Option<usize> {
 
     let matched = &haystack[left.len()..haystack.len() - right.len()];
 
-    matched.parse().ok()
+    Some(matched)
 }
 
 #[cfg(test)]
@@ -48,11 +58,15 @@ mod tests {
     // NOTE: this should be a doctest, see rust-lang/rust#50784
     #[test]
     fn match_pattern_is_correct() {
-        assert_eq!(match_pattern("aa_*_bb", "aa_123_bb"), Some(123));
-        assert_eq!(match_pattern("aa_*_bb", "foo"), None);
+        assert_eq!(match_pattern::<usize>("aa_*_bb", "aa_123_bb"), Some(123));
+        assert_eq!(match_pattern::<usize>("aa_*_bb", "foo"), None);
 
         // failed parsing returns None
-        assert_eq!(match_pattern("aa_*", "aa_123_bb"), None);
-        assert_eq!(match_pattern("*_bbb", "aa_123_bb"), None);
+        assert_eq!(match_pattern::<usize>("aa_*", "aa_123_bb"), None);
+        assert_eq!(match_pattern::<usize>("*_bbb", "aa_123_bb"), None);
+
+        // &str has its own method
+        assert_eq!(match_pattern_str("aa_*_bb", "aa_123_bb"), Some("123"));
+        assert_eq!(match_pattern_str("aa_*_bb", "foo"), None);
     }
 }
