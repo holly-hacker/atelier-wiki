@@ -14,11 +14,12 @@ use crate::{
     extract_images::{
         rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas, upload_manager::UploadManager,
     },
-    utils::{extract_game_version, game_slug, match_pattern, PakIndex},
+    utils::{extract_game_version, game_slug, match_pattern_str, PakIndex},
 };
 
 const PATH_ITEMS: &str = "items";
 const PATH_ENEMIES: &str = "enemies";
+const PATH_MAPS: &str = "maps";
 
 /// Extract and prepare the game data from the game install directory
 #[derive(FromArgs)]
@@ -124,6 +125,79 @@ impl Args {
         )
         .context("extract item icons")?;
 
+        info!("Extracting map textures");
+        const MAP_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_minimap_ta_*.g1t";
+        self.extract_prefixed(
+            pak_index,
+            MAP_PATTERN,
+            output_directory,
+            upload_manager,
+            PATH_MAPS,
+        )
+        .context("extract map textures")?;
+
+        Ok(())
+    }
+
+    fn extract_prefixed(
+        &self,
+        pak_index: &mut PakIndex,
+        pattern: &'static str,
+        output_directory: &Path,
+        upload_manager: &mut UploadManager,
+        subdirectory: &'static str,
+    ) -> anyhow::Result<()> {
+        let image_output_folder = output_directory.join(subdirectory);
+        if !self.dont_write_images {
+            debug!("Creating image output directory");
+            std::fs::create_dir_all(&image_output_folder)
+                .context("create image output directory")?;
+        }
+
+        let mut entries: Vec<_> = pak_index
+            .iter_entries()
+            .filter_map(|e| {
+                match_pattern_str(pattern, e.get_file_name()).map(|num| (e, num.to_string()))
+            })
+            .map(|(f, num)| (f.get_file_name().to_string(), num))
+            .collect();
+
+        entries.sort_by(|(_, a), (_, b)| a.cmp(b));
+
+        for (entry, num) in entries {
+            let mut file = pak_index
+                .get_file(&entry)
+                .with_context(|| format!("read {entry}"))?
+                .with_context(|| format!("cannot find entry {entry}"))?;
+
+            debug!(?entry, "reading g1t header");
+            let g1t = gust_g1t::GustG1t::read(&mut file).context("read g1t")?;
+            let texture = &g1t.textures[0];
+
+            if texture.width != 2048 && texture.height != 2048 {
+                bail!(
+                    "Texture {entry} has invalid size {}x{}, expected 2048x2048",
+                    texture.width,
+                    texture.height,
+                );
+            }
+
+            debug!(?entry, "reading image");
+            let image_bytes = g1t.read_image(texture, &mut file).context("read image")?;
+            let image =
+                Rgba8Image::new(texture.width, image_bytes).context("image buffer to image")?;
+            debug_assert_eq!(image.height(), texture.height);
+
+            self.save_and_upload_image(
+                image,
+                &image_output_folder,
+                subdirectory,
+                &format!("{}.webp", num),
+                upload_manager,
+            )
+            .with_context(|| format!("save image {num}"))?;
+        }
+
         Ok(())
     }
 
@@ -144,11 +218,13 @@ impl Args {
 
         let mut entries: Vec<_> = pak_index
             .iter_entries()
-            .filter_map(|e| match_pattern::<usize>(pattern, e.get_file_name()).map(|num| (e, num)))
+            .filter_map(|e| {
+                match_pattern_str(pattern, e.get_file_name()).map(|num| (e, num.to_string()))
+            })
             .map(|(f, num)| (f.get_file_name().to_string(), num))
             .collect();
 
-        entries.sort_by_key(|(_, num)| *num);
+        entries.sort_by(|(_, a), (_, b)| a.cmp(b));
 
         // create texture atlas
         let mut texture_atlas =
