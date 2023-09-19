@@ -7,7 +7,7 @@ use std::num::ParseFloatError;
 
 use anyhow::Context;
 use serde::Serialize;
-use tracing::{debug, trace};
+use tracing::trace;
 use typescript_type_def::TypeDef;
 
 use crate::utils::PakIndex;
