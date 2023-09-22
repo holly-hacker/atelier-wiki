@@ -8,6 +8,12 @@ pub struct Rgba8Image {
 impl Rgba8Image {
     /// Create a new transparent image with the given dimensions.
     pub fn new_empty(width: u32, height: u32) -> Self {
+        if width == 0 {
+            panic!("width must be greater than 0");
+        }
+        if height == 0 {
+            panic!("height must be greater than 0");
+        }
         Self {
             width,
             data: vec![0; (width * height * 4) as usize],
@@ -16,6 +22,9 @@ impl Rgba8Image {
 
     /// Create a new image with the given RGBA8 data.
     pub fn new(width: u32, data: Vec<u8>) -> anyhow::Result<Self> {
+        if width == 0 {
+            bail!("width must be greater than 0");
+        }
         if data.len() % 4 != 0 {
             bail!("data length must be a multiple of 4");
         }
@@ -100,6 +109,46 @@ impl Rgba8Image {
         }
 
         new_image
+    }
+
+    /// Copies a chunk of the image into a new image.
+    pub fn copy_chunk(&self, x: u32, y: u32, width: u32, height: u32) -> anyhow::Result<Self> {
+        if width == 0 {
+            bail!("chunk width must be greater than 0");
+        }
+        if height == 0 {
+            bail!("chunk height must be greater than 0");
+        }
+        if x + width > self.width {
+            bail!(
+                "right edge out of bounds, {} but width is {}",
+                x + width,
+                self.width
+            );
+        }
+        if y + height > self.height() {
+            bail!(
+                "bottom edge out of bounds, {} but height is {}",
+                y + height,
+                self.height()
+            );
+        }
+
+        let mut new_image = Rgba8Image::new_empty(width, height);
+
+        // TODO: optimize. we can memcpy entire rows at a time
+        for y2 in 0..height {
+            for x2 in 0..width {
+                let index = ((y + y2) * self.width + (x + x2)) as usize * 4;
+                let index2 = (y2 * width + x2) as usize * 4;
+                new_image.data[index2] = self.data[index];
+                new_image.data[index2 + 1] = self.data[index + 1];
+                new_image.data[index2 + 2] = self.data[index + 2];
+                new_image.data[index2 + 3] = self.data[index + 3];
+            }
+        }
+
+        Ok(new_image)
     }
 
     /// Blits another image onto this image at the given coordinates.
