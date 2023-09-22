@@ -49,7 +49,7 @@ pub fn extract_map_textures(
         let span = tracing::debug_span!("map", num = map_idx);
         let _enter = span.enter();
 
-        extract_map_texture(pak_index, map_idx, tiles, &image_output_folder)
+        extract_map_texture(args, pak_index, map_idx, tiles, &image_output_folder)
             .with_context(|| format!("extract map texture for map {map_idx}"))?;
     }
 
@@ -57,6 +57,7 @@ pub fn extract_map_textures(
 }
 
 fn extract_map_texture(
+    args: &super::Args,
     pak_index: &mut PakIndex,
     map_idx: usize,
     mut tiles: Vec<(String, usize)>,
@@ -202,13 +203,15 @@ fn extract_map_texture(
                 );
                 debug!(path, "Image decoded");
 
-                let path = output_directory.join(path);
+                if !args.dont_write_images {
+                    let path = output_directory.join(path);
 
-                std::fs::create_dir_all(Path::new(&path).parent().unwrap())
-                    .context("create image output directory")?;
+                    std::fs::create_dir_all(Path::new(&path).parent().unwrap())
+                        .context("create image output directory")?;
 
-                let encoded = scaled_tile.encode_webp().context("encode image")?;
-                std::fs::write(&path, encoded).context("write image")?;
+                    let encoded = scaled_tile.encode_webp().context("encode image")?;
+                    std::fs::write(&path, encoded).context("write image")?;
+                }
             }
         }
     }
