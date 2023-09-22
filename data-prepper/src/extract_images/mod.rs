@@ -3,6 +3,7 @@ mod rgba8_image;
 mod texture_atlas;
 
 use std::path::{Path, PathBuf};
+use std::str::FromStr;
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
@@ -37,6 +38,30 @@ pub struct Args {
     /// level of oxipng compression to use. if not present, use standard png encoder for png
     #[argh(option, short = 'c')]
     compression: Option<u8>,
+
+    /// the category of images to extract. if not present, extract all images
+    #[argh(option)]
+    category: Option<Category>,
+}
+
+#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+pub enum Category {
+    Monsters,
+    Items,
+    Maps,
+}
+
+impl FromStr for Category {
+    type Err = String;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "monsters" => Ok(Self::Monsters),
+            "items" => Ok(Self::Items),
+            "maps" => Ok(Self::Maps),
+            _ => Err(format!("Unknown category {}", s)),
+        }
+    }
 }
 
 impl Args {
@@ -69,7 +94,7 @@ impl Args {
         debug!("Creating output directory");
         std::fs::create_dir_all(&output_directory).context("create output directory")?;
 
-        self.extract_images(&mut pak_index, &output_directory)?;
+        self.extract_images(&mut pak_index, &output_directory, self.category)?;
         info!("Extracted images");
 
         Ok(())
@@ -79,30 +104,37 @@ impl Args {
         &self,
         pak_index: &mut PakIndex,
         output_directory: &Path,
+        category: Option<Category>,
     ) -> anyhow::Result<()> {
-        info!("Extracting monster portraits");
-        const MONSTER_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t";
-        self.extract_prefixed_with_texture_atlas(
-            pak_index,
-            MONSTER_PATTERN,
-            output_directory,
-            PATH_ENEMIES,
-        )
-        .context("extract monster portraits")?;
+        if category.is_none() || category == Some(Category::Monsters) {
+            info!("Extracting monster portraits");
+            const MONSTER_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t";
+            self.extract_prefixed_with_texture_atlas(
+                pak_index,
+                MONSTER_PATTERN,
+                output_directory,
+                PATH_ENEMIES,
+            )
+            .context("extract monster portraits")?;
+        }
 
-        info!("Extracting item icons");
-        const ITEM_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_item_l_*.g1t";
-        self.extract_prefixed_with_texture_atlas(
-            pak_index,
-            ITEM_PATTERN,
-            output_directory,
-            PATH_ITEMS,
-        )
-        .context("extract item icons")?;
+        if category.is_none() || category == Some(Category::Items) {
+            info!("Extracting item icons");
+            const ITEM_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_item_l_*.g1t";
+            self.extract_prefixed_with_texture_atlas(
+                pak_index,
+                ITEM_PATTERN,
+                output_directory,
+                PATH_ITEMS,
+            )
+            .context("extract item icons")?;
+        }
 
-        info!("Extracting map textures");
-        extract_maps::extract_map_textures(self, pak_index, output_directory)
-            .context("extract map textures")?;
+        if category.is_none() || category == Some(Category::Maps) {
+            info!("Extracting map textures");
+            extract_maps::extract_map_textures(self, pak_index, output_directory)
+                .context("extract map textures")?;
+        }
 
         Ok(())
     }
