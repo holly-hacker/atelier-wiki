@@ -8,8 +8,6 @@ use crate::{
     utils::{match_pattern_str, PakIndex},
 };
 
-use super::upload_manager::UploadManager;
-
 const MAP_PATTERN_MINIMAP: &str = r"\data\x64\res_cmn\ui\neo\neo_minimap_ta_*.g1t";
 const MAP_PATTERN_FULL: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_minimap_all_*.g1t";
 const NEO_TILE_SIZE: usize = 2048;
@@ -19,7 +17,6 @@ pub fn extract_map_textures(
     args: &super::Args,
     pak_index: &mut PakIndex,
     output_directory: &Path,
-    _upload_manager: &mut UploadManager,
 ) -> anyhow::Result<()> {
     let image_output_folder = output_directory.join(super::PATH_MAPS);
     if !args.dont_write_images {

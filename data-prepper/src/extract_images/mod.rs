@@ -1,7 +1,6 @@
 mod extract_maps;
 mod rgba8_image;
 mod texture_atlas;
-mod upload_manager;
 
 use std::path::{Path, PathBuf};
 
@@ -11,10 +10,7 @@ pub use texture_atlas::UniformTextureAtlasInfo;
 use tracing::{debug, info};
 
 use crate::{
-    config::Config,
-    extract_images::{
-        rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas, upload_manager::UploadManager,
-    },
+    extract_images::{rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas},
     utils::{extract_game_version, game_slug, match_pattern_str, PakIndex},
 };
 
@@ -41,14 +37,10 @@ pub struct Args {
     /// level of oxipng compression to use. if not present, use standard png encoder for png
     #[argh(option, short = 'c')]
     compression: Option<u8>,
-
-    /// upload the extracted files to S3-compatible object storage
-    #[argh(switch)]
-    upload: bool,
 }
 
 impl Args {
-    pub fn handle(self, config: Option<Config>) -> anyhow::Result<()> {
+    pub fn handle(self) -> anyhow::Result<()> {
         debug!("Detecting game version");
         let game_version = extract_game_version(&self.game_directory);
         let Some(game_version) = game_version else {
@@ -59,21 +51,6 @@ impl Args {
             "Detected game {game_version:?} ({}), using slug {slug}",
             game_version.get_short_name()
         );
-
-        let mut upload_manager = UploadManager::new_with_prefix(format!("game-data/{slug}/"));
-        if self.upload {
-            let Some(config) = &config else {
-                bail!("Cannot upload without a valid config");
-            };
-
-            let Some(upload_config) = &config.upload else {
-                bail!("Cannot upload without a valid config (missing [upload] section)");
-            };
-
-            upload_manager
-                .load_object_storage(upload_config.clone())
-                .context("load object storage config")?;
-        }
 
         let output_dir = self
             .output_directory
@@ -92,7 +69,7 @@ impl Args {
         debug!("Creating output directory");
         std::fs::create_dir_all(&output_directory).context("create output directory")?;
 
-        self.extract_images(&mut pak_index, &output_directory, &mut upload_manager)?;
+        self.extract_images(&mut pak_index, &output_directory)?;
         info!("Extracted images");
 
         Ok(())
@@ -102,7 +79,6 @@ impl Args {
         &self,
         pak_index: &mut PakIndex,
         output_directory: &Path,
-        upload_manager: &mut UploadManager,
     ) -> anyhow::Result<()> {
         info!("Extracting monster portraits");
         const MONSTER_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t";
@@ -110,7 +86,6 @@ impl Args {
             pak_index,
             MONSTER_PATTERN,
             output_directory,
-            upload_manager,
             PATH_ENEMIES,
         )
         .context("extract monster portraits")?;
@@ -121,13 +96,12 @@ impl Args {
             pak_index,
             ITEM_PATTERN,
             output_directory,
-            upload_manager,
             PATH_ITEMS,
         )
         .context("extract item icons")?;
 
         info!("Extracting map textures");
-        extract_maps::extract_map_textures(self, pak_index, output_directory, upload_manager)
+        extract_maps::extract_map_textures(self, pak_index, output_directory)
             .context("extract map textures")?;
 
         Ok(())
@@ -138,7 +112,6 @@ impl Args {
         pak_index: &mut PakIndex,
         pattern: &'static str,
         output_directory: &Path,
-        upload_manager: &mut UploadManager,
         subdirectory: &'static str,
     ) -> anyhow::Result<()> {
         let image_output_folder = output_directory.join(subdirectory);
@@ -192,14 +165,8 @@ impl Args {
                 .add_image(&image, num.to_string())
                 .context("add image to texture atlas")?;
 
-            self.save_and_upload_image(
-                image,
-                &image_output_folder,
-                subdirectory,
-                &format!("{}.png", num),
-                upload_manager,
-            )
-            .with_context(|| format!("save image {num}"))?;
+            self.save_image(image, &image_output_folder, &format!("{}.png", num))
+                .with_context(|| format!("save image {num}"))?;
         }
 
         // save the texture atlas info
@@ -212,25 +179,21 @@ impl Args {
         .context("write texture atlas info")?;
 
         // save the texture atlas image
-        self.save_and_upload_image(
+        self.save_image(
             texture_atlas.into_image(),
             &image_output_folder,
-            subdirectory,
             "packed.webp",
-            upload_manager,
         )
         .context("save texture atlas")?;
 
         Ok(())
     }
 
-    fn save_and_upload_image(
+    fn save_image(
         &self,
         image: Rgba8Image,
         output_folder: &Path,
-        object_storage_path: &str,
         file_name: &str,
-        upload_manager: &mut UploadManager,
     ) -> anyhow::Result<()> {
         let file_path = output_folder.join(file_name);
 
@@ -253,17 +216,9 @@ impl Args {
 
         if !self.dont_write_images {
             debug!(?file_path, "saving image...");
-            std::fs::write(&file_path, &image_bytes).context("write to image file")?;
+            std::fs::write(&file_path, image_bytes).context("write to image file")?;
             debug!(?file_path, "saved image");
         }
-
-        // store image for upload
-        upload_manager
-            .upload(
-                &format!("{}/{}", object_storage_path, file_name),
-                &image_bytes,
-            )
-            .context("upload to s3")?;
 
         Ok(())
     }
