@@ -196,7 +196,11 @@ fn extract_map_texture(
                     pixels_per_tile.min(full_size_image.width() - (start_x)),
                     pixels_per_tile.min(full_size_image.height() - (start_y)),
                 ).with_context(|| format!("copy chunk from tile index {tile_x},{tile_y} at zoom level {zoom_level}"))?;
-                let scaled_tile = unscaled_tile.scale_down((scale_factor, scale_factor));
+                let scaled_tile = if scale_factor == 1 {
+                    unscaled_tile
+                } else {
+                    unscaled_tile.scale_down((scale_factor, scale_factor))
+                };
                 // TODO: maybe pad to 256x256? check if leaflet pads non-square images by themselves
 
                 let path = format!(

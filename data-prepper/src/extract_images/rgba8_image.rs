@@ -136,16 +136,16 @@ impl Rgba8Image {
 
         let mut new_image = Rgba8Image::new_empty(width, height);
 
-        // TODO: optimize. we can memcpy entire rows at a time
-        for y2 in 0..height {
-            for x2 in 0..width {
-                let index = ((y + y2) * self.width + (x + x2)) as usize * 4;
-                let index2 = (y2 * width + x2) as usize * 4;
-                new_image.data[index2] = self.data[index];
-                new_image.data[index2 + 1] = self.data[index + 1];
-                new_image.data[index2 + 2] = self.data[index + 2];
-                new_image.data[index2 + 3] = self.data[index + 3];
-            }
+        for row in 0..height {
+            let data_len = (width * 4) as usize;
+
+            let self_data_start = (((y + row) * self.width + x) * 4) as usize;
+            let self_slice = &self.data[self_data_start..(self_data_start + data_len)];
+
+            let other_data_start = (row * width * 4) as usize;
+            let other_slice = &mut new_image.data[other_data_start..(other_data_start + data_len)];
+
+            other_slice.copy_from_slice(self_slice);
         }
 
         Ok(new_image)
