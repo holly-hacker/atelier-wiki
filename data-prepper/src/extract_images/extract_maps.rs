@@ -106,8 +106,8 @@ fn extract_map_texture(
     if tiles_x * tiles_y != tiles.len() {
         info!(
             "Skipping map {map_idx} because it has {} tiles ({tiles_x}x{tiles_y}) but should have {} tiles",
+            tiles_x * tiles_y,
             tiles.len(),
-            tiles_x * tiles_y
         );
         return Ok(());
     }
