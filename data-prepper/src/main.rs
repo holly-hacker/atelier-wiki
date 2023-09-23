@@ -33,15 +33,7 @@ enum Subcommand {
 fn main() {
     let args: CliArgs = argh::from_env();
 
-    let log_level = if args.trace {
-        tracing::Level::TRACE
-    } else if args.verbose || cfg!(debug_assertions) {
-        tracing::Level::DEBUG
-    } else {
-        tracing::Level::INFO
-    };
-
-    tracing_subscriber::fmt().with_max_level(log_level).init();
+    init_logging(&args);
     debug!("Initialized tracing");
     trace!("Trace logging enabled");
 
@@ -58,4 +50,35 @@ fn main() {
     }
 
     info!("Time elapsed: {:?}", time_elapsed);
+}
+
+fn init_logging(args: &CliArgs) {
+    use tracing_subscriber::{
+        filter::{FilterFn, LevelFilter},
+        fmt,
+        prelude::*,
+        registry,
+    };
+
+    let log_level = if args.trace {
+        tracing::Level::TRACE
+    } else if args.verbose || cfg!(debug_assertions) {
+        tracing::Level::DEBUG
+    } else {
+        tracing::Level::INFO
+    };
+    let level_filter = LevelFilter::from_level(log_level);
+
+    let target_filter = FilterFn::new(|md| {
+        md.target().starts_with("data_prepper::")
+            || md.target().starts_with("gust_g1t::")
+            || md.target().starts_with("gust_pak::")
+            || md.target().starts_with("dds_decoder::")
+    });
+
+    let layer = fmt::layer()
+        .with_filter(target_filter)
+        .with_filter(level_filter);
+
+    registry().with(layer).init();
 }
