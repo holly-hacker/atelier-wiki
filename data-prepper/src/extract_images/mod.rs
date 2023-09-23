@@ -14,6 +14,7 @@ use crate::{
     extract_images::{rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas},
     utils::{extract_game_version, game_slug, match_pattern, PakIndex},
 };
+pub use extract_maps::MapInfoList;
 
 const PATH_ITEMS: &str = "items";
 const PATH_ENEMIES: &str = "enemies";

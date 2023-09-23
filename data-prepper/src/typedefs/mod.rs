@@ -28,7 +28,9 @@ impl Args {
             &output_folder,
             "texture_atlas.d.ts",
         )
-        .context("generate typedefs for ryza3")?;
+        .context("generate texture atlas typedefs")?;
+        gen_typedefs::<super::extract_images::MapInfoList>(&output_folder, "map_data.d.ts")
+            .context("generate map data typedefs")?;
 
         info!("Wrote all typedefs to {:?}", output_folder);
 

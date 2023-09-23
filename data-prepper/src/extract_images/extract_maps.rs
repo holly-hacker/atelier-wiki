@@ -2,7 +2,9 @@ use std::{collections::BTreeMap, path::Path};
 
 use anyhow::Context;
 use rayon::prelude::*;
+use serde::Serialize;
 use tracing::{debug, info};
+use typescript_type_def::TypeDef;
 
 use crate::{
     extract_images::rgba8_image::Rgba8Image,
@@ -11,8 +13,26 @@ use crate::{
 
 const MAP_PATTERN_MINIMAP: &str = r"\data\x64\res_cmn\ui\neo\neo_minimap_ta_*.g1t";
 const MAP_PATTERN_FULL: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_minimap_all_*.g1t";
+
+/// The tile size of the `neo_*` files from the game.
 const NEO_TILE_SIZE: usize = 2048;
-const WEB_TILE_SIZE: usize = 256;
+
+/// The desired output tile size for the web.
+const WEB_TILE_SIZE: usize = 512;
+
+#[derive(Debug, Serialize, TypeDef)]
+pub struct MapInfoList {
+    /// A hashmap of map index to map info.
+    pub maps: BTreeMap<usize, MapInfo>,
+}
+
+#[derive(Debug, Serialize, TypeDef)]
+pub struct MapInfo {
+    /// The highest zoom level. The total amount of zoom levels is this +1.
+    pub max_zoom_level: usize,
+    pub tile_size: usize,
+    // TODO: transparent tile? zoomed-in size?
+}
 
 pub fn extract_map_textures(
     args: &super::Args,
@@ -46,13 +66,29 @@ pub fn extract_map_textures(
                 .push(tuple);
         });
 
+    let mut map_info_list = vec![];
     for (map_idx, tiles) in minimap_tiles {
         let span = tracing::debug_span!("map", num = map_idx);
         let _enter = span.enter();
 
-        extract_map_texture(args, pak_index, map_idx, tiles, &image_output_folder)
+        let map_info = extract_map_texture(args, pak_index, map_idx, tiles, &image_output_folder)
             .with_context(|| format!("extract map texture for map {map_idx}"))?;
+
+        if let Some(map_info) = map_info {
+            map_info_list.push((map_idx, map_info));
+        }
     }
+
+    let map_info_list = MapInfoList {
+        maps: map_info_list.into_iter().collect(),
+    };
+
+    // write to disk
+    super::super::extract::write_data_to_file(
+        &image_output_folder.join("map_data.json"),
+        &map_info_list,
+    )
+    .context("write map_data.json")?;
 
     Ok(())
 }
@@ -63,7 +99,7 @@ fn extract_map_texture(
     map_idx: usize,
     mut tiles: Vec<(String, usize)>,
     output_directory: &Path,
-) -> anyhow::Result<()> {
+) -> anyhow::Result<Option<MapInfo>> {
     // TODO: not really needed, just for debugging purposes
     tiles.sort_by_key(|(_, idx)| *idx);
 
@@ -75,7 +111,7 @@ fn extract_map_texture(
             max_tile + 1,
             tiles.len()
         );
-        return Ok(());
+        return Ok(None);
     }
 
     debug!("Map has {} tiles", tiles.len());
@@ -110,7 +146,7 @@ fn extract_map_texture(
             tiles_x * tiles_y,
             tiles.len(),
         );
-        return Ok(());
+        return Ok(None);
     }
 
     // create the full-size image in memory
@@ -169,6 +205,11 @@ fn extract_map_texture(
 
     debug!(zoom_levels);
 
+    let map_info = MapInfo {
+        max_zoom_level,
+        tile_size: WEB_TILE_SIZE,
+    };
+
     (0..zoom_levels).into_par_iter().for_each(|zoom_level| {
         let span = tracing::debug_span!("zoom_level", zoom = zoom_level);
         let _enter = span.enter();
@@ -226,5 +267,5 @@ fn extract_map_texture(
 
     info!("Map {map_idx} extracted with {zoom_levels} zoom levels");
 
-    Ok(())
+    Ok(Some(map_info))
 }

@@ -1,0 +1,40 @@
+{
+  "maps": {
+    "0": {
+      "max_zoom_level": 5,
+      "tile_size": 512
+    },
+    "1": {
+      "max_zoom_level": 6,
+      "tile_size": 512
+    },
+    "2": {
+      "max_zoom_level": 6,
+      "tile_size": 512
+    },
+    "3": {
+      "max_zoom_level": 6,
+      "tile_size": 512
+    },
+    "4": {
+      "max_zoom_level": 5,
+      "tile_size": 512
+    },
+    "5": {
+      "max_zoom_level": 5,
+      "tile_size": 512
+    },
+    "7": {
+      "max_zoom_level": 5,
+      "tile_size": 512
+    },
+    "9": {
+      "max_zoom_level": 3,
+      "tile_size": 512
+    },
+    "10": {
+      "max_zoom_level": 4,
+      "tile_size": 512
+    }
+  }
+}
