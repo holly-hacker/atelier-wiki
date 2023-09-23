@@ -10,6 +10,7 @@ import ItemUseTagsList from "./item_use_tags/list";
 import ItemUseTagDetail from "./item_use_tags/detail";
 import EnemyList from "./enemies/list";
 import EnemyDetail from "./enemies/detail";
+import Ryza3Map from "./map/map";
 
 export default function Ryza3Routes() {
   return (
@@ -30,6 +31,8 @@ export default function Ryza3Routes() {
 
       <Route path="enemies" element={<EnemyList />} />
       <Route path="enemy/:id" element={<EnemyDetail />} />
+
+      <Route path="map" element={<Ryza3Map />} />
     </Route>
   );
 }

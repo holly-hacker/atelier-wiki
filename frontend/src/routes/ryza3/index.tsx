@@ -21,6 +21,12 @@ export default function Ryza3Index() {
           <Link to="/ryza3/enemies">Enemies</Link>
         </li>
       </ul>
+      <hr />
+      <ul>
+        <li>
+          <Link to="/ryza3/map">Map test</Link>
+        </li>
+      </ul>
     </>
   );
 }

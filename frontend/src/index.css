@@ -13,3 +13,8 @@ a {
   color: #1a73e8;
   text-decoration: none;
 }
+
+.leaflet-container {
+  height: 85vh;
+  width: 100%;
+}
