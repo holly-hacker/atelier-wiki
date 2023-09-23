@@ -161,9 +161,10 @@ fn extract_map_texture(
     // calculate the zoom levels
     // we want zoom level 0 to be a single image for the full map (scaled to 256x256), and we want the deepest zoom
     // level to be unscaled 256x256 images
-    let zoom_levels = (padded_image_dimension as f64 / WEB_TILE_SIZE as f64)
+    let max_zoom_level = (padded_image_dimension as f64 / WEB_TILE_SIZE as f64)
         .log2()
         .ceil() as usize;
+    let zoom_levels = max_zoom_level + 1;
 
     debug!(zoom_levels);
 
@@ -172,11 +173,13 @@ fn extract_map_texture(
         let _enter = span.enter();
 
         let pixels_per_tile = padded_image_dimension >> zoom_level;
-        let tiles_width_padded = 1 << zoom_level;
+        let tiles_dimension_padded = 1 << zoom_level;
         let scale_factor = pixels_per_tile / WEB_TILE_SIZE as u32;
 
-        for tile_y in 0..tiles_width_padded {
-            for tile_x in 0..tiles_width_padded {
+        debug!(pixels_per_tile, tiles_dimension_padded, scale_factor);
+
+        for tile_y in 0..tiles_dimension_padded {
+            for tile_x in 0..tiles_dimension_padded {
                 let start_x = tile_x * pixels_per_tile;
                 let start_y = tile_y * pixels_per_tile;
 
@@ -215,6 +218,8 @@ fn extract_map_texture(
             }
         }
     }
+
+    info!("Map {map_idx} extracted with {zoom_levels} zoom levels");
 
     Ok(())
 }
