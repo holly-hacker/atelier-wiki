@@ -14,9 +14,17 @@ impl Rgba8Image {
         if height == 0 {
             panic!("height must be greater than 0");
         }
+
+        // NOTE: overflowing is a legitimate problem here, we're dealing with images that are 32768x32768 which is
+        // exactly too big.
+        let byte_count = width as u64 * height as u64 * 4;
+        if byte_count > usize::MAX as u64 {
+            panic!("image is too big on this architecture");
+        }
+
         Self {
             width,
-            data: vec![0; (width * height * 4) as usize],
+            data: vec![0; byte_count as usize],
         }
     }
 
@@ -119,25 +127,22 @@ impl Rgba8Image {
         if height == 0 {
             bail!("chunk height must be greater than 0");
         }
-        if x + width > self.width {
-            bail!(
-                "right edge out of bounds, {} but width is {}",
-                x + width,
-                self.width
-            );
-        }
-        if y + height > self.height() {
-            bail!(
-                "bottom edge out of bounds, {} but height is {}",
-                y + height,
-                self.height()
-            );
-        }
 
         let mut new_image = Rgba8Image::new_empty(width, height);
 
-        for row in 0..height {
-            let data_len = (width * 4) as usize;
+        // cut down the width and height if they would go out of bounds
+        // we want the empty space to be transparent, though this always puts the empty space is on the right or bottom
+        let copy_width = width.min(self.width() - x);
+        let copy_height = height.min(self.height() - y);
+        // dbg!(x, y, width, height, copy_width, copy_height);
+
+        if copy_width == 0 || copy_height == 0 {
+            tracing::warn!("copy_chunk is empty ({copy_width}x{copy_height})");
+            return Ok(new_image);
+        }
+
+        for row in 0..copy_height {
+            let data_len = (copy_width * 4) as usize;
 
             let self_data_start = (((y + row) * self.width + x) * 4) as usize;
             let self_slice = &self.data[self_data_start..(self_data_start + data_len)];

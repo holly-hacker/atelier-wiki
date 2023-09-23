@@ -210,7 +210,7 @@ fn extract_map_texture(
         tile_size: WEB_TILE_SIZE,
     };
 
-    (0..zoom_levels).into_par_iter().for_each(|zoom_level| {
+    (0..zoom_levels).into_par_iter().panic_fuse().for_each(|zoom_level| {
         let span = tracing::debug_span!("zoom_level", zoom = zoom_level);
         let _enter = span.enter();
 
@@ -232,12 +232,8 @@ fn extract_map_texture(
                 }
 
                 // TODO: take a slice/borrow instead of a copy? we may double the peak memory usage here (to 5gb!)
-                let unscaled_tile = full_size_image.copy_chunk(
-                    start_x,
-                    start_y,
-                    pixels_per_tile.min(full_size_image.width() - (start_x)),
-                    pixels_per_tile.min(full_size_image.height() - (start_y)),
-                ).with_context(|| format!("copy chunk from tile index {tile_x},{tile_y} at zoom level {zoom_level}")).unwrap();
+                let unscaled_tile = full_size_image.copy_chunk(start_x, start_y, pixels_per_tile, pixels_per_tile)
+                    .with_context(|| format!("copy chunk from tile index {tile_x},{tile_y} at zoom level {zoom_level}")).unwrap();
                 let scaled_tile = if scale_factor == 1 {
                     unscaled_tile
                 } else {
@@ -250,7 +246,7 @@ fn extract_map_texture(
                     y = tile_y,
                     x = tile_x,
                 );
-                debug!(path, "Image decoded");
+                debug!(path, "Image ready to write");
 
                 if !args.dont_write_images {
                     let path = output_directory.join(path);
