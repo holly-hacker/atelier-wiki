@@ -1,6 +1,7 @@
 use std::{collections::BTreeMap, path::Path};
 
 use anyhow::Context;
+use rayon::prelude::*;
 use tracing::{debug, info};
 
 use crate::{
@@ -168,7 +169,7 @@ fn extract_map_texture(
 
     debug!(zoom_levels);
 
-    for zoom_level in 0..zoom_levels {
+    (0..zoom_levels).into_par_iter().for_each(|zoom_level| {
         let span = tracing::debug_span!("zoom_level", zoom = zoom_level);
         let _enter = span.enter();
 
@@ -195,7 +196,7 @@ fn extract_map_texture(
                     start_y,
                     pixels_per_tile.min(full_size_image.width() - (start_x)),
                     pixels_per_tile.min(full_size_image.height() - (start_y)),
-                ).with_context(|| format!("copy chunk from tile index {tile_x},{tile_y} at zoom level {zoom_level}"))?;
+                ).with_context(|| format!("copy chunk from tile index {tile_x},{tile_y} at zoom level {zoom_level}")).unwrap();
                 let scaled_tile = if scale_factor == 1 {
                     unscaled_tile
                 } else {
@@ -214,14 +215,14 @@ fn extract_map_texture(
                     let path = output_directory.join(path);
 
                     std::fs::create_dir_all(Path::new(&path).parent().unwrap())
-                        .context("create image output directory")?;
+                        .context("create image output directory").unwrap();
 
-                    let encoded = scaled_tile.encode_webp().context("encode image")?;
-                    std::fs::write(&path, encoded).context("write image")?;
+                    let encoded = scaled_tile.encode_webp().context("encode image").unwrap();
+                    std::fs::write(&path, encoded).context("write image").unwrap();
                 }
             }
         }
-    }
+    });
 
     info!("Map {map_idx} extracted with {zoom_levels} zoom levels");
 
