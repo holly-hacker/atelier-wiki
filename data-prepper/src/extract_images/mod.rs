@@ -12,7 +12,7 @@ use tracing::{debug, info};
 
 use crate::{
     extract_images::{rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas},
-    utils::{extract_game_version, game_slug, match_pattern_str, PakIndex},
+    utils::{extract_game_version, game_slug, match_pattern, PakIndex},
 };
 
 const PATH_ITEMS: &str = "items";
@@ -155,13 +155,11 @@ impl Args {
 
         let mut entries: Vec<_> = pak_index
             .iter_entries()
-            .filter_map(|e| {
-                match_pattern_str(pattern, e.get_file_name()).map(|num| (e, num.to_string()))
-            })
+            .filter_map(|e| match_pattern::<usize>(pattern, e.get_file_name()).map(|num| (e, num)))
             .map(|(f, num)| (f.get_file_name().to_string(), num))
             .collect();
 
-        entries.sort_by(|(_, a), (_, b)| a.cmp(b));
+        entries.sort_by_key(|(_, num)| *num);
 
         // create texture atlas
         let mut texture_atlas =
