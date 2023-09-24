@@ -4,17 +4,33 @@ import { Marker } from "react-leaflet/Marker";
 import { Popup } from "react-leaflet/Popup";
 import { TileLayer } from "react-leaflet/TileLayer";
 import map_data from "@/data/ryza3/map_data.json";
+import field_map from "@/data/ryza3/field_map.json";
 import { useState } from "react";
+import { Rectangle } from "react-leaflet";
 
-export default function Map() {
+// for now, this is hardcoded. I don't know how to derive it from the game files.
+const region_map = new Map<number, string>([
+  [0, "ISLAND_TOWN"],
+  // [1, "ISLAND_FIELD"], // TODO: figure out offset
+  [2, "MOUNTAIN_FIELD"],
+  // [3, "FOREST_FIELD"],
+  // [4, "ANOTHER_FIELD"],
+  [5, "LAST_DUNGEON"],
+  // [7, "DESERT_FIELD"], // TODO: allow filtering, there are 3 overlapping regions
+  // [9, "DESERT_TOWER"], // TODO: unsure
+  [10, "FRONTIER_FIELD"],
+]);
+
+export default function MapTest() {
   const [mapId, setMapId] = useState(0);
 
   const map = map_data.maps[mapId];
-
-  const url = `https://atelier-wiki-data.variant9.dev/game-data/ryza3/maps/${mapId}/{z}/{y}_{x}.webp`;
+  const region_name = region_map.get(mapId);
+  const fields = field_map.field_maps.filter(
+    (map) => map.load_region && map.load_region == region_name,
+  );
 
   // transforms to convert height/width to map coordinates
-
   const padded_dim = (1 << map.max_zoom_level) * map.tile_size;
   const x_to_map = (x: number): number => (x / padded_dim) * map.tile_size;
   const y_to_map = (y: number): number => (-y / padded_dim) * map.tile_size;
@@ -27,6 +43,18 @@ export default function Map() {
   console.log("padded_dim", padded_dim);
   console.log("0,0", xy_to_map(0, 0));
   console.log("w,h", xy_to_map(map.width, map.height));
+
+  // TODO: how to derive this scale?
+  const scale = 1 / 15.6;
+  const region_bounds = (
+    min_x: number,
+    min_z: number,
+    max_x: number,
+    max_z: number,
+  ): [LatLngTuple, LatLngTuple] => [
+    xy_to_map(min_x * scale, min_z * scale),
+    xy_to_map(max_x * scale, max_z * scale),
+  ];
 
   return (
     <>
@@ -45,7 +73,7 @@ export default function Map() {
       >
         <TileLayer
           attribution="&copy; KOEI TECMO GAMES CO., LTD."
-          url={url}
+          url={`https://atelier-wiki-data.variant9.dev/game-data/ryza3/maps/${mapId}/{z}/{y}_{x}.webp`}
           tileSize={map.tile_size}
           noWrap={true}
           tms={true}
@@ -55,32 +83,40 @@ export default function Map() {
           maxZoom={map.max_zoom_level}
           keepBuffer={10}
           bounds={[
-            // this is kinda weird, I don't know why x is on the second index
-            xy_to_map(0, map.height),
-            xy_to_map(map.width, 0),
+            // TODO: this should be map width and height, but that causes tiles to not show up
+            xy_to_map(0, 0),
+            xy_to_map(padded_dim, padded_dim),
           ]}
         />
-        <Marker position={xy_to_map(0, 0)}>
-          <Popup>Popup at 0,0</Popup>
-        </Marker>
+        {fields.map((region) => (
+          <>
+            <Rectangle
+              key={region.data_file_name + "_range"}
+              bounds={region_bounds(
+                region.range_min_x,
+                region.range_min_z,
+                region.range_max_x,
+                region.range_max_z,
+              )}
+              pathOptions={{ color: "black" }}
+            />
+            {region.navi_range_min_x == null ? null : (
+              <Rectangle
+                key={region.data_file_name + "_navi_range"}
+                bounds={region_bounds(
+                  region.navi_range_min_x,
+                  region.navi_range_min_z!,
+                  region.navi_range_max_x!,
+                  region.navi_range_max_z!,
+                )}
+                pathOptions={{ color: "red" }}
+              />
+            )}
+          </>
+        ))}
+
         <Marker position={xy_to_map(100, 100)}>
           <Popup>Popup at 100,100</Popup>
-        </Marker>
-        <Marker position={xy_to_map(200, 200)}>
-          <Popup>Popup at 100,100</Popup>
-        </Marker>
-        <Marker position={xy_to_map(3000, 0)}>
-          <Popup>Popup at 3000,0</Popup>
-        </Marker>
-        <Marker position={xy_to_map(map.width / 2, map.height / 2)}>
-          <Popup>
-            Popup at center ({map.width / 2}x{map.height / 2})
-          </Popup>
-        </Marker>
-        <Marker position={xy_to_map(map.width, map.height)}>
-          <Popup>
-            Popup at end ({map.width}x{map.height})
-          </Popup>
         </Marker>
       </MapContainer>
     </>
