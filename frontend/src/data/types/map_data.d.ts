@@ -3,13 +3,28 @@
 export default types;
 export namespace types {
     export type Usize = number;
+    export type U32 = number;
     export type MapInfo = {
 
         /**
          * The highest zoom level. The total amount of zoom levels is this +1.
          */
         "max_zoom_level": types.Usize;
+
+        /**
+         * The size of a tile. This is also the size of the the lowest zoom layer.
+         */
         "tile_size": types.Usize;
+
+        /**
+         * The width of the highest zoom layer.
+         */
+        "width": types.U32;
+
+        /**
+         * The height of the highest zoom layer.
+         */
+        "height": types.U32;
     };
     export type MapInfoList = {
 

@@ -30,8 +30,12 @@ pub struct MapInfoList {
 pub struct MapInfo {
     /// The highest zoom level. The total amount of zoom levels is this +1.
     pub max_zoom_level: usize,
+    /// The size of a tile. This is also the size of the the lowest zoom layer.
     pub tile_size: usize,
-    // TODO: transparent tile? zoomed-in size?
+    /// The width of the highest zoom layer.
+    pub width: u32,
+    /// The height of the highest zoom layer.
+    pub height: u32,
 }
 
 pub fn extract_map_textures(
@@ -149,13 +153,36 @@ fn extract_map_texture(
         return Ok(None);
     }
 
+    // we need to get the size of the full image so the front-end knows where the padded map should end
+    // we can do so by checking the dimensions of the last tile, which may be smaller than the standard tile size
+    // in practice, the size calculated here will only differ from the stitched image in 1 ryza3 map
+    let (map_width, map_height) = {
+        let (last_tile, _) = tiles.last().unwrap();
+
+        let last_tile = pak_index
+            .get_file(last_tile)
+            .context("get last tile")?
+            .context("find last tile")?;
+
+        let last_tile = gust_g1t::GustG1t::read(last_tile).context("read last tile")?;
+
+        let (last_tile_width, last_tile_height) =
+            (last_tile.textures[0].width, last_tile.textures[0].height);
+
+        // re-calculate the size of the image, taking the truncated size of the last tile into account
+        (
+            ((tiles_x - 1) * NEO_TILE_SIZE) as u32 + last_tile_width,
+            ((tiles_y - 1) * NEO_TILE_SIZE) as u32 + last_tile_height,
+        )
+    };
+
     // create the full-size image in memory
     // this takes up quite a bit of RAM (up to ~2.5gb), but it's the easiest (and likely fastest) way to do this
     // NOTE: last tile in each direction may be a different size, which is fine. we fill the void with transparency
-    let full_size_width = tiles_x * NEO_TILE_SIZE;
-    let full_size_height = tiles_y * NEO_TILE_SIZE;
-    let mut full_size_image =
-        Rgba8Image::new_empty(full_size_width as u32, full_size_height as u32);
+    let mut stitched_image = Rgba8Image::new_empty(
+        (tiles_x * NEO_TILE_SIZE) as u32,
+        (tiles_y * NEO_TILE_SIZE) as u32,
+    );
     for (tile_name, input_tile_idx) in tiles {
         let (input_tile_idx_x, input_tile_idx_y) =
             (input_tile_idx % tiles_x, input_tile_idx / tiles_x);
@@ -178,7 +205,7 @@ fn extract_map_texture(
                 .context("create tile image")?
         };
 
-        full_size_image.blit(
+        stitched_image.blit(
             (input_tile_idx_x * NEO_TILE_SIZE) as u32,
             (input_tile_idx_y * NEO_TILE_SIZE) as u32,
             &input_tile_image,
@@ -186,13 +213,13 @@ fn extract_map_texture(
     }
 
     // remove mut
-    let full_size_image = full_size_image;
+    let stitched_image = stitched_image;
 
     // leaflet expects square images of equal size which is not guaranteed for the full map, so we need to pad the image
     // with transparency to make it square
-    let padded_image_dimension = full_size_image
+    let padded_image_dimension = stitched_image
         .width()
-        .max(full_size_image.height())
+        .max(stitched_image.height())
         .next_power_of_two();
 
     // calculate the zoom levels
@@ -208,6 +235,8 @@ fn extract_map_texture(
     let map_info = MapInfo {
         max_zoom_level,
         tile_size: WEB_TILE_SIZE,
+        width: map_width,
+        height: map_height,
     };
 
     (0..zoom_levels).into_par_iter().panic_fuse().for_each(|zoom_level| {
@@ -225,14 +254,14 @@ fn extract_map_texture(
                 let start_x = tile_x * pixels_per_tile;
                 let start_y = tile_y * pixels_per_tile;
 
-                if start_x >= full_size_image.width() || start_y >= full_size_image.height() {
+                if start_x >= stitched_image.width() || start_y >= stitched_image.height() {
                     // image would be out of bounds. we could write a transparent image here but that's pointless
                     debug!(start_x, start_y, "Skipping tile, out of bounds");
                     continue;
                 }
 
                 // TODO: take a slice/borrow instead of a copy? we may double the peak memory usage here (to 5gb!)
-                let unscaled_tile = full_size_image.copy_chunk(start_x, start_y, pixels_per_tile, pixels_per_tile)
+                let unscaled_tile = stitched_image.copy_chunk(start_x, start_y, pixels_per_tile, pixels_per_tile)
                     .with_context(|| format!("copy chunk from tile index {tile_x},{tile_y} at zoom level {zoom_level}")).unwrap();
                 let scaled_tile = if scale_factor == 1 {
                     unscaled_tile
