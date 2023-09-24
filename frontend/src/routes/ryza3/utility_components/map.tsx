@@ -1,4 +1,4 @@
-import { CRS } from "leaflet";
+import { CRS, LatLngTuple } from "leaflet";
 import { MapContainer } from "react-leaflet/MapContainer";
 import { Marker } from "react-leaflet/Marker";
 import { Popup } from "react-leaflet/Popup";
@@ -13,6 +13,21 @@ export default function Map() {
 
   const url = `https://atelier-wiki-data.variant9.dev/game-data/ryza3/maps/${mapId}/{z}/{y}_{x}.webp`;
 
+  // transforms to convert height/width to map coordinates
+
+  const padded_dim = (1 << map.max_zoom_level) * map.tile_size;
+  const x_to_map = (x: number): number => (x / padded_dim) * map.tile_size;
+  const y_to_map = (y: number): number => (-y / padded_dim) * map.tile_size;
+  const xy_to_map = (x: number, y: number): LatLngTuple => [
+    y_to_map(y),
+    x_to_map(x),
+  ];
+
+  console.log("map", map);
+  console.log("padded_dim", padded_dim);
+  console.log("0,0", xy_to_map(0, 0));
+  console.log("w,h", xy_to_map(map.width, map.height));
+
   return (
     <>
       <select value={mapId} onChange={(e) => setMapId(Number(e.target.value))}>
@@ -23,7 +38,7 @@ export default function Map() {
         ))}
       </select>
       <MapContainer
-        center={[-map.tile_size / 2, map.tile_size / 2]}
+        center={xy_to_map(map.width / 2, map.height / 2)}
         zoom={2}
         scrollWheelZoom={true}
         crs={CRS.Simple}
@@ -40,18 +55,32 @@ export default function Map() {
           maxZoom={map.max_zoom_level}
           keepBuffer={10}
           bounds={[
-            [-map.tile_size, 0],
-            [0, map.tile_size],
+            // this is kinda weird, I don't know why x is on the second index
+            xy_to_map(0, map.height),
+            xy_to_map(map.width, 0),
           ]}
         />
-        <Marker position={[0, 0]}>
+        <Marker position={xy_to_map(0, 0)}>
           <Popup>Popup at 0,0</Popup>
         </Marker>
-        <Marker position={[-100, 100]}>
-          <Popup>Popup at -100,100</Popup>
+        <Marker position={xy_to_map(100, 100)}>
+          <Popup>Popup at 100,100</Popup>
         </Marker>
-        <Marker position={[-3000, 0]}>
-          <Popup>Popup at -3000,0</Popup>
+        <Marker position={xy_to_map(200, 200)}>
+          <Popup>Popup at 100,100</Popup>
+        </Marker>
+        <Marker position={xy_to_map(3000, 0)}>
+          <Popup>Popup at 3000,0</Popup>
+        </Marker>
+        <Marker position={xy_to_map(map.width / 2, map.height / 2)}>
+          <Popup>
+            Popup at center ({map.width / 2}x{map.height / 2})
+          </Popup>
+        </Marker>
+        <Marker position={xy_to_map(map.width, map.height)}>
+          <Popup>
+            Popup at end ({map.width}x{map.height})
+          </Popup>
         </Marker>
       </MapContainer>
     </>
