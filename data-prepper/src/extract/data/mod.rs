@@ -9,6 +9,7 @@ use super::executable::Ryza3ExecutableData;
 
 mod enemies;
 mod field_data;
+mod field_map;
 mod item_categories;
 mod item_effects;
 mod items;
@@ -22,6 +23,7 @@ pub struct Ryza3Data {
     pub item_category_data: item_categories::ItemCategoryData,
     pub item_effect_data: item_effects::ItemEffectData,
     pub recipe_data: recipes::RecipeData,
+    pub field_map: field_map::FieldMapData,
     pub field_data: field_data::FieldData,
     pub enemy_data: Vec<enemies::Enemy>,
 }
@@ -64,6 +66,11 @@ impl Ryza3Data {
             recipes::RecipeData::read(pak_index, &strings_table).context("read recipes")?;
         info!("Read data for {} recipes", recipe_data.recipes.len());
 
+        let field_map =
+            field_map::FieldMapData::read(pak_index, &strings_table).context("read field map")?;
+        // info!("Read data for {} field data", field_map.0.len());
+        info!("Read data for field map");
+
         let field_data = field_data::FieldData::read(pak_index).context("read field data")?;
         info!("Read data for {} field data", field_data.0.len());
 
@@ -75,6 +82,7 @@ impl Ryza3Data {
             item_category_data,
             item_effect_data,
             recipe_data,
+            field_map,
             field_data,
             enemy_data,
         })

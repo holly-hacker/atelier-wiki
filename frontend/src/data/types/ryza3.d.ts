@@ -295,6 +295,30 @@ export namespace types {
         "feature_descriptions": Record<types.U32, types.FeatureDescription>;
     };
     export type Usize = number;
+    export type FieldMap = {
+        "field_map_name": (string | null);
+        "data_file_name": string;
+        "load_region": (string | null);
+        "range_min_x": types.Usize;
+        "range_min_z": types.Usize;
+        "range_max_x": types.Usize;
+        "range_max_z": types.Usize;
+        "navi_range_min_x": (types.Usize | null);
+        "navi_range_min_z": (types.Usize | null);
+        "navi_range_max_x": (types.Usize | null);
+        "navi_range_max_z": (types.Usize | null);
+        "area_tag": string;
+        "region_tag": string;
+        "qua_min": (types.Usize | null);
+        "qua_max": (types.Usize | null);
+        "num_min": (types.Usize | null);
+        "num_max": (types.Usize | null);
+        "grade_min": (types.Usize | null);
+        "grade_max": (types.Usize | null);
+    };
+    export type FieldMapData = {
+        "field_maps": (types.FieldMap)[];
+    };
     export type GimmickData = {
 
         /**
@@ -421,6 +445,7 @@ export namespace types {
         "item_category_data": types.ItemCategoryData;
         "item_effect_data": types.ItemEffectData;
         "recipe_data": types.RecipeData;
+        "field_map": types.FieldMapData;
         "field_data": types.FieldData;
         "enemy_data": (types.Enemy)[];
     };

@@ -102,6 +102,10 @@ fn extract_ryza3(
     write_data_to_file(&output_directory.join("recipes.json"), &data.recipe_data)
         .context("write recipe data")?;
 
+    debug!("Writing field map");
+    write_data_to_file(&output_directory.join("field_map.json"), &data.field_map)
+        .context("write field map")?;
+
     debug!("Writing field data");
     write_data_to_file(&output_directory.join("field_data.json"), &data.field_data)
         .context("write field data")?;

@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.75"
 argh = "0.1.12"
+encoding_rs = "0.8.33"
 gust-g1t = { git = "https://github.com/holly-hacker/atelier-tools", branch = "main" }
 gust-pak = { git = "https://github.com/holly-hacker/atelier-tools", branch = "main" }
 memchr = "2.6.3"
