@@ -5,6 +5,7 @@ import { Popup } from "react-leaflet/Popup";
 import { TileLayer } from "react-leaflet/TileLayer";
 import map_data from "@/data/ryza3/map_data.json";
 import field_map from "@/data/ryza3/field_map.json";
+import field_data from "@/data/ryza3/field_data.json";
 import { useState } from "react";
 import { Rectangle } from "react-leaflet";
 
@@ -12,6 +13,7 @@ import { Rectangle } from "react-leaflet";
 // TODO: how to derive these values?
 const region_scale = 1 / 15.6;
 const map_offset_scale = 3;
+const object_position_scale = 6.4;
 const region_map_names = new Map([
   [0, "ISLAND_TOWN"],
   [1, "ISLAND_FIELD"],
@@ -92,10 +94,10 @@ export default function GameMap() {
             xy_to_map(padded_dim, padded_dim),
           ]}
         />
-        {fields.map((region) => (
+        {fields.map((region, field_idx) => (
           <>
             <Rectangle
-              key={region.data_file_name + "_range"}
+              key={`${region.data_file_name}_${field_idx}_range`}
               bounds={region_bounds(
                 region.range_min_x,
                 region.range_min_z,
@@ -106,7 +108,7 @@ export default function GameMap() {
             />
             {region.navi_range_min_x == null ? null : (
               <Rectangle
-                key={region.data_file_name + "_navi_range"}
+                key={`${region.data_file_name}_${field_idx}_navi_range`}
                 bounds={region_bounds(
                   region.navi_range_min_x,
                   region.navi_range_min_z!,
@@ -116,6 +118,24 @@ export default function GameMap() {
                 pathOptions={{ color: "red" }}
               />
             )}
+            {
+              // TODO: move to layer that can be toggled
+              region.data_file_name == null
+                ? null
+                : field_data[
+                    region.data_file_name.toLowerCase() + ".xml"
+                  ].cut_down_tree.map((tree, tree_idx) => (
+                    <Marker
+                      key={`${region.data_file_name}_${field_idx}_tree_${tree_idx}`}
+                      position={xy_to_map(
+                        tree.position[0] * object_position_scale,
+                        tree.position[2] * object_position_scale,
+                      )}
+                    >
+                      <Popup>Tree, {tree.rate}% chance</Popup>
+                    </Marker>
+                  ))
+            }
           </>
         ))}
 
