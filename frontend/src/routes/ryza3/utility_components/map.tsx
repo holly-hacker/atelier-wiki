@@ -9,31 +9,37 @@ import { useState } from "react";
 import { Rectangle } from "react-leaflet";
 
 // for now, this is hardcoded. I don't know how to derive it from the game files.
-const region_map = new Map<number, string>([
+// TODO: how to derive these values?
+const region_scale = 1 / 15.6;
+const map_offset_scale = 3;
+const region_map_names = new Map([
   [0, "ISLAND_TOWN"],
-  // [1, "ISLAND_FIELD"], // TODO: figure out offset
+  [1, "ISLAND_FIELD"],
   [2, "MOUNTAIN_FIELD"],
-  // [3, "FOREST_FIELD"],
-  // [4, "ANOTHER_FIELD"],
+  [3, "FOREST_FIELD"],
+  [4, "ANOTHER_FIELD"],
   [5, "LAST_DUNGEON"],
   // [7, "DESERT_FIELD"], // TODO: allow filtering, there are 3 overlapping regions
-  // [9, "DESERT_TOWER"], // TODO: unsure
+  [9, "DESERT_TOWER"],
   [10, "FRONTIER_FIELD"],
 ]);
 
-export default function MapTest() {
+export default function GameMap() {
   const [mapId, setMapId] = useState(0);
 
   const map = map_data.maps[mapId];
-  const region_name = region_map.get(mapId);
+  const region_name = region_map_names.get(mapId);
+  const region_map = field_map.region_maps[mapId];
   const fields = field_map.field_maps.filter(
     (map) => map.load_region && map.load_region == region_name,
   );
 
   // transforms to convert height/width to map coordinates
   const padded_dim = (1 << map.max_zoom_level) * map.tile_size;
-  const x_to_map = (x: number): number => (x / padded_dim) * map.tile_size;
-  const y_to_map = (y: number): number => (-y / padded_dim) * map.tile_size;
+  const x_to_map = (x: number): number =>
+    ((x - region_map.pos[0] * map_offset_scale) / padded_dim) * map.tile_size;
+  const y_to_map = (y: number): number =>
+    (-(y - region_map.pos[1] * map_offset_scale) / padded_dim) * map.tile_size;
   const xy_to_map = (x: number, y: number): LatLngTuple => [
     y_to_map(y),
     x_to_map(x),
@@ -44,24 +50,22 @@ export default function MapTest() {
   console.log("0,0", xy_to_map(0, 0));
   console.log("w,h", xy_to_map(map.width, map.height));
 
-  // TODO: how to derive this scale?
-  const scale = 1 / 15.6;
   const region_bounds = (
     min_x: number,
     min_z: number,
     max_x: number,
     max_z: number,
   ): [LatLngTuple, LatLngTuple] => [
-    xy_to_map(min_x * scale, min_z * scale),
-    xy_to_map(max_x * scale, max_z * scale),
+    xy_to_map(min_x * region_scale, min_z * region_scale),
+    xy_to_map(max_x * region_scale, max_z * region_scale),
   ];
 
   return (
     <>
       <select value={mapId} onChange={(e) => setMapId(Number(e.target.value))}>
-        {Object.entries(map_data.maps).map(([id, map]) => (
+        {Object.entries(map_data.maps).map(([id]) => (
           <option key={id} value={id}>
-            Map {id} (zoom levels: {map.max_zoom_level + 1})
+            {field_map.region_maps[Number(id)].image_name} (map {id})
           </option>
         ))}
       </select>
@@ -98,7 +102,7 @@ export default function MapTest() {
                 region.range_max_x,
                 region.range_max_z,
               )}
-              pathOptions={{ color: "black" }}
+              pathOptions={{ color: "#00000080" }}
             />
             {region.navi_range_min_x == null ? null : (
               <Rectangle
@@ -114,6 +118,10 @@ export default function MapTest() {
             )}
           </>
         ))}
+
+        <Marker position={xy_to_map(region_map.pos[0], region_map.pos[1])}>
+          <Popup>Map offset</Popup>
+        </Marker>
 
         <Marker position={xy_to_map(100, 100)}>
           <Popup>Popup at 100,100</Popup>

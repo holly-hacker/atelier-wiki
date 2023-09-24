@@ -316,8 +316,15 @@ export namespace types {
         "grade_min": (types.Usize | null);
         "grade_max": (types.Usize | null);
     };
+    export type RegionMap = {
+        "image_name": string;
+        "rot": [types.F32, types.F32, types.F32];
+        "pos": [types.F32, types.F32, types.F32];
+        "scale": [types.F32, types.F32, types.F32];
+    };
     export type FieldMapData = {
         "field_maps": (types.FieldMap)[];
+        "region_maps": Record<types.Usize, types.RegionMap>;
     };
     export type GimmickData = {
 

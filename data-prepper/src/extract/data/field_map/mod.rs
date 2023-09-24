@@ -1,14 +1,17 @@
 use crate::extract::data::strings_table::StringsTable;
 use crate::utils::PakIndex;
 use serde::Serialize;
+use std::collections::BTreeMap;
 use typescript_type_def::TypeDef;
 
 mod fm_info;
 mod fm_info2;
+mod region_maps;
 
 #[derive(Serialize, TypeDef)]
 pub struct FieldMapData {
     pub field_maps: Vec<FieldMap>,
+    pub region_maps: BTreeMap<usize, RegionMap>,
 }
 
 #[derive(Serialize, TypeDef)]
@@ -35,16 +38,25 @@ pub struct FieldMap {
     pub grade_max: Option<usize>,
 }
 
+#[derive(Serialize, TypeDef)]
+pub struct RegionMap {
+    pub image_name: String,
+    pub rot: [f32; 3],
+    pub pos: [f32; 3],
+    pub scale: [f32; 3],
+}
+
 impl FieldMapData {
     pub fn read(pak_index: &mut PakIndex, strings: &StringsTable) -> anyhow::Result<Self> {
         let fm_info = fm_info::FieldMapInfo::read(pak_index)?;
         let fm_info2 = fm_info2::FieldMapInfo2::read(pak_index)?;
+        let region_maps = region_maps::RegionMap::read(pak_index)?;
 
         assert_eq!(fm_info.len(), fm_info2.len());
 
         let field_maps = fm_info
             .into_iter()
-            .zip(fm_info2.into_iter())
+            .zip(fm_info2)
             .map(|(info, info2)| FieldMap {
                 field_map_name: info
                     .field_map_name_id
@@ -72,6 +84,49 @@ impl FieldMapData {
             })
             .collect();
 
-        Ok(Self { field_maps })
+        let region_maps = region_maps
+            .into_iter()
+            .map(|r| {
+                assert!(r.name.starts_with("bg_image_"));
+                assert!(r.style.starts_with("gen_a24_minimap_all_"));
+
+                let index = r.style["gen_a24_minimap_all_".len()..].parse().unwrap();
+
+                let map = RegionMap {
+                    image_name: r.name["bg_image_".len()..].to_string(),
+                    rot: {
+                        let mut split = r.rot.split(", ");
+                        [
+                            split.next().unwrap().parse().unwrap(),
+                            split.next().unwrap().parse().unwrap(),
+                            split.next().unwrap().parse().unwrap(),
+                        ]
+                    },
+                    pos: {
+                        let mut split = r.pos.split(", ");
+                        [
+                            split.next().unwrap().parse().unwrap(),
+                            split.next().unwrap().parse().unwrap(),
+                            split.next().unwrap().parse().unwrap(),
+                        ]
+                    },
+                    scale: {
+                        let mut split = r.scale.split(", ");
+                        [
+                            split.next().unwrap().parse().unwrap(),
+                            split.next().unwrap().parse().unwrap(),
+                            split.next().unwrap().parse().unwrap(),
+                        ]
+                    },
+                };
+
+                (index, map)
+            })
+            .collect();
+
+        Ok(Self {
+            field_maps,
+            region_maps,
+        })
     }
 }
