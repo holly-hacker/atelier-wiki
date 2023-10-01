@@ -1,18 +1,25 @@
 import "./App.css";
-import { HashRouter, Link, Outlet, Route, Routes } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  Route,
+  RouterProvider,
+  createHashRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import Ryza3Routes from "./routes/ryza3/routes";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<IndexPage />} />
-          {Ryza3Routes()}
-        </Route>
-      </Routes>
-    </HashRouter>
+  // TODO: use proper router data instead of `createRoutesFromElements`
+  const router = createHashRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IndexPage />} />
+        {Ryza3Routes()}
+      </Route>,
+    ),
   );
+  return <RouterProvider router={router} />;
 }
 
 function Layout() {
