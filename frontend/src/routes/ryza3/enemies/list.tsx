@@ -27,6 +27,7 @@ export default function EnemyList() {
     columnHelper.accessor("race_tag", {
       header: "Race",
       cell: (i) => <code>{i.getValue()}</code>,
+      filterFn: "equalsString",
     }),
     columnHelper.accessor("monster_tag", {
       header: "Tag",
