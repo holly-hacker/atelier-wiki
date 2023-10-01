@@ -4,11 +4,6 @@ This repo houses the source code for my Atelier wiki. It focuses on
 automatically generating pages out of information extracted from the games. As
 such, it will likely be light on guides.
 
-## Progress
-
-Progress is tracked in the `todo.json` file. This file is maintained using the
-[td](https://github.com/holly-hacker/td) todo app.
-
 ## Inspirations
 
 The eventual end goal is to mostly obsolete these resources by making a single
