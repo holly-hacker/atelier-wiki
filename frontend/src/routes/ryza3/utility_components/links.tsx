@@ -85,7 +85,9 @@ export function TextureAtlasImage({
         display: "inline-block",
         height: texture_atlas.image_dimensions[0],
         width: texture_atlas.image_dimensions[1],
-        backgroundImage: `url(https://atelier-wiki-data.variant9.dev/game-data/ryza3/${texture_atlas_name}/packed.webp)`,
+        backgroundImage: `url(${
+          import.meta.env.VITE_DATA_URL
+        }/ryza3/${texture_atlas_name}/packed.webp)`,
         backgroundPositionX: -x_index * texture_atlas.image_dimensions[0],
         backgroundPositionY: -y_index * texture_atlas.image_dimensions[1],
         backgroundRepeat: "no-repeat",

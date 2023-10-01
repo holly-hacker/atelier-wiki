@@ -25,5 +25,5 @@ export function findItemByTag(tag: string): types.Item | undefined {
 
 export function getImageLink(path: string): string {
   // TODO: this should be configurable
-  return `https://atelier-wiki-data.variant9.dev/game-data/ryza3/${path}`;
+  return `${import.meta.env.VITE_DATA_URL}/ryza3/${path}`;
 }

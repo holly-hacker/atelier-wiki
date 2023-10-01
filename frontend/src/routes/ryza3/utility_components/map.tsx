@@ -79,7 +79,9 @@ export default function GameMap() {
       >
         <TileLayer
           attribution="&copy; KOEI TECMO GAMES CO., LTD."
-          url={`https://atelier-wiki-data.variant9.dev/game-data/ryza3/maps/${mapId}/{z}/{y}_{x}.webp`}
+          url={`${
+            import.meta.env.VITE_DATA_URL
+          }/ryza3/maps/${mapId}/{z}/{y}_{x}.webp`}
           tileSize={map.tile_size}
           noWrap={true}
           tms={true}
