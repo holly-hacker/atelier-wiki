@@ -1,15 +1,17 @@
-import items from "@/data/ryza3/items.json";
-import items_texture from "@/data/ryza3/texture-atlasses/items.json";
 import { ItemLink, TextureAtlasImage } from "../utility_components/links";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import Grid from "@/components/grid";
 import types from "@/data/types/ryza3";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Ryza3Context, Ryza3Data } from "@/data/ryza3_data";
 
 export default function ItemList() {
+  const ryza3Data = useContext(Ryza3Context);
   const [showHidden, setShowHidden] = useState(false);
 
-  const filtered_items = items.filter((i) => showHidden || i.name !== null);
+  const filtered_items = ryza3Data.items.filter(
+    (i) => showHidden || i.name !== null,
+  );
 
   return (
     <>
@@ -25,15 +27,15 @@ export default function ItemList() {
           <label>Include unimplemented items</label>
         </p>
 
-        <Grid data={filtered_items} columns={getColumnDefs()} />
+        <Grid data={filtered_items} columns={getColumnDefs(ryza3Data)} />
       </div>
     </>
   );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getColumnDefs(): ColumnDef<types.Item, any>[] {
-  const columnHelper = createColumnHelper<(typeof items)[0]>();
+function getColumnDefs(ryza3Data: Ryza3Data): ColumnDef<types.Item, any>[] {
+  const columnHelper = createColumnHelper<(typeof ryza3Data.items)[0]>();
   return [
     columnHelper.accessor("img_no", {
       header: "Image",
@@ -41,7 +43,7 @@ function getColumnDefs(): ColumnDef<types.Item, any>[] {
         return (
           <ItemLink item={i.row.original}>
             <TextureAtlasImage
-              texture_atlas={items_texture}
+              texture_atlas={ryza3Data.items_texture_atlas}
               texture_atlas_name="items"
               name={String(i.getValue())}
             />

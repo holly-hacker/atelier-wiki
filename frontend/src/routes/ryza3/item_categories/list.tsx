@@ -1,11 +1,14 @@
 import Grid from "@/components/grid";
-import items from "@/data/ryza3/items.json";
 import { createColumnHelper } from "@tanstack/react-table";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CategoryLink } from "../utility_components/links";
+import { Ryza3Context } from "@/data/ryza3_data";
 
 export default function ItemCategoriesList() {
-  const [categories] = useState(() => items.flatMap((item) => item.cat));
+  const ryza3Data = useContext(Ryza3Context);
+  const [categories] = useState(() =>
+    ryza3Data.items.flatMap((item) => item.cat),
+  );
   const [uniqueCategories] = useState(() => [...new Set(categories)]);
 
   const columnHelper = createColumnHelper<string>();

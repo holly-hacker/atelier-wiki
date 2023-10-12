@@ -1,8 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import items from "@/data/ryza3/items.json";
-import item_effects from "@/data/ryza3/item_effects.json";
-import enemies from "@/data/ryza3/enemies.json";
-import recipes from "@/data/ryza3/recipes.json";
 import {
   findItemByTag,
   getImageLink,
@@ -11,18 +7,21 @@ import {
 import types from "@/data/types/ryza3";
 import { CategoryLink, EnemyLink, ItemLink } from "../utility_components/links";
 import RecipeDisplay from "../utility_components/recipe_display";
+import { useContext } from "react";
+import { Ryza3Context, Ryza3Data } from "@/data/ryza3_data";
 
 export default function ItemDetail() {
+  const ryza3Data = useContext(Ryza3Context);
   const { id } = useParams();
 
   let item: types.Item | undefined;
   if (id && !isNaN(Number(id))) {
     // id is a number
-    item = items[Number(id)];
+    item = ryza3Data.items[Number(id)];
   } else if (id) {
     // try to find by item tag
     const tag = `ITEM_${id}`;
-    item = items.find((v) => v.tag == tag);
+    item = ryza3Data.items.find((v) => v.tag == tag);
   }
 
   if (!item) {
@@ -98,7 +97,8 @@ function ItemDetailSection({ item }: { item: types.Item }) {
 }
 
 function ItemRecipeSection({ item }: { item: types.Item }) {
-  const recipe = getRecipe(item);
+  const ryza3Data = useContext(Ryza3Context);
+  const recipe = getRecipe(ryza3Data, item);
 
   if (!recipe) {
     return <></>;
@@ -144,7 +144,9 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
           {morph_targets.map((target, i) => {
             return (
               <li key={i}>
-                <ItemLink item={findItemByTag(target.new_item_tag)!} />
+                <ItemLink
+                  item={findItemByTag(ryza3Data, target.new_item_tag)!}
+                />
                 {target.requires_link_morph && " (requires link morph)"}
               </li>
             );
@@ -161,7 +163,7 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
               {ingredient.is_category ? (
                 <CategoryLink category_tag={ingredient.tag} />
               ) : (
-                <ItemLink item={findItemByTag(ingredient.tag)!} />
+                <ItemLink item={findItemByTag(ryza3Data, ingredient.tag)!} />
               )}
               <ul>
                 {[
@@ -176,7 +178,8 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
                     );
                   }
 
-                  const effect = item_effects.item_effects[effect_tag];
+                  const effect =
+                    ryza3Data.item_effects.item_effects[effect_tag];
 
                   const formatEffectAttributes = (
                     attr: types.EffectAttribute,
@@ -205,9 +208,14 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
 
                   return (
                     <li key={i}>
-                      <b>{item_effects.item_effects[effect_tag].name}</b>
+                      <b>
+                        {ryza3Data.item_effects.item_effects[effect_tag].name}
+                      </b>
                       {" - "}
-                      {item_effects.item_effects[effect_tag].description}{" "}
+                      {
+                        ryza3Data.item_effects.item_effects[effect_tag]
+                          .description
+                      }{" "}
                       <ul>
                         {effect.attributes.map((a, i) => (
                           <li key={i}>
@@ -230,7 +238,7 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
             {explicit_recipe_items.map((item_tag, i) => {
               return (
                 <li key={i}>
-                  <ItemLink item={findItemByTag(item_tag!)!} />
+                  <ItemLink item={findItemByTag(ryza3Data, item_tag!)!} />
                 </li>
               );
             })}
@@ -248,9 +256,11 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
 }
 
 function ItemReverseRecipeSection({ item }: { item: types.Item }) {
+  const ryza3Data = useContext(Ryza3Context);
+
   // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard
   // earlier. See microsoft/TypeScript#9998
-  const reverse_recipes = recipes.recipes.filter(
+  const reverse_recipes = ryza3Data.recipes.recipes.filter(
     (r) =>
       r.ingredients.some((i) => i.tag == item!.tag) ||
       r.fields.flatMap((r) => r).some((r) => r.explicit_material == item!.tag),
@@ -294,7 +304,7 @@ function ItemReverseRecipeSection({ item }: { item: types.Item }) {
 
           return (
             <li key={i}>
-              <ItemLink item={findItemByTag(recipe.item_tag)!} />
+              <ItemLink item={findItemByTag(ryza3Data, recipe.item_tag)!} />
               {is_recipe_upgrade === true && " (recipe morph)"}
               {is_recipe_upgrade === null && " (not actually used)"}
             </li>
@@ -306,7 +316,8 @@ function ItemReverseRecipeSection({ item }: { item: types.Item }) {
 }
 
 function ItemDropSourcesSection({ item }: { item: types.Item }) {
-  const drops = getDrops(item);
+  const ryza3Data = useContext(Ryza3Context);
+  const drops = getDrops(ryza3Data, item);
 
   return (
     <>
@@ -338,13 +349,14 @@ function ItemDropSourcesSection({ item }: { item: types.Item }) {
 }
 
 function getDrops(
+  ryza3Data: Ryza3Data,
   item: types.Item,
 ): { drop: types.EnemyDrop; status: types.EnemyStatus; enemy: types.Enemy }[] {
   if (!item.tag) return [];
 
   const drops = [];
 
-  for (const enemy of enemies) {
+  for (const enemy of ryza3Data.enemies) {
     for (const status of enemy.statusses) {
       for (const drop of status.drops) {
         if (drop.item_tag == item.tag) {
@@ -357,10 +369,13 @@ function getDrops(
   return drops;
 }
 
-function getRecipe(item: types.Item): types.Recipe | null {
+function getRecipe(
+  ryza3Data: Ryza3Data,
+  item: types.Item,
+): types.Recipe | null {
   if (!item.tag) return null;
 
-  for (const recipe of recipes.recipes) {
+  for (const recipe of ryza3Data.recipes.recipes) {
     if (recipe.item_tag == item.tag) {
       return recipe;
     }

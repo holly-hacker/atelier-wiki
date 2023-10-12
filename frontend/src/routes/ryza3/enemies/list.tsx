@@ -1,19 +1,20 @@
-import enemies from "@/data/ryza3/enemies.json";
-import enemies_texture from "@/data/ryza3/texture-atlasses/enemies.json";
 import { EnemyLink, TextureAtlasImage } from "../utility_components/links";
 import { createColumnHelper } from "@tanstack/react-table";
 import { enemyDisplayName } from "../ryza3_data_util";
 import Grid from "@/components/grid";
+import { useContext } from "react";
+import { Ryza3Context } from "@/data/ryza3_data";
 
 export default function EnemyList() {
-  const columnHelper = createColumnHelper<(typeof enemies)[0]>();
+  const ryza3Data = useContext(Ryza3Context);
+  const columnHelper = createColumnHelper<(typeof ryza3Data.enemies)[0]>();
   const columns = [
     columnHelper.accessor("img_no", {
       header: "Image",
       cell: (i) => (
         <EnemyLink enemy={i.row.original}>
           <TextureAtlasImage
-            texture_atlas={enemies_texture}
+            texture_atlas={ryza3Data.enemies_texture_atlas}
             texture_atlas_name="enemies"
             name={String(i.getValue())}
           />
@@ -63,8 +64,8 @@ export default function EnemyList() {
   return (
     <>
       <h1>Ryza 3 enemy list</h1>
-      <div>{enemies.length} enemies found.</div>
-      <Grid data={enemies} columns={columns} />
+      <div>{ryza3Data.enemies.length} enemies found.</div>
+      <Grid data={ryza3Data.enemies} columns={columns} />
     </>
   );
 }

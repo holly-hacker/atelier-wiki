@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom";
-import items from "@/data/ryza3/items.json";
 import { ItemLink } from "../utility_components/links";
+import { useContext } from "react";
+import { Ryza3Context } from "@/data/ryza3_data";
 
 export default function ItemKindDetail() {
+  const ryza3Data = useContext(Ryza3Context);
   const { kind } = useParams();
 
   if (!kind) {
     return <>No kind selected.</>;
   }
 
-  const item = items
+  const item = ryza3Data.items
     .map((item, idx) => ({ item, idx }))
     .filter(({ item: v }) => v.kind_tag == kind);
 

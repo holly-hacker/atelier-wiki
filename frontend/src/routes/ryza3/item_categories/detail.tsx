@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
-import items from "@/data/ryza3/items.json";
 import { ItemLink } from "../utility_components/links";
 import { itemCategoryDisplayName } from "../ryza3_data_util";
+import { Ryza3Context } from "@/data/ryza3_data";
+import { useContext } from "react";
 
 export default function ItemCategoryDetail() {
+  const ryza3Data = useContext(Ryza3Context);
   const { category } = useParams();
 
   if (!category) {
@@ -11,9 +13,9 @@ export default function ItemCategoryDetail() {
   }
 
   const category_tag = `ITEM_CATEGORY_${category}`;
-  const category_name = itemCategoryDisplayName(category_tag);
+  const category_name = itemCategoryDisplayName(ryza3Data, category_tag);
 
-  const item = items
+  const item = ryza3Data.items
     .map((item, idx) => ({ item, idx }))
     .filter(({ item: v }) => v.cat.includes(category_tag));
 

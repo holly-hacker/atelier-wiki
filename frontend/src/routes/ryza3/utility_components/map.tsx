@@ -3,11 +3,9 @@ import { MapContainer } from "react-leaflet/MapContainer";
 import { Marker } from "react-leaflet/Marker";
 import { Popup } from "react-leaflet/Popup";
 import { TileLayer } from "react-leaflet/TileLayer";
-import map_data from "@/data/ryza3/map_data.json";
-import field_map from "@/data/ryza3/field_map.json";
-import field_data from "@/data/ryza3/field_data.json";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Rectangle } from "react-leaflet";
+import { Ryza3Context } from "@/data/ryza3_data";
 
 // for now, this is hardcoded. I don't know how to derive it from the game files.
 // TODO: how to derive these values?
@@ -27,12 +25,13 @@ const region_map_names = new Map([
 ]);
 
 export default function GameMap() {
+  const ryza3Data = useContext(Ryza3Context);
   const [mapId, setMapId] = useState(0);
 
-  const map = map_data.maps[mapId];
+  const map = ryza3Data.map_data.maps[mapId];
   const region_name = region_map_names.get(mapId);
-  const region_map = field_map.region_maps[mapId];
-  const fields = field_map.field_maps.filter(
+  const region_map = ryza3Data.field_map.region_maps[mapId];
+  const fields = ryza3Data.field_map.field_maps.filter(
     (map) => map.load_region && map.load_region == region_name,
   );
 
@@ -65,9 +64,9 @@ export default function GameMap() {
   return (
     <>
       <select value={mapId} onChange={(e) => setMapId(Number(e.target.value))}>
-        {Object.entries(map_data.maps).map(([id]) => (
+        {Object.entries(ryza3Data.map_data.maps).map(([id]) => (
           <option key={id} value={id}>
-            {field_map.region_maps[Number(id)].image_name} (map {id})
+            {ryza3Data.field_map.region_maps[Number(id)].image_name} (map {id})
           </option>
         ))}
       </select>
@@ -124,7 +123,7 @@ export default function GameMap() {
               // TODO: move to layer that can be toggled
               region.data_file_name == null
                 ? null
-                : field_data[
+                : ryza3Data.field_data[
                     region.data_file_name.toLowerCase() + ".xml"
                   ].cut_down_tree.map((tree, tree_idx) => (
                     <Marker

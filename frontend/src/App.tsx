@@ -8,6 +8,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Ryza3Routes from "./routes/ryza3/routes";
+import DataLoader from "./data_loader";
 
 function App() {
   // TODO: use proper router data instead of `createRoutesFromElements`
@@ -26,8 +27,12 @@ function Layout() {
   // we'll add some layout stuff here later
   return (
     <>
-      <Link to="/">Home</Link>
-      <Outlet />
+      <div>
+        <Link to="/">Home</Link>
+      </div>
+      <DataLoader>
+        <Outlet />
+      </DataLoader>
     </>
   );
 }

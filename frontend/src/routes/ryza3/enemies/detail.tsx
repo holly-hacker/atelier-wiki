@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import enemies from "@/data/ryza3/enemies.json";
 import {
   enemyDisplayName,
   findItemByTag,
@@ -7,18 +6,21 @@ import {
 } from "../ryza3_data_util";
 import { ItemLink } from "../utility_components/links";
 import types from "@/data/types/ryza3";
+import { Ryza3Context } from "@/data/ryza3_data";
+import { useContext } from "react";
 
 export default function EnemyDetail() {
+  const ryza3Data = useContext(Ryza3Context);
   const { id } = useParams();
 
   let enemy;
   if (id && !isNaN(Number(id))) {
     // id is a number
-    enemy = enemies[Number(id)];
+    enemy = ryza3Data.enemies[Number(id)];
   } else if (id) {
     // try to find by monster tag
     const tag = `MONSTER_${id}`;
-    enemy = enemies.find((v) => v.monster_tag == tag);
+    enemy = ryza3Data.enemies.find((v) => v.monster_tag == tag);
   }
 
   if (!enemy) {
@@ -115,6 +117,8 @@ function EnemyInstanceSection({ enemy }: { enemy: types.Enemy }) {
 }
 
 function EnemyInstance({ status }: { status: types.EnemyStatus }) {
+  const ryza3Data = useContext(Ryza3Context);
+
   return (
     <ul>
       <li>Level: {status.lv}</li>
@@ -166,7 +170,7 @@ function EnemyInstance({ status }: { status: types.EnemyStatus }) {
         Drops:
         <ul>
           {status.drops.map((drop, i) => {
-            const item = findItemByTag(drop.item_tag);
+            const item = findItemByTag(ryza3Data, drop.item_tag);
             return (
               <li key={i}>
                 {drop.rate}% {drop.num}x{" "}

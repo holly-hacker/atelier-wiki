@@ -6,7 +6,8 @@ import {
   itemCategoryDisplayName,
   itemDisplayName,
 } from "../ryza3_data_util";
-import items from "@/data/ryza3/items.json";
+import { useContext } from "react";
+import { Ryza3Context } from "@/data/ryza3_data";
 
 export function ItemLink({
   item,
@@ -15,6 +16,8 @@ export function ItemLink({
   item: types.Item;
   children?: React.ReactNode;
 }) {
+  const ryza3Data = useContext(Ryza3Context);
+
   let id;
   if (item.tag) {
     // if the item has a tag, use that
@@ -24,7 +27,7 @@ export function ItemLink({
     id = id.replace(/^ITEM_/, "");
   } else {
     // use the item index
-    id = String(items.findIndex((v) => v === item));
+    id = String(ryza3Data.items.findIndex((v) => v === item));
   }
 
   return (
@@ -57,11 +60,12 @@ export function CategoryLink({
   category_tag: string;
   children?: React.ReactNode;
 }) {
+  const ryza3Data = useContext(Ryza3Context);
   const short_category_tag = category_tag.replace(/^ITEM_CATEGORY_/, "");
 
   return (
     <Link to={`/ryza3/item_categories/${short_category_tag}`}>
-      {children || itemCategoryDisplayName(category_tag)}
+      {children || itemCategoryDisplayName(ryza3Data, category_tag)}
     </Link>
   );
 }
