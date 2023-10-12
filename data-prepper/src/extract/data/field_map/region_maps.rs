@@ -16,7 +16,7 @@ impl RegionMap {
         util::read_xml(
             pak_index,
             r"\saves\ui_cmn\a24_map\uil_a24_overall_map.xml",
-            |d| Self::read_from_doc(d),
+            Self::read_from_doc,
         )
     }
     fn read_from_doc(document: roxmltree::Document) -> anyhow::Result<Vec<Self>> {
