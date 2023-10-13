@@ -23,6 +23,5 @@ export function findItemByTag(ryza3Data: Ryza3Data, tag: string): types.Item | u
 }
 
 export function getImageLink(path: string): string {
-  // TODO: this should be configurable
   return `${import.meta.env.VITE_DATA_URL}/ryza3/${path}`;
 }
