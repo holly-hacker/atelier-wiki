@@ -334,7 +334,7 @@ export namespace types {
         "position": [types.F32, types.F32, types.F32];
 
         /**
-         * The rotation of this gimmick.
+         * The chance of this gimmick being placed, between 0 and 100 inclusive.
          */
         "rate": types.Usize;
 
@@ -365,12 +365,37 @@ export namespace types {
          */
         "hammer": [(string | null), (types.Usize | null)];
     });
+    export type EnemyRandomSpawner = (types.GimmickData & {
+        "min": types.Usize;
+        "max": types.Usize;
+        "symbol_group_1": (string | null);
+        "symbol_group_2": (string | null);
+        "symbol_group_3": (string | null);
+        "symbol_group_4": (string | null);
+        "symbol_group_5": (string | null);
+        "monster_count": (types.Usize | null);
+        "monster": (string | null);
+    });
+    export type InstantEnemySpawner = (types.GimmickData & {
+        "symbol_group": string;
+        "min_count": (types.Usize | null);
+    });
     export type FieldDataSet = {
 
         /**
          * Trees that can be cut down for resources.
          */
         "cut_down_tree": (types.CutDownTree)[];
+
+        /**
+         * Random spawn points for enemies.
+         */
+        "enemy_random_spawner": (types.EnemyRandomSpawner)[];
+
+        /**
+         * Instant spawn points for enemies. Presumably used for boss monsters.
+         */
+        "instant_enemy_spawner": (types.InstantEnemySpawner)[];
     };
     export type FieldData = Record<string, types.FieldDataSet>;
     export type EnemyDrop = {

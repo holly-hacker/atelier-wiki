@@ -19,10 +19,12 @@ const region_map_names = new Map([
   [3, "FOREST_FIELD"],
   [4, "ANOTHER_FIELD"],
   [5, "LAST_DUNGEON"],
-  // [7, "DESERT_FIELD"], // TODO: allow filtering, there are 3 overlapping regions
+  [7, "DESERT_FIELD"], // TODO: allow filtering, there are 3 overlapping regions
   [9, "DESERT_TOWER"],
   [10, "FRONTIER_FIELD"],
 ]);
+
+// TODO: consider clustering overlapping markers, https://github.com/Leaflet/Leaflet.markercluster
 
 export default function GameMap() {
   const ryza3Data = useContext(Ryza3Context);
@@ -120,7 +122,7 @@ export default function GameMap() {
               />
             )}
             {
-              // TODO: move to layer that can be toggled
+              // TODO: move to layer that can be toggled, clean up
               region.data_file_name == null
                 ? null
                 : ryza3Data.field_data[
@@ -137,15 +139,54 @@ export default function GameMap() {
                     </Marker>
                   ))
             }
+            {region.data_file_name == null
+              ? null
+              : ryza3Data.field_data[
+                  region.data_file_name.toLowerCase() + ".xml"
+                ].enemy_random_spawner.map((enemy, enemy_idx) => (
+                  <Marker
+                    key={`${region.data_file_name}_${field_idx}_enemy_${enemy_idx}`}
+                    position={xy_to_map(
+                      enemy.position[0] * object_position_scale,
+                      enemy.position[2] * object_position_scale,
+                    )}
+                  >
+                    <Popup>
+                      Random enemy spawn, {enemy.rate}% chance,{" "}
+                      {enemy.symbol_group_1 ??
+                        enemy.symbol_group_2 ??
+                        enemy.symbol_group_3 ??
+                        enemy.symbol_group_4 ??
+                        enemy.symbol_group_5}
+                    </Popup>
+                  </Marker>
+                ))}
+            {region.data_file_name == null
+              ? null
+              : ryza3Data.field_data[
+                  region.data_file_name.toLowerCase() + ".xml"
+                ].instant_enemy_spawner.map((enemy, enemy_idx) => {
+                  console.log("instant", enemy_idx, enemy);
+                  return (
+                    <Marker
+                      key={`${region.data_file_name}_${field_idx}_enemy_instant_${enemy_idx}`}
+                      position={xy_to_map(
+                        enemy.position[0] * object_position_scale,
+                        enemy.position[2] * object_position_scale,
+                      )}
+                    >
+                      <Popup>
+                        Instant enemy spawn, {enemy.rate}% chance,{" "}
+                        <code>{enemy.symbol_group}</code>
+                      </Popup>
+                    </Marker>
+                  );
+                })}
           </>
         ))}
 
         <Marker position={xy_to_map(region_map.pos[0], region_map.pos[1])}>
           <Popup>Map offset</Popup>
-        </Marker>
-
-        <Marker position={xy_to_map(100, 100)}>
-          <Popup>Popup at 100,100</Popup>
         </Marker>
       </MapContainer>
     </>
