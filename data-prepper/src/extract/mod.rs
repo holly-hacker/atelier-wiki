@@ -1,5 +1,4 @@
-mod data;
-mod executable;
+mod ryza3;
 
 use std::{
     fs::File,
@@ -8,8 +7,8 @@ use std::{
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
-pub use data::Ryza3Data;
 use gust_pak::common::GameVersion;
+pub use ryza3::data::Ryza3Data;
 use serde::Serialize;
 use tracing::{debug, info};
 
@@ -68,12 +67,12 @@ fn extract_ryza3(
     let output_directory = output_directory.join("ryza3");
 
     debug!("reading executable data");
-    let executable_data = executable::Ryza3ExecutableData::read_all(game_directory)
+    let executable_data = ryza3::executable::Ryza3ExecutableData::read_all(game_directory)
         .context("read executable data")?;
 
     debug!("reading game data");
-    let data =
-        data::Ryza3Data::read_all(&mut pak_index, &executable_data).context("read data files")?;
+    let data = ryza3::data::Ryza3Data::read_all(&mut pak_index, &executable_data)
+        .context("read data files")?;
 
     debug!("Creating output directory");
     std::fs::create_dir_all(&output_directory).context("create output directory")?;

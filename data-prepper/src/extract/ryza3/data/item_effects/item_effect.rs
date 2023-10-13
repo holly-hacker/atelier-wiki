@@ -2,7 +2,7 @@ use anyhow::Context;
 use roxmltree::Node;
 
 use crate::{
-    extract::data::util::{self, ElementReader},
+    extract::ryza3::data::util::{self, ElementReader},
     utils::PakIndex,
 };
 

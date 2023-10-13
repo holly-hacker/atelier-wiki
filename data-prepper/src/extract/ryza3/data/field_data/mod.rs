@@ -11,7 +11,7 @@ use serde::Serialize;
 use tracing::trace;
 use typescript_type_def::TypeDef;
 
-use crate::extract::data::field_data::gimmick::GimmickProperty;
+use crate::extract::ryza3::data::field_data::gimmick::GimmickProperty;
 use crate::utils::PakIndex;
 pub use field_data_types::*;
 

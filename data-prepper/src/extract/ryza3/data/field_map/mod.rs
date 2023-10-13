@@ -1,4 +1,4 @@
-use crate::extract::data::strings_table::StringsTable;
+use crate::extract::ryza3::data::strings_table::StringsTable;
 use crate::utils::PakIndex;
 use serde::Serialize;
 use std::collections::BTreeMap;

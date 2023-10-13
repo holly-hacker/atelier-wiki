@@ -4,7 +4,7 @@ use anyhow::Context;
 use serde::Serialize;
 use typescript_type_def::TypeDef;
 
-use crate::extract::executable::Ryza3ExecutableData;
+use crate::extract::ryza3::executable::Ryza3ExecutableData;
 
 use super::strings_table::StringsTable;
 

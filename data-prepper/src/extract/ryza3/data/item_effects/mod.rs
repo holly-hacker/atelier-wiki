@@ -7,7 +7,7 @@ use serde::Serialize;
 use tracing::debug;
 use typescript_type_def::TypeDef;
 
-use crate::{extract::executable::Ryza3ExecutableData, utils::PakIndex};
+use crate::{extract::ryza3::executable::Ryza3ExecutableData, utils::PakIndex};
 
 use super::strings_table::StringsTable;
 
