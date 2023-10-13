@@ -1,9 +1,10 @@
-import { Route } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
 
-export default function Routes() {
-  return (
-    <Route path="sophie">
-      <Route index element={<>Index</>} />
-    </Route>
-  );
+export default function getRoutes(): RouteObject[] {
+  return [
+    {
+      path: "sophie",
+      element: <>Index</>,
+    },
+  ];
 }

@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
 import Ryza3Index from ".";
 import ItemList from "./items/list";
 import ItemDetail from "./items/detail";
@@ -12,27 +12,60 @@ import EnemyList from "./enemies/list";
 import EnemyDetail from "./enemies/detail";
 import Ryza3Map from "./map/map";
 
-export default function Routes() {
-  return (
-    <Route path="ryza3">
-      <Route index element={<Ryza3Index />} />
-
-      <Route path="items" element={<ItemList />} />
-      <Route path="items/:id" element={<ItemDetail />} />
-      <Route path="item_categories" element={<ItemCategoriesList />} />
-      <Route
-        path="item_categories/:category"
-        element={<ItemCategoryDetail />}
-      />
-      <Route path="item_kinds" element={<ItemKindsList />} />
-      <Route path="item_kinds/:kind" element={<ItemKindDetail />} />
-      <Route path="item_use_tags" element={<ItemUseTagsList />} />
-      <Route path="item_use_tags/:tag" element={<ItemUseTagDetail />} />
-
-      <Route path="enemies" element={<EnemyList />} />
-      <Route path="enemy/:id" element={<EnemyDetail />} />
-
-      <Route path="map" element={<Ryza3Map />} />
-    </Route>
-  );
+export default function getRoutes(): RouteObject[] {
+  return [
+    {
+      path: "ryza3",
+      children: [
+        {
+          index: true,
+          element: <Ryza3Index />,
+        },
+        {
+          path: "items",
+          element: <ItemList />,
+        },
+        {
+          path: "items/:id",
+          element: <ItemDetail />,
+        },
+        {
+          path: "item_categories",
+          element: <ItemCategoriesList />,
+        },
+        {
+          path: "item_categories/:category",
+          element: <ItemCategoryDetail />,
+        },
+        {
+          path: "item_kinds",
+          element: <ItemKindsList />,
+        },
+        {
+          path: "item_kinds/:kind",
+          element: <ItemKindDetail />,
+        },
+        {
+          path: "item_use_tags",
+          element: <ItemUseTagsList />,
+        },
+        {
+          path: "item_use_tags/:tag",
+          element: <ItemUseTagDetail />,
+        },
+        {
+          path: "enemies",
+          element: <EnemyList />,
+        },
+        {
+          path: "enemy/:id",
+          element: <EnemyDetail />,
+        },
+        {
+          path: "map",
+          element: <Ryza3Map />,
+        },
+      ],
+    },
+  ];
 }

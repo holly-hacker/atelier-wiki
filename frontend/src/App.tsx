@@ -2,26 +2,25 @@ import "./App.css";
 import {
   Link,
   Outlet,
-  Route,
   RouterProvider,
   createHashRouter,
-  createRoutesFromElements,
 } from "react-router-dom";
-import SophieRoutes from "./routes/sophie/routes";
-import Ryza3Routes from "./routes/ryza3/routes";
+import getSophieRoutes from "./routes/sophie/routes";
+import getRyza3Routes from "./routes/ryza3/routes";
 import DataLoader from "./data_loader";
 
 function App() {
-  // TODO: use proper router data instead of `createRoutesFromElements`
-  const router = createHashRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Layout />}>
-        <Route index element={<IndexPage />} />
-        {SophieRoutes()}
-        {Ryza3Routes()}
-      </Route>,
-    ),
-  );
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { index: true, element: <IndexPage /> },
+        ...getSophieRoutes(),
+        ...getRyza3Routes(),
+      ],
+    },
+  ]);
   return <RouterProvider router={router} />;
 }
 
