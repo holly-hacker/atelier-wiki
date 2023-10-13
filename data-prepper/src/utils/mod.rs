@@ -17,8 +17,12 @@ pub fn extract_game_version(path: &Path) -> Option<GameVersion> {
 
 pub fn game_slug(game_version: GameVersion) -> &'static str {
     match game_version {
-        GameVersion::A21 => "ryza1",
+        GameVersion::A17 => "sophie",
+        GameVersion::A18 => "firis",
+        GameVersion::A19 => "lydiesuelle",
+        GameVersion::A21 => "ryza",
         GameVersion::A22 => "ryza2",
+        GameVersion::A23 => "sophie2",
         GameVersion::A24 => "ryza3",
     }
 }
