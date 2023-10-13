@@ -25,6 +25,10 @@ pub struct Args {
     /// the output directory
     #[argh(option, short = 'o')]
     output_directory: Option<PathBuf>,
+
+    /// the game version. detected automatically if not specified
+    #[argh(option, short = 'g')]
+    game_version: Option<GameVersion>,
 }
 
 impl Args {
@@ -35,7 +39,9 @@ impl Args {
         debug!(?output_directory);
 
         debug!("Detecting game version");
-        let game_version = extract_game_version(&self.game_directory);
+        let game_version = self
+            .game_version
+            .or_else(|| extract_game_version(&self.game_directory));
         let Some(game_version) = game_version else {
             bail!("Could not detect game version in the given install directory");
         };
