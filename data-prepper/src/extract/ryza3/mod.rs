@@ -4,16 +4,20 @@ pub mod executable;
 use std::path::Path;
 
 use anyhow::Context;
+use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 
-use crate::{extract::write_data_to_file, utils::PakIndex};
+use crate::{
+    extract::write_data_to_file,
+    utils::{game_slug, PakIndex},
+};
 
 pub fn extract(
     game_directory: &Path,
     mut pak_index: PakIndex,
     output_directory: &Path,
 ) -> anyhow::Result<()> {
-    let output_directory = output_directory.join("ryza3");
+    let output_directory = output_directory.join(game_slug(GameVersion::A24));
 
     debug!("reading executable data");
     let executable_data = executable::Ryza3ExecutableData::read_all(game_directory)

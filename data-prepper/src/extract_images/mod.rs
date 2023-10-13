@@ -86,8 +86,8 @@ impl Args {
 
         // loading index of game files
         debug!("Reading pak file index");
-        let pak_dir = self.game_directory.join("Data");
-        let mut pak_index = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
+        let mut pak_index =
+            PakIndex::read(&self.game_directory, game_version).context("read data dir")?;
         info!("Loaded pak file index with {} entries", pak_index.len());
 
         let output_directory = output_dir.join(slug);

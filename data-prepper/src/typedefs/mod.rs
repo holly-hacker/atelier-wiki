@@ -2,8 +2,11 @@ use std::path::{Path, PathBuf};
 
 use anyhow::Context;
 use argh::FromArgs;
+use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 use typescript_type_def::{write_definition_file, DefinitionFileOptions, TypeDef};
+
+use crate::utils::game_slug;
 
 /// Generate typescript definitions
 #[derive(FromArgs)]
@@ -22,8 +25,16 @@ impl Args {
         debug!(?output_folder);
 
         debug!("Generating typedefs");
-        gen_typedefs::<super::extract::Ryza3Data>(&output_folder, "ryza3.d.ts")
-            .context("generate typedefs for ryza3")?;
+        gen_typedefs::<super::extract::sophie::data::SophieData>(
+            &output_folder,
+            &format!("{}.d.ts", game_slug(GameVersion::A17)),
+        )
+        .context("generate typedefs for sophie")?;
+        gen_typedefs::<super::extract::ryza3::data::Ryza3Data>(
+            &output_folder,
+            &format!("{}.d.ts", game_slug(GameVersion::A24)),
+        )
+        .context("generate typedefs for ryza3")?;
         gen_typedefs::<super::extract_images::UniformTextureAtlasInfo>(
             &output_folder,
             "texture_atlas.d.ts",

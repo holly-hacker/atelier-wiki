@@ -28,7 +28,17 @@ struct FileInfo {
 }
 
 impl PakIndex {
-    pub fn read(pak_dir: &Path, game_version: GameVersion) -> anyhow::Result<Self> {
+    pub fn read(game_dir: &Path, game_version: GameVersion) -> anyhow::Result<Self> {
+        // some games use /Data for .PAK files, some use the root directory (eg. Sophie)
+        let pak_dir = if std::fs::read_dir(game_dir)?
+            .flatten()
+            .any(|f| f.path().extension().map(|e| e.to_ascii_lowercase()) == Some("pak".into()))
+        {
+            game_dir.to_path_buf()
+        } else {
+            game_dir.join("Data")
+        };
+
         let data_dir = pak_dir.read_dir().context("read data dir")?;
 
         // only select the pak files

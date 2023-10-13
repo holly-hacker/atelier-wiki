@@ -7,8 +7,19 @@ use gust_pak::common::GameVersion;
 pub use pak_index::PakIndex;
 
 pub fn extract_game_version(path: &Path) -> Option<GameVersion> {
-    // currently, only detect Atelier Ryza 3. we can add more later
-    if path.join("Atelier_Ryza_3.exe").exists() {
+    if path.join("Atelier_Sophie_DX.exe").exists() {
+        Some(GameVersion::A17)
+    } else if path.join("Atelier_Firis_DX.exe").exists() {
+        Some(GameVersion::A18)
+    } else if path.join("Atelier_Lydie_and_Suelle_DX.exe").exists() {
+        Some(GameVersion::A19)
+    } else if path.join("Atelier_Ryza.exe").exists() {
+        Some(GameVersion::A21)
+    } else if path.join("Atelier_Ryza_2.exe").exists() {
+        Some(GameVersion::A22)
+    } else if path.join("Atelier_Sophie_2.exe").exists() {
+        Some(GameVersion::A23)
+    } else if path.join("Atelier_Ryza_3.exe").exists() {
         Some(GameVersion::A24)
     } else {
         None

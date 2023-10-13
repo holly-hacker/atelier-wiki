@@ -1,4 +1,5 @@
-mod ryza3;
+pub mod ryza3;
+pub mod sophie;
 mod util;
 
 use std::{
@@ -9,7 +10,6 @@ use std::{
 use anyhow::{bail, Context};
 use argh::FromArgs;
 use gust_pak::common::GameVersion;
-pub use ryza3::data::Ryza3Data;
 use serde::Serialize;
 use tracing::{debug, info};
 
@@ -54,12 +54,13 @@ impl Args {
 
         // loading index of game files
         debug!("Reading pak file index");
-        let pak_dir = self.game_directory.join("Data");
-        let pak_index = PakIndex::read(&pak_dir, game_version).context("read data dir")?;
+        let pak_index =
+            PakIndex::read(&self.game_directory, game_version).context("read data dir")?;
         info!("Loaded pak file index with {} entries", pak_index.len());
 
         // extract data from game files
         match game_version {
+            GameVersion::A17 => sophie::extract(pak_index, &output_directory),
             GameVersion::A24 => ryza3::extract(&self.game_directory, pak_index, &output_directory),
             _ => bail!("Unsupported game version {:?}", game_version),
         }
