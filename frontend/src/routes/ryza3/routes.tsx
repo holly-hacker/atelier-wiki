@@ -12,7 +12,7 @@ import EnemyList from "./enemies/list";
 import EnemyDetail from "./enemies/detail";
 import Ryza3Map from "./map/map";
 
-export default function Ryza3Routes() {
+export default function Routes() {
   return (
     <Route path="ryza3">
       <Route index element={<Ryza3Index />} />
