@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import getSophieRoutes from "./routes/sophie/routes";
 import getRyza3Routes from "./routes/ryza3/routes";
-import DataLoader from "./data_loader";
 
 function App() {
   const router = createHashRouter([
@@ -31,9 +30,7 @@ function Layout() {
       <div>
         <Link to="/">Home</Link>
       </div>
-      <DataLoader>
-        <Outlet />
-      </DataLoader>
+      <Outlet />
     </>
   );
 }

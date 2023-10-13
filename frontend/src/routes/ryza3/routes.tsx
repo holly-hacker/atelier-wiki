@@ -11,11 +11,13 @@ import ItemUseTagDetail from "./item_use_tags/detail";
 import EnemyList from "./enemies/list";
 import EnemyDetail from "./enemies/detail";
 import Ryza3Map from "./map/map";
+import DataLoader from "./data_loader";
 
 export default function getRoutes(): RouteObject[] {
   return [
     {
       path: "ryza3",
+      element: <DataLoader />,
       children: [
         {
           index: true,
