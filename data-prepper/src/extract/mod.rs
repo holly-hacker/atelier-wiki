@@ -1,4 +1,5 @@
 mod ryza3;
+mod util;
 
 use std::{
     fs::File,

@@ -2,9 +2,10 @@ use std::collections::HashMap;
 
 use anyhow::Context;
 
-use crate::utils::PakIndex;
-
-use super::util::{self, ElementReader};
+use crate::{
+    extract::util::{self, ElementReader},
+    utils::PakIndex,
+};
 
 pub struct StringsTable {
     pub id_lookup: HashMap<String, String>,

@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use anyhow::{bail, Context};
 
 use crate::{
-    extract::ryza3::data::util::{self, ElementReader},
+    extract::util::{self, ElementReader},
     utils::PakIndex,
 };
 

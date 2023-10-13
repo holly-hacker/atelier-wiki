@@ -15,7 +15,6 @@ mod item_effects;
 mod items;
 mod recipes;
 mod strings_table;
-mod util;
 
 #[derive(Serialize, TypeDef)]
 pub struct Ryza3Data {

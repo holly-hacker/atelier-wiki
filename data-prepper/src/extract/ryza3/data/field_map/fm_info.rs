@@ -1,5 +1,4 @@
-use crate::extract::ryza3::data::util;
-use crate::extract::ryza3::data::util::ElementReader;
+use crate::extract::util::{self, ElementReader};
 use crate::utils::PakIndex;
 use anyhow::Context;
 
