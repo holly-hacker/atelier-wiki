@@ -11,6 +11,9 @@ export default function SophieIndex() {
         <li>
           <Link to="/sophie/friends">Friend presents</Link>
         </li>
+        <li>
+          <Link to="/sophie/rumors">Rumors</Link>
+        </li>
       </ul>
     </>
   );

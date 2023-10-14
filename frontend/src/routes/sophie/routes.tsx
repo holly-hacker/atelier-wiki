@@ -4,6 +4,7 @@ import SophieIndex from "./index";
 import ItemList from "./items/list";
 import ItemDetail from "./items/detail";
 import FriendPresentList from "./friends/presents";
+import RumorList from "./rumors/list";
 
 export default function getRoutes(): RouteObject[] {
   return [
@@ -26,6 +27,10 @@ export default function getRoutes(): RouteObject[] {
         {
           path: "friends",
           element: <FriendPresentList />,
+        },
+        {
+          path: "rumors",
+          element: <RumorList />,
         },
       ],
     },
