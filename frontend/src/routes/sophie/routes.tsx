@@ -3,6 +3,7 @@ import DataLoader from "./data_loader";
 import SophieIndex from "./index";
 import ItemList from "./items/list";
 import ItemDetail from "./items/detail";
+import FriendPresentList from "./friends/presents";
 
 export default function getRoutes(): RouteObject[] {
   return [
@@ -21,6 +22,10 @@ export default function getRoutes(): RouteObject[] {
         {
           path: "items/:id",
           element: <ItemDetail />,
+        },
+        {
+          path: "friends",
+          element: <FriendPresentList />,
         },
       ],
     },

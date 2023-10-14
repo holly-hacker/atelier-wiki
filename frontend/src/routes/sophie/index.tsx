@@ -8,6 +8,9 @@ export default function SophieIndex() {
         <li>
           <Link to="/sophie/items">Items</Link>
         </li>
+        <li>
+          <Link to="/sophie/friends">Friend presents</Link>
+        </li>
       </ul>
     </>
   );
