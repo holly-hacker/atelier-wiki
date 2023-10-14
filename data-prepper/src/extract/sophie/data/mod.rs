@@ -7,11 +7,13 @@ use crate::utils::PakIndex;
 
 mod items;
 mod presents;
+mod rumors;
 
 #[derive(Serialize, TypeDef)]
 pub struct SophieData {
     pub item_data: Vec<items::Item>,
     pub present_info: presents::PresentInfo,
+    pub rumors: Vec<rumors::Rumor>,
 }
 
 impl SophieData {
@@ -19,16 +21,19 @@ impl SophieData {
         let item_data = items::Item::read(pak_index).context("read items")?;
         info!("Read data for {} items", item_data.len());
 
-        // PresentInfo
         let present_info = presents::PresentInfo::read(pak_index).context("read presents")?;
         info!(
             "Read present info for {} friends",
             present_info.friend_present_info.len()
         );
 
+        let rumors = rumors::Rumor::read(pak_index).context("read rumors")?;
+        info!("Read data for {} items", rumors.len());
+
         Ok(Self {
             item_data,
             present_info,
+            rumors,
         })
     }
 }
