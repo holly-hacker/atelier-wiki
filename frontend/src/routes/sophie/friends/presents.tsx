@@ -1,8 +1,9 @@
 import Grid from "@/components/grid";
-import { SophieContext } from "@/data/sophie_data";
+import { SophieContext, SophieData } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext, useState } from "react";
 import { ItemLink } from "../utility_components/links";
+import type SophieTypes from "@/data/types/sophie.d.ts";
 
 export default function FriendPresentList() {
   const sophieData = useContext(SophieContext);
@@ -34,6 +35,25 @@ export default function FriendPresentList() {
   );
 }
 
+function getWeightedScore(
+  {
+    item_tag,
+    score,
+  }: {
+    item_tag: string;
+    score: number;
+  },
+  sophieData: SophieData,
+  present_info: SophieTypes.FriendPresentInfo,
+): number {
+  const item = sophieData.items.find((v) => v.tag == item_tag)!;
+  const base_points = present_info.base_points as Record<string, number>;
+  const base_score = base_points[
+    item.base.substring("ITEM_KIND_".length).toLowerCase()
+  ] as number;
+  return base_score * score;
+}
+
 function FriendPresentInfoDisplay({
   friend,
   showBadGifts,
@@ -49,7 +69,6 @@ function FriendPresentInfoDisplay({
       return { item_tag, score };
     })
     .filter((i) => showBadGifts || i.score >= 0);
-  items.sort((a, b) => b.score - a.score);
   const itemColumnHelper = createColumnHelper<(typeof items)[0]>();
   const itemColumns = [
     itemColumnHelper.accessor("item_tag", {
@@ -59,7 +78,21 @@ function FriendPresentInfoDisplay({
         return <ItemLink item={item} />;
       },
     }),
-    itemColumnHelper.accessor("score", { header: "Score" }),
+    itemColumnHelper.accessor("item_tag", {
+      header: "Item Type",
+      cell: (i) => {
+        const item = sophieData.items.find((v) => v.tag == i.getValue())!;
+        return <code>{item.base.substring("ITEM_KIND_".length)}</code>;
+      },
+    }),
+    itemColumnHelper.accessor("score", { header: "Raw score" }),
+    itemColumnHelper.accessor(
+      (x) => getWeightedScore(x, sophieData, present_info),
+      {
+        header: "Score",
+        id: "score_weighted",
+      },
+    ),
   ];
 
   return (
@@ -112,7 +145,11 @@ function FriendPresentInfoDisplay({
         </table>
       </p>
       <p>The following items give additional points when gifted:</p>
-      <Grid columns={itemColumns} data={items} />
+      <Grid
+        columns={itemColumns}
+        data={items}
+        initialSortingState={[{ id: "score_weighted", desc: true }]}
+      />
     </>
   );
 }
