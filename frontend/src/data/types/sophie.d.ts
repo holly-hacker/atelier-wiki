@@ -38,7 +38,59 @@ export namespace types {
          */
         "player_characters": (types.Usize)[];
     };
+    export type F32 = number;
+    export type PresentBasePoints = {
+        "attack": types.F32;
+        "heal": types.F32;
+        "support": types.F32;
+        "field": types.F32;
+        "mix": types.F32;
+        "machine": types.F32;
+        "weapon": types.F32;
+        "armor": types.F32;
+        "accessory": types.F32;
+        "material": types.F32;
+    };
+
+    /**
+     * Present info for a specific friend
+     */
+    export type FriendPresentInfo = {
+
+        /**
+         * Gift items and their points
+         */
+        "item_points": Record<string, types.F32>;
+
+        /**
+         * Base points for each item type
+         */
+        "base_points": types.PresentBasePoints;
+
+        /**
+         * The default friendship points for this friend
+         */
+        "default_points": types.Usize;
+
+        /**
+         * The default friendship point limit for this friend
+         */
+        "default_limit": types.Usize;
+
+        /**
+         * Unlockable friendship point limits with their required events
+         */
+        "unlockable_limits": ([types.Usize, string])[];
+    };
+    export type PresentInfo = {
+
+        /**
+         * Present info for each friend
+         */
+        "friend_present_info": Record<string, types.FriendPresentInfo>;
+    };
     export type SophieData = {
         "item_data": (types.Item)[];
+        "present_info": types.PresentInfo;
     };
 }
