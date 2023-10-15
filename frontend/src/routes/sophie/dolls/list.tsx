@@ -2,8 +2,20 @@ import Grid from "@/components/grid";
 import { SophieContext } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
+import { ItemLink } from "../utility_components/links";
 
-export default function DollList() {
+export default function DollListPage() {
+  return (
+    <>
+      <h1>Doll making</h1>
+      <DollList />
+
+      <DollMaterialListSection />
+    </>
+  );
+}
+
+function DollList() {
   const sophieData = useContext(SophieContext);
   const dolls = sophieData.dolls.filter(
     (v) => v.chara_base_tag != "CHARA_BASE_NONE",
@@ -64,10 +76,59 @@ export default function DollList() {
 
   return (
     <>
-      <h1>Doll making</h1>
+      <h1>Doll list</h1>
       <Grid data={dolls} columns={columns} />
     </>
   );
+}
+
+function DollMaterialListSection() {
+  return (
+    <>
+      <h2>Doll material list</h2>
+      <h3>Elixer</h3>
+      <DollMaterialList category="ELIXIL" />
+      <h3>Thread</h3>
+      <DollMaterialList category="THREAD" />
+      <h3>Gem</h3>
+      <DollMaterialList category="JEWEL" />
+      <h3>Secret Power</h3>
+      <DollMaterialList category="MYSTIC" />
+    </>
+  );
+}
+
+function DollMaterialList({ category }: { category: string }) {
+  const sophieData = useContext(SophieContext);
+
+  const items = sophieData.items.filter(
+    (v) => v.category.indexOf(`ITEM_CATEGORY_${category}`) !== -1,
+  );
+
+  const columnHelper = createColumnHelper<(typeof items)[0]>();
+  const columns = [
+    columnHelper.accessor("name", {
+      header: "Name",
+      cell: (i) => <ItemLink item={i.row.original} />,
+    }),
+    columnHelper.accessor("cost", { header: "Price" }),
+    columnHelper.accessor("level", { header: "Level" }),
+    columnHelper.accessor("tag", {
+      header: "Tag",
+      cell: (i) => <code>{i.getValue().substring("ITEM_".length)}</code>,
+    }),
+    columnHelper.accessor("base", {
+      header: "Item Kind",
+      cell: (i) => <code>{i.getValue().substring("ITEM_KIND_".length)}</code>,
+      filterFn: "equalsString",
+    }),
+    columnHelper.accessor("doll_tendency_cute", { header: "Cute" }),
+    columnHelper.accessor("doll_tendency_wise", { header: "Wise" }),
+    columnHelper.accessor("doll_tendency_brave", { header: "Brave" }),
+    columnHelper.accessor("doll_tendency_fool", { header: "Fool" }),
+  ];
+
+  return <Grid data={items} columns={columns} />;
 }
 
 function NonZeroNumber({ value }: { value: number }) {
