@@ -35,6 +35,42 @@ export default function FriendPresentList() {
   );
 }
 
+// this should be extracted from the game, but it seems to be embedded in the executable
+function mapFriendName(name: string) {
+  switch (name) {
+    case "CANARIA":
+      return "Corneria";
+    case "ELISE": // Librarian
+      return "Elise Phulie";
+    case "FILON":
+      return "Fritz Weissberg";
+    case "HELLMUT": // Cafe owner
+      return "Horst Basler";
+    case "HENRI":
+      return "Amelia Leonmeyer (Leon)";
+    case "JULIO":
+      return "Julio Sebald Leidenschaft";
+    case "LOGIX": // Blacksmith
+      return "Logix Ficsario (Logy)";
+    case "MARGRIT": // Grocery store owner
+      return "Marguerite Behlmer";
+    case "MONIKA":
+      return "Monika Ellmenreich";
+    case "OTTO":
+      return "Oskar Behlmer";
+    case "PAMELA": // Nun
+      return "Pamela Ibis";
+    case "PAUL":
+      return "Harol Simens";
+    case "PLACHTA":
+      return "Plachta";
+    case "TESS": // Bunny girl
+      return "Tess Heitzmann";
+    default:
+      return name;
+  }
+}
+
 function getWeightedScore(
   {
     item_tag,
@@ -97,7 +133,7 @@ function FriendPresentInfoDisplay({
 
   return (
     <>
-      <h2>{friend.substring("FRIEND_".length)}</h2>
+      <h2>{mapFriendName(friend.substring("FRIEND_".length))}</h2>
       <p>
         Friendship level starts at {present_info.default_points} points and can
         go up to {present_info.default_limit}.
