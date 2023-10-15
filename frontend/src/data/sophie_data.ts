@@ -7,6 +7,7 @@ export type SophieData = {
     items: SophieTypes.Item[],
     present_info: SophieTypes.PresentInfo,
     rumors: SophieTypes.Rumor[],
+    dolls: SophieTypes.Doll[],
 };
 
 export async function getSophieData(): Promise<SophieData> {
@@ -16,15 +17,18 @@ export async function getSophieData(): Promise<SophieData> {
         items,
         present_info,
         rumors,
+        dolls,
     ] = await Promise.all([
         fetch(`${url_base}/items.json`).then(res => res.json()),
         fetch(`${url_base}/presents.json`).then(res => res.json()),
         fetch(`${url_base}/rumors.json`).then(res => res.json()),
+        fetch(`${url_base}/dolls.json`).then(res => res.json()),
     ]);
 
     return {
         items,
         present_info,
         rumors,
+        dolls,
     };
 }
