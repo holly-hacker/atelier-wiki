@@ -3,6 +3,7 @@ import { SophieContext } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
 import { ItemLink } from "../utility_components/links";
+import type SophieTypes from "@/data/types/sophie.d.ts";
 
 export default function DollListPage() {
   return (
@@ -13,6 +14,36 @@ export default function DollListPage() {
       <DollMaterialListSection />
     </>
   );
+}
+
+function getDollRequirements(doll: SophieTypes.Doll) {
+  const requirement_types = [
+    ["cute_min", "Cute >="],
+    ["cute_max", "Cute <="],
+    ["wise_min", "Wise >="],
+    ["wise_max", "Wise <="],
+    ["brave_min", "Brave >="],
+    ["brave_max", "Brave <="],
+    ["fool_min", "Fool >="],
+    ["fool_max", "Fool <="],
+  ];
+
+  const requirements = requirement_types
+    .map(([key, name]) => {
+      const val = (doll as unknown as Record<string, number>)[key];
+      if (val != 0) {
+        return `${name} ${val}`;
+      } else {
+        return null;
+      }
+    })
+    .filter((v) => v != null);
+
+  if (requirements.length == 0) {
+    return "";
+  } else {
+    return requirements.join(", ");
+  }
 }
 
 function DollList() {
@@ -27,46 +58,57 @@ function DollList() {
       header: "Number",
     }),
     columnHelper.accessor("name", { header: "Name" }),
-    columnHelper.accessor("cute_min", {
-      header: "Cute Min",
+    columnHelper.display({
+      header: "Requirements",
+      cell: (i) => <code>{getDollRequirements(i.row.original)}</code>,
+    }),
+    columnHelper.accessor("doll_hp", {
+      header: "HP",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("cute_max", {
-      header: "Cute Max",
+    columnHelper.accessor("doll_mp", {
+      header: "MP",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("wise_min", {
-      header: "Wise Min",
+    columnHelper.accessor("doll_lp", {
+      header: "LP",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("wise_max", {
-      header: "Wise Max",
+    columnHelper.accessor("doll_atk", {
+      header: "Atk.",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("brave_min", {
-      header: "Brave Min",
+    columnHelper.accessor("doll_def", {
+      header: "Def.",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("brave_max", {
-      header: "Brave Max",
+    columnHelper.accessor("doll_spd", {
+      header: "Spd.",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("fool_min", {
-      header: "Fool Min",
+    columnHelper.accessor("doll_dmg_min", {
+      header: "Dmg Min",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("fool_max", {
-      header: "Fool Max",
+    columnHelper.accessor("doll_dmg_max", {
+      header: "Dmg Max",
       cell: (i) => <NonZeroNumber value={i.getValue()} />,
     }),
-    columnHelper.accessor("doll_hp", { header: "HP" }),
-    columnHelper.accessor("doll_mp", { header: "MP" }),
-    columnHelper.accessor("doll_lp", { header: "LP" }),
-    columnHelper.accessor("doll_atk", { header: "Atk." }),
-    columnHelper.accessor("doll_def", { header: "Def." }),
-    columnHelper.accessor("doll_spd", { header: "Spd." }),
-    columnHelper.accessor("doll_dmg_min", { header: "Dmg Min" }),
-    columnHelper.accessor("doll_dmg_max", { header: "Dmg Max" }),
+    columnHelper.accessor(
+      (c) =>
+        c.doll_hp +
+        c.doll_mp +
+        c.doll_lp +
+        c.doll_atk +
+        c.doll_def +
+        c.doll_spd +
+        c.doll_dmg_min +
+        c.doll_dmg_max,
+      {
+        header: "Sum of stats",
+        cell: (i) => <NonZeroNumber value={i.getValue()} />,
+      },
+    ),
     columnHelper.accessor("dlc_tag", {
       header: "DLC",
       cell: (i) => <code>{i.getValue()?.substring("DLC_".length)}</code>,
@@ -80,6 +122,14 @@ function DollList() {
       <Grid data={dolls} columns={columns} />
     </>
   );
+}
+
+function NonZeroNumber({ value }: { value: number }) {
+  if (value != 0) {
+    return <>{value}</>;
+  } else {
+    return <></>;
+  }
 }
 
 function DollMaterialListSection() {
@@ -129,12 +179,4 @@ function DollMaterialList({ category }: { category: string }) {
   ];
 
   return <Grid data={items} columns={columns} />;
-}
-
-function NonZeroNumber({ value }: { value: number }) {
-  if (value != 0) {
-    return <>{value}</>;
-  } else {
-    return <></>;
-  }
 }
