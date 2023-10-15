@@ -5,6 +5,7 @@ use typescript_type_def::TypeDef;
 
 use crate::utils::PakIndex;
 
+mod doll_making;
 mod items;
 mod presents;
 mod rumors;
@@ -14,6 +15,7 @@ pub struct SophieData {
     pub item_data: Vec<items::Item>,
     pub present_info: presents::PresentInfo,
     pub rumors: Vec<rumors::Rumor>,
+    pub doll_making_data: Vec<doll_making::Doll>,
 }
 
 impl SophieData {
@@ -30,10 +32,15 @@ impl SophieData {
         let rumors = rumors::Rumor::read(pak_index).context("read rumors")?;
         info!("Read data for {} items", rumors.len());
 
+        let doll_making_data =
+            doll_making::Doll::read(pak_index).context("read doll making data")?;
+        info!("Read data for {} dolls", doll_making_data.len());
+
         Ok(Self {
             item_data,
             present_info,
             rumors,
+            doll_making_data,
         })
     }
 }

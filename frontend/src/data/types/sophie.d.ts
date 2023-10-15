@@ -138,9 +138,34 @@ export namespace types {
          */
         "text": string;
     };
+    export type Doll = {
+        "no": types.Usize;
+        "name": string;
+        "doll_tag": string;
+        "chara_base_tag": string;
+        "dlc_tag": string;
+        "doll_event_tag": string;
+        "cute_min": types.I32;
+        "cute_max": types.I32;
+        "wise_min": types.I32;
+        "wise_max": types.I32;
+        "brave_min": types.I32;
+        "brave_max": types.I32;
+        "fool_min": types.I32;
+        "fool_max": types.I32;
+        "doll_hp": types.Usize;
+        "doll_mp": types.Usize;
+        "doll_lp": types.Usize;
+        "doll_atk": types.Usize;
+        "doll_def": types.Usize;
+        "doll_spd": types.Usize;
+        "doll_dmg_min": types.Usize;
+        "doll_dmg_max": types.Usize;
+    };
     export type SophieData = {
         "item_data": (types.Item)[];
         "present_info": types.PresentInfo;
         "rumors": (types.Rumor)[];
+        "doll_making_data": (types.Doll)[];
     };
 }

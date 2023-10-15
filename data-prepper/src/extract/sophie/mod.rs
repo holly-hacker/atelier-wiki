@@ -34,6 +34,9 @@ pub fn extract(mut pak_index: PakIndex, output_directory: &Path) -> anyhow::Resu
     write_data_to_file(&output_directory.join("rumors.json"), &data.rumors)
         .context("write rumor data")?;
 
+    debug!("Writing doll data");
+    write_data_to_file(&output_directory.join("dolls.json"), &data.doll_making_data)
+        .context("write doll data")?;
     info!("Wrote sophie data to {:?}", output_directory);
 
     Ok(())
