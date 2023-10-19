@@ -27,6 +27,18 @@ export default function Ryza3Index() {
           <Link to="/ryza3/map">Map test</Link>
         </li>
       </ul>
+      <hr />
+      <h2>External</h2>
+      <ul>
+        <li>
+          <a href="https://barrelwisdom.com/ryza3/">Barrel Wisdom</a>
+        </li>
+        <li>
+          <a href="https://pipplecultist.github.io/Ryza3MaterialMapFinder/">
+            Ryza3 Material Map Finder
+          </a>
+        </li>
+      </ul>
     </>
   );
 }
