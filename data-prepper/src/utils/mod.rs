@@ -2,7 +2,8 @@ pub mod images;
 mod pak_index;
 mod xml_reader;
 
-use std::{path::Path, str::FromStr};
+use std::path::Path;
+use std::str::FromStr;
 
 use gust_pak::common::GameVersion;
 pub use pak_index::PakIndex;

@@ -6,10 +6,8 @@ use anyhow::Context;
 use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 
-use crate::{
-    extract::write_data_to_file,
-    utils::{game_slug, PakIndex},
-};
+use crate::extract::write_data_to_file;
+use crate::utils::{game_slug, PakIndex};
 
 pub fn extract(mut pak_index: PakIndex, output_directory: &Path) -> anyhow::Result<()> {
     let output_directory = output_directory.join(game_slug(GameVersion::A17));

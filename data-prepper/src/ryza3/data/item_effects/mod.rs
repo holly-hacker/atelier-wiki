@@ -8,7 +8,8 @@ use tracing::debug;
 use typescript_type_def::TypeDef;
 
 use super::strings_table::StringsTable;
-use crate::{ryza3::executable::Ryza3ExecutableData, utils::PakIndex};
+use crate::ryza3::executable::Ryza3ExecutableData;
+use crate::utils::PakIndex;
 
 #[derive(Serialize, TypeDef)]
 pub struct ItemEffectData {

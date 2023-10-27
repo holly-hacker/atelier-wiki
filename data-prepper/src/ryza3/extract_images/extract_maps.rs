@@ -1,4 +1,5 @@
-use std::{collections::BTreeMap, path::Path};
+use std::collections::BTreeMap;
+use std::path::Path;
 
 use anyhow::Context;
 use rayon::prelude::*;
@@ -6,7 +7,8 @@ use serde::Serialize;
 use tracing::{debug, info};
 use typescript_type_def::TypeDef;
 
-use crate::utils::{images::rgba8_image::Rgba8Image, match_pattern_str, PakIndex};
+use crate::utils::images::rgba8_image::Rgba8Image;
+use crate::utils::{match_pattern_str, PakIndex};
 
 const MAP_PATTERN_MINIMAP: &str = r"\data\x64\res_cmn\ui\neo\neo_minimap_ta_*.g1t";
 const MAP_PATTERN_FULL: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_minimap_all_*.g1t";

@@ -1,7 +1,5 @@
-use std::{
-    fs::File,
-    path::{Path, PathBuf},
-};
+use std::fs::File;
+use std::path::{Path, PathBuf};
 
 use anyhow::{bail, Context};
 use argh::FromArgs;

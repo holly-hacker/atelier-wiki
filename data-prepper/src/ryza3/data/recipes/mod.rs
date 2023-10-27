@@ -9,10 +9,8 @@ use serde::Serialize;
 use tracing::debug;
 use typescript_type_def::TypeDef;
 
-use self::{
-    itemrecipedata::{IngredientData, RecipeHeader},
-    mixfielddata::Field,
-};
+use self::itemrecipedata::{IngredientData, RecipeHeader};
+use self::mixfielddata::Field;
 use super::strings_table::StringsTable;
 use crate::utils::PakIndex;
 

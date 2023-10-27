@@ -54,12 +54,9 @@ fn main() {
 }
 
 fn init_logging(args: &CliArgs) {
-    use tracing_subscriber::{
-        filter::{FilterFn, LevelFilter},
-        fmt,
-        prelude::*,
-        registry,
-    };
+    use tracing_subscriber::filter::{FilterFn, LevelFilter};
+    use tracing_subscriber::prelude::*;
+    use tracing_subscriber::{fmt, registry};
 
     let log_level = if args.trace {
         tracing::Level::TRACE

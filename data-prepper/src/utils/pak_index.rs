@@ -1,12 +1,11 @@
-use std::{
-    collections::BTreeMap,
-    fs::File,
-    io::{Read, Seek},
-    path::{Path, PathBuf},
-};
+use std::collections::BTreeMap;
+use std::fs::File;
+use std::io::{Read, Seek};
+use std::path::{Path, PathBuf};
 
 use anyhow::Context;
-use gust_pak::{common::GameVersion, GustPak, PakEntry, PakEntryRef};
+use gust_pak::common::GameVersion;
+use gust_pak::{GustPak, PakEntry, PakEntryRef};
 use rayon::prelude::*;
 use tracing::{debug, trace};
 

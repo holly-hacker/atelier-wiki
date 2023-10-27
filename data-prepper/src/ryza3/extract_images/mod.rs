@@ -8,11 +8,9 @@ use argh::FromArgs;
 pub use extract_maps::MapInfoList;
 use tracing::{debug, info};
 
-use crate::utils::{
-    extract_game_version, game_slug,
-    images::{rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas},
-    match_pattern, PakIndex,
-};
+use crate::utils::images::rgba8_image::Rgba8Image;
+use crate::utils::images::texture_atlas::UniformTextureAtlas;
+use crate::utils::{extract_game_version, game_slug, match_pattern, PakIndex};
 
 const PATH_ITEMS: &str = "items";
 const PATH_ENEMIES: &str = "enemies";
