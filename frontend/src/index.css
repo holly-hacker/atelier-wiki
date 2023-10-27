@@ -18,3 +18,14 @@ a {
   height: 85vh;
   width: 100%;
 }
+
+/* Basic styling for tables */
+td {
+  padding: 0.25em;
+}
+tr:nth-child(odd) {
+  background-color: #EEEEEE;
+}
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
