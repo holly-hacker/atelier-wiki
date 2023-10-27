@@ -26,7 +26,7 @@ export default function ItemDetail(): JSX.Element {
   return (
     <>
       <h1>{itemDisplayName(item)}</h1>
-      {item.img_no !== null && item.image_no >= 0 && (
+      {item.image_no !== null && item.image_no >= 0 && (
         <img src={getImageLink(`items/${item.image_no}.png`)}></img>
       )}
       <ItemDetailSection item={item} />
