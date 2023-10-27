@@ -1,4 +1,8 @@
+pub mod images;
 mod pak_index;
+mod xml_reader;
+
+pub use xml_reader::{read_xml, read_xml_shift_jis, ElementReader};
 
 use std::{path::Path, str::FromStr};
 

@@ -1,5 +1,6 @@
 mod extract;
-mod extract_images;
+pub mod ryza3;
+pub mod sophie;
 mod typedefs;
 mod utils;
 
@@ -26,7 +27,7 @@ struct CliArgs {
 #[argh(subcommand)]
 enum Subcommand {
     Extract(extract::Args),
-    ExtractImages(extract_images::Args),
+    ExtractImages(ryza3::extract_images::Args), // TODO: allow extracting images from other games
     TypeDefs(typedefs::Args),
 }
 

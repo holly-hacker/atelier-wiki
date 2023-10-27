@@ -25,22 +25,22 @@ impl Args {
         debug!(?output_folder);
 
         debug!("Generating typedefs");
-        gen_typedefs::<super::extract::sophie::data::SophieData>(
+        gen_typedefs::<super::sophie::data::SophieData>(
             &output_folder,
             &format!("{}.d.ts", game_slug(GameVersion::A17)),
         )
         .context("generate typedefs for sophie")?;
-        gen_typedefs::<super::extract::ryza3::data::Ryza3Data>(
+        gen_typedefs::<super::ryza3::data::Ryza3Data>(
             &output_folder,
             &format!("{}.d.ts", game_slug(GameVersion::A24)),
         )
         .context("generate typedefs for ryza3")?;
-        gen_typedefs::<super::extract_images::UniformTextureAtlasInfo>(
+        gen_typedefs::<crate::utils::images::texture_atlas::UniformTextureAtlasInfo>(
             &output_folder,
             "texture_atlas.d.ts",
         )
         .context("generate texture atlas typedefs")?;
-        gen_typedefs::<super::extract_images::MapInfoList>(&output_folder, "map_data.d.ts")
+        gen_typedefs::<crate::ryza3::extract_images::MapInfoList>(&output_folder, "map_data.d.ts")
             .context("generate map data typedefs")?;
 
         info!("Wrote all typedefs to {:?}", output_folder);
