@@ -20,6 +20,18 @@ export default function PuniFeeding() {
   );
 }
 
+function NumericRange({ range }: { range: [number, number] }) {
+  if (range[0] == range[1]) {
+    return <code>{range[0]}</code>;
+  } else {
+    return (
+      <code>
+        {range[0]}-{range[1]}
+      </code>
+    );
+  }
+}
+
 function PuniSpeciesSection() {
   const ryza3Data = useContext(Ryza3Context);
   const species = ryza3Data.puni_feeding.species;
@@ -47,26 +59,84 @@ function PuniSpeciesSection() {
       header: "Character tag",
       cell: (i) => <code>{i.getValue()}</code>,
     }),
-    columnHelper.accessor("energy", {
-      header: "Health",
-      cell: (i) =>
-        isFullRange(i.getValue())
-          ? ""
-          : `${i.getValue()[0]}-${i.getValue()[1]}`,
+    columnHelper.group({
+      header: "Stats",
+      columns: [
+        columnHelper.accessor("energy", {
+          header: "Health",
+          cell: (i) =>
+            isFullRange(i.getValue()) ? (
+              ""
+            ) : (
+              <NumericRange range={i.getValue()} />
+            ),
+        }),
+        columnHelper.accessor("color", {
+          header: "Luster",
+          cell: (i) =>
+            isFullRange(i.getValue()) ? (
+              ""
+            ) : (
+              <NumericRange range={i.getValue()} />
+            ),
+        }),
+        columnHelper.accessor("mood", {
+          header: "Mood",
+          cell: (i) =>
+            isFullRange(i.getValue()) ? (
+              ""
+            ) : (
+              <NumericRange range={i.getValue()} />
+            ),
+        }),
+      ],
     }),
-    columnHelper.accessor("color", {
-      header: "Luster",
-      cell: (i) =>
-        isFullRange(i.getValue())
-          ? ""
-          : `${i.getValue()[0]}-${i.getValue()[1]}`,
-    }),
-    columnHelper.accessor("mood", {
-      header: "Mood",
-      cell: (i) =>
-        isFullRange(i.getValue())
-          ? ""
-          : `${i.getValue()[0]}-${i.getValue()[1]}`,
+    columnHelper.group({
+      header: "Rank",
+      columns: [
+        columnHelper.accessor("rank_e", {
+          header: "E",
+          cell: (i) => {
+            const arr = i.getValue();
+            return arr === null ? "" : <NumericRange range={arr} />;
+          },
+        }),
+        columnHelper.accessor("rank_d", {
+          header: "D",
+          cell: (i) => {
+            const arr = i.getValue();
+            return arr === null ? "" : <NumericRange range={arr} />;
+          },
+        }),
+        columnHelper.accessor("rank_c", {
+          header: "C",
+          cell: (i) => {
+            const arr = i.getValue();
+            return arr === null ? "" : <NumericRange range={arr} />;
+          },
+        }),
+        columnHelper.accessor("rank_b", {
+          header: "B",
+          cell: (i) => {
+            const arr = i.getValue();
+            return arr === null ? "" : <NumericRange range={arr} />;
+          },
+        }),
+        columnHelper.accessor("rank_a", {
+          header: "A",
+          cell: (i) => {
+            const arr = i.getValue();
+            return arr === null ? "" : <NumericRange range={arr} />;
+          },
+        }),
+        columnHelper.accessor("rank_s", {
+          header: "S",
+          cell: (i) => {
+            const arr = i.getValue();
+            return arr === null ? "" : <NumericRange range={arr} />;
+          },
+        }),
+      ],
     }),
   ];
 
