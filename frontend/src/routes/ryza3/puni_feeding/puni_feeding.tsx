@@ -97,18 +97,18 @@ function PuniUniqueRewardsSection() {
     columnHelper.accessor("condition.PuniSpecies", {
       header: "Puni species",
       cell: (i) => {
-        const this_species = i.getValue() as string;
-        if (!this_species) return null;
-        const species_num = this_species
-          .substring("FEEDING_SPECIES_".length)
-          .padStart(2, "0");
-        // console.log(species_)
-        const species_obj = species.find(
-          (s) =>
-            s.character_tag.substring("CHARA_PUNI_FEEDING_".length) ===
-            species_num,
-        );
-        return species_obj?.name ?? this_species;
+        return <code>{i.getValue() as string}</code>;
+        // const this_species = i.getValue() as string;
+        // if (!this_species) return null;
+        // const species_num = this_species
+        //   .substring("FEEDING_SPECIES_".length)
+        //   .padStart(2, "0");
+        // const species_obj = species.find(
+        //   (s) =>
+        //     s.character_tag.substring("CHARA_PUNI_FEEDING_".length) ===
+        //     species_num,
+        // );
+        // return species_obj?.name ?? this_species;
       },
     }),
     columnHelper.accessor("condition.Color", {
