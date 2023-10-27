@@ -8,6 +8,7 @@ use crate::utils::PakIndex;
 use super::executable::Ryza3ExecutableData;
 
 mod enemies;
+mod feeding;
 mod field_data;
 mod field_map;
 mod item_categories;
@@ -25,6 +26,7 @@ pub struct Ryza3Data {
     pub field_map: field_map::FieldMapData,
     pub field_data: field_data::FieldData,
     pub enemy_data: Vec<enemies::Enemy>,
+    pub puni_feeding_data: feeding::PuniFeedingData,
 }
 
 impl Ryza3Data {
@@ -76,6 +78,10 @@ impl Ryza3Data {
         let enemy_data = enemies::read(pak_index, &strings_table).context("read enemies")?;
         info!("Read data for {} enemies", enemy_data.len());
 
+        let puni_feeding_data = feeding::PuniFeedingData::read(pak_index, &strings_table)
+            .context("read puni feeding info")?;
+        info!("Read puni feeding data");
+
         Ok(Self {
             item_data,
             item_category_data,
@@ -84,6 +90,7 @@ impl Ryza3Data {
             field_map,
             field_data,
             enemy_data,
+            puni_feeding_data,
         })
     }
 }

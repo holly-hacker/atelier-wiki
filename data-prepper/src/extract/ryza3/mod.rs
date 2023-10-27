@@ -66,6 +66,13 @@ pub fn extract(
     write_data_to_file(&output_directory.join("enemies.json"), &data.enemy_data)
         .context("write enemy data")?;
 
+    debug!("Writing puni feeding data");
+    write_data_to_file(
+        &output_directory.join("puni_feeding.json"),
+        &data.puni_feeding_data,
+    )
+    .context("write puni feeding data")?;
+
     info!("Wrote ryza3 data to {:?}", output_directory);
 
     Ok(())

@@ -18,8 +18,12 @@ export function itemCategoryDisplayName(ryza3Data: Ryza3Data, category_tag: stri
   return ryza3Data.item_categories.categories[category_tag] || category_tag;
 }
 
+const ryza3_tag_aliases: Record<string, string> = {
+  'ITEM_FURNITURE_ARTICLE_044': 'ITEM_MAT_RESERVE_005'
+};
 export function findItemByTag(ryza3Data: Ryza3Data, tag: string): types.Item | undefined {
-  return ryza3Data.items.find((item) => item.tag === tag);
+  const real_tag = ryza3_tag_aliases[tag] ?? tag;
+  return ryza3Data.items.find((item) => item.tag === real_tag);
 }
 
 export function getImageLink(path: string): string {

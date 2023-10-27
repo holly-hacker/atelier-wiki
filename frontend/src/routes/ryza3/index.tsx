@@ -20,6 +20,9 @@ export default function Ryza3Index() {
         <li>
           <Link to="/ryza3/enemies">Enemies</Link>
         </li>
+        <li>
+          <Link to="/ryza3/puni_feeding">Puni feeding</Link>
+        </li>
       </ul>
       <hr />
       <ul>

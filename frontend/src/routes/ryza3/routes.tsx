@@ -12,6 +12,7 @@ import EnemyList from "./enemies/list";
 import EnemyDetail from "./enemies/detail";
 import Ryza3Map from "./map/map";
 import DataLoader from "./data_loader";
+import PuniFeeding from "./puni_feeding/puni_feeding";
 
 export default function getRoutes(): RouteObject[] {
   return [
@@ -62,6 +63,10 @@ export default function getRoutes(): RouteObject[] {
         {
           path: "enemy/:id",
           element: <EnemyDetail />,
+        },
+        {
+          path: "puni_feeding",
+          element: <PuniFeeding />,
         },
         {
           path: "map",

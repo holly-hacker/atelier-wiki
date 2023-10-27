@@ -472,6 +472,86 @@ export namespace types {
         "division": string;
         "statusses": (types.EnemyStatus)[];
     };
+    export type PuniFeedingEventCondition = ({
+
+        /**
+         * A specific puni species.
+         */
+        "PuniSpecies": string;
+    } | {
+
+        /**
+         * A range for the energy value.
+         */
+        "Energy": [types.U32, types.U32];
+    } | {
+
+        /**
+         * A range for the color value.
+         */
+        "Color": [types.U32, types.U32];
+    } | {
+
+        /**
+         * A range for the mood value.
+         */
+        "Mood": [types.U32, types.U32];
+    });
+
+    /**
+     * A feeding event where a unique item is awarded.
+     */
+    export type PuniFeedingUniqueEvent = {
+
+        /**
+         * The item tag
+         */
+        "item_tag": string;
+
+        /**
+         * The condition required to trigger this event.
+         */
+        "condition": types.PuniFeedingEventCondition;
+    };
+
+    /**
+     * A puni species that can result from feeding the puni.
+     */
+    export type PuniFeedingSpecies = {
+
+        /**
+         * The name of this species
+         */
+        "name": string;
+        "character_tag": string;
+        "image_no": types.Usize;
+
+        /**
+         * The energy range for this species.
+         */
+        "energy": [types.U32, types.U32];
+
+        /**
+         * The color range for this species.
+         */
+        "color": [types.U32, types.U32];
+
+        /**
+         * The mood range for this species.
+         */
+        "mood": [types.U32, types.U32];
+        "rank_e": ([types.U32, types.U32] | null);
+        "rank_d": ([types.U32, types.U32] | null);
+        "rank_c": ([types.U32, types.U32] | null);
+        "rank_b": ([types.U32, types.U32] | null);
+        "rank_a": ([types.U32, types.U32] | null);
+        "rank_s": ([types.U32, types.U32] | null);
+        "categories": (string)[];
+    };
+    export type PuniFeedingData = {
+        "unique_events": (types.PuniFeedingUniqueEvent)[];
+        "species": (types.PuniFeedingSpecies)[];
+    };
     export type Ryza3Data = {
         "item_data": (types.Item)[];
         "item_category_data": types.ItemCategoryData;
@@ -480,5 +560,6 @@ export namespace types {
         "field_map": types.FieldMapData;
         "field_data": types.FieldData;
         "enemy_data": (types.Enemy)[];
+        "puni_feeding_data": types.PuniFeedingData;
     };
 }
