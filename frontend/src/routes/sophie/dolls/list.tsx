@@ -4,7 +4,6 @@ import { createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
 import { ItemLink, TextureAtlasImage } from "../utility_components/links";
 import type SophieTypes from "@/data/types/sophie.d.ts";
-import { findItemByTag } from "../sophie_data_util";
 
 export default function DollListPage() {
   return (
