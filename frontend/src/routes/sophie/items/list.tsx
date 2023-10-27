@@ -11,7 +11,10 @@ export default function ItemList(): JSX.Element {
     <>
       <h1>Sophie item list</h1>
       <div>
-        <Grid data={sophieData.items} columns={getColumnDefs(sophieData)} />
+        <Grid
+          data={sophieData.items.filter(isImplementedItem)}
+          columns={getColumnDefs(sophieData)}
+        />
       </div>
     </>
   );
@@ -47,4 +50,24 @@ function getColumnDefs(sophieData: SophieData): ColumnDef<types.Item, any>[] {
       filterFn: "equalsString",
     }),
   ];
+}
+
+function isImplementedItem(item: types.Item): boolean {
+  const japaneseDigits = [
+    "０",
+    "１",
+    "２",
+    "３",
+    "４",
+    "５",
+    "６",
+    "７",
+    "８",
+    "９",
+  ];
+
+  if (japaneseDigits.find((char) => item.name.includes(char)) !== undefined)
+    return false;
+
+  return true;
 }
