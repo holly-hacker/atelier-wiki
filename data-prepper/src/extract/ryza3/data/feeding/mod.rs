@@ -16,9 +16,9 @@ pub struct PuniFeedingSpecies {
     pub name: String,
     pub character_tag: String,
     pub image_no: usize,
-    /// The energy range for this species.
+    /// The energy range for this species. This is localized as "Health" in the English translation of the game.
     pub energy: (u32, u32),
-    /// The color range for this species.
+    /// The color range for this species. This is localized as "Luster" in the English translation of the game.
     pub color: (u32, u32),
     /// The mood range for this species.
     pub mood: (u32, u32),

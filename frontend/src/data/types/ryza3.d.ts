@@ -527,12 +527,12 @@ export namespace types {
         "image_no": types.Usize;
 
         /**
-         * The energy range for this species.
+         * The energy range for this species. This is localized as "Health" in the English translation of the game.
          */
         "energy": [types.U32, types.U32];
 
         /**
-         * The color range for this species.
+         * The color range for this species. This is localized as "Luster" in the English translation of the game.
          */
         "color": [types.U32, types.U32];
 
