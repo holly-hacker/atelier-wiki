@@ -7,13 +7,13 @@ use std::collections::BTreeMap;
 use std::num::ParseFloatError;
 
 use anyhow::Context;
+pub use field_data_types::*;
 use serde::Serialize;
 use tracing::trace;
 use typescript_type_def::TypeDef;
 
 use crate::ryza3::data::field_data::gimmick::GimmickProperty;
 use crate::utils::PakIndex;
-pub use field_data_types::*;
 
 #[derive(Serialize, TypeDef)]
 pub struct FieldData(pub BTreeMap<String, FieldDataSet>);

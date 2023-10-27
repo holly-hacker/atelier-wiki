@@ -2,13 +2,11 @@ pub mod images;
 mod pak_index;
 mod xml_reader;
 
-pub use xml_reader::{read_xml, read_xml_shift_jis, ElementReader};
-
 use std::{path::Path, str::FromStr};
 
 use gust_pak::common::GameVersion;
-
 pub use pak_index::PakIndex;
+pub use xml_reader::{read_xml, read_xml_shift_jis, ElementReader};
 
 pub fn extract_game_version(path: &Path) -> Option<GameVersion> {
     if path.join("Atelier_Sophie_DX.exe").exists() {

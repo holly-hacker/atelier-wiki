@@ -4,9 +4,8 @@ use anyhow::Context;
 use serde::Serialize;
 use typescript_type_def::TypeDef;
 
-use crate::ryza3::executable::Ryza3ExecutableData;
-
 use super::strings_table::StringsTable;
+use crate::ryza3::executable::Ryza3ExecutableData;
 
 #[derive(Serialize, TypeDef)]
 pub struct ItemCategoryData {

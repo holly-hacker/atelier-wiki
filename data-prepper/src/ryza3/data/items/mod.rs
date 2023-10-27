@@ -13,9 +13,8 @@ use serde::Serialize;
 use tracing::debug;
 use typescript_type_def::TypeDef;
 
-use crate::utils::PakIndex;
-
 use super::strings_table::StringsTable;
+use crate::utils::PakIndex;
 
 #[derive(Serialize, TypeDef)]
 pub struct Item {

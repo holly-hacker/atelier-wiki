@@ -5,6 +5,7 @@ use std::str::FromStr;
 
 use anyhow::{bail, Context};
 use argh::FromArgs;
+pub use extract_maps::MapInfoList;
 use tracing::{debug, info};
 
 use crate::utils::{
@@ -12,7 +13,6 @@ use crate::utils::{
     images::{rgba8_image::Rgba8Image, texture_atlas::UniformTextureAtlas},
     match_pattern, PakIndex,
 };
-pub use extract_maps::MapInfoList;
 
 const PATH_ITEMS: &str = "items";
 const PATH_ENEMIES: &str = "enemies";

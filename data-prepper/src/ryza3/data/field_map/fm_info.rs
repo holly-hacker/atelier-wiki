@@ -1,5 +1,6 @@
-use crate::utils::{self, ElementReader, PakIndex};
 use anyhow::Context;
+
+use crate::utils::{self, ElementReader, PakIndex};
 
 pub struct FieldMapInfo {
     pub field_map_name_id: Option<String>,

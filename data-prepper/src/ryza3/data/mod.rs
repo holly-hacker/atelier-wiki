@@ -3,9 +3,8 @@ use serde::Serialize;
 use tracing::info;
 use typescript_type_def::TypeDef;
 
-use crate::utils::PakIndex;
-
 use super::executable::Ryza3ExecutableData;
+use crate::utils::PakIndex;
 
 mod enemies;
 mod feeding;
