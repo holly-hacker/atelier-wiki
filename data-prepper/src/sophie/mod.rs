@@ -1,8 +1,10 @@
 pub mod data;
+mod extract_images;
 
 use std::path::Path;
 
 use anyhow::Context;
+pub use extract_images::extract_images;
 use gust_pak::common::GameVersion;
 use tracing::{debug, info};
 

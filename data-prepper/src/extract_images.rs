@@ -5,8 +5,8 @@ use anyhow::{bail, Context};
 use argh::FromArgs;
 use tracing::{debug, info};
 
-use crate::ryza3;
 use crate::utils::{extract_game_version, game_slug, PakIndex};
+use crate::{ryza3, sophie};
 
 /// Extract and prepare the game data from the game install directory
 #[derive(FromArgs)]
@@ -85,7 +85,9 @@ impl Args {
 
         // TODO: switch on game type
         match game_version {
-            gust_pak::common::GameVersion::A17 => todo!("extract sophie images"),
+            gust_pak::common::GameVersion::A17 => {
+                sophie::extract_images(&self, &mut pak_index, &output_directory, self.category)?
+            }
             gust_pak::common::GameVersion::A24 => {
                 ryza3::extract_images(&self, &mut pak_index, &output_directory, self.category)?
             }
