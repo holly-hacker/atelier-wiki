@@ -47,15 +47,15 @@ function PuniSpeciesSection() {
       header: "Character tag",
       cell: (i) => <code>{i.getValue()}</code>,
     }),
-    columnHelper.accessor("color", {
-      header: "Color",
+    columnHelper.accessor("energy", {
+      header: "Health",
       cell: (i) =>
         isFullRange(i.getValue())
           ? ""
           : `${i.getValue()[0]}-${i.getValue()[1]}`,
     }),
-    columnHelper.accessor("energy", {
-      header: "Energy",
+    columnHelper.accessor("color", {
+      header: "Luster",
       cell: (i) =>
         isFullRange(i.getValue())
           ? ""
@@ -122,15 +122,15 @@ function PuniUniqueRewardsSection() {
         // return species_obj?.name ?? this_species;
       },
     }),
-    columnHelper.accessor("condition.Color", {
-      header: "Color",
+    columnHelper.accessor("condition.Energy", {
+      header: "Health",
       cell: (i) => {
         const arr = i.getValue();
         return arr instanceof Array ? `${arr[0]}-${arr[1]}` : "";
       },
     }),
-    columnHelper.accessor("condition.Energy", {
-      header: "Energy",
+    columnHelper.accessor("condition.Color", {
+      header: "Luster",
       cell: (i) => {
         const arr = i.getValue();
         return arr instanceof Array ? `${arr[0]}-${arr[1]}` : "";
