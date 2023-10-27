@@ -11,14 +11,25 @@ use crate::extract_images::Args;
 pub mod rgba8_image;
 pub mod texture_atlas;
 
-pub fn extract_prefixed_with_texture_atlas(
+pub struct ExtractSpritesOptions {
+    /// The pattern used to find file names
+    pub pattern: &'static str,
+    /// The subdirectory in the output directory to put the individual images in. This is also the
+    /// name of the texture atlas file.
+    pub subdirectory: &'static str,
+    /// The size of each individual input image.
+    pub sprite_dimensions: (u32, u32),
+    /// The size of each item in the texture atlas
+    pub texture_atlas_dimensions: (u32, u32),
+}
+
+pub fn extract_sprites_with_texture_atlas(
     args: &Args,
     pak_index: &mut PakIndex,
-    pattern: &'static str,
     output_directory: &Path,
-    subdirectory: &'static str,
+    options: ExtractSpritesOptions,
 ) -> anyhow::Result<()> {
-    let image_output_folder = output_directory.join(subdirectory);
+    let image_output_folder = output_directory.join(options.subdirectory);
     if !args.dont_write_images {
         debug!("Creating image output directory");
         std::fs::create_dir_all(&image_output_folder).context("create image output directory")?;
@@ -26,16 +37,21 @@ pub fn extract_prefixed_with_texture_atlas(
 
     let mut entries: Vec<_> = pak_index
         .iter_entries()
-        .filter_map(|e| match_pattern::<usize>(pattern, e.get_file_name()).map(|num| (e, num)))
+        .filter_map(|e| {
+            match_pattern::<usize>(options.pattern, e.get_file_name()).map(|num| (e, num))
+        })
         .map(|(f, num)| (f.get_file_name().to_string(), num))
         .collect();
 
     entries.sort_by_key(|(_, num)| *num);
 
     // create texture atlas
-    let mut texture_atlas =
-        UniformTextureAtlas::new_with_scaling((512, 512), (64, 64), entries.len())
-            .context("create texture atlas")?;
+    let mut texture_atlas = UniformTextureAtlas::new_with_scaling(
+        options.sprite_dimensions,
+        options.texture_atlas_dimensions,
+        entries.len(),
+    )
+    .context("create texture atlas")?;
 
     for (entry, num) in entries {
         let mut file = pak_index
@@ -47,11 +63,13 @@ pub fn extract_prefixed_with_texture_atlas(
         let g1t = gust_g1t::GustG1t::read(&mut file).context("read g1t")?;
         let texture = &g1t.textures[0];
 
-        if texture.width != 512 && texture.height != 512 {
+        if (texture.width, texture.height) != options.sprite_dimensions {
             bail!(
-                "Texture {entry} has invalid size {}x{}, expected 512x512",
+                "Texture {entry} has invalid size {}x{}, expected {}x{}",
                 texture.width,
                 texture.height,
+                options.sprite_dimensions.0,
+                options.sprite_dimensions.1,
             );
         }
 
@@ -73,7 +91,7 @@ pub fn extract_prefixed_with_texture_atlas(
     let atlas_directory = output_directory.join("texture-atlasses");
     std::fs::create_dir_all(&atlas_directory).context("create atlas directory")?;
     crate::extract::write_data_to_file(
-        &atlas_directory.join(format!("{subdirectory}.json")),
+        &atlas_directory.join(format!("{}.json", options.subdirectory)),
         &texture_atlas.create_info(),
     )
     .context("write texture atlas info")?;

@@ -7,11 +7,9 @@ pub use extract_maps::MapInfoList;
 use tracing::info;
 
 use crate::extract_images::{Args, Category};
-use crate::utils::images::extract_prefixed_with_texture_atlas;
+use crate::utils::images::{extract_sprites_with_texture_atlas, ExtractSpritesOptions};
 use crate::utils::PakIndex;
 
-const PATH_ITEMS: &str = "items";
-const PATH_ENEMIES: &str = "enemies";
 const PATH_MAPS: &str = "maps";
 
 pub fn extract_images(
@@ -22,28 +20,26 @@ pub fn extract_images(
 ) -> anyhow::Result<()> {
     if category.is_none() || category == Some(Category::Monsters) {
         info!("Extracting monster portraits");
-        const MONSTER_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t";
-        extract_prefixed_with_texture_atlas(
-            args,
-            pak_index,
-            MONSTER_PATTERN,
-            output_directory,
-            PATH_ENEMIES,
-        )
-        .context("extract monster portraits")?;
+        let options = ExtractSpritesOptions {
+            pattern: r"\data\x64\res_cmn\ui\neo\neo_a24_monster_l_*.g1t",
+            subdirectory: "enemies",
+            sprite_dimensions: (512, 512),
+            texture_atlas_dimensions: (64, 64),
+        };
+        extract_sprites_with_texture_atlas(args, pak_index, output_directory, options)
+            .context("extract monster portraits")?;
     }
 
     if category.is_none() || category == Some(Category::Items) {
         info!("Extracting item icons");
-        const ITEM_PATTERN: &str = r"\data\x64\res_cmn\ui\neo\neo_a24_item_l_*.g1t";
-        extract_prefixed_with_texture_atlas(
-            args,
-            pak_index,
-            ITEM_PATTERN,
-            output_directory,
-            PATH_ITEMS,
-        )
-        .context("extract item icons")?;
+        let options = ExtractSpritesOptions {
+            pattern: r"\data\x64\res_cmn\ui\neo\neo_a24_item_l_*.g1t",
+            subdirectory: "items",
+            sprite_dimensions: (512, 512),
+            texture_atlas_dimensions: (64, 64),
+        };
+        extract_sprites_with_texture_atlas(args, pak_index, output_directory, options)
+            .context("extract item icons")?;
     }
 
     if category.is_none() || category == Some(Category::Maps) {
