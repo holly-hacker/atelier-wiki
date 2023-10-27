@@ -163,7 +163,7 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
               {ingredient.is_category ? (
                 <CategoryLink category_tag={ingredient.tag} />
               ) : (
-                <ItemLink item={findItemByTag(ryza3Data, ingredient.tag)!} />
+                <ItemLink item={ingredient.tag} />
               )}
               <ul>
                 {[
@@ -238,7 +238,7 @@ function ItemRecipeSection({ item }: { item: types.Item }) {
             {explicit_recipe_items.map((item_tag, i) => {
               return (
                 <li key={i}>
-                  <ItemLink item={findItemByTag(ryza3Data, item_tag!)!} />
+                  <ItemLink item={item_tag} />
                 </li>
               );
             })}
@@ -304,7 +304,7 @@ function ItemReverseRecipeSection({ item }: { item: types.Item }) {
 
           return (
             <li key={i}>
-              <ItemLink item={findItemByTag(ryza3Data, recipe.item_tag)!} />
+              <ItemLink item={recipe.item_tag} />
               {is_recipe_upgrade === true && " (recipe morph)"}
               {is_recipe_upgrade === null && " (not actually used)"}
             </li>

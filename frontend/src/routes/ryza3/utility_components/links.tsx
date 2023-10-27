@@ -3,6 +3,7 @@ import texture_atlas from "@/data/types/texture_atlas";
 import { Link } from "react-router-dom";
 import {
   enemyDisplayName,
+  findItemByTag,
   itemCategoryDisplayName,
   itemDisplayName,
 } from "../ryza3_data_util";
@@ -13,10 +14,20 @@ export function ItemLink({
   item,
   children,
 }: {
-  item: types.Item;
+  item: types.Item | string;
   children?: React.ReactNode;
 }) {
   const ryza3Data = useContext(Ryza3Context);
+
+  if (typeof item === "string") {
+    const found_item = findItemByTag(ryza3Data, item);
+
+    if (found_item) {
+      item = found_item;
+    } else {
+      return <code>{children ?? item}</code>;
+    }
+  }
 
   let id;
   if (item.tag) {

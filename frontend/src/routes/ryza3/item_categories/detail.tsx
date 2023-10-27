@@ -15,11 +15,11 @@ export default function ItemCategoryDetail() {
   const category_tag = `ITEM_CATEGORY_${category}`;
   const category_name = itemCategoryDisplayName(ryza3Data, category_tag);
 
-  const item = ryza3Data.items
+  const items = ryza3Data.items
     .map((item, idx) => ({ item, idx }))
     .filter(({ item: v }) => v.cat.includes(category_tag));
 
-  if (!item.length) {
+  if (!items.length) {
     return <>No items found for category {category_name}.</>;
   }
 
@@ -28,7 +28,7 @@ export default function ItemCategoryDetail() {
       <h1>{category_name}</h1>
       All items of the {category_name} category.
       <ul>
-        {item.map(({ item, idx }) => {
+        {items.map(({ item, idx }) => {
           return (
             <li key={idx}>
               <ItemLink item={item} />

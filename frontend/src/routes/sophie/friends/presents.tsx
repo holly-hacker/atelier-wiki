@@ -109,10 +109,7 @@ function FriendPresentInfoDisplay({
   const itemColumns = [
     itemColumnHelper.accessor("item_tag", {
       header: "Name",
-      cell: (i) => {
-        const item = sophieData.items.find((v) => v.tag == i.getValue())!;
-        return <ItemLink item={item} />;
-      },
+      cell: (i) => <ItemLink item={i.getValue()} />,
     }),
     itemColumnHelper.accessor("item_tag", {
       header: "Item Type",

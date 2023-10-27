@@ -11,11 +11,11 @@ export default function ItemKindDetail() {
     return <>No kind selected.</>;
   }
 
-  const item = ryza3Data.items
+  const items = ryza3Data.items
     .map((item, idx) => ({ item, idx }))
     .filter(({ item: v }) => v.kind_tag == kind);
 
-  if (!item.length) {
+  if (!items.length) {
     return <>No items found for kind {kind}.</>;
   }
 
@@ -24,7 +24,7 @@ export default function ItemKindDetail() {
       <h1>{kind}</h1>
       All items of the {kind} kind.
       <ul>
-        {item.map(({ item, idx }) => {
+        {items.map(({ item, idx }) => {
           return (
             <li key={idx}>
               <ItemLink item={item} />

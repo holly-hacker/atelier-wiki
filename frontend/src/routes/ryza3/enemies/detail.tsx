@@ -1,9 +1,5 @@
 import { useParams } from "react-router-dom";
-import {
-  enemyDisplayName,
-  findItemByTag,
-  getImageLink,
-} from "../ryza3_data_util";
+import { enemyDisplayName, getImageLink } from "../ryza3_data_util";
 import { ItemLink } from "../utility_components/links";
 import types from "@/data/types/ryza3";
 import { Ryza3Context } from "@/data/ryza3_data";
@@ -117,8 +113,6 @@ function EnemyInstanceSection({ enemy }: { enemy: types.Enemy }) {
 }
 
 function EnemyInstance({ status }: { status: types.EnemyStatus }) {
-  const ryza3Data = useContext(Ryza3Context);
-
   return (
     <ul>
       <li>Level: {status.lv}</li>
@@ -170,11 +164,9 @@ function EnemyInstance({ status }: { status: types.EnemyStatus }) {
         Drops:
         <ul>
           {status.drops.map((drop, i) => {
-            const item = findItemByTag(ryza3Data, drop.item_tag);
             return (
               <li key={i}>
-                {drop.rate}% {drop.num}x{" "}
-                {item ? <ItemLink item={item} /> : <code>{drop.item_tag}</code>}
+                {drop.rate}% {drop.num}x <ItemLink item={drop.item_tag} />
                 <ul>
                   <li>
                     Quality: {drop.quality_min} (x

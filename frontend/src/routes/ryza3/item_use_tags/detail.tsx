@@ -11,11 +11,11 @@ export default function ItemUseTagDetail() {
     return <>No tag selected.</>;
   }
 
-  const item = ryza3Data.items
+  const items = ryza3Data.items
     .map((item, idx) => ({ item, idx }))
     .filter(({ item: v }) => v.use_tag == tag);
 
-  if (!item.length) {
+  if (!items.length) {
     return <>No items found for use tag {tag}.</>;
   }
 
@@ -24,7 +24,7 @@ export default function ItemUseTagDetail() {
       <h1>{tag}</h1>
       All items of the {tag} tag.
       <ul>
-        {item.map(({ item, idx }) => {
+        {items.map(({ item, idx }) => {
           return (
             <li key={idx}>
               <ItemLink item={item} />

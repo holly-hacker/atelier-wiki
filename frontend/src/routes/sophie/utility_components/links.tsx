@@ -1,6 +1,10 @@
 import types from "@/data/types/sophie";
 import { Link } from "react-router-dom";
-import { itemCategoryDisplayName, itemDisplayName } from "../sophie_data_util";
+import {
+  findItemByTag,
+  itemCategoryDisplayName,
+  itemDisplayName,
+} from "../sophie_data_util";
 import { useContext } from "react";
 import { SophieContext } from "@/data/sophie_data";
 
@@ -8,10 +12,20 @@ export function ItemLink({
   item,
   children,
 }: {
-  item: types.Item;
+  item: types.Item | string;
   children?: React.ReactNode;
 }) {
   const sophieData = useContext(SophieContext);
+
+  if (typeof item === "string") {
+    const found_item = findItemByTag(sophieData, item);
+
+    if (found_item) {
+      item = found_item;
+    } else {
+      return <code>{children ?? item}</code>;
+    }
+  }
 
   let id;
   if (item.tag) {
