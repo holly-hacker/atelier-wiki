@@ -30,6 +30,18 @@ function PuniSpeciesSection() {
   }
 
   const columns = [
+    columnHelper.accessor("image_no", {
+      header: "Name",
+      cell: (i) => {
+        return (
+          <TextureAtlasImage
+            texture_atlas={ryza3Data.enemies_texture_atlas}
+            texture_atlas_name="enemies"
+            name={String(i.getValue())}
+          />
+        );
+      },
+    }),
     columnHelper.accessor("name", { header: "Name" }),
     columnHelper.accessor("character_tag", {
       header: "Character tag",
@@ -68,7 +80,6 @@ function PuniSpeciesSection() {
 function PuniUniqueRewardsSection() {
   const ryza3Data = useContext(Ryza3Context);
   const events = ryza3Data.puni_feeding.unique_events;
-  const species = ryza3Data.puni_feeding.species;
   const columnHelper = createColumnHelper<(typeof events)[0]>();
 
   const columns = [
