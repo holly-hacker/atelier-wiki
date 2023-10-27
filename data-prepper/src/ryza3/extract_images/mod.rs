@@ -25,6 +25,7 @@ pub fn extract_images(
             subdirectory: "enemies",
             sprite_dimensions: (512, 512),
             texture_atlas_dimensions: (64, 64),
+            ..Default::default()
         };
         extract_sprites_with_texture_atlas(args, pak_index, output_directory, options)
             .context("extract monster portraits")?;
@@ -37,6 +38,7 @@ pub fn extract_images(
             subdirectory: "items",
             sprite_dimensions: (512, 512),
             texture_atlas_dimensions: (64, 64),
+            ..Default::default()
         };
         extract_sprites_with_texture_atlas(args, pak_index, output_directory, options)
             .context("extract item icons")?;

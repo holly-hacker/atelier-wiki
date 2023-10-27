@@ -4,6 +4,7 @@ import types from "@/data/types/sophie";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
 import { ItemLink } from "../utility_components/links";
+import { TextureAtlasImage } from "@/routes/sophie/utility_components/links";
 
 export default function ItemList(): JSX.Element {
   const sophieData = useContext(SophieContext);
@@ -24,6 +25,20 @@ export default function ItemList(): JSX.Element {
 function getColumnDefs(sophieData: SophieData): ColumnDef<types.Item, any>[] {
   const columnHelper = createColumnHelper<(typeof sophieData.items)[0]>();
   return [
+    columnHelper.accessor("image_no", {
+      header: "Image",
+      cell: (i) => {
+        return (
+          <ItemLink item={i.row.original}>
+            <TextureAtlasImage
+              texture_atlas={sophieData.items_texture_atlas}
+              texture_atlas_name="items"
+              name={String(i.getValue())}
+            />
+          </ItemLink>
+        );
+      },
+    }),
     columnHelper.accessor("name", {
       header: "Name",
       cell: (i) => <ItemLink item={i.row.original} />,

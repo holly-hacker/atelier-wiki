@@ -19,7 +19,9 @@ pub fn extract_images(
             pattern: r"\Data\Win32\ui_JP\a17_item_l_*.g1t",
             subdirectory: "items",
             sprite_dimensions: (512, 512),
-            texture_atlas_dimensions: (64, 64),
+            sprite_trimmed_dimensions: Some((288, 288)),
+            // TODO: do we want 64 instead? we can only do integer scaling for now
+            texture_atlas_dimensions: (72, 72),
         };
         extract_sprites_with_texture_atlas(args, pak_index, output_directory, options)
             .context("extract item icons")?;

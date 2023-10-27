@@ -11,6 +11,7 @@ use crate::extract_images::Args;
 pub mod rgba8_image;
 pub mod texture_atlas;
 
+#[derive(Default)]
 pub struct ExtractSpritesOptions {
     /// The pattern used to find file names
     pub pattern: &'static str,
@@ -19,6 +20,8 @@ pub struct ExtractSpritesOptions {
     pub subdirectory: &'static str,
     /// The size of each individual input image.
     pub sprite_dimensions: (u32, u32),
+    /// The size of the image after optional trimming. If not present, no trimming is done.
+    pub sprite_trimmed_dimensions: Option<(u32, u32)>,
     /// The size of each item in the texture atlas
     pub texture_atlas_dimensions: (u32, u32),
 }
@@ -47,7 +50,9 @@ pub fn extract_sprites_with_texture_atlas(
 
     // create texture atlas
     let mut texture_atlas = UniformTextureAtlas::new_with_scaling(
-        options.sprite_dimensions,
+        options
+            .sprite_trimmed_dimensions
+            .unwrap_or(options.sprite_dimensions),
         options.texture_atlas_dimensions,
         entries.len(),
     )
@@ -77,6 +82,13 @@ pub fn extract_sprites_with_texture_atlas(
         let image_bytes = g1t.read_image(texture, &mut file).context("read image")?;
         let image = Rgba8Image::new(texture.width, image_bytes).context("image buffer to image")?;
         debug_assert_eq!(image.height(), texture.height);
+
+        // cut image if needed
+        let image = if let Some(trimmed_dimensions) = options.sprite_trimmed_dimensions {
+            image.trim_to(trimmed_dimensions.0, trimmed_dimensions.1)?
+        } else {
+            image
+        };
 
         debug!(?entry, "adding image to texture atlas");
         texture_atlas

@@ -3,7 +3,7 @@ import types from "@/data/types/sophie";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CategoryLink } from "../utility_components/links";
-import { itemDisplayName } from "../sophie_data_util";
+import { getImageLink, itemDisplayName } from "../sophie_data_util";
 
 export default function ItemDetail(): JSX.Element {
   const sophieData = useContext(SophieContext);
@@ -26,6 +26,9 @@ export default function ItemDetail(): JSX.Element {
   return (
     <>
       <h1>{itemDisplayName(item)}</h1>
+      {item.img_no !== null && item.image_no >= 0 && (
+        <img src={getImageLink(`items/${item.image_no}.png`)}></img>
+      )}
       <ItemDetailSection item={item} />
     </>
   );

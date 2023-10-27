@@ -119,6 +119,17 @@ impl Rgba8Image {
         new_image
     }
 
+    pub fn trim_to(&self, new_width: u32, new_height: u32) -> anyhow::Result<Self> {
+        if new_width > self.width() {
+            bail!("new width must be less than or equal to current width");
+        }
+        if new_height > self.height() {
+            bail!("new height must be less than or equal to current height");
+        }
+
+        self.copy_chunk(0, 0, new_width, new_height)
+    }
+
     /// Copies a chunk of the image into a new image.
     pub fn copy_chunk(&self, x: u32, y: u32, width: u32, height: u32) -> anyhow::Result<Self> {
         if width == 0 {
