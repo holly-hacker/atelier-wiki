@@ -150,6 +150,7 @@ function PuniSpeciesSection() {
 function PuniUniqueRewardsSection() {
   const ryza3Data = useContext(Ryza3Context);
   const events = ryza3Data.puni_feeding.unique_events;
+  const species = ryza3Data.puni_feeding.species;
   const columnHelper = createColumnHelper<(typeof events)[0]>();
 
   const columns = [
@@ -178,18 +179,29 @@ function PuniUniqueRewardsSection() {
     columnHelper.accessor("condition.PuniSpecies", {
       header: "Puni species",
       cell: (i) => {
-        return <code>{i.getValue() as string}</code>;
-        // const this_species = i.getValue() as string;
-        // if (!this_species) return null;
-        // const species_num = this_species
-        //   .substring("FEEDING_SPECIES_".length)
-        //   .padStart(2, "0");
-        // const species_obj = species.find(
-        //   (s) =>
-        //     s.character_tag.substring("CHARA_PUNI_FEEDING_".length) ===
-        //     species_num,
-        // );
-        // return species_obj?.name ?? this_species;
+        const this_species_tag = i.getValue() as string;
+        if (!this_species_tag) return null;
+        const species_idx = this_species_tag
+          .substring("FEEDING_SPECIES_".length)
+          .padStart(2, "0");
+        const this_species = species[Number(species_idx)];
+
+        return (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <TextureAtlasImage
+              texture_atlas={ryza3Data.enemies_texture_atlas}
+              texture_atlas_name="enemies"
+              name={String(this_species.image_no)}
+            />
+            <span style={{}}>{this_species.name}</span>
+          </div>
+        );
       },
     }),
     columnHelper.accessor("condition.Energy", {
