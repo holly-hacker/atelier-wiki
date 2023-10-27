@@ -2,8 +2,9 @@ import Grid from "@/components/grid";
 import { SophieContext } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
-import { ItemLink } from "../utility_components/links";
+import { ItemLink, TextureAtlasImage } from "../utility_components/links";
 import type SophieTypes from "@/data/types/sophie.d.ts";
+import { findItemByTag } from "../sophie_data_util";
 
 export default function DollListPage() {
   return (
@@ -157,6 +158,20 @@ function DollMaterialList({ category }: { category: string }) {
 
   const columnHelper = createColumnHelper<(typeof items)[0]>();
   const columns = [
+    columnHelper.accessor("image_no", {
+      header: "Image",
+      cell: (i) => {
+        return (
+          <ItemLink item={i.row.original}>
+            <TextureAtlasImage
+              texture_atlas={sophieData.items_texture_atlas}
+              texture_atlas_name="items"
+              name={String(i.row.original.image_no)}
+            />
+          </ItemLink>
+        );
+      },
+    }),
     columnHelper.accessor("name", {
       header: "Name",
       cell: (i) => <ItemLink item={i.row.original} />,

@@ -2,8 +2,9 @@ import Grid from "@/components/grid";
 import { SophieContext, SophieData } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext, useState } from "react";
-import { ItemLink } from "../utility_components/links";
+import { ItemLink, TextureAtlasImage } from "../utility_components/links";
 import type SophieTypes from "@/data/types/sophie.d.ts";
+import { findItemByTag } from "../sophie_data_util";
 
 export default function FriendPresentList() {
   const sophieData = useContext(SophieContext);
@@ -107,6 +108,22 @@ function FriendPresentInfoDisplay({
     .filter((i) => showBadGifts || i.score >= 0);
   const itemColumnHelper = createColumnHelper<(typeof items)[0]>();
   const itemColumns = [
+    itemColumnHelper.display({
+      header: "Image",
+      cell: (i) => {
+        const item = findItemByTag(sophieData, i.row.original.item_tag);
+        if (!item) return;
+        return (
+          <ItemLink item={item}>
+            <TextureAtlasImage
+              texture_atlas={sophieData.items_texture_atlas}
+              texture_atlas_name="items"
+              name={String(item.image_no)}
+            />
+          </ItemLink>
+        );
+      },
+    }),
     itemColumnHelper.accessor("item_tag", {
       header: "Name",
       cell: (i) => <ItemLink item={i.getValue()} />,
