@@ -1,5 +1,6 @@
 pub mod extract_maps;
 
+use std::collections::HashMap;
 use std::path::Path;
 
 use anyhow::Context;
@@ -55,6 +56,7 @@ pub fn extract_images(
         info!("Extracting misc textures");
 
         // TODO: these are just some test images. extract useful images later
+        let mut texture_cache = HashMap::new();
 
         let icons =
             UiSpritesheetInfo::read(pak_index, r"\saves\ui_cmn\gen_styles\uis_gen_a24_icons.xml")
@@ -63,7 +65,7 @@ pub fn extract_images(
         std::fs::write(
             output_directory.join("monster_icon.png"),
             icons
-                .get_image_indexed(pak_index, "gen_a24_icons14_ic_mon", 1)?
+                .get_image_indexed(pak_index, &mut texture_cache, "gen_a24_icons14_ic_mon", 1)?
                 .encode_png()?,
         )
         .context("write monster icon")?;
@@ -71,7 +73,7 @@ pub fn extract_images(
         std::fs::write(
             output_directory.join("emo_0.png"),
             icons
-                .get_image_indexed(pak_index, "gen_a24_icons07_emo", 0)?
+                .get_image_indexed(pak_index, &mut texture_cache, "gen_a24_icons07_emo", 0)?
                 .encode_png()?,
         )
         .context("write monster icon")?;
@@ -79,7 +81,11 @@ pub fn extract_images(
         std::fs::write(
             output_directory.join("swordmaster.png"),
             icons
-                .get_image(pak_index, "gen_a24_icons14_ic_swordmaster")?
+                .get_image(
+                    pak_index,
+                    &mut texture_cache,
+                    "gen_a24_icons14_ic_swordmaster",
+                )?
                 .encode_png()?,
         )
         .context("write monster icon")?;

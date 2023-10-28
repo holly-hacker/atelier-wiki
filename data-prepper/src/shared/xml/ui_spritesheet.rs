@@ -1,5 +1,9 @@
+use std::collections::HashMap;
+use std::rc::Rc;
+
 use anyhow::Context;
 use gust_g1t::GustG1t;
+use tracing::debug;
 
 use crate::utils::images::rgba8_image::Rgba8Image;
 use crate::utils::{self, ElementReader, PakIndex};
@@ -36,7 +40,12 @@ impl UiSpritesheetInfo {
         utils::read_xml(pak_index, path, Self::read_from_doc)
     }
 
-    pub fn get_image(&self, pak_index: &mut PakIndex, name: &str) -> anyhow::Result<Rgba8Image> {
+    pub fn get_image(
+        &self,
+        pak_index: &mut PakIndex,
+        texture_cache: &mut HashMap<(String, usize), Rc<Rgba8Image>>,
+        name: &str,
+    ) -> anyhow::Result<Rgba8Image> {
         let image_info = self
             .images
             .iter()
@@ -47,12 +56,13 @@ impl UiSpritesheetInfo {
             .find(|l| l.name == name)
             .with_context(|| format!("find image with name `{name}`"))?;
 
-        self.extract_image(pak_index, image_info)
+        self.extract_image(pak_index, texture_cache, image_info)
     }
 
     pub fn get_image_indexed(
         &self,
         pak_index: &mut PakIndex,
+        texture_cache: &mut HashMap<(String, usize), Rc<Rgba8Image>>,
         name: &str,
         index: usize,
     ) -> anyhow::Result<Rgba8Image> {
@@ -71,12 +81,13 @@ impl UiSpritesheetInfo {
             .get(index)
             .with_context(|| format!("get image at index `{index}`"))?;
 
-        self.extract_image(pak_index, image_info)
+        self.extract_image(pak_index, texture_cache, image_info)
     }
 
     fn extract_image(
         &self,
         pak_index: &mut PakIndex,
+        texture_cache: &mut HashMap<(String, usize), Rc<Rgba8Image>>,
         image_info: &ImageInfo,
     ) -> anyhow::Result<Rgba8Image> {
         // TODO: get prefix based on pak_index.game_version
@@ -85,22 +96,34 @@ impl UiSpritesheetInfo {
 
         let path = format!("{PREFIX}{}", image_info.texture.replace('/', "\\"));
         let path = make_neo(&path);
-        let mut file = pak_index
-            .get_file(&path)
-            .with_context(|| format!("get file `{}` from pak_index", path))?
-            .with_context(|| format!("find file `{}` in pak_index", path))?;
 
-        let g1t = GustG1t::read(&mut file).context("read g1t file")?;
-        let texture = g1t
-            .textures
-            .get(image_info.texture_index)
-            .with_context(|| format!("get texture {}", image_info.texture_index))?;
+        let spritesheet =
+            if let Some(image) = texture_cache.get(&(path.clone(), image_info.texture_index)) {
+                debug!("Using cached spritesheet `{}`", path);
+                image.clone()
+            } else {
+                debug!("Reading spritesheet `{}`", path);
+                let mut file = pak_index
+                    .get_file(&path)
+                    .with_context(|| format!("get file `{}` from pak_index", path))?
+                    .with_context(|| format!("find file `{}` in pak_index", path))?;
 
-        let image_data = g1t
-            .read_image(texture, file)
-            .context("read image from g1t")?;
+                let g1t = GustG1t::read(&mut file).context("read g1t file")?;
+                let texture = g1t
+                    .textures
+                    .get(image_info.texture_index)
+                    .with_context(|| format!("get texture {}", image_info.texture_index))?;
 
-        let spritesheet = Rgba8Image::new(texture.width, image_data)?;
+                let image_data = g1t
+                    .read_image(texture, file)
+                    .context("read image from g1t")?;
+
+                let rc = Rc::new(Rgba8Image::new(texture.width, image_data)?);
+
+                texture_cache.insert((path, image_info.texture_index), rc.clone());
+
+                rc
+            };
 
         // extract the sprite from the spritesheet
         // TODO: in ryza3, uvwh coordinates are only valid for `neo` files. other games are unchecked
@@ -120,8 +143,6 @@ impl UiSpritesheetInfo {
             .context("find resolution_hd on root element")?
             .parse()
             .context("parse resolution_hd")?;
-
-        println!("children: {}", root.children().count());
 
         let images = root
             .children()
