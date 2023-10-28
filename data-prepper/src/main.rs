@@ -1,6 +1,7 @@
 mod extract;
 pub mod extract_images;
 pub mod ryza3;
+mod shared;
 pub mod sophie;
 mod typedefs;
 mod utils;

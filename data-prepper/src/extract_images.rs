@@ -38,6 +38,7 @@ pub enum Category {
     Monsters,
     Items,
     Maps,
+    Misc,
 }
 
 impl FromStr for Category {
@@ -48,6 +49,7 @@ impl FromStr for Category {
             "monsters" => Ok(Self::Monsters),
             "items" => Ok(Self::Items),
             "maps" => Ok(Self::Maps),
+            "misc" => Ok(Self::Misc),
             _ => Err(format!("Unknown category {}", s)),
         }
     }
