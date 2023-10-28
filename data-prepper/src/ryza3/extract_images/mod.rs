@@ -55,7 +55,9 @@ pub fn extract_images(
     if category.is_none() || category == Some(Category::Misc) {
         info!("Extracting misc textures");
 
-        // TODO: these are just some test images. extract useful images later
+        let icons_directory = output_directory.join("icons");
+        std::fs::create_dir_all(&icons_directory).context("create icons directory")?;
+
         let mut texture_cache = HashMap::new();
 
         let icons =
@@ -63,32 +65,25 @@ pub fn extract_images(
                 .context("read ui_spritesheet.xml")?;
 
         std::fs::write(
-            output_directory.join("monster_icon.png"),
+            icons_directory.join("fld_cut_tree.png"),
+            icons
+                .get_image_indexed(pak_index, &mut texture_cache, "gen_a24_icons07_fld", 2)?
+                .encode_png()?,
+        )?;
+
+        std::fs::write(
+            icons_directory.join("fld_fishing.png"),
+            icons
+                .get_image(pak_index, &mut texture_cache, "gen_a24_icons14_ic_fishing")?
+                .encode_png()?,
+        )?;
+
+        std::fs::write(
+            icons_directory.join("fld_monster.png"),
             icons
                 .get_image_indexed(pak_index, &mut texture_cache, "gen_a24_icons14_ic_mon", 1)?
                 .encode_png()?,
-        )
-        .context("write monster icon")?;
-
-        std::fs::write(
-            output_directory.join("emo_0.png"),
-            icons
-                .get_image_indexed(pak_index, &mut texture_cache, "gen_a24_icons07_emo", 0)?
-                .encode_png()?,
-        )
-        .context("write monster icon")?;
-
-        std::fs::write(
-            output_directory.join("swordmaster.png"),
-            icons
-                .get_image(
-                    pak_index,
-                    &mut texture_cache,
-                    "gen_a24_icons14_ic_swordmaster",
-                )?
-                .encode_png()?,
-        )
-        .context("write monster icon")?;
+        )?;
     }
 
     Ok(())

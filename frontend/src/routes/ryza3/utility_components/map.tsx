@@ -1,4 +1,4 @@
-import { CRS, LatLngTuple } from "leaflet";
+import { CRS, LatLngTuple, icon } from "leaflet";
 import { MapContainer } from "react-leaflet/MapContainer";
 import { Marker } from "react-leaflet/Marker";
 import { Popup } from "react-leaflet/Popup";
@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import { Rectangle } from "react-leaflet";
 import { Ryza3Context } from "@/data/ryza3_data";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
+import { getImageLink } from "../ryza3_data_util";
 
 // for now, this is hardcoded. I don't know how to derive it from the game files.
 // TODO: how to derive these values?
@@ -63,6 +64,18 @@ export default function GameMap() {
     xy_to_map(min_x * region_scale, min_z * region_scale),
     xy_to_map(max_x * region_scale, max_z * region_scale),
   ];
+
+  const enemyIcon = icon({
+    iconUrl: getImageLink("icons/fld_monster.png"),
+    iconSize: [48, 48],
+    iconAnchor: [24, 24],
+  });
+
+  const cutTreeIcon = icon({
+    iconUrl: getImageLink("icons/fld_cut_tree.png"),
+    iconSize: [48, 48],
+    iconAnchor: [24, 24],
+  });
 
   return (
     <>
@@ -134,6 +147,7 @@ export default function GameMap() {
                     ].cut_down_tree.map((tree, tree_idx) => (
                       <Marker
                         key={`${region.data_file_name}_${field_idx}_tree_${tree_idx}`}
+                        icon={cutTreeIcon}
                         position={xy_to_map(
                           tree.position[0] * object_position_scale,
                           tree.position[2] * object_position_scale,
@@ -150,6 +164,7 @@ export default function GameMap() {
                   ].enemy_random_spawner.map((enemy, enemy_idx) => (
                     <Marker
                       key={`${region.data_file_name}_${field_idx}_enemy_${enemy_idx}`}
+                      icon={enemyIcon}
                       position={xy_to_map(
                         enemy.position[0] * object_position_scale,
                         enemy.position[2] * object_position_scale,
