@@ -51,7 +51,8 @@ function ItemDetailSection({ item }: { item: types.Item }) {
         <li>Price: {item.cost}</li>
         <li>Level: {item.level}</li>
         <li>
-          Element: <code>{item.color}</code>
+          Element:{" "}
+          <code>{colorToEmoji(item.color.split("_").slice(-1)[0])}</code>
         </li>
         <li>
           Use tag: <code>{item.use_type}</code>
@@ -145,25 +146,6 @@ function RecipeSection({ item }: { item: types.Item }) {
 
   if (!board) return <>No recipe found</>;
 
-  function colorToEmoji(color: string) {
-    switch (color) {
-      case "R":
-        return "🟥";
-      case "G":
-        return "🟩";
-      case "B":
-        return "🟦";
-      case "Y":
-        return "🟨";
-      case "W":
-        return "⬜";
-      case " ":
-        return "⬛";
-      default:
-        return color;
-    }
-  }
-
   return (
     <>
       <h3>Colors</h3>
@@ -203,4 +185,28 @@ function RecipeSection({ item }: { item: types.Item }) {
       </table>
     </>
   );
+}
+
+function colorToEmoji(color: string) {
+  switch (color) {
+    case "R":
+    case "RED":
+      return "🟥";
+    case "G":
+    case "GREEN":
+      return "🟩";
+    case "B":
+    case "BLUE":
+      return "🟦";
+    case "Y":
+    case "YELLOW":
+      return "🟨";
+    case "W":
+    case "WHITE":
+      return "⬜";
+    case " ":
+      return "⬛";
+    default:
+      return color;
+  }
 }

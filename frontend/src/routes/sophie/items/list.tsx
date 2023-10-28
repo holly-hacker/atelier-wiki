@@ -5,6 +5,7 @@ import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
 import { ItemLink } from "../utility_components/links";
 import { TextureAtlasImage } from "@/routes/sophie/utility_components/links";
+import { containsJapaneseDigit } from "@/util";
 
 export default function ItemList(): JSX.Element {
   const sophieData = useContext(SophieContext);
@@ -13,7 +14,7 @@ export default function ItemList(): JSX.Element {
       <h1>Sophie item list</h1>
       <div>
         <Grid
-          data={sophieData.items.filter(isImplementedItem)}
+          data={sophieData.items.filter((x) => !containsJapaneseDigit(x.name))}
           columns={getColumnDefs(sophieData)}
         />
       </div>
@@ -65,24 +66,4 @@ function getColumnDefs(sophieData: SophieData): ColumnDef<types.Item, any>[] {
       filterFn: "equalsString",
     }),
   ];
-}
-
-function isImplementedItem(item: types.Item): boolean {
-  const japaneseDigits = [
-    "０",
-    "１",
-    "２",
-    "３",
-    "４",
-    "５",
-    "６",
-    "７",
-    "８",
-    "９",
-  ];
-
-  if (japaneseDigits.find((char) => item.name.includes(char)) !== undefined)
-    return false;
-
-  return true;
 }

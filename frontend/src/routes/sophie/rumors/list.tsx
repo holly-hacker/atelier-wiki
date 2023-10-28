@@ -3,9 +3,15 @@ import { SophieContext } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
 import { ItemLink } from "../utility_components/links";
+import { containsJapaneseDigit } from "@/util";
 
 export default function RumorList() {
   const sophieData = useContext(SophieContext);
+
+  const rumors = sophieData.rumors.filter(
+    // japanese for "request", used in placeholders
+    (r) => !containsJapaneseDigit(r.name) && !r.name.includes("依頼"),
+  );
 
   const columnHelper = createColumnHelper<(typeof sophieData.rumors)[0]>();
   const columns = [
@@ -26,7 +32,10 @@ export default function RumorList() {
       cell: (i) => (i.getValue() ? "✅" : "❌"),
     }),
     columnHelper.accessor("priority", { header: "Priority" }),
-    columnHelper.accessor("probability", { header: "Probability" }),
+    columnHelper.accessor("probability", {
+      header: "Probability",
+      cell: (i) => `${i.getValue()}%`,
+    }),
     columnHelper.accessor("register", {
       header: "Register",
       cell: (i) => (i.getValue() ? "✅" : "❌"),
@@ -58,7 +67,7 @@ export default function RumorList() {
       cell: (i) => <code>{i.getValue()?.substring("EVENT_".length)}</code>,
     }),
     columnHelper.accessor("ev_end", {
-      header: "Begin Event",
+      header: "End Event",
       cell: (i) => <code>{i.getValue()?.substring("EVENT_".length)}</code>,
     }),
   ];
@@ -66,7 +75,7 @@ export default function RumorList() {
   return (
     <>
       <h1>Rumors</h1>
-      <Grid data={sophieData.rumors} columns={columns} />
+      <Grid data={rumors} columns={columns} />
     </>
   );
 }
