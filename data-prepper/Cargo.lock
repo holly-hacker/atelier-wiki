@@ -229,7 +229,7 @@ dependencies = [
 [[package]]
 name = "dds-decoder"
 version = "0.0.0"
-source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#1025bd714d4a6cbea9592276412f69714cfade34"
+source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#fdf6c676e86024ee67d987784cede99211b3ea46"
 dependencies = [
  "thiserror",
  "tracing",
@@ -296,7 +296,7 @@ checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 [[package]]
 name = "gust-common"
 version = "0.0.0"
-source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#1025bd714d4a6cbea9592276412f69714cfade34"
+source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#fdf6c676e86024ee67d987784cede99211b3ea46"
 dependencies = [
  "strum",
 ]
@@ -304,7 +304,7 @@ dependencies = [
 [[package]]
 name = "gust-g1t"
 version = "0.0.0"
-source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#1025bd714d4a6cbea9592276412f69714cfade34"
+source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#fdf6c676e86024ee67d987784cede99211b3ea46"
 dependencies = [
  "bitflags 2.4.0",
  "dds-decoder",
@@ -317,7 +317,7 @@ dependencies = [
 [[package]]
 name = "gust-pak"
 version = "0.0.0"
-source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#1025bd714d4a6cbea9592276412f69714cfade34"
+source = "git+https://github.com/holly-hacker/atelier-tools?branch=main#fdf6c676e86024ee67d987784cede99211b3ea46"
 dependencies = [
  "custom_debug",
  "gust-common",
