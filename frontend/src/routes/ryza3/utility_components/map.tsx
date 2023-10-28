@@ -6,6 +6,7 @@ import { TileLayer } from "react-leaflet/TileLayer";
 import { useContext, useState } from "react";
 import { Rectangle } from "react-leaflet";
 import { Ryza3Context } from "@/data/ryza3_data";
+import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 
 // for now, this is hardcoded. I don't know how to derive it from the game files.
 // TODO: how to derive these values?
@@ -28,7 +29,7 @@ const region_map_names = new Map([
 
 export default function GameMap() {
   const ryza3Data = useContext(Ryza3Context);
-  const [mapId, setMapId] = useState(0);
+  const [mapId, setMapId] = useState(1);
 
   const map = ryza3Data.map_data.maps[mapId];
   const region_name = region_map_names.get(mapId);
@@ -97,93 +98,97 @@ export default function GameMap() {
             xy_to_map(padded_dim, padded_dim),
           ]}
         />
-        {fields.map((region, field_idx) => (
-          <>
-            <Rectangle
-              key={`${region.data_file_name}_${field_idx}_range`}
-              bounds={region_bounds(
-                region.range_min_x,
-                region.range_min_z,
-                region.range_max_x,
-                region.range_max_z,
-              )}
-              pathOptions={{ color: "#00000080" }}
-            />
-            {region.navi_range_min_x == null ? null : (
+        <MarkerClusterGroup
+          maxClusterRadius={(z: number) => (z == map.max_zoom_level ? 10 : 40)}
+        >
+          {fields.map((region, field_idx) => (
+            <>
               <Rectangle
-                key={`${region.data_file_name}_${field_idx}_navi_range`}
+                key={`${region.data_file_name}_${field_idx}_range`}
                 bounds={region_bounds(
-                  region.navi_range_min_x,
-                  region.navi_range_min_z!,
-                  region.navi_range_max_x!,
-                  region.navi_range_max_z!,
+                  region.range_min_x,
+                  region.range_min_z,
+                  region.range_max_x,
+                  region.range_max_z,
                 )}
-                pathOptions={{ color: "red" }}
+                pathOptions={{ color: "#00000080" }}
               />
-            )}
-            {
-              // TODO: move to layer that can be toggled, clean up
-              region.data_file_name == null
+              {region.navi_range_min_x == null ? null : (
+                <Rectangle
+                  key={`${region.data_file_name}_${field_idx}_navi_range`}
+                  bounds={region_bounds(
+                    region.navi_range_min_x,
+                    region.navi_range_min_z!,
+                    region.navi_range_max_x!,
+                    region.navi_range_max_z!,
+                  )}
+                  pathOptions={{ color: "red" }}
+                />
+              )}
+              {
+                // TODO: move to layer that can be toggled, clean up
+                region.data_file_name == null
+                  ? null
+                  : ryza3Data.field_data[
+                      region.data_file_name.toLowerCase() + ".xml"
+                    ].cut_down_tree.map((tree, tree_idx) => (
+                      <Marker
+                        key={`${region.data_file_name}_${field_idx}_tree_${tree_idx}`}
+                        position={xy_to_map(
+                          tree.position[0] * object_position_scale,
+                          tree.position[2] * object_position_scale,
+                        )}
+                      >
+                        <Popup>Tree, {tree.rate}% chance</Popup>
+                      </Marker>
+                    ))
+              }
+              {region.data_file_name == null
                 ? null
                 : ryza3Data.field_data[
                     region.data_file_name.toLowerCase() + ".xml"
-                  ].cut_down_tree.map((tree, tree_idx) => (
+                  ].enemy_random_spawner.map((enemy, enemy_idx) => (
                     <Marker
-                      key={`${region.data_file_name}_${field_idx}_tree_${tree_idx}`}
-                      position={xy_to_map(
-                        tree.position[0] * object_position_scale,
-                        tree.position[2] * object_position_scale,
-                      )}
-                    >
-                      <Popup>Tree, {tree.rate}% chance</Popup>
-                    </Marker>
-                  ))
-            }
-            {region.data_file_name == null
-              ? null
-              : ryza3Data.field_data[
-                  region.data_file_name.toLowerCase() + ".xml"
-                ].enemy_random_spawner.map((enemy, enemy_idx) => (
-                  <Marker
-                    key={`${region.data_file_name}_${field_idx}_enemy_${enemy_idx}`}
-                    position={xy_to_map(
-                      enemy.position[0] * object_position_scale,
-                      enemy.position[2] * object_position_scale,
-                    )}
-                  >
-                    <Popup>
-                      Random enemy spawn, {enemy.rate}% chance,{" "}
-                      {enemy.symbol_group_1 ??
-                        enemy.symbol_group_2 ??
-                        enemy.symbol_group_3 ??
-                        enemy.symbol_group_4 ??
-                        enemy.symbol_group_5}
-                    </Popup>
-                  </Marker>
-                ))}
-            {region.data_file_name == null
-              ? null
-              : ryza3Data.field_data[
-                  region.data_file_name.toLowerCase() + ".xml"
-                ].instant_enemy_spawner.map((enemy, enemy_idx) => {
-                  console.log("instant", enemy_idx, enemy);
-                  return (
-                    <Marker
-                      key={`${region.data_file_name}_${field_idx}_enemy_instant_${enemy_idx}`}
+                      key={`${region.data_file_name}_${field_idx}_enemy_${enemy_idx}`}
                       position={xy_to_map(
                         enemy.position[0] * object_position_scale,
                         enemy.position[2] * object_position_scale,
                       )}
                     >
                       <Popup>
-                        Instant enemy spawn, {enemy.rate}% chance,{" "}
-                        <code>{enemy.symbol_group}</code>
+                        Random enemy spawn, {enemy.rate}% chance,{" "}
+                        {enemy.symbol_group_1 ??
+                          enemy.symbol_group_2 ??
+                          enemy.symbol_group_3 ??
+                          enemy.symbol_group_4 ??
+                          enemy.symbol_group_5}
                       </Popup>
                     </Marker>
-                  );
-                })}
-          </>
-        ))}
+                  ))}
+              {region.data_file_name == null
+                ? null
+                : ryza3Data.field_data[
+                    region.data_file_name.toLowerCase() + ".xml"
+                  ].instant_enemy_spawner.map((enemy, enemy_idx) => {
+                    console.log("instant", enemy_idx, enemy);
+                    return (
+                      <Marker
+                        key={`${region.data_file_name}_${field_idx}_enemy_instant_${enemy_idx}`}
+                        position={xy_to_map(
+                          enemy.position[0] * object_position_scale,
+                          enemy.position[2] * object_position_scale,
+                        )}
+                      >
+                        <Popup>
+                          Instant enemy spawn, {enemy.rate}% chance,{" "}
+                          <code>{enemy.symbol_group}</code>
+                        </Popup>
+                      </Marker>
+                    );
+                  })}
+            </>
+          ))}
+        </MarkerClusterGroup>
 
         <Marker position={xy_to_map(region_map.pos[0], region_map.pos[1])}>
           <Popup>Map offset</Popup>
