@@ -2,6 +2,10 @@
 default:
   just --list
 
+copy-data:
+    cp atelier-data/sophie/manually_extracted/item_boards.json object-storage-data/game-data/sophie/
+    cp atelier-data/sophie/manually_extracted/shapes.json object-storage-data/game-data/sophie/
+
 # Extract game info and generate typescript definitions
 extract-data GAME_DIR:
     cd data-prepper && cargo run -- type-defs -o ../frontend/src/data/types/
