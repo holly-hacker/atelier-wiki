@@ -13,6 +13,7 @@ mod field_map;
 mod item_categories;
 mod item_effects;
 mod items;
+mod quests;
 mod recipes;
 mod strings_table;
 
@@ -26,6 +27,7 @@ pub struct Ryza3Data {
     pub field_data: field_data::FieldData,
     pub enemy_data: Vec<enemies::Enemy>,
     pub puni_feeding_data: feeding::PuniFeedingData,
+    pub quests: quests::QuestData,
 }
 
 impl Ryza3Data {
@@ -81,6 +83,9 @@ impl Ryza3Data {
             .context("read puni feeding info")?;
         info!("Read puni feeding data");
 
+        let quests = quests::QuestData::read(pak_index, &strings_table).context("read quests")?;
+        info!("Read quest data");
+
         Ok(Self {
             item_data,
             item_category_data,
@@ -90,6 +95,7 @@ impl Ryza3Data {
             field_data,
             enemy_data,
             puni_feeding_data,
+            quests,
         })
     }
 }

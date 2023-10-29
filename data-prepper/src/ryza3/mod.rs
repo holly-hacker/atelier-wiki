@@ -73,6 +73,10 @@ pub fn extract(
     )
     .context("write puni feeding data")?;
 
+    debug!("Writing quest data");
+    write_data_to_file(&output_directory.join("quests.json"), &data.quests)
+        .context("write quests")?;
+
     info!("Wrote ryza3 data to {:?}", output_directory);
 
     Ok(())

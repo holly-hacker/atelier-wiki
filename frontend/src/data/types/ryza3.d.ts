@@ -552,6 +552,179 @@ export namespace types {
         "unique_events": (types.PuniFeedingUniqueEvent)[];
         "species": (types.PuniFeedingSpecies)[];
     };
+    export type NormalQuestClearAchievement = {
+        "detail_text": string;
+        "clear_achievement_tag": string;
+        "display_progress": boolean;
+    };
+    export type NormalQuestClearEvent = {
+        "detail_text": string;
+        "clear_event_tag": string;
+    };
+    export type NormalQuestClearDelivery = {
+        "detail_text": (string | null);
+
+        /**
+         * The tag of the item that should be delivered.
+         */
+        "item_tag": string;
+
+        /**
+         * The amount of items that should be delivered.
+         */
+        "delivery_item_num": types.U32;
+        "quality_min": (types.U32 | null);
+        "quality_max": (types.U32 | null);
+
+        /**
+         * The traits that the item should have.
+         */
+        "pot": (string)[];
+
+        /**
+         * The effects that the item should have.
+         */
+        "eff": (string)[];
+    };
+    export type NormalQuestClearBattle = {
+        "detail_text": (string | null);
+
+        /**
+         * The monster that should be defeated.
+         */
+        "target_name": string;
+
+        /**
+         * The amount of monsters that should be defeated.
+         */
+        "target_num": types.U32;
+
+        /**
+         * The specific symbol group that the monster must come from.
+         */
+        "symbol_group_tag": (string | null);
+    };
+    export type NormalQuestClearCondition = {
+
+        /**
+         * A potential achievement that should be completed.
+         */
+        "achievement_condition": (types.NormalQuestClearAchievement | null);
+
+        /**
+         * A potential event that should be completed.
+         */
+        "event_condition": (types.NormalQuestClearEvent | null);
+
+        /**
+         * A potential item that should be delivered.
+         */
+        "delivery_condition": (types.NormalQuestClearDelivery | null);
+
+        /**
+         * A potential enemy that should be defeated.
+         */
+        "battle_condition": (types.NormalQuestClearBattle | null);
+
+        /**
+         * A marked position on the map that should be visited.
+         */
+        "trace_pos": ([types.F32, types.F32, types.F32] | null);
+
+        /**
+         * The radius around the marked position on the map.
+         */
+        "trace_radius": (types.F32 | null);
+
+        /**
+         * The field tag of the map that should be visited.
+         */
+        "trace_field_map_tag": (string | null);
+
+        /**
+         * A marked NPC that should be interacted with.
+         */
+        "trace_npc_tag": (string | null);
+
+        /**
+         * Whether the atelier should be visited.
+         */
+        "trace_atelier": boolean;
+    };
+    export type NormalQuestPrizeType = (({
+        "type": "Item";
+    } & {
+        "num": types.U32;
+        "item_tag": string;
+        "quality_min": types.U32;
+        "quality_max": types.U32;
+        "pots": (string)[];
+        "effects": (string)[];
+        "pot_num_min": types.U32;
+        "pot_num_max": types.U32;
+        "pot_grade_min": types.U32;
+        "pot_grade_max": types.U32;
+        "pot_lvl_min": types.U32;
+        "pot_lvl_max": types.U32;
+    }) | ({
+        "type": "Money";
+    } & {
+        "amount": types.U32;
+    }) | ({
+        "type": "GoldCoin";
+    } & {
+        "amount": types.U32;
+    }) | ({
+        "type": "SP";
+    } & {
+        "amount": types.U32;
+    }) | ({
+        "type": "Memories";
+    } & {
+        "tag": string;
+    }));
+    export type NormalQuestPrize = {
+        "is_unknown": boolean;
+        "prize": types.NormalQuestPrizeType;
+    };
+    export type NormalQuest = {
+        "tag": (string | null);
+        "image_no": types.U32;
+
+        /**
+         * The title of the quest.
+         */
+        "title": (string | null);
+
+        /**
+         * The flavor text/description of the quest.
+         */
+        "flavor_text": (string | null);
+
+        /**
+         * The flavor text/description of the quest after it has been cleared.
+         */
+        "flavor_text_after": (string | null);
+        "start_exec_ev": (string | null);
+
+        /**
+         * Event that must have been completed before this quest can be started.
+         */
+        "condition_event_tags": (string)[];
+
+        /**
+         * Conditions that must be cleared before this quest can be completed.
+         */
+        "clear_cond_tag": (types.NormalQuestClearCondition)[];
+
+        /**
+         * The prizes that are awarded for completing this quest.
+         */
+        "prizes": (types.NormalQuestPrize)[];
+    };
+    export type QuestData = {
+        "normal_quests": (types.NormalQuest)[];
+    };
     export type Ryza3Data = {
         "item_data": (types.Item)[];
         "item_category_data": types.ItemCategoryData;
@@ -561,5 +734,6 @@ export namespace types {
         "field_data": types.FieldData;
         "enemy_data": (types.Enemy)[];
         "puni_feeding_data": types.PuniFeedingData;
+        "quests": types.QuestData;
     };
 }
