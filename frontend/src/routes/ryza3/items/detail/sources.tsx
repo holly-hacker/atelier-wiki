@@ -9,8 +9,9 @@ export function ItemDropSourcesSection({ item }: { item: types.Item }) {
 
   const monsters = MonsterSources(item);
   const puniFeeding = PuniFeedingSources(item);
+  const quests = QuestSources(item);
 
-  const noKnownSources = !monsters && !puniFeeding;
+  const noKnownSources = !monsters && !puniFeeding && !quests;
   const canBeCrafted = ryza3Data.recipes.recipes.some(
     (r) => r.item_tag == item.tag,
   );
@@ -20,6 +21,7 @@ export function ItemDropSourcesSection({ item }: { item: types.Item }) {
       <h2>Sources</h2>
       {monsters}
       {puniFeeding}
+      {quests}
 
       {noKnownSources && (
         <p>
@@ -107,6 +109,40 @@ function PuniFeedingSources(item: types.Item) {
           </p>
         </>
       )}
+    </>
+  );
+}
+
+function QuestSources(item: types.Item) {
+  const ryza3Data = useContext(Ryza3Context);
+
+  const quests = ryza3Data.quests.normal_quests;
+  const questsWithThisReward = quests.filter((q) =>
+    q.prizes.some(
+      (r) => r.prize.type == "Item" && r.prize.item_tag == item.tag,
+    ),
+  );
+
+  if (questsWithThisReward.length == 0) {
+    return null;
+  }
+
+  return (
+    <>
+      <h3>Normal Quests</h3>
+      <p>
+        This item is a reward for completing the following normal quests:
+        <ul>
+          {questsWithThisReward.map((q, i) => {
+            return (
+              <li key={i}>
+                <code>{q.tag ?? "<No tag>"}</code> -{" "}
+                {q.title ?? "<No quest name>"}
+              </li>
+            );
+          })}
+        </ul>
+      </p>
     </>
   );
 }

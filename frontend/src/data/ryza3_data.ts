@@ -22,6 +22,7 @@ export type Ryza3Data = {
     enemies: Ryza3Types.Enemy[],
 
     puni_feeding: Ryza3Types.PuniFeedingData,
+    quests: Ryza3Types.QuestData,
 };
 
 export async function getRyza3Data(): Promise<Ryza3Data> {
@@ -39,6 +40,7 @@ export async function getRyza3Data(): Promise<Ryza3Data> {
         recipes,
         enemies,
         puni_feeding,
+        quests,
     ] = await Promise.all([
         fetch(`${url_base}/texture-atlasses/items.json`).then(res => res.json()),
         fetch(`${url_base}/texture-atlasses/enemies.json`).then(res => res.json()),
@@ -51,6 +53,7 @@ export async function getRyza3Data(): Promise<Ryza3Data> {
         fetch(`${url_base}/recipes.json`).then(res => res.json()),
         fetch(`${url_base}/enemies.json`).then(res => res.json()),
         fetch(`${url_base}/puni_feeding.json`).then(res => res.json()),
+        fetch(`${url_base}/quests.json`).then(res => res.json()),
     ]);
 
     return {
@@ -65,5 +68,6 @@ export async function getRyza3Data(): Promise<Ryza3Data> {
         recipes,
         enemies,
         puni_feeding,
+        quests,
     };
 }
