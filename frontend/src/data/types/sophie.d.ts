@@ -17,7 +17,7 @@ export namespace types {
         "quality_name": string;
         "size_name": string;
         "color": string;
-        "category": (string)[];
+        "categories": (string)[];
         "reasonable": (types.Usize)[];
         "strengthening": (types.Usize | null);
         "hp": (types.Usize | null);

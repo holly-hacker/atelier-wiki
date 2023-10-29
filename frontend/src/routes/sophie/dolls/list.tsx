@@ -152,7 +152,7 @@ function DollMaterialList({ category }: { category: string }) {
   const sophieData = useContext(SophieContext);
 
   const items = sophieData.items.filter(
-    (v) => v.category.indexOf(`ITEM_CATEGORY_${category}`) !== -1,
+    (v) => v.categories.indexOf(`ITEM_CATEGORY_${category}`) !== -1,
   );
 
   const columnHelper = createColumnHelper<(typeof items)[0]>();

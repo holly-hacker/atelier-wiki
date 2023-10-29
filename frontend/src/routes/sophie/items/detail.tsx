@@ -63,7 +63,7 @@ function ItemDetailSection({ item }: { item: types.Item }) {
         <li>
           Categories:
           <ul>
-            {item.category.map((cat, i) => {
+            {item.categories.map((cat, i) => {
               return (
                 <li key={i}>
                   <CategoryLink category_tag={cat} />

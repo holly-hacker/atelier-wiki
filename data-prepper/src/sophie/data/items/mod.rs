@@ -21,7 +21,7 @@ pub struct Item {
     pub quality_name: String,
     pub size_name: String,
     pub color: String,
-    pub category: Vec<String>,
+    pub categories: Vec<String>,
     pub reasonable: Vec<usize>,
 
     pub strengthening: Option<usize>,
@@ -64,7 +64,7 @@ impl Item {
                     quality_name: item.quality_name,
                     size_name: item.size_name,
                     color: item.color,
-                    category: item.category,
+                    categories: item.category,
                     reasonable: item.reasonable,
                     strengthening: item.strengthening,
                     hp: item.hp,
