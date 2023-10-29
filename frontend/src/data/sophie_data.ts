@@ -11,6 +11,9 @@ export type SophieData = {
     present_info: SophieTypes.PresentInfo,
     rumors: SophieTypes.Rumor[],
     dolls: SophieTypes.Doll[],
+
+    categories: SophieManualTypes.Categories,
+    ingredients: SophieManualTypes.Ingredients,
     item_boards: SophieManualTypes.ItemBoardMap,
     shapes: SophieManualTypes.ShapeMap,
 };
@@ -24,6 +27,9 @@ export async function getSophieData(): Promise<SophieData> {
         present_info,
         rumors,
         dolls,
+
+        categories,
+        ingredients,
         item_boards,
         shapes,
     ] = await Promise.all([
@@ -32,6 +38,9 @@ export async function getSophieData(): Promise<SophieData> {
         fetch(`${url_base}/presents.json`).then(res => res.json()),
         fetch(`${url_base}/rumors.json`).then(res => res.json()),
         fetch(`${url_base}/dolls.json`).then(res => res.json()),
+
+        fetch(`${url_base}/categories.json`).then(res => res.json()),
+        fetch(`${url_base}/ingredients.json`).then(res => res.json()),
         fetch(`${url_base}/item_boards.json`).then(res => res.json()),
         fetch(`${url_base}/shapes.json`).then(res => res.json()),
     ]);
@@ -44,5 +53,7 @@ export async function getSophieData(): Promise<SophieData> {
         dolls,
         item_boards,
         shapes,
+        categories,
+        ingredients,
     };
 }

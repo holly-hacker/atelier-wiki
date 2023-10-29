@@ -1,5 +1,11 @@
 export default types;
 export namespace types {
+    // Categories
+    export type Categories = Record<string, { name: string }>;
+
+    // Item ingredients
+    export type Ingredients = Record<string, { ingredient: string, count: number }>;
+
     // Item boards
     export type Color = 'R' | 'G' | 'B' | 'W' | 'Y';
     export type ColorOrEmpty = Color | ' ';
