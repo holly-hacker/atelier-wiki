@@ -176,10 +176,11 @@ function PuniUniqueRewardsSection() {
         return <ItemLink item={i.getValue()} />;
       },
     }),
-    columnHelper.accessor("condition.PuniSpecies", {
+    columnHelper.accessor("condition.species", {
       header: "Puni species",
       cell: (i) => {
-        const this_species_tag = i.getValue() as string;
+        const this_species_tag = i.getValue() as string | null;
+
         if (!this_species_tag) return null;
         const species_idx = this_species_tag
           .substring("FEEDING_SPECIES_".length)
@@ -204,25 +205,40 @@ function PuniUniqueRewardsSection() {
         );
       },
     }),
-    columnHelper.accessor("condition.Energy", {
+    columnHelper.accessor("condition.min", {
       header: "Health",
       cell: (i) => {
-        const arr = i.getValue();
-        return arr instanceof Array ? `${arr[0]}-${arr[1]}` : "";
+        if (i.row.original.condition.type != "Energy") {
+          return null;
+        }
+
+        const min = i.getValue();
+        const max = i.row.original.condition.max;
+        return `${min}-${max}`;
       },
     }),
-    columnHelper.accessor("condition.Color", {
+    columnHelper.accessor("condition.min", {
       header: "Luster",
       cell: (i) => {
-        const arr = i.getValue();
-        return arr instanceof Array ? `${arr[0]}-${arr[1]}` : "";
+        if (i.row.original.condition.type != "Color") {
+          return null;
+        }
+
+        const min = i.getValue();
+        const max = i.row.original.condition.max;
+        return `${min}-${max}`;
       },
     }),
-    columnHelper.accessor("condition.Mood", {
+    columnHelper.accessor("condition.min", {
       header: "Mood",
       cell: (i) => {
-        const arr = i.getValue();
-        return arr instanceof Array ? `${arr[0]}-${arr[1]}` : "";
+        if (i.row.original.condition.type != "Mood") {
+          return null;
+        }
+
+        const min = i.getValue();
+        const max = i.row.original.condition.max;
+        return `${min}-${max}`;
       },
     }),
   ];

@@ -40,15 +40,16 @@ pub struct PuniFeedingUniqueEvent {
 }
 
 #[derive(Serialize, TypeDef)]
+#[serde(tag = "type")]
 pub enum PuniFeedingEventCondition {
     /// A specific puni species.
-    PuniSpecies(String),
+    PuniSpecies { species: String },
     /// A range for the energy value.
-    Energy(u32, u32),
+    Energy { min: u32, max: u32 },
     /// A range for the color value.
-    Color(u32, u32),
+    Color { min: u32, max: u32 },
     /// A range for the mood value.
-    Mood(u32, u32),
+    Mood { min: u32, max: u32 },
 }
 
 #[derive(Serialize, TypeDef)]
@@ -68,21 +69,21 @@ impl PuniFeedingData {
             .map(|e| PuniFeedingUniqueEvent {
                 item_tag: e.item,
                 condition: match e.cond.as_str() {
-                    "FEEDING_COND_PUNI" => {
-                        PuniFeedingEventCondition::PuniSpecies(e.param[0].clone())
-                    }
-                    "FEEDING_COND_ENERGY" => PuniFeedingEventCondition::Energy(
-                        e.param[0].parse().unwrap(),
-                        e.param[1].parse().unwrap(),
-                    ),
-                    "FEEDING_COND_COLOR" => PuniFeedingEventCondition::Color(
-                        e.param[0].parse().unwrap(),
-                        e.param[1].parse().unwrap(),
-                    ),
-                    "FEEDING_COND_MOOD" => PuniFeedingEventCondition::Mood(
-                        e.param[0].parse().unwrap(),
-                        e.param[1].parse().unwrap(),
-                    ),
+                    "FEEDING_COND_PUNI" => PuniFeedingEventCondition::PuniSpecies {
+                        species: e.param[0].clone(),
+                    },
+                    "FEEDING_COND_ENERGY" => PuniFeedingEventCondition::Energy {
+                        min: e.param[0].parse().unwrap(),
+                        max: e.param[1].parse().unwrap(),
+                    },
+                    "FEEDING_COND_COLOR" => PuniFeedingEventCondition::Color {
+                        min: e.param[0].parse().unwrap(),
+                        max: e.param[1].parse().unwrap(),
+                    },
+                    "FEEDING_COND_MOOD" => PuniFeedingEventCondition::Mood {
+                        min: e.param[0].parse().unwrap(),
+                        max: e.param[1].parse().unwrap(),
+                    },
                     _ => panic!("Unknown condition type: {}", e.cond),
                 },
             })

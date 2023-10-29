@@ -118,8 +118,8 @@ function QuestSources(item: types.Item) {
 
   const quests = ryza3Data.quests.normal_quests;
   const questsWithThisReward = quests.filter((q) =>
-    q.prizes.some(
-      (r) => r.prize.type == "Item" && r.prize.item_tag == item.tag,
+    q.rewards.some(
+      (r) => r.reward.type == "Item" && r.reward.item_tag == item.tag,
     ),
   );
 

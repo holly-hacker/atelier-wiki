@@ -472,31 +472,42 @@ export namespace types {
         "division": string;
         "statusses": (types.EnemyStatus)[];
     };
-    export type PuniFeedingEventCondition = ({
+    export type PuniFeedingEventCondition = (({
 
         /**
          * A specific puni species.
          */
-        "PuniSpecies": string;
-    } | {
+        "type": "PuniSpecies";
+    } & {
+        "species": string;
+    }) | ({
 
         /**
          * A range for the energy value.
          */
-        "Energy": [types.U32, types.U32];
-    } | {
+        "type": "Energy";
+    } & {
+        "min": types.U32;
+        "max": types.U32;
+    }) | ({
 
         /**
          * A range for the color value.
          */
-        "Color": [types.U32, types.U32];
-    } | {
+        "type": "Color";
+    } & {
+        "min": types.U32;
+        "max": types.U32;
+    }) | ({
 
         /**
          * A range for the mood value.
          */
-        "Mood": [types.U32, types.U32];
-    });
+        "type": "Mood";
+    } & {
+        "min": types.U32;
+        "max": types.U32;
+    }));
 
     /**
      * A feeding event where a unique item is awarded.
@@ -651,7 +662,7 @@ export namespace types {
          */
         "trace_atelier": boolean;
     };
-    export type NormalQuestPrizeType = (({
+    export type NormalQuestRewardType = (({
         "type": "Item";
     } & {
         "num": types.U32;
@@ -683,9 +694,9 @@ export namespace types {
     } & {
         "tag": string;
     }));
-    export type NormalQuestPrize = {
+    export type NormalQuestReward = {
         "is_unknown": boolean;
-        "prize": types.NormalQuestPrizeType;
+        "reward": types.NormalQuestRewardType;
     };
     export type NormalQuest = {
         "tag": (string | null);
@@ -718,9 +729,9 @@ export namespace types {
         "clear_cond_tag": (types.NormalQuestClearCondition)[];
 
         /**
-         * The prizes that are awarded for completing this quest.
+         * The rewards that are awarded for completing this quest.
          */
-        "prizes": (types.NormalQuestPrize)[];
+        "rewards": (types.NormalQuestReward)[];
     };
     export type QuestData = {
         "normal_quests": (types.NormalQuest)[];

@@ -28,8 +28,8 @@ pub struct NormalQuest {
     pub condition_event_tags: Vec<String>,
     /// Conditions that must be cleared before this quest can be completed.
     pub clear_cond_tag: Vec<NormalQuestClearCondition>,
-    /// The prizes that are awarded for completing this quest.
-    pub prizes: Vec<NormalQuestPrize>,
+    /// The rewards that are awarded for completing this quest.
+    pub rewards: Vec<NormalQuestReward>,
 }
 
 #[derive(Serialize, TypeDef)]
@@ -91,14 +91,14 @@ pub struct NormalQuestClearBattle {
 }
 
 #[derive(Serialize, TypeDef)]
-pub struct NormalQuestPrize {
+pub struct NormalQuestReward {
     pub is_unknown: bool,
-    pub prize: NormalQuestPrizeType,
+    pub reward: NormalQuestRewardType,
 }
 
 #[derive(Serialize, TypeDef)]
 #[serde(tag = "type")]
-pub enum NormalQuestPrizeType {
+pub enum NormalQuestRewardType {
     Item {
         num: u32,
 
@@ -137,7 +137,7 @@ impl NormalQuest {
         let quest_clear_conds =
             quest_clear_cond::QuestClearCond::read(pak_index).context("read quest_clear_cond")?;
         let quest_conds = quest_cond::QuestCond::read(pak_index).context("read quest_cond")?;
-        let quest_prizes = quest_prize::QuestPrize::read(pak_index).context("read quest_prize")?;
+        let quest_rewards = quest_prize::QuestPrize::read(pak_index).context("read quest_prize")?;
 
         let quests = normal_quests
             .into_iter()
@@ -176,10 +176,10 @@ impl NormalQuest {
                         })
                         .map(|clear_cond| map_clear_cond(clear_cond, strings))
                         .collect(),
-                    prizes: q
+                    rewards: q
                         .prize_tag
                         .and_then(|prize_tag| {
-                            quest_prizes
+                            quest_rewards
                                 .iter()
                                 .find(|prize| prize.prize_tag == prize_tag)
                                 .map(map_prize)
@@ -289,25 +289,25 @@ fn map_clear_cond(
     }
 }
 
-fn map_prize(quest_prize: &quest_prize::QuestPrize) -> Vec<NormalQuestPrize> {
+fn map_prize(quest_prize: &quest_prize::QuestPrize) -> Vec<NormalQuestReward> {
     const MAX_PRIZES: usize = 2;
 
     (0..MAX_PRIZES)
         .filter_map(|i| {
             let is_unknown = quest_prize.unknown_flag.get(i).cloned() == Some(Some(-1));
 
-            let prize_type = if let Some(Some(money)) = quest_prize.prize_money.get(i) {
-                Some(NormalQuestPrizeType::Money { amount: *money })
+            let reward_type = if let Some(Some(money)) = quest_prize.prize_money.get(i) {
+                Some(NormalQuestRewardType::Money { amount: *money })
             } else if let Some(Some(gold_coin)) = quest_prize.prize_gold_coin.get(i) {
-                Some(NormalQuestPrizeType::GoldCoin { amount: *gold_coin })
+                Some(NormalQuestRewardType::GoldCoin { amount: *gold_coin })
             } else if let Some(Some(sp)) = quest_prize.prize_sp.get(i) {
-                Some(NormalQuestPrizeType::SP { amount: *sp })
+                Some(NormalQuestRewardType::SP { amount: *sp })
             } else if let Some(Some(memories_tag)) = quest_prize.prize_memories_tag.get(i) {
-                Some(NormalQuestPrizeType::Memories {
+                Some(NormalQuestRewardType::Memories {
                     tag: memories_tag.clone(),
                 })
             } else if let Some(Some(item_tag)) = quest_prize.item_tag.get(i) {
-                Some(NormalQuestPrizeType::Item {
+                Some(NormalQuestRewardType::Item {
                     num: quest_prize.prize_num.get(i).unwrap().unwrap(),
                     item_tag: item_tag.clone(),
                     quality_min: quest_prize.quality_min.get(i).cloned().flatten().unwrap(),
@@ -340,7 +340,7 @@ fn map_prize(quest_prize: &quest_prize::QuestPrize) -> Vec<NormalQuestPrize> {
                 None
             };
 
-            prize_type.map(|prize| NormalQuestPrize { is_unknown, prize })
+            reward_type.map(|reward| NormalQuestReward { is_unknown, reward })
         })
         .collect()
 }
