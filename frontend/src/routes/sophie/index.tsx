@@ -18,6 +18,12 @@ export default function SophieIndex() {
           <Link to="/sophie/dolls">Doll Making</Link>
         </li>
       </ul>
+      <h2>Tools</h2>
+      <ul>
+        <li>
+          <Link to="/sophie/tools/synth-graph">Trait transfer path finder</Link>
+        </li>
+      </ul>
     </>
   );
 }

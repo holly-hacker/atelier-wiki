@@ -6,6 +6,7 @@ import ItemDetail from "./items/detail";
 import FriendPresentList from "./friends/presents";
 import RumorList from "./rumors/list";
 import DollListPage from "./dolls/list";
+import { SynthGraph } from "./tools/synth-graph";
 
 export default function getRoutes(): RouteObject[] {
   return [
@@ -36,6 +37,12 @@ export default function getRoutes(): RouteObject[] {
         {
           path: "dolls",
           element: <DollListPage />,
+        },
+
+        // utilities/tools
+        {
+          path: "tools/synth-graph",
+          element: <SynthGraph />,
         },
       ],
     },
