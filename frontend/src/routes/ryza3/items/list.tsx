@@ -1,7 +1,7 @@
 import { ItemLink, TextureAtlasImage } from "../utility_components/links";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import Grid from "@/components/grid";
-import types from "@/data/types/ryza3";
+import { ItemTypes } from "@/data/types/ryza3";
 import { useContext, useState } from "react";
 import { Ryza3Context, Ryza3Data } from "@/data/ryza3_data";
 
@@ -33,8 +33,10 @@ export default function ItemList() {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getColumnDefs(ryza3Data: Ryza3Data): ColumnDef<types.Item, any>[] {
+function getColumnDefs(
+  ryza3Data: Ryza3Data,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): ColumnDef<ItemTypes.Item, any>[] {
   const columnHelper = createColumnHelper<(typeof ryza3Data.items)[0]>();
   return [
     columnHelper.accessor("img_no", {

@@ -1,3 +1,6 @@
 [submodule "atelier-data"]
 	path = atelier-data
 	url = https://github.com/holly-hacker/atelier-data.git
+[submodule "data-extractor"]
+	path = data-extractor
+	url = https://github.com/holly-hacker/atelier-data-extractor.git

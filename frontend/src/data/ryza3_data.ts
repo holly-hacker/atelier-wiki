@@ -1,6 +1,6 @@
-import type TextureAtlasTypes from "@/data/types/texture_atlas.d.ts";
+import type TextureAtlasTypes from "@/data/types/common/texture_atlas.d.ts";
 import type Ryza3Types from "@/data/types/ryza3.d.ts";
-import type MapDataTypes from "@/data/types/map_data.d.ts";
+import type MapDataTypes from "@/data/types/common/map_data.d.ts";
 import { createContext } from "react";
 
 export const Ryza3Context = createContext(null as unknown as Ryza3Data);
@@ -10,19 +10,19 @@ export type Ryza3Data = {
     enemies_texture_atlas: TextureAtlasTypes.UniformTextureAtlasInfo,
 
     map_data: MapDataTypes.MapInfoList,
-    field_map: Ryza3Types.FieldMapData,
-    field_data: Ryza3Types.FieldData,
+    field_map: Ryza3Types.FieldMapTypes.FieldMapData,
+    field_data: Ryza3Types.FieldDataTypes.FieldData,
 
-    items: Ryza3Types.Item[],
-    item_categories: Ryza3Types.ItemCategoryData,
-    item_effects: Ryza3Types.ItemEffectData,
+    items: Ryza3Types.ItemTypes.Item[],
+    item_categories: Ryza3Types.ItemCategoryTypes.ItemCategoryData,
+    item_effects: Ryza3Types.ItemEffectTypes.ItemEffectData,
 
-    recipes: Ryza3Types.RecipeData,
+    recipes: Ryza3Types.RecipeTypes.RecipeData,
 
-    enemies: Ryza3Types.Enemy[],
+    enemies: Ryza3Types.EnemyTypes.Enemy[],
 
-    puni_feeding: Ryza3Types.PuniFeedingData,
-    quests: Ryza3Types.QuestData,
+    puni_feeding: Ryza3Types.PuniFeedingTypes.PuniFeedingData,
+    quests: Ryza3Types.QuestTypes.QuestData,
 };
 
 export async function getRyza3Data(): Promise<Ryza3Data> {

@@ -1,10 +1,10 @@
-import types from "@/data/types/ryza3";
+import type { ItemTypes } from "@/data/types/ryza3";
 import { EnemyLink } from "../../utility_components/links";
 import { useContext } from "react";
 import { Ryza3Context } from "@/data/ryza3_data";
 import { Link } from "react-router-dom";
 
-export function ItemDropSourcesSection({ item }: { item: types.Item }) {
+export function ItemDropSourcesSection({ item }: { item: ItemTypes.Item }) {
   const ryza3Data = useContext(Ryza3Context);
 
   const monsters = MonsterSources(item);
@@ -33,7 +33,7 @@ export function ItemDropSourcesSection({ item }: { item: types.Item }) {
   );
 }
 
-function MonsterSources(item: types.Item) {
+function MonsterSources(item: ItemTypes.Item) {
   const ryza3Data = useContext(Ryza3Context);
 
   const drops = [];
@@ -75,7 +75,7 @@ function MonsterSources(item: types.Item) {
   );
 }
 
-function PuniFeedingSources(item: types.Item) {
+function PuniFeedingSources(item: ItemTypes.Item) {
   const ryza3Data = useContext(Ryza3Context);
 
   const events = ryza3Data.puni_feeding.unique_events;
@@ -113,7 +113,7 @@ function PuniFeedingSources(item: types.Item) {
   );
 }
 
-function QuestSources(item: types.Item) {
+function QuestSources(item: ItemTypes.Item) {
   const ryza3Data = useContext(Ryza3Context);
 
   const quests = ryza3Data.quests.normal_quests;

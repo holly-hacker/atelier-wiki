@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { getImageLink, itemDisplayName } from "../../ryza3_data_util";
-import types from "@/data/types/ryza3";
+import type { ItemTypes } from "@/data/types/ryza3";
 import { CategoryLink, ItemLink } from "../../utility_components/links";
 import { useContext } from "react";
 import { Ryza3Context } from "@/data/ryza3_data";
@@ -11,7 +11,7 @@ export default function ItemDetail() {
   const ryza3Data = useContext(Ryza3Context);
   const { id } = useParams();
 
-  let item: types.Item | undefined;
+  let item: ItemTypes.Item | undefined;
   if (id && !isNaN(Number(id))) {
     // id is a number
     item = ryza3Data.items[Number(id)];
@@ -42,7 +42,7 @@ export default function ItemDetail() {
   );
 }
 
-function ItemDetailSection({ item }: { item: types.Item }) {
+function ItemDetailSection({ item }: { item: ItemTypes.Item }) {
   return (
     <>
       <h2>Details</h2>
@@ -93,7 +93,7 @@ function ItemDetailSection({ item }: { item: types.Item }) {
   );
 }
 
-function ItemReverseRecipeSection({ item }: { item: types.Item }) {
+function ItemReverseRecipeSection({ item }: { item: ItemTypes.Item }) {
   const ryza3Data = useContext(Ryza3Context);
 
   // typescript is a bit buggy, it doesn't know that item cannot be undefined due to the guard

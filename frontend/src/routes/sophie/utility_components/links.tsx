@@ -1,5 +1,5 @@
-import types from "@/data/types/sophie";
-import texture_atlas from "@/data/types/texture_atlas";
+import { ItemTypes } from "@/data/types/sophie";
+import texture_atlas from "@/data/types/common/texture_atlas";
 import { Link } from "react-router-dom";
 import {
   findItemByTag,
@@ -13,7 +13,7 @@ export function ItemLink({
   item,
   children,
 }: {
-  item: types.Item | string;
+  item: ItemTypes.Item | string;
   children?: React.ReactNode;
 }) {
   const sophieData = useContext(SophieContext);

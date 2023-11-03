@@ -3,7 +3,7 @@ import { SophieContext } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext } from "react";
 import { ItemLink, TextureAtlasImage } from "../utility_components/links";
-import type SophieTypes from "@/data/types/sophie.d.ts";
+import type { DollTypes } from "@/data/types/sophie.d.ts";
 
 export default function DollListPage() {
   return (
@@ -16,7 +16,7 @@ export default function DollListPage() {
   );
 }
 
-function getDollRequirements(doll: SophieTypes.Doll) {
+function getDollRequirements(doll: DollTypes.Doll) {
   const requirement_types = [
     ["cute_min", "Cute >="],
     ["cute_max", "Cute <="],

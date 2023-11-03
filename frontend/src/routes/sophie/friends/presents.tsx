@@ -3,7 +3,7 @@ import { SophieContext, SophieData } from "@/data/sophie_data";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useContext, useState } from "react";
 import { ItemLink, TextureAtlasImage } from "../utility_components/links";
-import type SophieTypes from "@/data/types/sophie.d.ts";
+import type { PresentTypes } from "@/data/types/sophie.d.ts";
 import { findItemByTag } from "../sophie_data_util";
 
 export default function FriendPresentList() {
@@ -81,7 +81,7 @@ function getWeightedScore(
     score: number;
   },
   sophieData: SophieData,
-  present_info: SophieTypes.FriendPresentInfo,
+  present_info: PresentTypes.FriendPresentInfo,
 ): number {
   const item = sophieData.items.find((v) => v.tag == item_tag)!;
   const base_points = present_info.base_points as Record<string, number>;

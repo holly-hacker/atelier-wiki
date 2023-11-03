@@ -1,7 +1,7 @@
-import types from "@/data/types/ryza3";
+import type { EnemyTypes, ItemTypes } from "@/data/types/ryza3";
 import { Ryza3Data } from "@/data/ryza3_data";
 
-export function itemDisplayName(item: types.Item): string {
+export function itemDisplayName(item: ItemTypes.Item): string {
   // NOTE: sort is not always correct, there are some items that share a `sort` value
   if (item.name) {
     return item.name;
@@ -9,7 +9,7 @@ export function itemDisplayName(item: types.Item): string {
   return item.tag ?? `Unnamed item (#${item.sort})`;
 }
 
-export function enemyDisplayName(enemy: types.Enemy): string {
+export function enemyDisplayName(enemy: EnemyTypes.Enemy): string {
   return enemy.name;
 }
 
@@ -21,7 +21,7 @@ export function itemCategoryDisplayName(ryza3Data: Ryza3Data, category_tag: stri
 const ryza3_tag_aliases: Record<string, string> = {
   'ITEM_FURNITURE_ARTICLE_044': 'ITEM_MAT_RESERVE_005'
 };
-export function findItemByTag(ryza3Data: Ryza3Data, tag: string): types.Item | undefined {
+export function findItemByTag(ryza3Data: Ryza3Data, tag: string): ItemTypes.Item | undefined {
   const real_tag = ryza3_tag_aliases[tag] ?? tag;
   return ryza3Data.items.find((item) => item.tag === real_tag);
 }

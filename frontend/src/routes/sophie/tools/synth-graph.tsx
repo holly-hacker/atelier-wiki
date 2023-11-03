@@ -1,5 +1,5 @@
 import { SophieContext } from "@/data/sophie_data";
-import types from "@/data/types/sophie";
+import { ItemTypes } from "@/data/types/sophie";
 import typesManual from "@/data/types/sophie-manual";
 import { containsJapaneseDigit } from "@/util";
 import { Graph, alg } from "@dagrejs/graphlib";
@@ -144,7 +144,7 @@ export function SynthGraph() {
 
 function createGraph(
   ingredients: typesManual.Ingredients,
-  items: types.Item[],
+  items: ItemTypes.Item[],
   categories: typesManual.Categories,
   disallowedItems: string[],
 ) {

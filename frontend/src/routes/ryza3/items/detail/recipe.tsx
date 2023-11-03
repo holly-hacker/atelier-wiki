@@ -1,11 +1,15 @@
 import { findItemByTag } from "../../ryza3_data_util";
-import types from "@/data/types/ryza3";
+import type {
+  ItemEffectTypes,
+  ItemTypes,
+  RecipeTypes,
+} from "@/data/types/ryza3";
 import { CategoryLink, ItemLink } from "../../utility_components/links";
 import RecipeDisplay from "../../utility_components/recipe_display";
 import { useContext } from "react";
 import { Ryza3Context, Ryza3Data } from "@/data/ryza3_data";
 
-export function ItemRecipeSection({ item }: { item: types.Item }) {
+export function ItemRecipeSection({ item }: { item: ItemTypes.Item }) {
   const ryza3Data = useContext(Ryza3Context);
   const recipe = getRecipe(ryza3Data, item);
 
@@ -91,7 +95,7 @@ export function ItemRecipeSection({ item }: { item: types.Item }) {
                     ryza3Data.item_effects.item_effects[effect_tag];
 
                   const formatEffectAttributes = (
-                    attr: types.EffectAttribute,
+                    attr: ItemEffectTypes.EffectAttribute,
                   ) => {
                     const formatMinMax = (
                       min: string | null,
@@ -166,8 +170,8 @@ export function ItemRecipeSection({ item }: { item: types.Item }) {
 
 function getRecipe(
   ryza3Data: Ryza3Data,
-  item: types.Item,
-): types.Recipe | null {
+  item: ItemTypes.Item,
+): RecipeTypes.Recipe | null {
   if (!item.tag) return null;
 
   for (const recipe of ryza3Data.recipes.recipes) {

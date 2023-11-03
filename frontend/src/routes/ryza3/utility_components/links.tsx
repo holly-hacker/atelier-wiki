@@ -1,5 +1,5 @@
-import types from "@/data/types/ryza3";
-import texture_atlas from "@/data/types/texture_atlas";
+import type { EnemyTypes, ItemTypes } from "@/data/types/ryza3";
+import texture_atlas from "@/data/types/common/texture_atlas";
 import { Link } from "react-router-dom";
 import {
   enemyDisplayName,
@@ -14,7 +14,7 @@ export function ItemLink({
   item,
   children,
 }: {
-  item: types.Item | string;
+  item: ItemTypes.Item | string;
   children?: React.ReactNode;
 }) {
   const ryza3Data = useContext(Ryza3Context);
@@ -50,7 +50,7 @@ export function EnemyLink({
   enemy,
   children,
 }: {
-  enemy: types.Enemy;
+  enemy: EnemyTypes.Enemy;
   children?: React.ReactNode;
 }) {
   // each enemy has a valid monster tag, so we can always use that in our links

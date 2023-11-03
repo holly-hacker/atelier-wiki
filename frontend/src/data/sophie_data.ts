@@ -1,5 +1,5 @@
-import type TextureAtlasTypes from "@/data/types/texture_atlas.d.ts";
-import type SophieTypes from "@/data/types/sophie.d.ts";
+import type TextureAtlasTypes from "@/data/types/common/texture_atlas.d.ts";
+import type { DollTypes, ItemTypes, PresentTypes, RumorTypes } from "@/data/types/sophie.d.ts";
 import type SophieManualTypes from "@/data/types/sophie-manual.d.ts";
 import { createContext } from "react";
 
@@ -7,10 +7,10 @@ export const SophieContext = createContext(null as unknown as SophieData);
 
 export type SophieData = {
     items_texture_atlas: TextureAtlasTypes.UniformTextureAtlasInfo,
-    items: SophieTypes.Item[],
-    present_info: SophieTypes.PresentInfo,
-    rumors: SophieTypes.Rumor[],
-    dolls: SophieTypes.Doll[],
+    items: ItemTypes.Item[],
+    present_info: PresentTypes.PresentInfo,
+    rumors: RumorTypes.Rumor[],
+    dolls: DollTypes.Doll[],
 
     categories: SophieManualTypes.Categories,
     ingredients: SophieManualTypes.Ingredients,

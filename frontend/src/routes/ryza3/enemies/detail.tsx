@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { enemyDisplayName, getImageLink } from "../ryza3_data_util";
 import { ItemLink } from "../utility_components/links";
-import types from "@/data/types/ryza3";
+import { EnemyTypes } from "@/data/types/ryza3";
 import { Ryza3Context } from "@/data/ryza3_data";
 import { useContext } from "react";
 
@@ -43,7 +43,7 @@ export default function EnemyDetail() {
   );
 }
 
-function EnemyStats({ enemy }: { enemy: types.Enemy }) {
+function EnemyStats({ enemy }: { enemy: EnemyTypes.Enemy }) {
   const stats: [string, number][] = [
     ["Health", enemy.library_rank_health],
     ["Attack", enemy.library_rank_attack],
@@ -77,7 +77,7 @@ function StarRating({ value }: { value: number }) {
   );
 }
 
-function EnemyDetailSection({ enemy }: { enemy: types.Enemy }) {
+function EnemyDetailSection({ enemy }: { enemy: EnemyTypes.Enemy }) {
   return (
     <>
       <h2>Details</h2>
@@ -97,7 +97,7 @@ function EnemyDetailSection({ enemy }: { enemy: types.Enemy }) {
   );
 }
 
-function EnemyInstanceSection({ enemy }: { enemy: types.Enemy }) {
+function EnemyInstanceSection({ enemy }: { enemy: EnemyTypes.Enemy }) {
   return (
     <>
       <h2>Instances</h2>
@@ -112,7 +112,7 @@ function EnemyInstanceSection({ enemy }: { enemy: types.Enemy }) {
   );
 }
 
-function EnemyInstance({ status }: { status: types.EnemyStatus }) {
+function EnemyInstance({ status }: { status: EnemyTypes.EnemyStatus }) {
   return (
     <ul>
       <li>Level: {status.lv}</li>

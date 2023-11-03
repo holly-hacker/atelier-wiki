@@ -1,4 +1,4 @@
-import types from "@/data/types/ryza3";
+import { RecipeTypes } from "@/data/types/ryza3";
 import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
 
@@ -17,7 +17,11 @@ const arrow_angle = 60;
 // whether to use a pseudo-hexagonal grid
 const use_hex_grid = true;
 
-export default function RecipeDisplay({ recipe }: { recipe: types.Recipe }) {
+export default function RecipeDisplay({
+  recipe,
+}: {
+  recipe: RecipeTypes.Recipe;
+}) {
   const svgRef = useRef(null);
   const [k, setK] = useState(1);
   const [x, setX] = useState(0);
@@ -84,7 +88,7 @@ export default function RecipeDisplay({ recipe }: { recipe: types.Recipe }) {
 }
 
 function create_scales(
-  field: types.Ring[],
+  field: RecipeTypes.Ring[],
   width: number,
   height: number,
 ): [
@@ -151,7 +155,7 @@ function RingConnectionLines({
   scale_y,
   scale_rel,
 }: {
-  field: types.Ring[];
+  field: RecipeTypes.Ring[];
   scale_x: d3.ScaleLinear<number, number>;
   scale_y: d3.ScaleLinear<number, number>;
   scale_rel: d3.ScaleLinear<number, number>;

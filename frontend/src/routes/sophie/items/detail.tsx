@@ -1,5 +1,5 @@
 import { SophieContext } from "@/data/sophie_data";
-import types from "@/data/types/sophie";
+import type { ItemTypes } from "@/data/types/sophie";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CategoryLink } from "../utility_components/links";
@@ -9,7 +9,7 @@ export default function ItemDetail(): JSX.Element {
   const sophieData = useContext(SophieContext);
   const { id } = useParams();
 
-  let item: types.Item | undefined;
+  let item: ItemTypes.Item | undefined;
   if (id && !isNaN(Number(id))) {
     // id is a number
     item = sophieData.items[Number(id)];
@@ -39,7 +39,7 @@ export default function ItemDetail(): JSX.Element {
   );
 }
 
-function ItemDetailSection({ item }: { item: types.Item }) {
+function ItemDetailSection({ item }: { item: ItemTypes.Item }) {
   return (
     <>
       <ul>
@@ -83,7 +83,7 @@ function ItemDetailSection({ item }: { item: types.Item }) {
   );
 }
 
-function ItemShape({ item }: { item: types.Item }) {
+function ItemShape({ item }: { item: ItemTypes.Item }) {
   const sophieData = useContext(SophieContext);
 
   if (item.shape_type == "ITEM_SHAPE_TYPE_DAMMY")
@@ -140,7 +140,7 @@ function Shape({ shape, size }: { shape: number[]; size: number }) {
   );
 }
 
-function RecipeSection({ item }: { item: types.Item }) {
+function RecipeSection({ item }: { item: ItemTypes.Item }) {
   const sophieData = useContext(SophieContext);
   const board = sophieData.item_boards[item.tag];
 
