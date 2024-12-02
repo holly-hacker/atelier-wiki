@@ -1,3 +1,8 @@
+> [!IMPORTANT]  
+> This wiki is very bare-bones will likely never have the level of polish or
+> the content of a normal wiki. It is open source so others can check out its
+> source code.
+
 # Atelier Wiki
 
 This repo houses the source code for my Atelier wiki. It focuses on
